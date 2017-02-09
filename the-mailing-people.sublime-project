@@ -1,0 +1,52 @@
+{
+    "folders":
+    [
+        {
+            "file_exclude_patterns":
+            [
+                "._*",
+                "*.bak",
+                "*.ico",
+                "*.sample",
+                "*.swf",
+                "*.tar",
+                "*.tgz",
+                "wp-*.php",
+                "*.md",
+                "*.sublime-workspace",
+                "*.sln",
+                "*.Debug.config",
+                "*.Release.config",
+                // "*.csproj",
+                "*.csproj.user",
+                "*.aspx",
+                "*.asax"
+            ],
+            "folder_exclude_patterns":
+            [
+                "_assemblies",
+                ".tmp",
+                ".sass-cache",
+                ".vs",
+                "node_modules",
+                "packages",
+                "TMP.Web/App_Browsers",
+                "TMP.Web/bin",
+                "TMP.Web/Css",
+                "TMP.Web/Masterpages",
+                "TMP.Web/media",
+                "TMP.Web/obj",
+                "TMP.Web/Properties",
+                "TMP.Web/Umbraco_Client",
+                "TMP.Web/UserControls",
+                "TMP.Web/Views/Master.cshtml",
+                "TMP.Web/Xslt"
+            ],
+            "path": "."
+        }
+    ],
+    "settings":
+    {
+        "tab_size": 4
+    }
+}
