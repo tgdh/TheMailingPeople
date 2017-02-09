@@ -11,7 +11,6 @@
                 "*.swf",
                 "*.tar",
                 "*.tgz",
-                "wp-*.php",
                 "*.md",
                 "*.sublime-workspace",
                 "*.sln",
@@ -24,7 +23,7 @@
             ],
             "folder_exclude_patterns":
             [
-                "_assemblies",
+                // "_assemblies",
                 ".tmp",
                 ".sass-cache",
                 ".vs",
