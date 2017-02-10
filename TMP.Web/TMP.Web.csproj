@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Analytics, Version=1.2.0.73, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Analytics.Umbraco.1.2.0\lib\net45\Analytics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="AutoMapper, Version=3.3.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.3.3.1\lib\net40\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -185,6 +189,10 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Our.Umbraco.NestedContent, Version=0.3.6033.18955, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Our.Umbraco.NestedContent.0.3.0\lib\net45\Our.Umbraco.NestedContent.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
@@ -215,6 +223,10 @@
     </Reference>
     <Reference Include="SEOChecker.Validators, Version=1.9.4.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SEOChecker.1.9.4.1\lib\SEOChecker.Validators.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Skybrud.Social, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Skybrud.Social.0.9.0\lib\Skybrud.Social.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SQLCE4Umbraco, Version=1.0.6247.17500, Culture=neutral, processorArchitecture=MSIL">
@@ -434,9 +446,77 @@
     <Content Include="App_Data\TEMP\SEOChecker\SEOChecker.Logging.dll" />
     <Content Include="App_Data\TEMP\SEOChecker\SEOChecker.MVC.dll" />
     <Content Include="App_Data\TEMP\SEOChecker\SEOChecker.PropertyEditorConverters.dll" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\Browser.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\Country.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\Dashboard.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\Device.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\Ecommerce.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\Edit.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\Keyword.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\Language.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\OS.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\PageViews.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\ProductPerformance.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\SalesPerformance.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\ScreenRes.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\Settings.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\Social.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\Transaction.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\controllers\View.Controller.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\directives\DateRangePicker.Directive.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\edit.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\filters\currency.filter.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\browser.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\country.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\dashboard.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\devices.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\ecommerce.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\keywords.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\language.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\os.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\productperformance.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\salesperformance.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\screenres.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\settings.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\social.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\transactions.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\partials\views.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\resources\Settings.Resource.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\resources\Stats.Resource.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\services\DateRange.Service.js" />
+    <Content Include="App_Plugins\Analytics\backOffice\AnalyticsTree\view.html" />
+    <Content Include="App_Plugins\Analytics\backOffice\OAuth.aspx" />
+    <Content Include="App_Plugins\Analytics\backOffice\OAuthCallback.aspx" />
+    <Content Include="App_Plugins\Analytics\config\lang\da.xml" />
+    <Content Include="App_Plugins\Analytics\config\lang\en.xml" />
+    <Content Include="App_Plugins\Analytics\config\lang\en_us.xml" />
+    <Content Include="App_Plugins\Analytics\css\analytics.css" />
+    <Content Include="App_Plugins\Analytics\installer\PostInstall.ascx" />
+    <Content Include="App_Plugins\Analytics\lib\accountingjs\accounting.js" />
+    <Content Include="App_Plugins\Analytics\lib\accountingjs\accounting.min.js" />
+    <Content Include="App_Plugins\Analytics\lib\angles\angles.js" />
+    <Content Include="App_Plugins\Analytics\lib\angular-chartjs\angular-chartjs.js" />
+    <Content Include="App_Plugins\Analytics\lib\angular-tablesort\angular-tablesort.js" />
+    <Content Include="App_Plugins\Analytics\lib\angular-tablesort\tablesort.css" />
+    <Content Include="App_Plugins\Analytics\lib\chartjs\Chart.js" />
+    <Content Include="App_Plugins\Analytics\lib\chartjs\Chart.min.js" />
+    <Content Include="App_Plugins\Analytics\lib\daterangepicker\daterangepicker-bs2.css" />
+    <Content Include="App_Plugins\Analytics\lib\daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="App_Plugins\Analytics\lib\daterangepicker\daterangepicker.js" />
+    <Content Include="App_Plugins\Analytics\lib\momentjs\moment-with-langs.js" />
+    <Content Include="App_Plugins\Analytics\lib\momentjs\moment-with-langs.min.js" />
+    <Content Include="App_Plugins\Analytics\lib\momentjs\moment.js" />
+    <Content Include="App_Plugins\Analytics\lib\momentjs\moment.min.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
+    <Content Include="App_Plugins\NestedContent\Css\nestedcontent.css" />
+    <Content Include="App_Plugins\NestedContent\Js\nestedcontent.controllers.js" />
+    <Content Include="App_Plugins\NestedContent\Js\nestedcontent.directives.js" />
+    <Content Include="App_Plugins\NestedContent\Js\nestedcontent.resources.js" />
+    <Content Include="App_Plugins\NestedContent\Views\nestedcontent.doctypepicker.html" />
+    <Content Include="App_Plugins\NestedContent\Views\nestedcontent.editor.html" />
+    <Content Include="App_Plugins\NestedContent\Views\nestedcontent.html" />
     <Content Include="App_Plugins\SEOChecker\css\seochecker-propertyeditors.css" />
     <Content Include="App_Plugins\SEOChecker\directives\valShowError.js" />
     <Content Include="App_Plugins\SEOChecker\redirects\redirectsController.js" />
@@ -2209,6 +2289,11 @@
     <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.DESKTOP-5BHHJ25.list" />
     <Content Include="App_Data\umbraco.config" />
     <Content Include="App_Data\TEMP\SEOChecker\SEOChecker.config" />
+    <Content Include="App_Plugins\NestedContent\package.manifest" />
+    <Content Include="App_Plugins\Analytics\settings.config" />
+    <Content Include="App_Plugins\Analytics\profile.config" />
+    <Content Include="App_Plugins\Analytics\package.manifest" />
+    <Content Include="App_Plugins\Analytics\account.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
