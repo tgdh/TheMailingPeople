@@ -225,8 +225,12 @@
       <HintPath>..\packages\SEOChecker.1.9.4.1\lib\SEOChecker.Validators.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Skybrud.Social, Version=0.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Skybrud.Social.0.9.0\lib\Skybrud.Social.dll</HintPath>
+    <Reference Include="Skybrud.Social, Version=0.9.4.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Skybrud.Social.0.9.4.8\lib\net40\Skybrud.Social.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Skybrud.Social.Umbraco, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Skybrud.Social.Umbraco.1.0.6\lib\net45\Skybrud.Social.Umbraco.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SQLCE4Umbraco, Version=1.0.6247.17500, Culture=neutral, processorArchitecture=MSIL">
@@ -526,6 +530,31 @@
     <Content Include="App_Plugins\SEOChecker\seochecker\seoCheckerPropertyEditor.html" />
     <Content Include="App_Plugins\SEOChecker\seochecker\seoCheckerPropertyEditorController.js" />
     <Content Include="App_Plugins\SEOChecker\XMLSitemapEditor\xmlsitemapeditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Dialogs\FacebookOAuth.aspx" />
+    <Content Include="App_Plugins\Skybrud.Social\Dialogs\GoogleOAuth.aspx" />
+    <Content Include="App_Plugins\Skybrud.Social\Dialogs\InstagramOAuth.aspx" />
+    <Content Include="App_Plugins\Skybrud.Social\Dialogs\TwitterOAuth.aspx" />
+    <Content Include="App_Plugins\Skybrud.Social\Facebook\OAuth\Controllers.js" />
+    <Content Include="App_Plugins\Skybrud.Social\Facebook\OAuth\Dialogs.js" />
+    <Content Include="App_Plugins\Skybrud.Social\Facebook\OAuth\PreValueEditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Facebook\OAuth\PropertyEditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Facebook\OAuth\ScopesDialog.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Google\OAuth\Controllers.js" />
+    <Content Include="App_Plugins\Skybrud.Social\Google\OAuth\Dialogs.js" />
+    <Content Include="App_Plugins\Skybrud.Social\Google\OAuth\PreValueEditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Google\OAuth\PropertyEditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Google\OAuth\ScopesDialog.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Images\sprite.png" />
+    <Content Include="App_Plugins\Skybrud.Social\Instagram\OAuth\Controllers.js" />
+    <Content Include="App_Plugins\Skybrud.Social\Instagram\OAuth\PreValueEditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Instagram\OAuth\PropertyEditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Social.css" />
+    <Content Include="App_Plugins\Skybrud.Social\Social.min.css" />
+    <Content Include="App_Plugins\Skybrud.Social\Table.css" />
+    <Content Include="App_Plugins\Skybrud.Social\Table.min.css" />
+    <Content Include="App_Plugins\Skybrud.Social\Twitter\OAuth\Controllers.js" />
+    <Content Include="App_Plugins\Skybrud.Social\Twitter\OAuth\PreValueEditor.html" />
+    <Content Include="App_Plugins\Skybrud.Social\Twitter\OAuth\PropertyEditor.html" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -2294,6 +2323,9 @@
     <Content Include="App_Plugins\Analytics\profile.config" />
     <Content Include="App_Plugins\Analytics\package.manifest" />
     <Content Include="App_Plugins\Analytics\account.config" />
+    <Content Include="App_Plugins\Skybrud.Social\Table.less" />
+    <Content Include="App_Plugins\Skybrud.Social\Social.less" />
+    <Content Include="App_Plugins\Skybrud.Social\package.manifest" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
