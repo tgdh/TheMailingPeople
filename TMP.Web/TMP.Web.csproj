@@ -560,6 +560,12 @@
     <Content Include="App_Plugins\Skybrud.Social\Twitter\OAuth\Controllers.js" />
     <Content Include="App_Plugins\Skybrud.Social\Twitter\OAuth\PreValueEditor.html" />
     <Content Include="App_Plugins\Skybrud.Social\Twitter\OAuth\PropertyEditor.html" />
+    <Content Include="assets\css\critical.ec2985d9.css" />
+    <Content Include="assets\css\ie.0e32c868.css" />
+    <Content Include="assets\css\rte.d967b514.css" />
+    <Content Include="assets\css\style.dcfa009d.css" />
+    <Content Include="assets\js\head.ed08cb59.js" />
+    <Content Include="assets\js\main.d7bab61f.js" />
     <Content Include="config\grid.editors.config.js" />
     <Content Include="config\Lang\cs-CZ.user.xml" />
     <Content Include="config\Lang\da-DK.user.xml" />
@@ -2367,6 +2373,12 @@
     <Content Include="Views\Search.cshtml" />
     <Content Include="Views\Sitemap.cshtml" />
     <Content Include="Views\TextPage.cshtml" />
+    <Content Include="assets\css\critical.css.311cd40c.map" />
+    <Content Include="assets\css\ie.css.04faf409.map" />
+    <Content Include="assets\css\rte.css.c9b9347e.map" />
+    <Content Include="assets\css\style.css.e2a5b7bc.map" />
+    <Content Include="assets\img\readme.md" />
+    <Content Include="assets\js\main.js.51a3db6e.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

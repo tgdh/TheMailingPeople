@@ -21,6 +21,9 @@ var headScripts = [
 ];
 
 var mainScripts = [
+    paths.assetsFolder + '/_components/jquery-validation/dist/jquery.validate.js',
+    paths.assetsFolder + '/_components/jquery-validation/dist/additional-methods.js',
+    paths.assetsFolder + '/_components/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js',
     paths.assetsFolder + '/js/components/jquery.tabs.js',
     paths.assetsFolder + '/js/main.js'
 ];

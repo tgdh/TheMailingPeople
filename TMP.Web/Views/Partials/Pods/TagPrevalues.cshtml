@@ -13,9 +13,9 @@
     var homePage = Model.Site();
 
     // Change this to tagSettings once the document type alias has been changed
-    var tagSettings = homePage.Descendants("tagSettings").FirstOrDefault();
+    var blogSettings = homePage.Descendants("blogSettings").FirstOrDefault();
 
-    if (tagSettings == null)
+    if (blogSettings == null)
     {
         return;
     }
@@ -28,7 +28,7 @@
         return;
     }
 
-    var blogPrevalues = tagSettings.Descendants(docType).ToList();
+    var blogPrevalues = blogSettings.Descendants(docType).ToList();
 
     var prevalueQueryString = Request.QueryString[docType].ConvertToId() ?? "";
 }
