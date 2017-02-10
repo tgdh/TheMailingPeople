@@ -1,6 +1,6 @@
 ﻿@using System.Web.Mvc.Html
-@using UmbracoStarterKit.Core.Data
-@using UmbracoStarterKit.Core.Utility
+@using TMP.Core.Data
+@using TMP.Core.Utility
 @inherits UmbracoViewPage<IPublishedContent>
 @{
     Layout = "MasterBlog.cshtml";
@@ -30,7 +30,7 @@
                     CreateDate = post.GetPropertyValue<DateTime>("releaseDate")
                 };
 
-                if (post.DocumentTypeAlias == UmbracoStarterKit.Core.Constants.InTheMedia)
+                if (post.DocumentTypeAlias == TMP.Core.Constants.InTheMedia)
                 {
                     articleModel.Url = post.HasValue("source") ? post.GetPropertyValue<string>("source") : "#";
                     articleModel.LinkTarget = "_blank";
@@ -56,8 +56,8 @@
 </main>
 
 <aside class="o-page__aside">
-    @Html.Partial("~/Views/Partials/Pods/TagPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Authors" }, { "docType", "author" } })
-    @Html.Partial("~/Views/Partials/Pods/TagPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Categories" }, { "docType", "category" } })
+    @Html.Partial("~/Views/Partials/Pods/TagPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Authors" }, { "docType", "author" }, { "baseUrl", Model.Url } })
+    @Html.Partial("~/Views/Partials/Pods/TagPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Categories" }, { "docType", "category" }, { "baseUrl", Model.Url } })
     @Html.Partial("~/Views/Partials/Pods/DateArchive.cshtml", allBlogPosts)
 </aside>
 

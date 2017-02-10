@@ -1,6 +1,6 @@
 ﻿@using Umbraco.Web
-@using UmbracoStarterKit.ExtensionMethods.Strings
-@using Constants = UmbracoStarterKit.Core.Constants
+@using TMP.Core.ExtensionMethods
+@using Constants = TMP.Core.Constants
 @inherits UmbracoViewPage<IPublishedContent>
 @{
 
@@ -49,6 +49,6 @@
                     <a href="@news.Url?category=press-release" class="c-link-list__link @activeClass">Press release</a>
                 </li>
             }
-        </ul>        
+        </ul>
     </div>
 }

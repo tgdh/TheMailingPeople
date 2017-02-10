@@ -1,4 +1,6 @@
-﻿@helper RenderPaging(Paging paging, int currentId)
+﻿@using TMP.Core.Utility
+
+@helper RenderPaging(Paging paging, int currentId)
 {
     var umbracoHelper = new Umbraco.Web.UmbracoHelper(Umbraco.Web.UmbracoContext.Current);
     var queryString = string.Empty;

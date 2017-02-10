@@ -756,7 +756,6 @@
     <Content Include="App_Code\GalleryViewModel.cs" />
     <Content Include="App_Code\ICard.cs" />
     <Content Include="App_Code\ImageViewModel.cs" />
-    <Content Include="App_Code\Paging.cs" />
     <Content Include="App_Code\QuoteViewModel.cs" />
     <Content Include="App_Code\TabListViewModel.cs" />
     <Content Include="App_Code\TabViewModel.cs" />

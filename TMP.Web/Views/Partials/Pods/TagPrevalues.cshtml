@@ -1,9 +1,15 @@
 ﻿@using Umbraco.Web
-@using UmbracoStarterKit.ExtensionMethods.Strings
+@using TMP.Core.ExtensionMethods
 @inherits UmbracoViewPage<IPublishedContent>
 @{
     var title = ViewData["title"] as string;
     var docType = ViewData["docType"] as string;
+    var baseUrl = ViewData["baseUrl"] as string;
+
+    if (baseUrl == null)
+    {
+        return;
+    }
 
     if (title == null && docType == null)
     {
@@ -11,30 +17,19 @@
     }
 
     var homePage = Model.Site();
+    var tagSettings = homePage.Descendants("tagSettings").FirstOrDefault();
 
-    // Change this to tagSettings once the document type alias has been changed
-    var blogSettings = homePage.Descendants("blogSettings").FirstOrDefault();
-
-    if (blogSettings == null)
+    if (tagSettings == null)
     {
         return;
     }
 
-    // Change this to root rather than specifying what it is
-    var blog = homePage.Descendants("blog").FirstOrDefault();
-
-    if (blog == null)
-    {
-        return;
-    }
-
-    var blogPrevalues = blogSettings.Descendants(docType).ToList();
-
+    var prevalues = tagSettings.Descendants(docType).ToList();
     var prevalueQueryString = Request.QueryString[docType].ConvertToId() ?? "";
 }
 
 
-@if (blogPrevalues.Any())
+@if (prevalues.Any())
 {
     <div class="c-pod">
         @if (!string.IsNullOrWhiteSpace(title))
@@ -42,10 +37,10 @@
             <h3 class="c-pod__title">@title</h3>
         }
         <ul class="c-link-list">
-            @foreach (var prevalue in blogPrevalues)
+            @foreach (var prevalue in prevalues)
             {
                 var activeClass = prevalueQueryString.Equals(prevalue.Name.ConvertToId(), StringComparison.OrdinalIgnoreCase) ? "is-active" : "";
-                var prevalueLink = blog.Url + "?" + docType + "=" + prevalue.Name.ConvertToId();
+                var prevalueLink = baseUrl + "?" + docType + "=" + prevalue.Name.ConvertToId();
 
                 <li class="c-link-list__item">
                     <a href="@prevalueLink" class="c-link-list__link @activeClass">@prevalue.Name</a>

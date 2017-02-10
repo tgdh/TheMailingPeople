@@ -1,4 +1,4 @@
-﻿@using UmbracoStarterKit.ExtensionMethods.Int
+﻿@using TMP.Core.ExtensionMethods
 @inherits UmbracoViewPage<DownloadsViewModel>
 @{
     var typedMedia = !string.IsNullOrWhiteSpace(Model.MediaIds) ? Model.MediaIds.Split(',').Select(mediaId => Umbraco.TypedMedia(mediaId)).ToList() : null;

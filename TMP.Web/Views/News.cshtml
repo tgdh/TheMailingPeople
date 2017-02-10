@@ -1,5 +1,5 @@
-﻿@using UmbracoStarterKit.Core.Utility
-@using UmbracoStarterKit.Core.Data
+﻿@using TMP.Core.Utility
+@using TMP.Core.Data
 @inherits UmbracoViewPage<IPublishedContent>
 @{
     Layout = "MasterNews.cshtml";
@@ -28,7 +28,7 @@
                     CreateDate = article.GetPropertyValue<DateTime>("releaseDate")
                 };
 
-                if (article.DocumentTypeAlias == UmbracoStarterKit.Core.Constants.InTheMedia)
+                if (article.DocumentTypeAlias == TMP.Core.Constants.InTheMedia)
                 {
                     articleModel.Url = article.HasValue("source") ? article.GetPropertyValue<string>("source") : "#";
                     articleModel.LinkTarget = "_blank";
