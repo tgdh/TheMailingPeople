@@ -1,0 +1,58 @@
+﻿@using Umbraco.Web
+@using UmbracoStarterKit.ExtensionMethods.Strings
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    var title = ViewData["title"] as string;
+    var docType = ViewData["docType"] as string;
+
+    if (title == null && docType == null)
+    {
+        return;
+    }
+
+    var homePage = Model.Site();
+
+    // Change this to tagSettings once the document type alias has been changed
+    var tagSettings = homePage.Descendants("tagSettings").FirstOrDefault();
+
+    if (tagSettings == null)
+    {
+        return;
+    }
+
+    // Change this to root rather than specifying what it is
+    var blog = homePage.Descendants("blog").FirstOrDefault();
+
+    if (blog == null)
+    {
+        return;
+    }
+
+    var blogPrevalues = tagSettings.Descendants(docType).ToList();
+
+    var prevalueQueryString = Request.QueryString[docType].ConvertToId() ?? "";
+}
+
+
+@if (blogPrevalues.Any())
+{
+    <div class="c-pod">
+        @if (!string.IsNullOrWhiteSpace(title))
+        {
+            <h3 class="c-pod__title">@title</h3>
+        }
+        <ul class="c-link-list">
+            @foreach (var prevalue in blogPrevalues)
+            {
+                var activeClass = prevalueQueryString.Equals(prevalue.Name.ConvertToId(), StringComparison.OrdinalIgnoreCase) ? "is-active" : "";
+                var prevalueLink = blog.Url + "?" + docType + "=" + prevalue.Name.ConvertToId();
+
+                <li class="c-link-list__item">
+                    <a href="@prevalueLink" class="c-link-list__link @activeClass">@prevalue.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+}
+
+

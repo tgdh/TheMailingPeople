@@ -1,0 +1,39 @@
+@using Umbraco.Web
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    var homePage = Model.Site();
+    var settings = homePage.Descendants("globalSettings").FirstOrDefault();
+
+    if (settings == null)
+    {
+        return;
+    }
+
+    var socialPlatforms = settings.GetPropertyValue<IEnumerable<IPublishedContent>>("socialPlatforms");
+}
+
+@if (socialPlatforms != null)
+{
+    <div class="c-social u-clearfix">
+
+        @foreach (var socialPlatform in socialPlatforms)
+        {
+            var platformName = socialPlatform.GetPropertyValue<string>("socialPlatformName");
+            var link = socialPlatform.GetPropertyValue<string>("socialPlatformLink");
+            var cssStyleClass = platformName.ToLower();
+
+            if (cssStyleClass == "google+")
+            {
+                cssStyleClass = "google";
+            }
+
+            if (!string.IsNullOrWhiteSpace(link))
+            {
+                <a href="@link" title="Go to our @platformName page (external link)" class="c-social__link c-social__link--@cssStyleClass" target="_blank">
+                    <i class="ico-@cssStyleClass"></i> <span class="u-hide-text">@platformName</span>
+                </a>
+            }
+        }
+    </div>
+}
+

@@ -511,6 +511,11 @@
     <Content Include="App_Plugins\Analytics\lib\momentjs\moment-with-langs.min.js" />
     <Content Include="App_Plugins\Analytics\lib\momentjs\moment.js" />
     <Content Include="App_Plugins\Analytics\lib\momentjs\moment.min.js" />
+    <Content Include="App_Plugins\Input.CharLimitEditor\css\style.css" />
+    <Content Include="App_Plugins\Input.CharLimitEditor\js\controller.js" />
+    <Content Include="App_Plugins\Input.CharLimitEditor\lang\en-US.xml" />
+    <Content Include="App_Plugins\Input.CharLimitEditor\lang\pt-BR.xml" />
+    <Content Include="App_Plugins\Input.CharLimitEditor\views\view.html" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -2103,18 +2108,6 @@
     <Content Include="Umbraco\Xslt\Templates\Schema2\TablePrototype.xslt" />
     <Content Include="Umbraco\Xslt\Templates\Sitemap.xslt" />
     <Content Include="Umbraco\Xslt\Templates\TablePrototype.xslt" />
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
-    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
-    <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
-    <Content Include="Media\Web.config" />
     <Content Include="config\UrlRewriting.config" />
     <Content Include="config\umbracoSettings.config" />
     <Content Include="config\trees.config" />
@@ -2326,6 +2319,54 @@
     <Content Include="App_Plugins\Skybrud.Social\Table.less" />
     <Content Include="App_Plugins\Skybrud.Social\Social.less" />
     <Content Include="App_Plugins\Skybrud.Social\package.manifest" />
+    <Content Include="App_Plugins\Input.CharLimitEditor\LICENSE" />
+    <Content Include="App_Plugins\Input.CharLimitEditor\package.manifest" />
+    <Content Include="App_Plugins\Input.CharLimitEditor\README.md" />
+    <Content Include="App_Code\App_Browsers\Form.browser" />
+    <Content Include="App_Code\App_Browsers\w3cvalidator.browser" />
+    <Content Include="App_Code\PagingTemplate.cshtml" />
+    <Content Include="Views\Article.cshtml" />
+    <Content Include="Views\Blog.cshtml" />
+    <Content Include="Views\ContactPage.cshtml" />
+    <Content Include="Views\GatewayPage.cshtml" />
+    <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\Layout.cshtml" />
+    <Content Include="Views\Master.cshtml" />
+    <Content Include="Views\MasterBlog.cshtml" />
+    <Content Include="Views\MasterNews.cshtml" />
+    <Content Include="Views\News.cshtml" />
+    <Content Include="Views\Partials\Cards\ArticleCard.cshtml" />
+    <Content Include="Views\Partials\Components\Analytics.cshtml" />
+    <Content Include="Views\Partials\Components\ContactDetails.cshtml" />
+    <Content Include="Views\Partials\Components\Favicons.cshtml" />
+    <Content Include="Views\Partials\Components\Fonts.cshtml" />
+    <Content Include="Views\Partials\Components\SEO.cshtml" />
+    <Content Include="Views\Partials\PageComponents\Accordion.cshtml" />
+    <Content Include="Views\Partials\PageComponents\Downloads.cshtml" />
+    <Content Include="Views\Partials\PageComponents\Embed.cshtml" />
+    <Content Include="Views\Partials\PageComponents\Form.cshtml" />
+    <Content Include="Views\Partials\PageComponents\Gallery.cshtml" />
+    <Content Include="Views\Partials\PageComponents\Image.cshtml" />
+    <Content Include="Views\Partials\PageComponents\Quote.cshtml" />
+    <Content Include="Views\Partials\PageComponents\Tabs.cshtml" />
+    <Content Include="Views\Partials\PageComponents\Textarea.cshtml" />
+    <Content Include="Views\Partials\Page\Breadcrumbs.cshtml" />
+    <Content Include="Views\Partials\Page\Components.cshtml" />
+    <Content Include="Views\Partials\Page\Footer.cshtml" />
+    <Content Include="Views\Partials\Page\FooterNavigation.cshtml" />
+    <Content Include="Views\Partials\Page\Header.cshtml" />
+    <Content Include="Views\Partials\Page\Headline.cshtml" />
+    <Content Include="Views\Partials\Page\MainNavigation.cshtml" />
+    <Content Include="Views\Partials\Page\Sitemap.cshtml" />
+    <Content Include="Views\Partials\Page\SocialLinks.cshtml" />
+    <Content Include="Views\Partials\Pods\DateArchive.cshtml" />
+    <Content Include="Views\Partials\Pods\NewsFilter.cshtml" />
+    <Content Include="Views\Partials\Pods\TagPrevalues.cshtml" />
+    <Content Include="Views\Partials\Shared\TwitterFeed.cshtml" />
+    <Content Include="Views\Post.cshtml" />
+    <Content Include="Views\Search.cshtml" />
+    <Content Include="Views\Sitemap.cshtml" />
+    <Content Include="Views\TextPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2334,11 +2375,34 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Partials\Grid\Bootstrap2-Fluid.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap2.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+    <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Embed.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Macro.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Media.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Rte.cshtml" />
+    <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
+    <Content Include="Views\Web.config" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\ArticleViewModel.cs" />
+    <Content Include="App_Code\DownloadsViewModel.cs" />
+    <Content Include="App_Code\EmbedViewModel.cs" />
+    <Content Include="App_Code\FormViewModel.cs" />
+    <Content Include="App_Code\GalleryViewModel.cs" />
+    <Content Include="App_Code\ICard.cs" />
+    <Content Include="App_Code\ImageViewModel.cs" />
+    <Content Include="App_Code\Paging.cs" />
+    <Content Include="App_Code\QuoteViewModel.cs" />
+    <Content Include="App_Code\TabListViewModel.cs" />
+    <Content Include="App_Code\TabViewModel.cs" />
+    <Content Include="App_Code\TextareaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2352,6 +2416,7 @@
     <Folder Include="App_Data\packages\created\" />
     <Folder Include="App_Data\TEMP\FileUploads\" />
     <Folder Include="App_Data\TEMP\Install\" />
+    <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

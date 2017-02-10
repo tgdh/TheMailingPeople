@@ -1,0 +1,28 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    var homePage = Model.Site();
+    var settings = homePage.Descendants("globalSettings").FirstOrDefault();
+    var siteName = string.Empty;
+
+    if (settings != null)
+    {
+        siteName = settings.GetPropertyValue<string>("websiteName");
+    }
+}
+
+<header id="header" class="c-header" role="banner">
+    <a href="/" class="c-header__logo-link">
+        <img src="/assets/img/logo.png" alt="@siteName" class="c-header__logo-image">
+    </a>
+
+    <button class="c-header__toggle-menu-button js-toggle" id="toggle-menu" aria-haspopup="true">
+        <i class="c-header__toggle__icon">
+            <span class="c-header__toggle__line c-header__toggle__line--1"></span>
+            <span class="c-header__toggle__line c-header__toggle__line--2"></span>
+            <span class="c-header__toggle__line c-header__toggle__line--3"></span>
+        </i>
+        <span class="u-hide-text">Menu</span>
+    </button>
+
+    @Html.Partial("~/Views/Partials/Page/MainNavigation.cshtml")
+</header>

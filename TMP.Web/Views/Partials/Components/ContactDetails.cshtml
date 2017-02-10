@@ -1,0 +1,58 @@
+@using UmbracoStarterKit.ExtensionMethods.Strings
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    var contactDetailSections = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("contactDetailSections");
+}
+
+@if (contactDetailSections != null)
+{
+    <div class="c-contacts">
+        @foreach (var contactDetailsSection in contactDetailSections)
+        {
+            var title = contactDetailsSection.GetPropertyValue<string>("title");
+            var contactDetails = contactDetailsSection.GetPropertyValue<IEnumerable<IPublishedContent>>("contactDetails");
+
+            <div class="c-contacts__section">
+                @if (!string.IsNullOrWhiteSpace(title))
+                {
+                    <span class="u-gamma">@title</span>
+                }
+
+                @if (contactDetails != null)
+                {
+                    <div class="c-contacts__lines">
+                        @foreach (var contactDetailsEntry in contactDetails)
+                        {
+                            var label = contactDetailsEntry.GetPropertyValue<string>("label");
+                            var value = contactDetailsEntry.GetPropertyValue<string>("value");
+
+                            if (!string.IsNullOrWhiteSpace(value))
+                            {
+                                <div class="c-contacts__line">
+                                    @if (!string.IsNullOrWhiteSpace(label))
+                                    {
+                                        <span class="c-contacts__label">@label&#58;</span>
+                                    }
+
+                                    @if (value.IsValidEmail())
+                                    {
+                                        <a class="c-contacts__link" href="mailto:@value" title="Email to @value">
+                                            @value
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <span class="c-contacts__text">
+                                            @value
+                                        </span>
+                                    }
+                                </div>
+                            }
+                        }
+                    </div>
+                }
+            </div>
+        }
+    </div>
+}
+

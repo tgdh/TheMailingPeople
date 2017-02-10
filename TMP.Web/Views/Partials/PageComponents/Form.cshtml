@@ -1,0 +1,21 @@
+﻿@inherits UmbracoViewPage<FormViewModel>
+@{
+    if (string.IsNullOrWhiteSpace(Model.FormName))
+    {
+        return;
+    }
+}
+
+<div class="c-form-wrap @Model.AdditionalClass @Model.WrapClasses">
+    @if (!string.IsNullOrWhiteSpace(Model.Title))
+    {
+        <h2>@Model.Title</h2>
+    }
+    @switch (Model.FormName)
+    {
+        case "Contact form":
+            <p style="color: red;">No contact form logic added yet.</p>
+            @*@Html.Action("RenderContactForm", "ContactForm")*@
+            break;
+    }
+</div>

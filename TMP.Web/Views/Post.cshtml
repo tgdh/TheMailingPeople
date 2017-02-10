@@ -1,0 +1,18 @@
+﻿@using UmbracoStarterKit.Core.Data
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    Layout = "MasterBlog.cshtml";
+
+    var allBlogPosts = BlogRepository.AllBlogPosts(Umbraco).ToList();
+}
+
+<main class="o-page__inner" role="main">
+    @Html.Partial("~/Views/Partials/Page/Headline.cshtml")
+    @Html.Partial("~/Views/Partials/Page/Components.cshtml")
+</main>
+
+<aside class="o-page__aside">
+    @Html.Partial("~/Views/Partials/Pods/BlogPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Authors" }, { "docType", "author" } })
+    @Html.Partial("~/Views/Partials/Pods/BlogPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Categories" }, { "docType", "category" } })
+    @Html.Partial("~/Views/Partials/Pods/BlogNewsArchive.cshtml", allBlogPosts)
+</aside>
