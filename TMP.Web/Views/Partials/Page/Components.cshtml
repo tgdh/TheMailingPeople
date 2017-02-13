@@ -9,20 +9,24 @@
     }
 
     const string wrapSize = "medium";
-    var pageComponentClass = "o-page-component";
+    var pageComponentClass = "";
+    var wrapClasses = "o-wrap o-wrap--" + wrapSize;
 
-    foreach (var item in components)
+    foreach (var item in components.ToContentSet())
     {
-        var alignment = item.GetPropertyValue<string>("alignment");
+        var alignment = item.HasValue("alignment") ? item.GetPropertyValue<string>("alignment") : "";
+        var wrapInExtraDiv =  !alignment.Equals("Full width");
         var aspectRatio = item.GetPropertyValue<string>("aspectRatio");
 
-        if (alignment != "Full width")
+        if (wrapInExtraDiv)
         {
-            var wrapMarkup = "<div class='o-page-component o-wrap o-wrap--" + wrapSize +"'>";
+            var wrapMarkup = "<div class='o-page-component o-wrap o-wrap--" + wrapSize + item.IsFirst(" is-first", "") + "'>";
 
             @Html.Raw(wrapMarkup)
-
-            pageComponentClass = "";
+        }
+        else
+        {
+            pageComponentClass = "o-page-component";
         }
 
         switch (item.DocumentTypeAlias)
@@ -44,7 +48,8 @@
                     ImageId = item.GetPropertyValue<string>("imageId"),
                     Alignment = alignment,
                     AspectRatio = aspectRatio,
-                    AdditionalClass = pageComponentClass
+                    AdditionalClass = pageComponentClass,
+                    ImageWidth = 2000
                 };
 
                 @Html.Partial("~/Views/Partials/PageComponents/Image.cshtml", image)
@@ -84,7 +89,8 @@
                 var text = new TextareaViewModel
                 {
                     Text = item.GetPropertyValue<IHtmlString>("text"),
-                    AdditionalClass = pageComponentClass
+                    AdditionalClass = pageComponentClass,
+                    WrapClasses = wrapClasses
                 };
 
                 @Html.Partial("~/Views/Partials/PageComponents/Textarea.cshtml", text)
@@ -131,7 +137,7 @@
                 break;
         }
 
-        if (item.HasProperty("alignment"))
+        if (wrapInExtraDiv)
         {
             @Html.Raw("</div>")
         }

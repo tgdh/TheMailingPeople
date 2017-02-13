@@ -4,6 +4,6 @@
 
 =========================================================== */
 
-.o-page-component + .o-page-component {
+.o-page-component:not(.is-first) + .o-page-component {
 	margin-top: $line-height * 2;
 }
