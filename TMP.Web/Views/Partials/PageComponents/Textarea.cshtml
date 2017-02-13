@@ -1,4 +1,5 @@
-﻿@inherits UmbracoViewPage<TextareaViewModel>
+﻿@using TMP.Core.Models
+@inherits UmbracoViewPage<TextareaViewModel>
 @{
     if (string.IsNullOrWhiteSpace(Model.Text.ToString()))
     {

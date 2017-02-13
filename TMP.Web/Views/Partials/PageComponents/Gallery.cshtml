@@ -1,4 +1,5 @@
-﻿@inherits UmbracoViewPage<GalleryViewModel>
+﻿@using TMP.Core.Models
+@inherits UmbracoViewPage<GalleryViewModel>
 @{
     var typedMedia = !string.IsNullOrWhiteSpace(Model.MediaIds) ? Model.MediaIds.Split(',').Select(mediaId => Umbraco.TypedMedia(mediaId)).ToList() : null;
 

@@ -1,4 +1,5 @@
-﻿@inherits UmbracoViewPage<TMP.Core.Models.EmbedViewModel>
+﻿@using TMP.Core.Models
+@inherits UmbracoViewPage<EmbedViewModel>
 @{
     if (string.IsNullOrWhiteSpace(Model.EmbedCode))
     {
