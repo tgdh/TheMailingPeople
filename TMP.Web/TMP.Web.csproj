@@ -749,17 +749,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\ArticleViewModel.cs" />
-    <Content Include="App_Code\DownloadsViewModel.cs" />
-    <Content Include="App_Code\EmbedViewModel.cs" />
-    <Content Include="App_Code\FormViewModel.cs" />
-    <Content Include="App_Code\GalleryViewModel.cs" />
-    <Content Include="App_Code\ICard.cs" />
-    <Content Include="App_Code\ImageViewModel.cs" />
-    <Content Include="App_Code\QuoteViewModel.cs" />
-    <Content Include="App_Code\TabListViewModel.cs" />
-    <Content Include="App_Code\TabViewModel.cs" />
-    <Content Include="App_Code\TextareaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -774,6 +763,12 @@
     <Folder Include="App_Data\TEMP\FileUploads\" />
     <Folder Include="App_Data\TEMP\Install\" />
     <Folder Include="Views\MacroPartials\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TMP.Core\TMP.Core.csproj">
+      <Project>{fadbc756-32aa-4edb-9416-f1a3590829e6}</Project>
+      <Name>TMP.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
