@@ -5,19 +5,19 @@
     var hasIntroduction = Model.HasValue("introduction");
 }
 
-<div class="c-headline">
-    <h1 class="c-headline__heading">@headline</h1>
+<div class="c-heading">
+    <h1 class="c-heading__headline">@headline</h1>
 
     @if (!string.IsNullOrWhiteSpace(subtitle))
     {
-        <span class="c-headline__subtitle">@subtitle</span>
+        <span class="c-heading__subtitle">@subtitle</span>
     }
 
     @if (hasIntroduction)
     {
         var introduction = Model.GetPropertyValue<HtmlString>("introduction");
 
-        <div class="c-headline__introduction">
+        <div class="c-heading__introduction">
             @introduction
         </div>
     }

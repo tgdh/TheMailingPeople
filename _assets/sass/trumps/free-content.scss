@@ -3,7 +3,15 @@
 	# Free Content
 
 =========================================================== */
-
+.s-free-content {
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		clear: both;
+	}
+}
 @include respond-min( $mq-small ) {
 	.s-free-content {
 		.o-table {
