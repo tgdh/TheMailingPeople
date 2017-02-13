@@ -7,6 +7,11 @@
 .o-section {
 	padding-bottom: $padding-small;
 	padding-top: $padding-small;
+
+	&--small {
+		padding-bottom: $padding-small;
+		padding-top: $padding-small;
+	}
 }
 
 @include respond-min-max( $mq-small, $mq-medium ) {
@@ -23,6 +28,10 @@
 	.o-section {
 		padding-bottom: $padding-large;
 		padding-top: $padding-large;
-	}
 
+		&--small {
+			padding-bottom: $padding-medium;
+			padding-top: $padding-medium;
+		}
+	}
 }

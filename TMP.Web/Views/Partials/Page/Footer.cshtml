@@ -12,18 +12,35 @@
     }
 }
 
-<footer id="footer" class="c-footer u-spacer" role="contentinfo">
-    <a href="/" class="c-footer__logo-link">
-        <img src="/assets/img/logo.png" alt="@siteName" class="c-footer__logo-image">
-    </a>
-
-    @Html.Partial("~/Views/Partials/Page/FooterNavigation.cshtml")
-    @Html.Partial("~/Views/Partials/Page/SocialLinks.cshtml")
-
-    @if (!string.IsNullOrWhiteSpace(copyright))
-    {
-        <p class="c-footer__copyright">
-            @Html.Raw(copyright.Replace("\n", "<br/>"))
-        </p>
-    }
+<footer id="footer" class="c-footer" role="contentinfo">
+    <div class="c-footer__top-wrap">
+        <div class="o-wrap o-wrap--large c-footer__top__inner o-section--small">
+            <div class="c-footer__top__col c-footer__top__col--first">
+                <h2 class="o-heading c-footer__headline u-mega u-uppercase">Contacts</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, <a href="#">sed diam nonummy nibh.</a></p>
+                <h3>Locations: </h3>
+                <p>Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
+            </div>
+            <div class="c-footer__top__col c-footer__top__col--last">
+                <h2 class="o-heading c-footer__healine c-footer__headline u-mega u-uppercase">Connect with us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                @Html.Partial("~/Views/Partials/Page/SocialLinks.cshtml")
+            </div>
+        </div>
+    </div>
+    <div class="c-footer__bottom-wrap">
+        <div class="o-wrap o-wrap--large c-footer__bottom__inner">
+            <div class="c-footer__bottom_col">
+                @if (!string.IsNullOrWhiteSpace(copyright))
+                {
+                    <p class="c-footer__copyright">
+                        @Html.Raw(copyright.Replace("\n", "<br/>"))
+                    </p>
+                }
+            </div>
+            <div class="c-footer__bottom_col">
+                @Html.Partial("~/Views/Partials/Page/FooterNavigation.cshtml")
+            </div>
+        </div>
+    </div>
 </footer>

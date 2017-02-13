@@ -1,0 +1,21 @@
+.o-heading {
+    font-family: $font-family-sec;
+
+    &:after {
+        content: "";
+        width: 6rem;
+        height: .4rem;
+        background-color: $white;
+        display: block;
+        margin-top: 1rem;
+    }
+
+    &--center {
+        text-align: center;
+
+        &:after {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

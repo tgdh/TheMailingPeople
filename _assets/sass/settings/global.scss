@@ -18,16 +18,20 @@ $images: 					'#{$base-dir}/img';
 
 $white: 					#FFFFFF;
 $black: 					#000000;
-$red:						#f44336;
+$red:						#e42622;
 $green:						#4caf50;
 
-$dark-1:					#1d1d1d;
+$dark-1:					#272727;
+$dark-2:                    #313131;
+$dark-3:                    #7d7d7d;
 
-$light-1:					#f7f7f7;
-$light-2:					darken( $light-1, 5% );
+$light-1:					#7d7d7d;
+$light-2:                   #f1f1f1;
 
-$pri: 						#00b7ce;
-$sec: 						#ed1165;
+// $light-2:					darken( $light-1, 5% );
+
+$pri: 						$red;
+$sec: 						$dark-1;
 $ter:				 		#fad620;
 
 $facebook: 					#3b5998;
@@ -47,7 +51,7 @@ $flcikr: 					#0063dc;
 =========================================================== */
 
 $font-family:				"proxima-nova", Helvetica, Arial, Geneva, sans-serif;
-$font-family-sec:			'';
+$font-family-sec:			"bebas-neue", sans-serif;
 $font-size-small:			1.6rem;
 $font-size-large:			1.6rem;
 $line-height:				1.4em;
@@ -60,7 +64,7 @@ $text-colour:				$black;
 $background-colour:			$white;
 $border-colour:				#ccc;
 $link-colour:				$pri;
-$link-colour-hover:			$sec;
+$link-colour-hover:			darken($pri, 10);
 $form-placeholder-colour:	#ccc;
 $placeholder-colour:		$light-1;
 $highlight-colour:			lighten( $pri, 50 );
@@ -85,7 +89,7 @@ $bold:						700;
 
 $wrap-small:				75rem;
 $wrap-medium:				92rem;
-$wrap-large:				108rem;
+$wrap-large:				136rem;
 $wrap-x-large:				140rem;
 
 
