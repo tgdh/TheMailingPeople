@@ -1,55 +1,20 @@
 /* ===========================================================
 
-  # Overrides
+  # Hide
 
 =========================================================== */
 
-.u-clearfix {
-	@include clearfix;
-}
-
-.u-hide-text {
-	@include hide-text;
-}
-
-.u-center-content,
-.u-center-text {
-	text-align: center;
-}
-
-.u-highlight-text {
-	color: $pri;
-}
-
-.u-space-top {
-	margin-top: $line-height;
-}
-
-.u-space-top--large {
-	margin-top: $line-height * 2;
-}
-
-.u-space-bottom {
-	margin-bottom: $line-height
-}
-
-.u-space-bottom--large {
-	margin-bottom: $line-height * 2;
-}
-
-
 @include respond-max( $mq-small ) {
 
-	.u-hide-small {
+	.u-hide--small {
 		display: none !important;
 	}
 
 }
 
-
 @include respond-min-max( $mq-small, $mq-medium ) {
 
-	.u-hide-medium {
+	.u-hide--medium {
 		display: none !important;
 	}
 
@@ -57,7 +22,7 @@
 
 @include respond-min-max( $mq-medium, $mq-large ) {
 
-	.u-hide-large {
+	.u-hide--large {
 		display: none !important;
 	}
 
@@ -65,7 +30,7 @@
 
 @include respond-min-max( $mq-large, $mq-x-large ) {
 
-	.u-hide-x-large {
+	.u-hide--x-large {
 		display: none !important;
 	}
 
@@ -74,7 +39,7 @@
 
 @include respond-min( $mq-x-large ) {
 
-	.u-hide-xx-large {
+	.u-hide--xx-large {
 		display: none !important;
 	}
 
