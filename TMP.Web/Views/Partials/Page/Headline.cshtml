@@ -5,22 +5,31 @@
     var hasIntroduction = Model.HasValue("introduction");
 }
 
-<div class="c-heading o-wrap o-wrap--medium">
-    <h1 class="c-heading__headline">@headline</h1>
+<div class="c-heading o-section">
+    <div class="o-wrap o-wrap--medium">
+        <h1 class="c-heading__headline u-mega">@headline</h1>
 
-    @if (!string.IsNullOrWhiteSpace(subtitle))
-    {
-        <span class="c-heading__subtitle">@subtitle</span>
-    }
+        @if (!string.IsNullOrWhiteSpace(subtitle))
+        {
+            <span class="c-heading__subtitle">@subtitle</span>
+        }
 
-    @if (hasIntroduction)
-    {
-        var introduction = Model.GetPropertyValue<HtmlString>("introduction");
+        @if (hasIntroduction)
+        {
+            var introduction = Model.GetPropertyValue<HtmlString>("introduction");
+
+            <div class="c-heading__introduction">
+                @introduction
+            </div>
+        }
 
         <div class="c-heading__introduction">
-            @introduction
+            <p>Have an enquiry we can help with?<br/>
+            Email us at <a href="">enquiries@themailingpeople.co.uk</a> or enquire <br/>
+            using the form below!</p>
         </div>
-    }
+
+    </div>
 </div>
 
 

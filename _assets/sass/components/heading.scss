@@ -1,0 +1,31 @@
+.c-heading {
+    background-color: $red;
+    background-image: url(/assets/img/red-vector-background.png);
+    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $white;
+    text-align: center;
+}
+
+.c-heading__headline {
+    color: inherit;
+    font-family: $font-family-sec;
+    font-weight: normal;
+    padding-bottom: 1.5rem;
+}
+
+.c-heading__subtitle {
+    color: inherit;
+}
+
+.c-heading__introduction {
+    color: inherit;
+    font-size: 1.9rem;
+    font-family: $font-family;
+
+    a {
+        color: inherit;
+        font-weight: bold;
+    }
+}
