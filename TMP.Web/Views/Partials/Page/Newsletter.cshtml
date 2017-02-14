@@ -1,0 +1,36 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    var homePage = Model.Site();
+    var settings = homePage.Descendants("globalSettings").FirstOrDefault();
+
+    if (settings == null)
+    {
+        return;
+    }
+
+}
+
+<div class="o-section c-newsletter">
+    <div class="o-wrap o-wrap--small c-newsletter__inner">
+        <h2 class="u-uppercase o-heading o-heading--white o-heading--center u-giga">Keep up to date</h2>
+        <div class="c-newsletter__info u-center-content u-space-bottom">
+            <p>Subscribe to our newsletter</p>
+        </div>
+        <form class="c-newsletter__form">
+            <fieldset class="c-newsletter__fieldset">
+                <legend class="u-hide-text">Newsletter subscribe</legend>
+                <div class="c-newsletter__field-wrap">
+                    <div class="c-newsletter__field c-newsletter__field--input">
+                        <label class="c-newsletter__label u-hide-text" for="Email">Email address</label>
+                        <input class="c-newsletter__input" id="Email" name="Email" placeholder="Enter your email address" type="text">
+                    </div>
+                    <div class="c-newsletter__field c-newsletter__field--submit">
+                        <button type="submit" class="c-button c-button--primary c-newsletter__button">Send form</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <img class="c-newsletter__image" src="/assets/img/steve/walking.png" alt="Mr Steve - The Mailing People">
+    </div>
+</div>
+

@@ -1,5 +1,5 @@
 /* ===========================================================
-	
+
 	# Form
 
 =========================================================== */
@@ -35,8 +35,6 @@ $line-height-half: $line-height / 2;
 		color: $error;
 	}
 }
-
-
 
 //= LABEL ====================================================
 
@@ -163,7 +161,7 @@ $line-height-half: $line-height / 2;
 			display: none;
 
 			&:checked {
-				
+
 				+ .o-checkbox__label:before,
 				+ .o-radio__label:before {
 					background-color: $pri;

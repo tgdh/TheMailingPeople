@@ -7,10 +7,10 @@
 input,
 select,
 textarea {
-	background: none;
+	background: $form-background-colour;
 	border: $border-width solid $border-colour;
 	border-radius: $border-radius;
-	padding: 1rem 1.5rem;
+	padding: 1.4rem 1.6rem;
 	transition: border $speed $ease;
 	width: 100%;
 

@@ -726,6 +726,8 @@
     <Content Include="Views\Sitemap.cshtml" />
     <Content Include="Views\TextPage.cshtml" />
     <Content Include="Views\Partials\Forms\ContactFormView.cshtml" />
+    <Content Include="Views\Partials\Page\Accreditations.cshtml" />
+    <Content Include="Views\Partials\Page\Newsletter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

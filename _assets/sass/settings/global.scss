@@ -62,10 +62,11 @@ $type-scale-large:			1.195;
 $heading-colour:			$black;
 $text-colour:				$black;
 $background-colour:			$white;
-$border-colour:				#ccc;
+$border-colour:				$light-2;
 $link-colour:				$pri;
 $link-colour-hover:			darken($pri, 10);
-$form-placeholder-colour:	#ccc;
+$form-background-colour:    $light-2;
+$form-placeholder-colour:	$light-1;
 $placeholder-colour:		$light-1;
 $highlight-colour:			red;
 
@@ -74,12 +75,12 @@ $success:					$green;
 $disabled:					$light-1;
 
 // section padding
-$padding-small:				4rem;
-$padding-medium:			6rem;
-$padding-large:				8rem;
+$padding-small:				4.5rem;
+$padding-medium:			6.5rem;
+$padding-large:				9rem;
 
-$border-width: 				.2rem;
-$border-radius: 			.3rem;
+$border-width: 				.1rem;
+$border-radius: 			.7rem;
 $speed: 					.3s;
 $ease:						ease;
 
