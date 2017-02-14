@@ -725,6 +725,7 @@
     <Content Include="Views\Search.cshtml" />
     <Content Include="Views\Sitemap.cshtml" />
     <Content Include="Views\TextPage.cshtml" />
+    <Content Include="Views\Partials\Forms\ContactFormView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

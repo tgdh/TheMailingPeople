@@ -4,24 +4,19 @@ using TMP.Core.Utility;
 using Umbraco.Core.Logging;
 using Umbraco.Web;
 using Umbraco.Web.Mvc;
-using Umbraco.Core;
 using TMP.Core.Models;
-using Umbraco.Core.Services;
 
 namespace TMP.Core.Controllers
 {
     public class ContactFormController : SurfaceController
     {
         private readonly MailHelper _mailHelper = new MailHelper();
-        private readonly IContentService _contentService = ApplicationContext.Current.Services.ContentService;
-        private readonly UmbracoHelper _umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
-        private const int FormFolderId = 1081;
+        private const int FormFolderId = 1189;
 
         public ActionResult RenderContactForm()
         {
             return PartialView("~/Views/Partials/Forms/ContactFormView.cshtml", new ContactForm());
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -40,39 +35,28 @@ namespace TMP.Core.Controllers
             SaveContactFormSubmission(model);
             SendEmailNotifications(model);
 
-            if (_umbracoHelper.TypedContent(FormFolderId).HasValue("redirectPage"))
+            var formFolder = Umbraco.TypedContent(FormFolderId);
+
+            if (formFolder != null && formFolder.HasValue("redirectPage"))
             {
-                return RedirectToUmbracoPage(_umbracoHelper.TypedContent(FormFolderId).GetPropertyValue<int>("redirectPage"));
+                return RedirectToUmbracoPage(formFolder.GetPropertyValue<int>("redirectPage"));
             }
 
             return RedirectToCurrentUmbracoPage();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public JsonResult ProcessAjaxFormSubmission(ContactForm model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return Json(new { success = false });
-            }
-
-            SaveContactFormSubmission(model);
-            SendEmailNotifications(model);
-
-            return Json(new { success = true });
         }
 
         private void SaveContactFormSubmission(ContactForm model)
         {
             try
             {
-                var formSubmission = _contentService.CreateContent(model.Name + ", " + model.Email + " - " + DateTime.Now.ToShortDateString(), FormFolderId, "contactForm");
+                var contentService = Services.ContentService;
+                var formSubmission = contentService.CreateContent(model.Name + ", " + model.Email + " - " + DateTime.Now.ToShortDateString(), FormFolderId, "contactForm");
 
                 formSubmission.SetValue("name", model.Name);
                 formSubmission.SetValue("emailAddress", model.Email);
                 formSubmission.SetValue("message", model.Message);
-                _contentService.SaveAndPublishWithStatus(formSubmission);
+
+                contentService.SaveAndPublishWithStatus(formSubmission);
             }
             catch (Exception ex)
             {
@@ -83,9 +67,9 @@ namespace TMP.Core.Controllers
 
         private void SendEmailNotifications(ContactForm model)
         {
-            var formFolder = _umbracoHelper.TypedContent(FormFolderId);
+            var formFolder = Umbraco.TypedContent(FormFolderId);
 
-            if (!string.IsNullOrEmpty(formFolder.Name))
+            if (formFolder != null)
             {
                 _mailHelper.CreateAndSendNotifications(model, formFolder);
             }
