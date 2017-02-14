@@ -12,7 +12,7 @@
 	text-align: center;
 	padding: 1.8rem 8rem;
 	transition: background $speed $ease,
-				box-shadow $speed $ease,
+				border $speed $ease,
 				color $speed $ease;
 
 	&:hover,
@@ -35,12 +35,12 @@
 .c-button--primary {
 	background-color: $pri;
 	color: $white;
-	box-shadow: 0 .4rem darken($pri, 20);
+	border-bottom: .4rem solid darken($pri, 20);
 
 	&:focus,
 	&:hover {
 		background-color: darken($pri, 10);
-		box-shadow: 0 .4rem darken($pri, 30);
+		border-bottom: .4rem solid darken($pri, 30);
 	}
 }
 
