@@ -1,0 +1,53 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    var homePage = Model.Site();
+    var settings = homePage.Descendants("globalSettings").FirstOrDefault();
+
+    if (settings == null)
+    {
+        return;
+    }
+
+    var introText = settings.GetPropertyValue<IHtmlString>("introductionText");
+    var accreditations = settings.GetPropertyValue<IEnumerable<IPublishedContent>>("accreditations");
+}
+
+<div class="o-section--small o-wrap o-wrap--large">
+    <div class="c-accreditation">
+        <div class="c-accreditation__col c-accreditation__col--first">
+            @introText
+        </div>
+        <div class="c-accreditation__col c-accreditation__col--last">
+            @if (accreditations != null)
+            {
+                <div class="c-accreditation__logos">
+                    @foreach (var accreditation in accreditations)
+                    {
+                        @RenderLogo(accreditation, "c-accreditation__logo")
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+@helper RenderLogo(IPublishedContent footerLogo, string extraClass)
+{
+    var imageId = footerLogo.GetPropertyValue<int>("imageId");
+    var image = Umbraco.TypedMedia(imageId);
+
+    if (image != null)
+    {
+        var linkName = footerLogo.GetPropertyValue<string>("linkName");
+        var linkUrl = footerLogo.GetPropertyValue<string>("linkUrl");
+        var imageUrlLow = image.Url + "?width=250&height=128&bgcolor=ffffff";
+
+        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="o-logo @extraClass">
+            <a href="@linkUrl" itemprop="" title="Link to @linkName" class="o-logo__link" target="_blank">
+                <img src="@imageUrlLow" itemprop="thumbnail" alt="#" class="o-logo__image" />
+            </a>
+        </figure>
+    }
+}

@@ -1,0 +1,54 @@
+.c-accreditation {
+}
+
+.c-accreditation__col {
+
+    + .c-accreditation__col {
+        margin-top: 3rem;
+    }
+}
+
+.c-accreditation__logo {
+    padding: 3.5rem;
+
+    @include column(1 / 2, $gutter: 15, $cycle: 2);
+}
+
+@include respond-min($mq-small) {
+
+    .c-accreditation__logo {
+        padding: 2rem;
+    }
+
+    .c-accreditation {
+        @include clearfix();
+    }
+    .c-accreditation__col {
+
+        + .c-accreditation__col {
+            margin-top: 0;
+        }
+    }
+
+    .c-accreditation__col--first {
+        @include column(.45 / 1, $gutter: 2, $cycle: 2);
+    }
+
+    .c-accreditation__col--last {
+        @include column(.5 / 1, $gutter: 2, $cycle: 2);
+    }
+}
+
+@include respond-min($mq-medium) {
+
+    .c-accreditation__logo {
+        padding: 0;
+
+        @include column(1 / 4, $gutter: 8, $uncycle: 2, $cycle: 4);
+
+        &:nth-child(1n + 5) {
+            margin-top: 5rem;
+        }
+    }
+
+}

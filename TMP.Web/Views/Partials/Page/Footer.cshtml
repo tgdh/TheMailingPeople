@@ -2,22 +2,22 @@
 @{
     var homePage = Model.Site();
     var settings = homePage.Descendants("globalSettings").FirstOrDefault();
-    var siteName = string.Empty;
     var copyright = string.Empty;
 
     if (settings != null)
     {
-        siteName = settings.GetPropertyValue<string>("websiteName");
         copyright = settings.GetPropertyValue<string>("copyrightDisclaimer");
     }
 }
+
+@Html.Partial("~/Views/Partials/Page/Accreditations.cshtml")
 
 <footer id="footer" class="c-footer" role="contentinfo">
     <div class="c-footer__top-wrap">
         <div class="o-wrap o-wrap--large c-footer__top__inner o-section--small">
             <div class="c-footer__top__col c-footer__top__col--first">
                 <h2 class="o-heading c-footer__headline u-mega u-uppercase">Contacts</h2>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, <a href="#">sed diam nonummy nibh.</a></p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
                 <h3>Locations: </h3>
                 <p>Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
             </div>
