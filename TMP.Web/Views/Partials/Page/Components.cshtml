@@ -1,4 +1,4 @@
-@using TMP.Core.Models
+@using TMP.Core.Models.Components
 @using Umbraco.Web
 @inherits UmbracoViewPage<IPublishedContent>
 @{
@@ -46,7 +46,7 @@
             case "singleImage":
                 var image = new ImageViewModel
                 {
-                    ImageId = item.GetPropertyValue<string>("imageId"),
+                    ImageId = item.GetPropertyValue<int>("imageId"),
                     Alignment = alignment,
                     AspectRatio = aspectRatio,
                     AdditionalClass = pageComponentClass,

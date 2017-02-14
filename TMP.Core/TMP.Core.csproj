@@ -52,6 +52,7 @@
       <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\SQLCE4Umbraco.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -102,29 +103,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
+    <Compile Include="Controllers\ContactFormController.cs" />
     <Compile Include="Controllers\TwitterFeedController.cs" />
     <Compile Include="Data\BlogRepository.cs" />
     <Compile Include="Data\DataHelpers.cs" />
     <Compile Include="Data\NewsRepository.cs" />
     <Compile Include="ExtensionMethods\IntExtentionsMethods.cs" />
     <Compile Include="ExtensionMethods\StringExtensionMethods.cs" />
-    <Compile Include="Models\ArticleViewModel.cs" />
-    <Compile Include="Models\FormViewModel.cs" />
-    <Compile Include="Models\GalleryViewModel.cs" />
-    <Compile Include="Models\EmbedViewModel.cs" />
-    <Compile Include="Models\DownloadsViewModel.cs" />
-    <Compile Include="Models\ImageViewModel.cs" />
-    <Compile Include="Models\ICard.cs" />
-    <Compile Include="Models\QuoteViewModel.cs" />
-    <Compile Include="Models\TabListViewModel.cs" />
-    <Compile Include="Models\TabViewModel.cs" />
-    <Compile Include="Models\TextareaViewModel.cs" />
+    <Compile Include="Models\Components\ArticleViewModel.cs" />
+    <Compile Include="Models\ContactForm.cs" />
+    <Compile Include="Models\Components\FormViewModel.cs" />
+    <Compile Include="Models\Components\GalleryViewModel.cs" />
+    <Compile Include="Models\Components\EmbedViewModel.cs" />
+    <Compile Include="Models\Components\DownloadsViewModel.cs" />
+    <Compile Include="Models\Components\ImageViewModel.cs" />
+    <Compile Include="Models\Interfaces\ICard.cs" />
+    <Compile Include="Models\Components\QuoteViewModel.cs" />
+    <Compile Include="Models\Components\TabListViewModel.cs" />
+    <Compile Include="Models\Components\TabViewModel.cs" />
+    <Compile Include="Models\Components\TextareaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\MailHelper.cs" />
     <Compile Include="Utility\Paging.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="PropertyConverters\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)TMP.Web\bin\" /R /H /Y /D

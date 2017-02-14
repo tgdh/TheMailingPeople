@@ -1,7 +1,7 @@
 ﻿using System;
 using Umbraco.Core.Models;
 
-namespace TMP.Core.Models
+namespace TMP.Core.Models.Interfaces
 {
     public interface ICardBase
     {

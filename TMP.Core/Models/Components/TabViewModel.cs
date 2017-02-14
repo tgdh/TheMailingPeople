@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using TMP.Core.ExtensionMethods;
 
-namespace TMP.Core.Models
+namespace TMP.Core.Models.Components
 {
     public class TabViewModel
     {

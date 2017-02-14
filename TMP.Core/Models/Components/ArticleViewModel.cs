@@ -1,7 +1,8 @@
 ﻿using System;
+using TMP.Core.Models.Interfaces;
 using Umbraco.Core.Models;
 
-namespace TMP.Core.Models
+namespace TMP.Core.Models.Components
 {
     public class ArticleViewModel : IArticleCard
     {

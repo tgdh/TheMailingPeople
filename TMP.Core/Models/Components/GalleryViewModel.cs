@@ -1,8 +1,8 @@
-﻿namespace TMP.Core.Models
+﻿namespace TMP.Core.Models.Components
 {
-    public class ImageViewModel
+    public class GalleryViewModel
     {
-        public string ImageId { get; set; }
+        public string MediaIds { get; set; }
 
         public string Alignment { get; set; }
 
@@ -12,7 +12,9 @@
 
         public int ImageWidth { get; set; }
 
-        public ImageViewModel()
+        public string WrapClasses { get; set; }
+
+        public GalleryViewModel()
         {
             ImageWidth = 1000;
         }

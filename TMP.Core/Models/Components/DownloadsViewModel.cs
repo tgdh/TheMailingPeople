@@ -1,4 +1,4 @@
-﻿namespace TMP.Core.Models
+﻿namespace TMP.Core.Models.Components
 {
     public class DownloadsViewModel
     {
