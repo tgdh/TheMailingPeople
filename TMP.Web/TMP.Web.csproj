@@ -728,6 +728,7 @@
     <Content Include="Views\Partials\Forms\ContactFormView.cshtml" />
     <Content Include="Views\Partials\Page\Accreditations.cshtml" />
     <Content Include="Views\Partials\Page\Newsletter.cshtml" />
+    <Content Include="Views\Partials\Home\FeaturedContent.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

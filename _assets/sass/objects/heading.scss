@@ -11,6 +11,12 @@
         margin-top: 1rem;
     }
 
+    &--inverted {
+        &:after {
+            background-color: $dark-1;
+        }
+    }
+
     &--center {
         text-align: center;
 

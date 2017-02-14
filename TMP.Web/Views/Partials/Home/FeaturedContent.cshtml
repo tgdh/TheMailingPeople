@@ -1,0 +1,28 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    
+}
+
+<div class="o-section o-wrap o-wrap--large">
+    <h2 class="o-heading o-heading--inverted u-mega">Tips & Tricks</h2>
+    <div>
+        @RenderCard("Blog article about Email Marketing and Direct Mail Services", "Tips & Advice", 1202)
+        @RenderCard("Direct Mail partner – why every Marketing Agency should have one", "News", 1203)
+        @RenderCard("Make sure the reader knows what to do next!", "Blog post", 1201)
+    </div>
+</div>
+
+@helper RenderCard(string title, string label, int imageId)
+{
+    var image = Umbraco.TypedMedia(imageId);
+
+    <p>@label</p>
+
+    if (image != null)
+    {
+        <img src="@image.Url" alt="@title"/>
+    }
+
+    <h3>@title</h3>
+    
+}
