@@ -8,6 +8,8 @@
         "lazysizes": "~2.0.1",
         "onMediaQuery": "https://github.com/JoshBarr/on-media-query.git#^0.2.0",
         "jquery-validation": "https://github.com/jzaefferer/jquery-validation.git#^1.16.0",
-        "jquery-validation-unobtrusive": "https://github.com/aspnet/jquery-validation-unobtrusive.git#^3.2.6"
+        "jquery-validation-unobtrusive": "https://github.com/aspnet/jquery-validation-unobtrusive.git#^3.2.6",
+        "owl.carousel": "https://github.com/OwlCarousel2/OwlCarousel2.git",
+        "magnific-popup": "^1.1.0"
     }
 }

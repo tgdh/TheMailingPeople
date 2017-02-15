@@ -41,7 +41,8 @@
 		'objects/media',
 		'objects/page-components';
 
-@import 'lib/slick',
+@import 'lib/owl-core',
+		'lib/owl-theme',
 		'lib/magnific-popup';
 
 @import 'components/header',
@@ -63,6 +64,8 @@
 //		'components/social',
 //		'components/tile',
 //		'components/pagination',
+		'components/card-list.scss',
+		'components/cards/thumbnail-card.scss',
 		'components/alert',
 		'components/newsletter',
 		'components/tabs',
