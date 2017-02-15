@@ -41,6 +41,7 @@
 
     var featuredContentCarousel = function() {
         var $carousel = $('.js-carousel--featured');
+        $carousel.addClass('owl-carousel');
 
         $carousel.owlCarousel({
             loop: true,

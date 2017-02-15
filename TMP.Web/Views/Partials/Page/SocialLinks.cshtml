@@ -10,11 +10,12 @@
     }
 
     var socialPlatforms = settings.GetPropertyValue<IEnumerable<IPublishedContent>>("socialPlatforms");
+    var extraClass = ViewData["extraClass"] ?? "";
 }
 
 @if (socialPlatforms != null)
 {
-    <div class="c-social u-clearfix">
+    <div class="c-social @extraClass u-clearfix">
 
         @foreach (var socialPlatform in socialPlatforms)
         {

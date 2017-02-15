@@ -4,18 +4,44 @@
 
 =========================================================== */
 
+
+.c-social--footer {
+
+	.c-social__link {
+		width: 4.4rem;
+		height: 4.4rem;
+
+		i {
+			line-height: 4.4rem;
+			width: 4.4rem;
+			height: 4.4rem;
+			font-size: 2rem;
+		}
+
+	}
+
+}
+
 .c-social__link {
-	color: $white;
+	color: $dark-1;
 	font-size: 1.6rem;
 	display: inline-block;
-	background-color: $pri;
-	padding: .7rem 1rem;
+	background-color: $white;
+	border-radius: 100%;
+	text-align: center;
+	width: 2.4rem;
+	height: 2.4rem;
 	float: left;
 	transition: background $speed $ease,
 				color $speed $ease;
 
 	i {
 		vertical-align: middle;
+		color: inherit;
+		text-align: center;
+		width: 2.4rem;
+		height: 2.4rem;
+		font-size: 1.5rem;
 	}
 
 	&:hover,
@@ -24,104 +50,79 @@
 		background-color: $light-1;
 	}
 
+	+ .c-social__link {
+		margin-left: 2rem;
+	}
 }
+
 .c-social__link--facebook {
-	background-color: $facebook;
 
 	&:hover,
 	&:focus {
-		color: $facebook;
+		background-color: $facebook;
 	}
 }
 
 .c-social__link--twitter {
-	background-color: $twitter;
 
 	&:hover,
 	&:focus {
-		color: $twitter;
+		background-color: $twitter;
 	}
 }
 
 .c-social__link--google {
-	background-color: $google;
 
 	&:hover,
 	&:focus {
-		color: $google;
+		background-color: $google;
 	}
 }
 
 .c-social__link--instagram {
-	background-color: $instagram;
 
 	&:hover,
 	&:focus {
-		color: $instagram;
+		background-color: $instagram;
 	}
 }
 
 .c-social__link--linkedin {
-	background-color: $linkedin;
 
 	&:hover,
 	&:focus {
-		color: $linkedin;
+		background-color: $linkedin;
 	}
 }
 
 .c-social__link--pinterest {
-	background-color: $pinterest;
 
 	&:hover,
 	&:focus {
-		color: $pinterest;
+		background-color: $pinterest;
 	}
 }
 
 .c-social__link--youtube {
-	background-color: $youtube;
 
 	&:hover,
 	&:focus {
-		color: $youtube;
+		background-color: $youtube;
 	}
 }
 
 .c-social__link--vimeo {
-	background-color: $vimeo;
 
 	&:hover,
 	&:focus {
-		color: $vimeo;
+		background-color: $vimeo;
 	}
 }
 
 .c-social__link--flcikr {
-	background-color: $flcikr;
 
 	&:hover,
 	&:focus {
-		color: $flcikr;
+		background-color: $flcikr;
 	}
 }
-
-
-@include respond-max( $mq-large ) {
-
-	.enhance {
-
-		.c-social {
-			display: flex;
-		}
-
-		.c-social__link {
-			flex-grow: 1;
-			text-align: center;
-			padding: 2rem;
-		}
-
-	}
-
-}
-
