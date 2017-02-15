@@ -24,13 +24,13 @@ namespace TMP.Core.Controllers
         {
             if (!ModelState.IsValid)
             {
-                TempData["ValidationFailed"] = "The form validation could not pass. Please check your input.";
+                TempData["ContactFormValidationFailed"] = "The form validation could not pass. Please check your input.";
 
                 return CurrentUmbracoPage();
             }
 
-            TempData["ValidationPasses"] = "The form has been validated successfully.";
-            TempData["FormFolderId"] = FormFolderId;
+            TempData["ContactFormValidationPasses"] = "The form has been validated successfully.";
+            TempData["ContactFormFormFolderId"] = FormFolderId;
 
             SaveContactFormSubmission(model);
             SendEmailNotifications(model);

@@ -28,6 +28,7 @@ var mainScripts = [
     paths.assetsFolder + '/_components/magnific-popup/dist/jquery.magnific-popup.js',
     paths.assetsFolder + '/js/components/jquery.tabs.js',
     paths.assetsFolder + '/js/components/accordion.js',
+    paths.assetsFolder + '/js/components/validateForms.js',
     paths.assetsFolder + '/js/main.js'
 ];
 

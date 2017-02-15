@@ -14,7 +14,7 @@ namespace TMP.Core.Models
         [Required(ErrorMessage = "Please enter your name")]
         public string Name { get; set; }
 
-        [DisplayName("Email address")]
+        [DisplayName("Email")]
         [MaxLength(254, ErrorMessage = "Field exceeded maximum length")]
         [Required(ErrorMessage = "Please enter your email address")]
         [EmailAddress(ErrorMessage = "Please enter a valid email address")]

@@ -2,9 +2,9 @@
 @using TMP.Core.Models
 @inherits UmbracoViewPage<ContactForm>
 @{
-    var success = TempData["ValidationPasses"] != null;
-    var error = TempData["ValidationFailed"] != null;
-    var folderId = TempData["FormFolderId"];
+    var success = TempData["ContactFormValidationPasses"] != null;
+    var error = TempData["ContactFormValidationFailed"] != null;
+    var folderId = TempData["ContactFormFormFolderId"];
 }
 
 @if (success)
@@ -29,20 +29,20 @@ else
         @Html.AntiForgeryToken()
         @Html.HiddenFor(x => x.PageName)
         <fieldset class="o-form__fieldset">
-            <legend class="o-legend">Contact form</legend>
-            <div class="o-form__field">
-                @Html.LabelFor(x => x.Name, new { @class = "o-label" })
-                @Html.TextBoxFor(x => x.Name, new { required = "required", @class = "o-input", placeholder = "Enter your name" })
+            <legend class="o-legend u-hide-text">Contact form</legend>
+             <div class="o-form__field o-form__field--compact is-required">
+                @Html.TextBoxFor(x => x.Name, new {required = "required", @class = "o-input"})
+                @Html.LabelFor(x => x.Name, new {@class = "o-label"})
                 @Html.ValidationMessageFor(x => x.Name)
             </div>
-            <div class="o-form__field">
+            <div class="o-form__field o-form__field--compact is-required">
+                @Html.TextBoxFor(x => x.Email, new { required = "required", @class = "o-input" })
                 @Html.LabelFor(x => x.Email, new { @class = "o-label" })
-                @Html.TextBoxFor(x => x.Email, new { required = "required", @class = "o-input", placeholder = "Enter your email address" })
                 @Html.ValidationMessageFor(x => x.Email)
             </div>
-            <div class="o-form__field">
+            <div class="o-form__field o-form__field--compact is-required">
+                @Html.TextAreaFor(x => x.Message, new { required = (string)null, @class = "o-input", rows = 6 })
                 @Html.LabelFor(x => x.Message, new { @class = "o-label" })
-                @Html.TextAreaFor(x => x.Message, new { required = (string)null, @class = "o-input", placeholder = "Reason for enquiry", rows = 6 })
                 @Html.ValidationMessageFor(x => x.Message)
             </div>
             <div class="o-form__field o-form__field--submit">

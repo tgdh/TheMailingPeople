@@ -95,7 +95,7 @@
         //		$window.Modal.init( $('.js-modal') );
         //		$window.Accordion.init();
         //		$window.GMaps.init();
-        //		$window.ValidateForms.init( $('.js-form') );
+        $window.ValidateForms.init($('.js-form'));
 
         //		MQ.init(breakpoints);
     }
