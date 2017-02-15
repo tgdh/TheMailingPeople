@@ -3,5 +3,14 @@
     Layout = "Layout.cshtml";
 }
 
-@Html.Partial("~/Views/Partials/Page/Headline.cshtml")
-@Html.Partial("~/Views/Partials/Page/Sitemap.cshtml")
+<main class="o-page__inner" role="main">
+    @Html.Partial("~/Views/Partials/Page/Headline.cshtml")
+
+    <div class="o-section s-free-content">
+        @Html.Partial("~/Views/Partials/Page/Components.cshtml")
+
+        <div class=" o-wrap o-wrap--medium">
+            @Html.Partial("~/Views/Partials/Page/Sitemap.cshtml")
+        </div>
+    </div>
+</main>
