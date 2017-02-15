@@ -12,11 +12,18 @@
 				border-color $speed $ease;
 }
 
+.c-header__super {
+	background-color: $dark-1;
+
+	@include clearfix();
+}
+
 .c-header__logo-link {
 	display: block;
 	float: left;
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
+	margin-left: 1.5rem;
 }
 
 .c-header__logo-image {
@@ -71,18 +78,49 @@
 
 }
 
+@include respond-min-max( $mq-small, $mq-medium ) {
+
+	.c-header__logo-link {
+		margin-left: 2rem;
+	}
+
+}
+
+@include respond-min( $mq-medium ) {
+
+	.c-header__logo-link {
+		margin-top: 1.7rem;
+		margin-bottom: 1.7rem;
+		margin-left: 4rem;
+	}
+
+}
+
+
 @include respond-min( $mq-large ) {
 
+	.c-header__logo-link {
+		margin-top: 2.8rem;
+	}
+
 	.c-header__logo-image {
-		width: 15rem;
+		width: 15.5rem;
 	}
 
 	.c-header__inner {
 		float: left;
 	}
 
-	.c-nav--main {
-		float: right;
+}
+
+@include respond-min( $mq-x-large ) {
+
+	.c-header__logo-link {
+		margin-left: 6rem;
+	}
+
+	.c-header__logo-image {
+		width: 18.5rem;
 	}
 
 }

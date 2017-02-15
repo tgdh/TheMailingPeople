@@ -52,6 +52,7 @@ namespace TMP.Core.Controllers
                 var contentService = Services.ContentService;
                 var formSubmission = contentService.CreateContent(model.Name + ", " + model.Email + " - " + DateTime.Now.ToShortDateString(), FormFolderId, "contactForm");
 
+                formSubmission.SetValue("nameName", model.PageName);
                 formSubmission.SetValue("name", model.Name);
                 formSubmission.SetValue("emailAddress", model.Email);
                 formSubmission.SetValue("message", model.Message);

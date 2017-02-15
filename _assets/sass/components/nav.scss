@@ -9,7 +9,7 @@
 	.c-nav__list {
 		list-style: none;
 	}
-	
+
 	.c-nav__item {
 		margin: 0;
 	}
@@ -86,7 +86,7 @@
 }
 
 @include respond-max( $mq-large ) {
-	
+
 	.enhance {
 
 		.c-header__nav-wrap {
@@ -130,19 +130,38 @@
 	.c-nav--main {
 		position: relative;
 		z-index: 10;
+		float: left;
+		margin-left: 4rem;
+		margin-top: 2.5rem;
 
 		.c-nav__item {
 			display: inline;
 			position: relative;
 		}
 
+		.c-nav__item--parent {
+
+			> .c-nav__link {
+				font-size: 1.5rem;
+
+				padding-left: 1.4rem;
+				padding-right: 1.4rem;
+				padding-top: 1.1em;
+				padding-bottom: 4rem;
+			}
+		}
+
 		.c-nav__link {
 			display: inline-block;
 			padding: 1rem;
-			transition: color $speed $ease;
+			padding-left: 1.4rem;
+			padding-right: 1.4rem;
+			transition: color $speed $ease, background-color $speed $ease;
 
+			&:hover,
 			&.is-active {
-				color: $pri;
+				color: $white;
+				background-color: $red;
 			}
 		}
 
@@ -159,7 +178,7 @@
 			opacity: 0;
 			visibility: hidden;
 			margin-top: 0;
-			transform: translateY(-.3rem);
+			// transform: translateY(-.3rem);
 			transition: opacity $speed $ease,
 						visibility $speed $ease,
 						transform $speed $ease;
@@ -172,7 +191,7 @@
 			.c-nav__link {
 				margin: 0;
 				padding-top: 1rem;
-				
+				color: $white;
 
 				&:hover,
 				&:focus {
@@ -195,7 +214,12 @@
 		}
 
 		.c-nav__item--parent:hover {
-			
+
+			> .c-nav__link {
+				color: $white;
+				background-color: $red;
+			}
+
 			.c-nav__list--sub {
 				opacity: 1;
 				visibility: visible;
@@ -204,6 +228,27 @@
 
 		}
 
+	}
+
+}
+
+@include respond-min( $mq-x-large ) {
+
+	.c-nav--main {
+		.c-nav__item--parent {
+
+			> .c-nav__link {
+				padding-left: 2rem;
+				padding-right: 2rem;
+				padding-top: 1.3em;
+				padding-bottom: 4rem;
+			}
+		}
+
+		.c-nav__link {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
 	}
 
 }

@@ -5,6 +5,27 @@
 =========================================================== */
 
 
+.c-social--header {
+	display: none;
+}
+
+@include respond-min($mq-large) {
+
+    .c-social--header {
+		max-width: 33.7rem;
+		display: inline-block;
+		text-align: center;
+		padding: .8rem;
+		float: right;
+
+		.c-social__link {
+			display: inline-block;
+			float: none;
+		}
+	}
+
+}
+
 .c-social--footer {
 
 	.c-social__link {
