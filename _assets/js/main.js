@@ -58,7 +58,7 @@
                     loop: false,
                     margin: 25
                 },
-                800: {
+                650: {
                     items: 3,
                     nav: false,
                     dots: true,
