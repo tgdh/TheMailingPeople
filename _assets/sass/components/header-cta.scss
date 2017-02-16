@@ -1,0 +1,53 @@
+/* ===========================================================
+
+    # Header CTA
+
+=========================================================== */
+
+@include respond-max($mq-large) {
+
+    .c-header__cta {
+        display: none;
+    }
+
+}
+
+@include respond-min($mq-large) {
+
+    .c-header__cta {
+        color: $white;
+        display: block;
+        // float: right;
+        width: 100%;
+        text-align: center;
+    }
+
+    .c-header__cta__item {
+        display: block;
+
+        a {
+            color: inherit;
+        }
+    }
+
+    .flexbox {
+
+        .c-header__cta {
+            background-color: $pri;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+    }
+
+    .no-flexbox {
+
+        .c-header__cta {
+            position: absolute;
+            top: 3rem;
+        }
+
+    }
+
+}

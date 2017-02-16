@@ -1,0 +1,22 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    var homePage = Model.Site();
+    var settings = homePage.Descendants("globalSettings").FirstOrDefault();
+
+    if (settings == null)
+    {
+        return;
+    }
+}
+
+<div class="c-header__cta">
+    <span class="c-header__cta__item">
+        <a href="tel:02392377900">
+            <i class="ico-phone"></i>
+            023 9237 7900
+        </a>
+    </span>
+    <span class="c-header__cta__item">
+        <a href="mailto:enquiries@themailingpeople.co.uk">enquiries@themailingpeople.co.uk</a>
+    </span>
+</div>
