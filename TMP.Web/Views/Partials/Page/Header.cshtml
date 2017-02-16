@@ -13,8 +13,10 @@
 <header id="header" class="c-header u-clearfix" role="banner">
     <div class="c-header__super">
         <div class="c-header__left">
+            @Html.Partial("~/Views/Partials/Page/HeaderCta.cshtml", Model, new ViewDataDictionary { { "extraClass", "c-header__cta--super" } })
         </div>
-        <div class="c-header__right">
+        <div class="c-header__right c-header__super__right">
+            @Html.Partial("~/Views/Partials/Page/HeaderSearch.cshtml")
             @Html.Partial("~/Views/Partials/Page/SocialLinks.cshtml", Model, new ViewDataDictionary { { "extraClass", "c-social--header" } })
         </div>
     </div>
@@ -28,7 +30,7 @@
             </div>
         </div>
         <div class="c-header__right c-header__main__right">
-            @Html.Partial("~/Views/Partials/Page/HeaderCta.cshtml")
+            @Html.Partial("~/Views/Partials/Page/HeaderCta.cshtml", Model, new ViewDataDictionary { { "extraClass", "c-header__cta--main" } })
             <button class="c-header__toggle-menu-button js-toggle" id="toggle-menu" aria-haspopup="true">
                 <i class="c-header__toggle__icon">
                     <span class="c-header__toggle__line c-header__toggle__line--1"></span>

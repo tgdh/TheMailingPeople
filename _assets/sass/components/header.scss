@@ -101,7 +101,7 @@
 
 	.c-header__super {
 		display: block;
-		min-height: 4rem;
+		min-height: 4.2rem;
 		@include clearfix();
 	}
 
@@ -110,6 +110,10 @@
 		float: right;
 	}
 
+	.c-header__super__right {
+		position: relative;
+		text-align: center;
+	}
 
 	.no-flexbox {
 		.c-header__main {
@@ -129,6 +133,7 @@
 	}
 
 	.flexbox {
+		.c-header__super,
 		.c-header__main {
 			display: flex;
 		}
@@ -158,6 +163,10 @@
 }
 
 @include respond-min( $mq-x-large ) {
+
+	.c-header__super__right {
+		text-align: center;
+	}
 
 	.c-header__logo-link {
 		margin-left: 6rem;

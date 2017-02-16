@@ -4,50 +4,107 @@
 
 =========================================================== */
 
-@include respond-max($mq-large) {
+.c-header__cta--super {
+    display: none;
+}
 
-    .c-header__cta {
+
+
+@include respond-max($mq-x-large) {
+
+    .c-header__cta--main {
         display: none;
     }
 
 }
 
+
 @include respond-min($mq-large) {
 
     .c-header__cta {
         color: $white;
-        display: block;
-        // float: right;
         width: 100%;
-        text-align: center;
-    }
 
-    .c-header__cta__item {
-        display: block;
+        .c-header__cta__item {
 
-        a {
-            color: inherit;
+            * {
+                vertical-align: middle;
+            }
+
+            a {
+                color: inherit;
+            }
         }
     }
 
+}
+
+
+@include respond-min-max($mq-large,$mq-x-large) {
+
+    .c-header__cta--super {
+        display: block;
+        float: right;
+        text-align: right;
+        margin-top: .8rem;
+        margin-right: 5rem;
+        color: $light-2;
+
+        .c-header__cta__item {
+
+            + .c-header__cta__item {
+                 margin-left: 3rem;
+            }
+        }
+    }
+
+}
+
+@include respond-min($mq-x-large) {
+
+    .c-header__cta--main {
+        text-align: center;
+        display: block;
+
+        .c-header__cta__item--phone {
+            font-size: 2rem;
+        }
+
+        .c-header__cta__item {
+            display: block;
+
+            * {
+                vertical-align: middle;
+            }
+
+            a {
+                color: inherit;
+            }
+
+            + .c-header__cta__item {
+                 margin-top: .7rem;
+            }
+        }
+    }
+
+
+
     .flexbox {
 
-        .c-header__cta {
+        .c-header__cta--main {
             background-color: $pri;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-
     }
 
     .no-flexbox {
 
-        .c-header__cta {
+        .c-header__cta--main {
             position: absolute;
             top: 3rem;
         }
-
     }
 
 }
