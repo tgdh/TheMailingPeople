@@ -729,6 +729,8 @@
     <Content Include="Views\Partials\Page\Accreditations.cshtml" />
     <Content Include="Views\Partials\Page\Newsletter.cshtml" />
     <Content Include="Views\Partials\Home\FeaturedContent.cshtml" />
+    <Content Include="Views\Partials\Page\HeaderCta.cshtml" />
+    <Content Include="Views\Partials\Page\HeaderSearch.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
