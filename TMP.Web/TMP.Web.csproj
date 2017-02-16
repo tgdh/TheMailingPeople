@@ -731,6 +731,8 @@
     <Content Include="Views\Partials\Home\FeaturedContent.cshtml" />
     <Content Include="Views\Partials\Page\HeaderCta.cshtml" />
     <Content Include="Views\Partials\Page\HeaderSearch.cshtml" />
+    <Content Include="Views\Partials\Components\SearchForm.cshtml" />
+    <Content Include="Views\MacroPartials\ezSearch.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -768,7 +770,6 @@
     <Folder Include="App_Data\packages\created\" />
     <Folder Include="App_Data\TEMP\FileUploads\" />
     <Folder Include="App_Data\TEMP\Install\" />
-    <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TMP.Core\TMP.Core.csproj">

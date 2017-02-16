@@ -1,0 +1,11 @@
+@inherits UmbracoViewPage<IPublishedContent>
+<form action="/search" method="GET" class="c-search">
+    <div class="c-search__inner">
+        <label class="c-search__label u-hide-text" for="search">Site search</label>
+        <input class="c-search__input" id="search" type="text" name="q" placeholder="Search..." value="@Request["q"]">
+        <button class="c-search__button" type="submit">
+            <i class="ico-search" aria-role="presentation"></i>
+            <span class="u-hide-text">Go</span>
+        </button>
+    </div>
+</form>
