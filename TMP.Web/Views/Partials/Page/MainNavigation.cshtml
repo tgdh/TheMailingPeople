@@ -1,7 +1,8 @@
 @inherits UmbracoViewPage<IPublishedContent>
 @{
     var homePage = Model.Site();
-    var menuItems = homePage.Children.Where(x => x.IsVisible() && x.TemplateId > 0);
+    var menuItems = homePage.Children.Where(x => x.IsVisible() && x.TemplateId > 0).ToList();
+    var compactClass = menuItems.Count >= 6 ? "is-compact" : "";
 }
 
 <nav id="mainNavigation" class="c-nav c-nav--main js-nav" role="navigation" aria-labelledby="toggle-menu">
@@ -10,10 +11,11 @@
         {
             var activeStateClass = item.IsAncestorOrSelf(Model) ? "is-active" : null;
 
-            <li class="c-nav__item c-nav__item--parent">
+            <li class="c-nav__item c-nav__item--parent @compactClass">
                 <a href="@item.Url" class="c-nav__link @activeStateClass">
                     @item.Name
                 </a>
+
                 @Traverse(item)
             </li>
         }

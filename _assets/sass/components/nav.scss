@@ -251,3 +251,21 @@
 	}
 
 }
+
+@include respond-min-max( $mq-x-large, $mq-xx-large ) {
+
+	.c-nav--main {
+
+		.c-nav__item--parent {
+
+			&.is-compact {
+
+				> .c-nav__link {
+					padding-left: 1.5rem;
+					padding-right: 1.5rem;
+				}
+			}
+		}
+	}
+
+}
