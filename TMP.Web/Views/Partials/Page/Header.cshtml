@@ -12,7 +12,7 @@
 
 <header id="header" class="c-header u-clearfix" role="banner">
     <div class="c-header__super">
-        <div class="c-header__left">
+        <div class="c-header__left c-header__super__left">
             @Html.Partial("~/Views/Partials/Page/HeaderCta.cshtml", Model, new ViewDataDictionary { { "extraClass", "c-header__cta--super" } })
         </div>
         <div class="c-header__right c-header__super__right">
@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="c-header__main u-clearfix">
-        <div class="c-header__left">
+        <div class="c-header__left c-header__main__left">
             <a href="/" class="c-header__logo-link">
                 <img src="/assets/img/tmp-logo.svg" alt="@siteName" class="c-header__logo-image">
             </a>

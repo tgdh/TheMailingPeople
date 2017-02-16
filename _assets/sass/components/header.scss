@@ -116,7 +116,8 @@
 	}
 
 	.no-flexbox {
-		.c-header__main {
+
+		.c-header__super__left {
 		    position: relative;
 		    padding-right: 25%;
 		}
@@ -125,28 +126,20 @@
 			position: absolute;
 			right: 0;
 		}
-
-		.c-header__main__right {
-			height: 100%;
-			background-color: $pri;
-		}
 	}
 
 	.flexbox {
-		.c-header__super,
-		.c-header__main {
+
+		.c-header__super {
 			display: flex;
 		}
 
-		.c-header__left {
+		.c-header__super__left {
 			flex: 1 1 auto;
 		}
-
-		.c-header__main__right {
-			display: flex;
-		}
-
 	}
+
+
 
 	.c-header__logo-link {
 		margin-top: 2.8rem;
@@ -176,6 +169,31 @@
 		width: 18.5rem;
 	}
 
+	.flexbox {
+		.c-header__main {
+			display: flex;
+		}
+
+		.c-header__main__left {
+			flex: 1 1 auto;
+		}
+
+		.c-header__main__right {
+			display: flex;
+		}
+	}
+
+	.no-flexbox {
+		.c-header__main {
+		    position: relative;
+		    padding-right: 25%;
+		}
+
+		.c-header__main__right {
+			height: 100%;
+			background-color: $pri;
+		}
+	}
 }
 
 
