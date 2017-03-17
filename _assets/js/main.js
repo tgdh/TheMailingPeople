@@ -20,7 +20,7 @@
         call_for_each_context: false,
         match: function() {
             //console.log('small');
-            mobileNavigation($('.js-nav'));
+//            mobileNavigation($('.js-nav'));
         },
         unmatch: function() {
             // unbind and scripts if possible
@@ -31,7 +31,7 @@
         call_for_each_context: false,
         match: function() {
             //console.log('medium - xxl');
-            compactHeader();
+//            compactHeader();
         },
         unmatch: function() {
             // unbind and scripts if possible
