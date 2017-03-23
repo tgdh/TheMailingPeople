@@ -46,12 +46,17 @@
 	display: none;
 }
 
+.c-header__search__sticky{
+	display: none;
+}
+
 /* Sticky Styling */
 .c-header.js-sticky{
 	.c-header__super{
 		/* To fix the jolt when the header__main is position fixed. */
 		margin-bottom: 93px;
 	}
+
 	.c-header__main{
 		position: fixed;
 		top: 0;
@@ -68,12 +73,46 @@
 		margin-bottom: 1.5rem;
 		transform: scale(0.95);
 	}
+
 	.c-nav__link{
 		padding-top: 2.65rem;
 		padding-bottom: 2.65rem;
 	}
+
 	.c-header__logo-image{
 		width: 15.5rem;
+	}
+
+	.c-header__cta__item{
+		display: none;
+	}
+
+	.c-header__cta__item--phone{
+		display: block;
+	}
+
+	.c-header__search__sticky{
+		display: block;
+		width: 10rem;
+		border-left: 1px solid rgba($black,0.2);
+		background-color: white;
+		transition: $speed $ease background-color;
+		i{
+			font-size: 2rem;
+			color: rgba($black,0.35);
+			position: relative;
+		    left: calc(50% - 1rem);
+		    top: calc(50% - 1rem);
+			transition: $speed $ease color;
+		}
+
+		&:hover,&:focus{
+			cursor: pointer;
+			background-color: $pri;
+			i{
+				color: white;
+			}
+		}
 	}
 }
 
