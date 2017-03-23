@@ -1,271 +1,125 @@
-/* ===========================================================
-
-	# Nav
-
-=========================================================== */
-
-.c-nav--main {
-
-	.c-nav__list {
-		list-style: none;
-	}
-
-	.c-nav__item {
-		margin: 0;
-		float: left;
-	}
-
-	.c-nav__link {
-		color: $text-colour;
-		padding: 1rem;
-		display: block;
-		transition: color $speed $ease,
-					background $speed $ease;
-
-		&:hover,
-		&:focus {
-			color: $sec;
-		}
-
-		&.is-active {
-			color: $pri;
-		}
-	}
-
-	.c-nav__item--parent .c-nav__list-sub {
-		display: none;
-	}
-
-}
-
-@include respond-max( $mq-small ) {
-
-	.enhance {
-
-		.c-nav--main {
-
-			.c-nav__link {
-				padding: 1rem 1.5rem;
-			}
-
-		}
-
-	}
-
-}
-
-@include respond-min-max( $mq-small, $mq-medium ) {
-
-	.enhance {
-
-		.c-nav--main {
-
-			.c-nav__link {
-				padding: 1rem 2rem;
-			}
-
-		}
-
-	}
-
-}
-
-@include respond-min-max( $mq-medium, $mq-large ) {
-
-	.enhance {
-
-		.c-nav--main {
-
-			.c-nav__link {
-				padding: 1rem 4rem;
-			}
-
-		}
-
-	}
-
-}
-
-@include respond-max( $mq-large ) {
-
-	.enhance {
-
-		.c-header__nav-wrap {
-			position: absolute;
+@include respond-max ( $mq-large ) {
+	.c-header__nav-wrap{
+		position: fixed;
+		top: 0;
+		right: calc(-100% + 6rem);
+		width: calc(100% - 6rem);
+		background-color: $pri;
+		height: 100vh;
+		transition: $ease $speed right;
+		box-shadow: inset 5px 0 30px rgba($black,0.2);
+		&.js-nav-active{
 			right: 0;
-			left: 0;
-			visibility: hidden;
-			opacity: 0;
-			background-color: $pri;
-			transform: translateY(-1rem);
-			transition: opacity $speed $ease,
-						visibility $speed $ease,
-						transform $speed $ease;
 		}
-
-		&.nav-main-open {
-
-			.c-header__nav-wrap {
-				opacity: 1;
-				visibility: visible;
-				transform: translateY(0rem);
-
-				.c-nav__link {
-					color: $white;
-
-					&.is-active {
-						color: $pri;
-					}
-				}
-
-			}
-
-		}
-
 	}
 
-}
-
-@include respond-min( $mq-large ) {
-
-	.c-nav--main {
+	.c-nav--main{
+		padding-top: 8rem;
 		position: relative;
-		z-index: 10;
-		float: left;
-		margin-left: 4rem;
+	}
 
-		.c-nav__item {
-			display: inline;
+	.c-nav__item{
+		list-style-type: none;
+		margin: 2rem;
+		padding: .8rem 0;
+	}
+
+	.c-nav__link{
+		color: white;
+		font-size: 2.1rem;
+		font-weight: bold;
+		&:hover,&:focus{
+			text-decoration: underline;
+			color: white;
+		}
+	}
+
+	.c-nav__sub-chevron{
+		display: inline-block;
+		content: "";
+		width: 2rem;
+		height: 2rem;
+		margin-left: 5rem;
+		position: relative;
+		top: 3px;
+		cursor: pointer;
+		&::before,&::after{
+			content: "";
+			display: block;
+			width: 10px;
+			height: 2px;
+			background-color: white;
 			position: relative;
 		}
-
-		.c-nav__item--parent {
-
-			> .c-nav__link {
-				font-size: 1.5rem;
-
-				padding-left: 1.4rem;
-				padding-right: 1.4rem;
-				padding-top: 3.55rem;
-				padding-bottom: 3.55rem;
-			}
+		&::before{
+			transform: rotate(55deg);
+			top: 6px;
 		}
-
-		.c-nav__link {
-			display: inline-block;
-			padding: 1rem;
-			padding-left: 1.4rem;
-			padding-right: 1.4rem;
-			transition: color $speed $ease, background-color $speed $ease;
-
-			&:hover,
-			&.is-active {
-				color: $white;
-				background-color: $red;
-			}
+		&::after{
+			transform: rotate(-55deg);
+			top: 11px;
 		}
+	}
 
-		.c-nav__list--parent {
+	.c-nav__list--sub{
+		left: 100%;
+		position: absolute;
+		top: 1.5rem;
+		padding-top: 4.5rem;
+		width: 100%;
+		height: calc(100vh - 1.5rem);
+		background-color: $pri;
+		z-index: 999;
+		transition: $ease $speed left;
+		&.js-active{
+			left: 2rem;
+		}
+	}
+
+	.c-nav__close{
+		color: white;
+		display: block;
+		font-size: 2rem;
+		font-weight: bold;
+		opacity: .75;
+		position: absolute;
+		top: 0;
+		left: 40px;
+		cursor: pointer;
+		.c-nav__close-icon{
+			width: 20px;
+			height: 3px;
+			background-color: white;
+			display: block;
 			position: relative;
-		}
-
-		.c-nav__list--sub {
-			min-width: 20rem;
-			color: $white;
-			background-color: $pri;
-			position: absolute;
-			left: 0;
-			opacity: 0;
-			visibility: hidden;
-			margin-top: 0;
-			// transform: translateY(-.3rem);
-			transition: opacity $speed $ease,
-						visibility $speed $ease,
-						transform $speed $ease;
-
-			.c-nav__item,
-			.c-nav__link {
+			top: 12px;
+			left: -30px;
+			&::before,&::after{
+				content: "";
 				display: block;
+				width: 12px;
+				height: 3px;
+				position: relative;
+				background-color: white;
+				left: -2px;
 			}
-
-			.c-nav__link {
-				margin: 0;
-				padding-top: 1rem;
-				color: $white;
-
-				&:hover,
-				&:focus {
-					color: $red;
-					background-color: $white;
-				}
-
-				&.is-active {
-					color: $white;
-					background-color: $sec;
-
-					&:hover,
-					&:focus {
-						background-color: $sec;
-					}
-				}
-
+			&::before{
+				transform: rotate(-45deg);
+				top: -4px;
 			}
-
-		}
-
-		.c-nav__item--parent:hover {
-
-			> .c-nav__link {
-				color: $white;
-				background-color: $red;
-			}
-
-			.c-nav__list--sub {
-				opacity: 1;
-				visibility: visible;
-				transform: translateY(0);
-			}
-
-		}
-
-	}
-
-}
-
-@include respond-min( $mq-x-large ) {
-
-	.c-nav--main {
-		.c-nav__item--parent {
-
-			> .c-nav__link {
-				padding-left: 2rem;
-				padding-right: 2rem;
-				padding-top: 3em;
-			}
-		}
-
-		.c-nav__link {
-			padding-left: 2rem;
-			padding-right: 2rem;
-		}
-	}
-
-}
-
-@include respond-min-max( $mq-x-large, $mq-xx-large ) {
-
-	.c-nav--main {
-
-		.c-nav__item--parent {
-
-			&.is-compact {
-
-				> .c-nav__link {
-					padding-left: 1.5rem;
-					padding-right: 1.5rem;
-				}
+			&::after{
+				transform: rotate(45deg);
 			}
 		}
 	}
 
+	/* Mobile Menu Toggle */
+	.c-page__wrapper,footer{
+		transition: $ease $speed right;
+		right: 0%;
+		position: relative;
+		&.js-nav-active{
+			right: 50%;
+		}
+	}
 }

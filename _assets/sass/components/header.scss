@@ -1,295 +1,265 @@
-/* ===========================================================
-
-	# Header
-
-=========================================================== */
-
-.c-header {
-	background-color: $white;
-	position: relative;
-	z-index: 10;
-	transition: background $speed $ease,
-				border-color $speed $ease;
-}
-
-.c-header__main{
-	box-shadow: 0 .1rem 2rem .1rem rgba($dark-1,.1);
-}
-
-.c-header__super {
-	background-color: $dark-1;
-	display: none;
-}
-
-.c-header__logo-link {
-	display: block;
-	float: left;
-	margin-top: 1.5rem;
-	margin-bottom: 1.5rem;
-	margin-left: 1.5rem;
-	transition: $ease $speed transform,
-				$ease $speed margin-top,
-				$ease $speed margin-bottom;
-}
-
-.c-header__logo-image {
-	width: 9.3rem;
-	transition: $ease $speed width;
-}
-
-.c-nav__link{
-	transition: $ease $speed padding-top,
-				$ease $speed padding-bottom;
-}
-
-.c-header__toggle-menu-button {
-	display: none;
-}
-
-.c-header__search__sticky{
-	display: none;
-}
-
-/* Sticky Styling */
-.c-header.js-sticky{
-	.c-header__super{
-		/* To fix the jolt when the header__main is position fixed. */
-		margin-bottom: 93px;
-	}
-
-	.c-header__main{
+@include respond-max ( $mq-large ) {
+	.c-header{
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
 		background-color: white;
-		z-index: 999;
-	}
-}
-
-.c-header.js-sticky.js-smaller{
-	.c-header__logo-link{
-		margin-top: 1.5rem;
-		margin-bottom: 1.5rem;
-		transform: scale(0.95);
+		z-index: 995;
 	}
 
-	.c-nav__link{
-		padding-top: 2.65rem;
-		padding-bottom: 2.65rem;
-	}
-
-	.c-header__logo-image{
-		width: 15.5rem;
-	}
-
-	.c-header__cta__item{
+	.c-header__super{
 		display: none;
 	}
 
-	.c-header__cta__item--phone{
+	.c-header__main{
+		box-shadow: 0 0 9px rgba($black,0.25);
+	}
+
+	.c-header__left{
+		float: left;
+	}
+
+	.c-header__logo-link{
+		width: 12rem;
 		display: block;
+		margin: 1.15rem;
 	}
 
-	.c-header__search__sticky{
-		display: block;
-		width: 10rem;
-		border-left: 1px solid rgba($black,0.2);
-		background-color: white;
-		transition: $speed $ease background-color;
-
-		i{
-			font-size: 2rem;
-			color: rgba($black,0.35);
-			position: relative;
-		    left: calc(50% - 1rem);
-		    top: calc(50% - 1rem);
-			transition: $speed $ease color;
-		}
-
-		&:hover,&:focus{
-			cursor: pointer;
-			background-color: $pri;
-			i{
-				color: white;
-			}
-		}
-	}
-}
-
-@include respond-max( $mq-large ) {
-
-	.enhance {
-
-		.c-header__toggle-menu-button {
-			color: $pri;
-			font-size: 2.4rem;
-			display: block;
-			float: right;
-			padding: .9rem 1.3rem .8rem;
-			transition: color $speed $ease,
-						background $speed ease;
-
-			i {
-				vertical-align: middle;
-			}
-
-			&:hover,
-			&:focus {
-				color: $sec;
-			}
-		}
-
-		.c-header__logo-link {
-			position: relative;
-		}
-
-		&.nav-main-open {
-
-			.c-header__toggle-menu-button {
-				color: $white;
-
-				&:hover,
-				&:focus {
-					color: $pri;
-				}
-			}
-
-		}
-
-	}
-
-	.c-header__logo-image{
-		/* Override the JS on mobile view */
-		width: 9.3rem !important;
-	}
-
-}
-
-@include respond-min-max( $mq-small, $mq-medium ) {
-
-	.c-header__logo-link {
-		margin-left: 2rem;
-	}
-
-}
-
-@include respond-min( $mq-medium ) {
-
-	.c-header__logo-link {
-		margin-top: 1.7rem;
-		margin-bottom: 1.7rem;
-		margin-left: 4rem;
-	}
-
-}
-
-@include respond-min( $mq-large ) {
-
-	.c-nav__item .c-nav__list--sub .c-nav__item{
-		width: 100%;
-	}
-
-	.c-header__super {
-		display: block;
-		min-height: 4.2rem;
-		@include clearfix();
-	}
-
-	.c-header__right {
-		width: 25%;
+	.c-header__right{
 		float: right;
 	}
 
-	.c-header__super__right {
+	.c-header__toggle-menu-button{
+		float: right;
+		width: 6rem;
+		height: 6rem;
+		background-color: $pri;
+		cursor: pointer;
 		position: relative;
-		text-align: center;
-	}
+		right: 0;
+		transition: $ease $speed right;
 
-	.no-flexbox {
+		&.js-active{
+			right: calc(100vw - 6rem);
 
-		.c-header__super__left {
-		    position: relative;
-		    padding-right: 25%;
-		}
+			.c-header__toggle__line{
+				width: 0;
 
-		.c-header__right {
-			position: absolute;
-			right: 0;
-		}
-	}
+				&::before{
+					transform: rotate(45deg);
+					top: 1px;
+				}
 
-	.flexbox {
+				&::after{
+					transform: rotate(-45deg);
+					top: -1px;
+				}
 
-		.c-header__super {
-			display: flex;
-		}
-
-		.c-header__super__left {
-			flex: 1 1 auto;
+			}
 		}
 	}
-
-
-
-	.c-header__logo-link {
-		margin-top: 2.8rem;
-	}
-
-	.c-header__logo-image {
-		width: 15.5rem;
-	}
-
-	.c-header__inner {
+	.c-header__search__sticky{
+		width: 6rem;
+		height: 6rem;
+		background-color: $pri;
+		border-right: 1px solid white;
+		display: block;
 		float: left;
+
+		.ico-finder{
+			color: white;
+			font-size: 2.5rem;
+			font-weight: bold;
+		}
+
+	}
+	.c-header__toggle__icon{
+		width: 3rem;
+		height: 3rem;
+		display: block;
+		position: relative;
+		left: calc(50% - 1.5rem);
+
+		.c-header__toggle__line, .c-header__toggle__line::before, .c-header__toggle__line::after{
+			width: 3rem;
+			height: .2rem;
+			background-color: white;
+			display: block;
+			position: relative;
+			content: "";
+			transition: $ease $speed width,
+						$ease $speed transform,
+						$ease $speed top;
+		}
+
+		.c-header__toggle__line{
+			top: calc(50% - .1rem);
+
+			&::before{
+				top: -1rem;
+			}
+
+			&::after{
+				top: .8rem;
+			}
+
+		}
+
+	}
+	.flexbox{
+
+		.c-header__search__sticky{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+	}
+	.no-flexbox{
+
+		.c-header__search__sticky{
+
+			.ico-finder{
+				position: relative;
+				left: calc(50% - 1.25rem);
+				top: calc(50% - 1.25rem);
+			}
+
+		}
+
+	}
+
+}
+@include respond-min ( $mq-large ) {
+	.c-header__super{
+		background-color: $dark-1;
+		float: left;
+		width: 100%;
+	}
+
+	.c-header__right{
+		float: right;
+		width: 30%;
+	}
+
+	.c-header__super__left{
+		display: none;
+	}
+
+	.c-social--header{
+		width: calc(100% - 5rem);
+	}
+
+	.c-header__main{
+		float: left;
+		width: 100%;
+		background-color: white;
+		box-shadow: 0 0 9px rgba($black,0.25);
+	}
+
+	.c-header__main__left{
+		width: 100%;
+		float: left;
+	}
+
+	.c-header__logo-link{
+		width: 22.5rem;
+		display: block;
+		padding: 1.5rem 3rem;
+		float: left;
+	}
+
+	.c-header__main__right{
+		background-color: $pri;
+		display: none;
+		height: 82px;
+	}
+
+	.c-header__search__sticky{
+		display: none;
+	}
+
+	.c-header__nav-wrap{
+		float: left;
+		width: calc(100% - 22.5rem);
+	}
+
+	.c-nav__close{
+		display: none;
+	}
+
+	.c-nav__item{
+		list-style-type: none;
+		float: left;
+		margin: 0;
+
+		&:hover,&:focus{
+
+			.c-nav__list--sub{
+				opacity: 1;
+				visibility: visible;
+			}
+
+		}
+
+	}
+
+	.c-nav__link{
+		color: $dark-1;
+		font-weight: bold;
+		padding: 3rem 2rem;
+		display: block;
+		transition: $ease $speed background-color,
+					$ease $speed color;
+
+		&:focus,&:hover{
+			color: $white;
+			background-color: $pri;
+		}
+
+	}
+
+	.c-nav__list--sub{
+		background-color: $pri;
+		display: block;
+		min-width: 200px;
+		position: absolute;
+		margin-top: 0;
+		visibility: hidden;
+		transition: $ease $speed visibility,
+					$ease $speed top;
+
+		.c-nav__item{
+			display: block;
+			float: none;
+		}
+
+		.c-nav__link{
+			color: white;
+			transition: $ease $speed background-color,
+						$ease $speed color;
+						padding: 2rem;
+
+			&:hover{
+				background-color: $white;
+				color: $pri;
+			}
+
+		}
+
 	}
 
 }
 
 @include respond-min( $mq-x-large ) {
 
-	.c-header__super__right {
-		text-align: center;
+	.c-header__main__left{
+		width: 70%;
 	}
 
-	.c-header__logo-link {
-		margin-left: 6rem;
+	.c-header__main__right{
+		display: block;
 	}
 
-	.c-header__logo-image {
-		width: 18.5rem;
-	}
-
-	.flexbox {
-		.c-header__main {
-			display: flex;
-		}
-
-		.c-header__main__left {
-			flex: 1 1 auto;
-		}
-
-		.c-header__main__right {
-			display: flex;
-		}
-	}
-
-	.no-flexbox {
-		.c-header__main {
-		    position: relative;
-		    padding-right: 25%;
-		}
-
-		.c-header__main__right {
-			height: 100%;
-			background-color: $pri;
-		}
-	}
-}
-
-@include respond-max( $mq-x-large) {
-	.c-header__search__sticky{
-		/* Override the JS on mobile view */
-		display: none !important;
-	}
 }

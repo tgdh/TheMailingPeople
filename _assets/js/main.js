@@ -97,6 +97,7 @@
         //		$window.GMaps.init();
         $window.ValidateForms.init($('.js-form'));
         $window.Header.init();
+        $window.Nav.init();
 
         //		MQ.init(breakpoints);
     }

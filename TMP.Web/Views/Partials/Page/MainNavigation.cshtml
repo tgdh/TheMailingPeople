@@ -33,7 +33,9 @@
 
     if (items.Any())
     {
+        <span class="c-nav__sub-chevron"></span>
         <ul class="c-nav__list c-nav__list--sub js-nav-sub">
+		<span class="c-nav__close"><i class="c-nav__close-icon"></i>Back</span>
             @foreach (var item in items)
             {
                 var activeStateClass = Model.Id == item.Id ? "is-active" : null;
