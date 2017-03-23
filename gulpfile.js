@@ -29,6 +29,7 @@ var mainScripts = [
     paths.assetsFolder + '/js/components/jquery.tabs.js',
     paths.assetsFolder + '/js/components/accordion.js',
     paths.assetsFolder + '/js/components/validateForms.js',
+    paths.assetsFolder + '/js/components/*.js',
     paths.assetsFolder + '/js/main.js'
 ];
 
@@ -211,7 +212,7 @@ gulp.task('refAssets', ['css', 'js'], function() {
 // gulp dev
 gulp.task('dev', ['clean', 'modernizr'], function() {
     isProduction = false;
-    gulp.start('refAssets', 'images', 'watch', 'copyfonts');
+    gulp.start('refAssets', 'watch', 'copyfonts');
 });
 
 // gulp build
