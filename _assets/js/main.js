@@ -96,6 +96,7 @@
         //		$window.Accordion.init();
         //		$window.GMaps.init();
         $window.ValidateForms.init($('.js-form'));
+        $window.Header.init();
 
         //		MQ.init(breakpoints);
     }

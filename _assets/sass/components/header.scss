@@ -10,6 +10,9 @@
 	z-index: 10;
 	transition: background $speed $ease,
 				border-color $speed $ease;
+}
+
+.c-header__main{
 	box-shadow: 0 .1rem 2rem .1rem rgba($dark-1,.1);
 }
 
@@ -24,14 +27,54 @@
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
 	margin-left: 1.5rem;
+	transition: $ease $speed transform,
+				$ease $speed margin-top,
+				$ease $speed margin-bottom;
 }
 
 .c-header__logo-image {
 	width: 9.3rem;
+	transition: $ease $speed width;
+}
+
+.c-nav__link{
+	transition: $ease $speed padding-top,
+				$ease $speed padding-bottom;
 }
 
 .c-header__toggle-menu-button {
 	display: none;
+}
+
+/* Sticky Styling */
+.c-header.js-sticky{
+	.c-header__super{
+		/* To fix the jolt when the header__main is position fixed. */
+		margin-bottom: 93px;
+	}
+	.c-header__main{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: white;
+		z-index: 999;
+	}
+}
+
+.c-header.js-sticky.js-smaller{
+	.c-header__logo-link{
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+		transform: scale(0.95);
+	}
+	.c-nav__link{
+		padding-top: 2.65rem;
+		padding-bottom: 2.65rem;
+	}
+	.c-header__logo-image{
+		width: 15.5rem;
+	}
 }
 
 @include respond-max( $mq-large ) {
@@ -95,7 +138,6 @@
 	}
 
 }
-
 
 @include respond-min( $mq-large ) {
 
@@ -195,5 +237,3 @@
 		}
 	}
 }
-
-
