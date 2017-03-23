@@ -97,6 +97,7 @@
 		border-left: 1px solid rgba($black,0.2);
 		background-color: white;
 		transition: $speed $ease background-color;
+
 		i{
 			font-size: 2rem;
 			color: rgba($black,0.35);
@@ -158,6 +159,10 @@
 
 	}
 
+	.c-header__logo-image{
+		/* Override the JS on mobile view */
+		width: 9.3rem !important;
+	}
 }
 
 @include respond-min-max( $mq-small, $mq-medium ) {
@@ -274,5 +279,12 @@
 			height: 100%;
 			background-color: $pri;
 		}
+	}
+}
+
+@include respond-max( $mq-x-large) {
+	.c-header__search__sticky{
+		/* Override the JS on mobile view */
+		display: none !important;
 	}
 }
