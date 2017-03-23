@@ -163,6 +163,7 @@
 		/* Override the JS on mobile view */
 		width: 9.3rem !important;
 	}
+
 }
 
 @include respond-min-max( $mq-small, $mq-medium ) {
@@ -184,6 +185,10 @@
 }
 
 @include respond-min( $mq-large ) {
+
+	.c-nav__item .c-nav__list--sub .c-nav__item{
+		width: 100%;
+	}
 
 	.c-header__super {
 		display: block;
