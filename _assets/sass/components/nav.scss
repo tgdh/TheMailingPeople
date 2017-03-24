@@ -145,6 +145,26 @@
 	.c-nav__item{
 		float: left;
 		margin: 0;
+		position: relative;
+
+		&:hover, &:focus{
+			color: white;
+			.c-nav__link{
+				background-color: $pri;
+				color: white;
+			}
+
+			.c-nav__list--sub{
+				visibility: visible;
+				opacity: 1;
+				.c-nav__item:hover{
+					.c-nav__link{
+						background-color: white;
+						color: $pri;
+					}
+				}
+			}
+		}
 	}
 
 	.c-nav__link{
@@ -153,15 +173,10 @@
 		display: block;
 		transition: $ease $speed background-color,
 					$ease $speed color;
-
-		&:focus,&:hover{
+		&:hover, &:focus{
 			background-color: $pri;
-			 ~ .c-nav__list--sub{
-				opacity: 1;
-				visibility: visible;
-			}
+			color: white;
 		}
-
 	}
 
 	.c-nav__list--sub{
@@ -169,14 +184,13 @@
 		display: block;
 		min-width: 200px;
 		position: absolute;
+		top: 8.2rem;
+		left: 0;
 		visibility: hidden;
 		opacity: 0;
 		margin-top: 0;
-
-		&:focus, &:hover{
-			opacity: 1;
-			visibility: visible;
-		}
+		transition: $ease $speed opacity,
+					$ease $speed visbility;
 
 		.c-nav__item{
 			display: block;
@@ -185,14 +199,14 @@
 
 		.c-nav__link{
 			color: white;
-
-			&:focus, &:hover{
-				background-color: $white;
-				color: $pri;
-			}
-
+			padding: 1.5rem 2rem;
 		}
 
 	}
 
+	.c-header.js-smaller{
+		.c-nav__list--sub{
+			top: 6.6rem;
+		}
+	}
 }
