@@ -9,28 +9,62 @@
 
 	String SubTitle = Model.Content.GetPropertyValue<string>("bannerSubTitle");
 	var SubTitleNullChecked = !string.IsNullOrWhiteSpace(SubTitle) ? SubTitle : "";
-}
 
+
+	String PageLink1 = Model.Content.GetPropertyValue<string>("bannerLink1");
+	var decode1 = Json.Decode(PageLink1);
+	var PageLink1Image = Model.Content.GetPropertyValue("bannerLink1Image");
+	var PageLink1ImageMedia = Umbraco.Media(PageLink1Image);
+
+	String PageLink2 = Model.Content.GetPropertyValue<string>("bannerLink2");
+	var decode2 = Json.Decode(PageLink2);
+	var PageLink2Image = Model.Content.GetPropertyValue("bannerLink2Image");
+	var PageLink2ImageMedia = Umbraco.Media(PageLink2Image);
+
+	String PageLink3 = Model.Content.GetPropertyValue<string>("bannerLink3");
+	var decode3 = Json.Decode(PageLink3);
+	var PageLink3Image = Model.Content.GetPropertyValue("bannerLink3Image");
+	var PageLink3ImageMedia = Umbraco.Media(PageLink3Image);
+
+}
 <div class="c-banner c-banner__background-image" style="background-image: url(@ImageNullChecked);">
 	<div class="o-wrap o-wrap--large">
 		<div class="c-banner__content-wrapper">
 			<div class="c-banner__content">
 				<h2 class="c-banner__heading o-heading u-tera --no-underlay">@TitleNullChecked</h2>
 				<p class="c-banner__text">@SubTitleNullChecked</p>
-				<div class="c-banner__links">
-					<a href="#" class="c-banner__link c-button--primary">
-						<i class="c-banner__icon"></i>
-						<span class="c-banner__link-text">Direct Mail</span>
-					</a>
-					<a href="#" class="c-banner__link c-button--primary">
-						<i class="c-banner__icon"></i>
-						<span class="c-banner__link-text">Printing & Polywrapping</span>
-					</a>
-					<a href="#" class="c-banner__link c-button--primary">
-						<i class="c-banner__icon"></i>
-						<span class="c-banner__link-text">Postage</span>
-					</a>
-				</div>
+					<div class="c-banner__links">
+						@if(decode1 != null)
+						{
+							<a href="@decode1.Url" class="c-banner__link c-button--primary">
+								@if(PageLink1ImageMedia.Url != "")
+								{
+									<i class="c-banner__icon"><img src="@PageLink1ImageMedia.Url?height=20" alt="@decode1.Name"></i>
+								}
+								<span class="c-banner__link-text">@decode1.Name</span>
+							</a>
+						}
+						@if(decode2 != null)
+						{
+							<a href="@decode2.Url" class="c-banner__link c-button--primary">
+								@if(PageLink2ImageMedia.Url != "" )
+								{
+									<i class="c-banner__icon"><img src="@PageLink2ImageMedia.Url?height=20" alt="@decode2.Name"></i>
+								}
+								<span class="c-banner__link-text">@decode2.Name</span>
+							</a>
+						}
+						@if(decode3 != null)
+						{
+							<a href="@decode3.Url" class="c-banner__link c-button--primary">
+								@if(PageLink3ImageMedia.Url != "")
+								{
+									<i class="c-banner__icon"><img src="@PageLink3ImageMedia.Url?height=20" alt="@decode3.Name"></i>
+								}
+								<span class="c-banner__link-text">@decode3.Name</span>
+							</a>
+						}
+					</div>
 			</div>
 		</div>
 	</div>

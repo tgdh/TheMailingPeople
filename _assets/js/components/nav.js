@@ -1,6 +1,5 @@
 var Nav = (function ($) {
 	'use strict';
-
 	var _nav = function() {
 		$(document).ready(function(){
 			$('.js-toggle').click(function(){
