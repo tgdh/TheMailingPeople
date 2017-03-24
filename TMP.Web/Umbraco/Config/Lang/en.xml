@@ -40,6 +40,10 @@
     <key alias="translate">Translate</key>
     <key alias="update">Update</key>
     <key alias="defaultValue">Default value</key>
+    <key alias="SEOCheckerSchedule">Add scheduled validation</key>
+    <key alias="SEOCheckerEditRobots">Edit robots.txt file</key>
+    <key alias="SEOCheckerImportRedirects">Import redirects</key>
+    <key alias="SEOCheckerExportRedirects">Export redirects</key>
   </area>
   <area alias="assignDomain">
     <key alias="permissionDenied">Permission denied.</key>
@@ -895,6 +899,7 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="help" version="7.0">Help</key>
     <key alias="forms">Forms</key>
     <key alias="analytics">Analytics</key>
+    <key alias="seochecker">SEO Checker</key>
   </area>
   <area alias="help">
     <key alias="goTo">go to</key>
@@ -1370,7 +1375,7 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="enabledConfirm">URL tracker has now been enabled.</key>
     <key alias="enableError">Error enabling the URL tracker, more information can be found in your log file.</key>
   </area>
-<area alias="analytics">
+  <area alias="analytics">
     <key alias="viewMoreDetails">View more details</key>
     <key alias="visits">Visits</key>
     <key alias="pagePath">Page Path</key>
@@ -1438,4 +1443,5 @@ To manage your website, simply open the Umbraco back office and start adding con
     <key alias="somethingWentWrong">Okay. Something went wrong.</key>
     <key alias="informationSavedMessage"><![CDATA[Hi there %0%. We have saved your information to a config file, so Umbraco can pull stats from your Google Analytics account.<br /><br />You can now <a href='javascript:self.close();'>close this window</a>.]]></key>
     <key alias="noAccess">Sorry you do not have access.</key>
-  </area></language>
+  </area>
+</language>

@@ -44,6 +44,10 @@
     <key alias="SEOCheckerEditRobots">Edit robots.txt file</key>
     <key alias="SEOCheckerImportRedirects">Import redirects</key>
     <key alias="SEOCheckerExportRedirects">Export redirects</key>
+    <key alias="SEOCheckerSchedule">Add scheduled validation</key>
+    <key alias="SEOCheckerEditRobots">Edit robots.txt file</key>
+    <key alias="SEOCheckerImportRedirects">Import redirects</key>
+    <key alias="SEOCheckerExportRedirects">Export redirects</key>
   </area>
   <area alias="assignDomain">
     <key alias="addNew">Добавить новый домен</key>
@@ -1083,6 +1087,7 @@
     <key alias="translation">Перевод</key>
     <key alias="users">Пользователи</key>
     <key alias="addIcon">Добавить значок</key>
+    <key alias="seochecker">SEO Checker</key>
     <key alias="seochecker">SEO Checker</key>
   </area>
   <area alias="settings">

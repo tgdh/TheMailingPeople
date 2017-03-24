@@ -37,6 +37,10 @@
     <key alias="translate">Übersetzen</key>
     <key alias="update">Aktualisieren</key>
     <key alias="defaultValue">Standardwert</key>
+    <key alias="SEOCheckerSchedule">Add scheduled validation</key>
+    <key alias="SEOCheckerEditRobots">Edit robots.txt file</key>
+    <key alias="SEOCheckerImportRedirects">Import redirects</key>
+    <key alias="SEOCheckerExportRedirects">Export redirects</key>
   </area>
   <area alias="assignDomain">
     <key alias="permissionDenied">Erlaubnis verweigert.</key>
@@ -732,6 +736,7 @@ Wenn Sie sich für Runway entscheiden, können Sie optional Blöcke nutzen, die 
     <key alias="help" version="7.0">Hilfe</key>
     <key alias="forms">Formulare</key>
     <key alias="analytics">Auswertungen</key>
+    <key alias="seochecker">SEO Checker</key>
   </area>
   <area alias="help">
     <key alias="goTo">go to</key>

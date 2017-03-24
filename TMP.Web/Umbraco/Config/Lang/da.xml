@@ -42,6 +42,10 @@
     <key alias="translate">Oversæt</key>
     <key alias="update">Opdatér</key>
     <key alias="defaultValue">Standard værdi</key>
+    <key alias="SEOCheckerSchedule">Add scheduled validation</key>
+    <key alias="SEOCheckerEditRobots">Edit robots.txt file</key>
+    <key alias="SEOCheckerImportRedirects">Import redirects</key>
+    <key alias="SEOCheckerExportRedirects">Export redirects</key>
   </area>
   <area alias="assignDomain">
     <key alias="permissionDenied">Tilladelse nægtet.</key>
@@ -846,6 +850,7 @@ Mange hilsner fra Umbraco robotten
     <key alias="help">Hjælp</key>
     <key alias="forms">Formularer</key>
     <key alias="analytics">Analytics</key>
+    <key alias="seochecker">SEO Checker</key>
   </area>
   <area alias="help">
     <key alias="goTo">gå til</key>
@@ -1116,7 +1121,7 @@ Mange hilsner fra Umbraco robotten
     <key alias="enabledConfirm">URL tracker er nu slået fra.</key>
     <key alias="enableError">Der opstod en fejl under forsøget på at slå URL trackeren til, der findes mere information i logfilen.</key>
   </area>
-<area alias="analytics">
+  <area alias="analytics">
     <key alias="viewMoreDetails">Vis flere detaljer</key>
     <key alias="visits">Besøg</key>
     <key alias="pagePath">Sidesti</key>
@@ -1184,4 +1189,5 @@ Mange hilsner fra Umbraco robotten
     <key alias="somethingWentWrong">Okay. Der gik noget galt.</key>
     <key alias="informationSavedMessage"><![CDATA[Hej %0%. Vi har gemt din information til en konfigurationsfil, så Umbraco kan hente statistik fra din Google Analytics konto.<br /><br />Du kan nu <a href='javascript:self.close();'>lukke dette vindue</a>.]]></key>
     <key alias="noAccess">Sorry you do not have access.</key>
-  </area></language>
+  </area>
+</language>

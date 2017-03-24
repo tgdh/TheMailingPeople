@@ -36,6 +36,10 @@
     <key alias="translate">Vertalen</key>
     <key alias="update">Bijwerken</key>
     <key alias="defaultValue">Standaardwaarde</key>
+    <key alias="SEOCheckerSchedule">Add scheduled validation</key>
+    <key alias="SEOCheckerEditRobots">Edit robots.txt file</key>
+    <key alias="SEOCheckerImportRedirects">Import redirects</key>
+    <key alias="SEOCheckerExportRedirects">Export redirects</key>
   </area>
   <area alias="assignDomain">
     <key alias="permissionDenied">Permission denied.</key>
@@ -727,6 +731,7 @@ Echter, Runway biedt een gemakkelijke basis om je snel op weg te helpen. Als je 
     <key alias="help" version="7.0">Help</key>
     <key alias="forms">Formulieren</key>
     <key alias="analytics">Analytics</key>
+    <key alias="seochecker">SEO Checker</key>
   </area>
   <area alias="settings">
     <key alias="defaulttemplate">Standaard template</key>

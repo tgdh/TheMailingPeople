@@ -39,6 +39,10 @@
     <key alias="SEOCheckerEditRobots">Edit robots.txt file</key>
     <key alias="SEOCheckerImportRedirects">Import redirects</key>
     <key alias="SEOCheckerExportRedirects">Export redirects</key>
+    <key alias="SEOCheckerSchedule">Add scheduled validation</key>
+    <key alias="SEOCheckerEditRobots">Edit robots.txt file</key>
+    <key alias="SEOCheckerImportRedirects">Import redirects</key>
+    <key alias="SEOCheckerExportRedirects">Export redirects</key>
   </area>
   <area alias="assignDomain">
     <key alias="permissionDenied">禁止访问</key>
@@ -705,6 +709,7 @@
     <key alias="statistics">统计</key>
     <key alias="translation">翻译</key>
     <key alias="users">用户</key>
+    <key alias="seochecker">SEO Checker</key>
     <key alias="seochecker">SEO Checker</key>
   </area>
   <area alias="settings">

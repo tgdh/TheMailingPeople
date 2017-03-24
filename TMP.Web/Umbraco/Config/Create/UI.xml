@@ -267,4 +267,11 @@
       <delete assembly="umbraco" type="PartialViewMacroTasks" />
     </tasks>
   </nodeType>
+  <nodeType alias="seocheckerRedirectManager" legacyAlias="seochecker">
+    <header>Scheduled task</header>
+    <usercontrol>/plugins/seochecker/usercontrols/createredirectcontrol.ascx</usercontrol>
+    <tasks>
+      <delete assembly="SEOChecker.Core" type="Umbraco.Tasks.DeleteTask" />
+    </tasks>
+  </nodeType>
 </createUI>
