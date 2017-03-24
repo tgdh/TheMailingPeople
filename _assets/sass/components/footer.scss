@@ -25,7 +25,11 @@
         padding-bottom: 3rem;
     }
 
-
+	.c-nav__link{
+		&:hover{
+			background-color: transparent;
+		}
+	}
 }
 
 .c-footer__top__col {
@@ -81,7 +85,3 @@
     }
 
 }
-
-
-
-
