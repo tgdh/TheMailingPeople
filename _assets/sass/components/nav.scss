@@ -173,6 +173,11 @@
 		display: block;
 		transition: $ease $speed background-color,
 					$ease $speed color;
+
+		&.is-active{
+			color: $pri;
+		}
+
 		&:hover, &:focus{
 			background-color: $pri;
 			color: white;
