@@ -4,6 +4,7 @@ var Nav = (function ($) {
 	var _nav = function() {
 		$(document).ready(function(){
 			$('.js-toggle').click(function(){
+				$('.c-header__main__right').toggleClass('js-active');
 				$(this).toggleClass('js-active');
 				$('.c-page__wrapper').toggleClass('js-nav-active');
 				$('header').toggleClass('js-nav-active');
@@ -23,6 +24,7 @@ var Nav = (function ($) {
 				$('header').removeClass('js-nav-active');
 				$('footer').removeClass('js-nav-active');
 				$('.c-header__nav-wrap').removeClass('js-nav-active');
+				$('.c-header__main__right').removeClass('js-active');
 			});
 		});
 	};

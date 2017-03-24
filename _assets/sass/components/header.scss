@@ -1,4 +1,24 @@
+.c-header{
+	&.js-sticky{
+		.c-header__main{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+		.c-header__super{
+			margin-bottom: 82px;
+		}
+	}
+}
+
+.c-header__main{
+	background-color: white;
+	z-index: 999;
+}
+
 @include respond-max ( $mq-large ) {
+
 	.c-header{
 		position: fixed;
 		top: 0;
@@ -28,6 +48,8 @@
 
 	.c-header__right{
 		float: right;
+		position: relative;
+		right: -4rem;
 	}
 
 	.c-header__toggle-menu-button{
@@ -41,7 +63,6 @@
 		transition: $ease $speed right;
 
 		&.js-active{
-			right: calc(100vw - 6rem);
 
 			.c-header__toggle__line{
 				width: 0;
@@ -59,6 +80,7 @@
 			}
 		}
 	}
+
 	.c-header__search__sticky{
 		width: 6rem;
 		height: 6rem;
@@ -74,6 +96,7 @@
 		}
 
 	}
+
 	.c-header__toggle__icon{
 		width: 3rem;
 		height: 3rem;
@@ -107,6 +130,7 @@
 		}
 
 	}
+
 	.flexbox{
 
 		.c-header__search__sticky{
@@ -116,6 +140,7 @@
 		}
 
 	}
+
 	.no-flexbox{
 
 		.c-header__search__sticky{
@@ -128,10 +153,66 @@
 
 		}
 
+		.c-header__main__right{
+			position: relative;
+		}
+
+		.c-header__cta--main{
+			top: 1rem;
+			height: 82px;
+		}
+
+	}
+
+	.c-header__main__right{
+		transition: $ease $speed right;
+		&.js-active{
+			right: calc(100% - 2rem)
+		}
 	}
 
 }
+
+@include respond-max ( $mq-medium ) {
+
+	.c-header__right{
+		right: -2rem;
+	}
+
+	.c-header__main__right{
+		transition: $ease $speed right;
+		&.js-active{
+			right: calc(100% - 4rem);
+		}
+	}
+}
+
 @include respond-min ( $mq-large ) {
+
+	.c-header{
+		&.js-smaller{
+			.c-header__logo-link{
+				width: 18rem;
+			}
+
+			.c-nav__link{
+				padding: 2.25rem;
+			}
+
+			.c-header__cta--main, .c-header__main__right{
+				height: 67px;
+			}
+
+			.c-header__cta__item{
+				display: none;
+			}
+
+			.c-header__cta__item--phone{
+				display: block;
+			}
+		}
+	}
+
 	.c-header__super{
 		background-color: $dark-1;
 		float: left;
@@ -168,12 +249,14 @@
 		display: block;
 		padding: 1.5rem 3rem;
 		float: left;
+		transition: $ease $speed width;
 	}
 
 	.c-header__main__right{
 		background-color: $pri;
 		display: none;
 		height: 82px;
+		transition: $ease $speed height;
 	}
 
 	.c-header__search__sticky{
@@ -183,71 +266,6 @@
 	.c-header__nav-wrap{
 		float: left;
 		width: calc(100% - 22.5rem);
-	}
-
-	.c-nav__close{
-		display: none;
-	}
-
-	.c-nav__item{
-		list-style-type: none;
-		float: left;
-		margin: 0;
-
-		&:hover,&:focus{
-
-			.c-nav__list--sub{
-				opacity: 1;
-				visibility: visible;
-			}
-
-		}
-
-	}
-
-	.c-nav__link{
-		color: $dark-1;
-		font-weight: bold;
-		padding: 3rem 2rem;
-		display: block;
-		transition: $ease $speed background-color,
-					$ease $speed color;
-
-		&:focus,&:hover{
-			color: $white;
-			background-color: $pri;
-		}
-
-	}
-
-	.c-nav__list--sub{
-		background-color: $pri;
-		display: block;
-		min-width: 200px;
-		position: absolute;
-		margin-top: 0;
-		visibility: hidden;
-		transition: $ease $speed visibility,
-					$ease $speed top;
-
-		.c-nav__item{
-			display: block;
-			float: none;
-		}
-
-		.c-nav__link{
-			color: white;
-			transition: $ease $speed background-color,
-						$ease $speed color;
-						padding: 2rem;
-
-			&:hover{
-				background-color: $white;
-				color: $pri;
-			}
-
-		}
-
 	}
 
 }

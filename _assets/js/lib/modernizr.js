@@ -334,93 +334,6 @@ Check if browser implements ECMAScript 6 `String.prototype.contains` per specifi
 
 
   /**
-   * createElement is a convenience wrapper around document.createElement. Since we
-   * use createElement all over the place, this allows for (slightly) smaller code
-   * as well as abstracting away issues with creating elements in contexts other than
-   * HTML documents (e.g. SVG documents).
-   *
-   * @access private
-   * @function createElement
-   * @returns {HTMLElement|SVGElement} An HTML or SVG element
-   */
-
-  function createElement() {
-    if (typeof document.createElement !== 'function') {
-      // This is the case in IE7, where the type of createElement is "object".
-      // For this reason, we cannot call apply() as Object is not a Function.
-      return document.createElement(arguments[0]);
-    } else if (isSVG) {
-      return document.createElementNS.call(document, 'http://www.w3.org/2000/svg', arguments[0]);
-    } else {
-      return document.createElement.apply(document, arguments);
-    }
-  }
-
-  ;
-/*!
-{
-  "name": "HTML5 Video",
-  "property": "video",
-  "caniuse": "video",
-  "tags": ["html5"],
-  "knownBugs": [
-    "Without QuickTime, `Modernizr.video.h264` will be `undefined`; https://github.com/Modernizr/Modernizr/issues/546"
-  ],
-  "polyfills": [
-    "html5media",
-    "mediaelementjs",
-    "sublimevideo",
-    "videojs",
-    "leanbackplayer",
-    "videoforeverybody"
-  ]
-}
-!*/
-/* DOC
-Detects support for the video element, as well as testing what types of content it supports.
-
-Subproperties are provided to describe support for `ogg`, `h264` and `webm` formats, e.g.:
-
-```javascript
-Modernizr.video         // true
-Modernizr.video.ogg     // 'probably'
-```
-*/
-
-  // Codec values from : github.com/NielsLeenheer/html5test/blob/9106a8/index.html#L845
-  //                     thx to NielsLeenheer and zcorpan
-
-  // Note: in some older browsers, "no" was a return value instead of empty string.
-  //   It was live in FF3.5.0 and 3.5.1, but fixed in 3.5.2
-  //   It was also live in Safari 4.0.0 - 4.0.4, but fixed in 4.0.5
-
-  Modernizr.addTest('video', function() {
-    var elem = createElement('video');
-    var bool = false;
-
-    // IE9 Running on Windows Server SKU can cause an exception to be thrown, bug #224
-    try {
-      bool = !!elem.canPlayType
-      if (bool) {
-        bool = new Boolean(bool);
-        bool.ogg = elem.canPlayType('video/ogg; codecs="theora"').replace(/^no$/, '');
-
-        // Without QuickTime, this value will be `undefined`. github.com/Modernizr/Modernizr/issues/546
-        bool.h264 = elem.canPlayType('video/mp4; codecs="avc1.42E01E"').replace(/^no$/, '');
-
-        bool.webm = elem.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/, '');
-
-        bool.vp9 = elem.canPlayType('video/webm; codecs="vp9"').replace(/^no$/, '');
-
-        bool.hls = elem.canPlayType('application/x-mpegURL; codecs="avc1.42E01E"').replace(/^no$/, '');
-      }
-    } catch (e) {}
-
-    return bool;
-  });
-
-
-  /**
    * If the browsers follow the spec, then they would expose vendor-specific styles as:
    *   elem.style.WebkitBorderRadius
    * instead of something like the following (which is technically incorrect):
@@ -456,6 +369,31 @@ Modernizr.video.ogg     // 'probably'
 
   function contains(str, substr) {
     return !!~('' + str).indexOf(substr);
+  }
+
+  ;
+
+  /**
+   * createElement is a convenience wrapper around document.createElement. Since we
+   * use createElement all over the place, this allows for (slightly) smaller code
+   * as well as abstracting away issues with creating elements in contexts other than
+   * HTML documents (e.g. SVG documents).
+   *
+   * @access private
+   * @function createElement
+   * @returns {HTMLElement|SVGElement} An HTML or SVG element
+   */
+
+  function createElement() {
+    if (typeof document.createElement !== 'function') {
+      // This is the case in IE7, where the type of createElement is "object".
+      // For this reason, we cannot call apply() as Object is not a Function.
+      return document.createElement(arguments[0]);
+    } else if (isSVG) {
+      return document.createElementNS.call(document, 'http://www.w3.org/2000/svg', arguments[0]);
+    } else {
+      return document.createElement.apply(document, arguments);
+    }
   }
 
   ;
@@ -959,6 +897,22 @@ Modernizr.video.ogg     // 'probably'
   
 /*!
 {
+  "name": "CSS Transforms",
+  "property": "csstransforms",
+  "caniuse": "transforms2d",
+  "tags": ["css"]
+}
+!*/
+
+  Modernizr.addTest('csstransforms', function() {
+    // Android < 3.0 is buggy, so we sniff and blacklist
+    // http://git.io/hHzL7w
+    return navigator.userAgent.indexOf('Android 2.') === -1 &&
+           testAllProps('transform', 'scale(1)', true);
+  });
+
+/*!
+{
   "name": "Flexbox",
   "property": "flexbox",
   "caniuse": "flexbox",
@@ -980,18 +934,64 @@ Detects support for the Flexible Box Layout model, a.k.a. Flexbox, which allows 
 
 /*!
 {
-  "name": "CSS Transforms",
-  "property": "csstransforms",
-  "caniuse": "transforms2d",
-  "tags": ["css"]
+  "name": "HTML5 Video",
+  "property": "video",
+  "caniuse": "video",
+  "tags": ["html5"],
+  "knownBugs": [
+    "Without QuickTime, `Modernizr.video.h264` will be `undefined`; https://github.com/Modernizr/Modernizr/issues/546"
+  ],
+  "polyfills": [
+    "html5media",
+    "mediaelementjs",
+    "sublimevideo",
+    "videojs",
+    "leanbackplayer",
+    "videoforeverybody"
+  ]
 }
 !*/
+/* DOC
+Detects support for the video element, as well as testing what types of content it supports.
 
-  Modernizr.addTest('csstransforms', function() {
-    // Android < 3.0 is buggy, so we sniff and blacklist
-    // http://git.io/hHzL7w
-    return navigator.userAgent.indexOf('Android 2.') === -1 &&
-           testAllProps('transform', 'scale(1)', true);
+Subproperties are provided to describe support for `ogg`, `h264` and `webm` formats, e.g.:
+
+```javascript
+Modernizr.video         // true
+Modernizr.video.ogg     // 'probably'
+```
+*/
+
+  // Codec values from : github.com/NielsLeenheer/html5test/blob/9106a8/index.html#L845
+  //                     thx to NielsLeenheer and zcorpan
+
+  // Note: in some older browsers, "no" was a return value instead of empty string.
+  //   It was live in FF3.5.0 and 3.5.1, but fixed in 3.5.2
+  //   It was also live in Safari 4.0.0 - 4.0.4, but fixed in 4.0.5
+
+  Modernizr.addTest('video', function() {
+    var elem = createElement('video');
+    var bool = false;
+
+    // IE9 Running on Windows Server SKU can cause an exception to be thrown, bug #224
+    try {
+      bool = !!elem.canPlayType
+      if (bool) {
+        bool = new Boolean(bool);
+        bool.ogg = elem.canPlayType('video/ogg; codecs="theora"').replace(/^no$/, '');
+
+        // Without QuickTime, this value will be `undefined`. github.com/Modernizr/Modernizr/issues/546
+        bool.h264 = elem.canPlayType('video/mp4; codecs="avc1.42E01E"').replace(/^no$/, '');
+
+        bool.webm = elem.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/, '');
+
+        bool.vp9 = elem.canPlayType('video/webm; codecs="vp9"').replace(/^no$/, '');
+
+        bool.hls = elem.canPlayType('application/x-mpegURL; codecs="avc1.42E01E"').replace(/^no$/, '');
+      }
+    } catch (e) {}
+
+    return bool;
   });
 
 
