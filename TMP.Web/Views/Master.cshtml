@@ -33,8 +33,12 @@
     </head>
     <body class="o-page">
         @Html.Partial("~/Views/Partials/Page/Header.cshtml")
-        @RenderBody()
-        @Html.Partial("~/Views/Partials/Page/Footer.cshtml")
+		<div class="c-page__wrapper">
+ 			@RenderBody()
+ 			@Html.Partial("~/Views/Partials/Page/Newsletter.cshtml")
+ 			@Html.Partial("~/Views/Partials/Page/Accreditations.cshtml")
+ 		</div>
+ 		@Html.Partial("~/Views/Partials/Page/Footer.cshtml")
 
         <!--[if lt IE 9]>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
