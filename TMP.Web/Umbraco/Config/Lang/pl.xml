@@ -460,7 +460,7 @@ Możesz dodać dodatkowe języki w menu "Języki" po lewej stronie.]]></key>
   </area>
   <area alias="notifications">
     <key alias="editNotifications">Edytuj powiadomienie dla %0%</key>
-    <key alias="mailBody"><![CDATA[Witaj %0% To jest automatyczny e-mail, wysłany aby poinformować Cię, że polecenie '%1%' zostało wykonane na stronie '%2%' przez użytkownika '%3%'. 
+    <key alias="mailBody"><![CDATA[Witaj %0% To jest automatyczny e-mail, wysłany aby poinformować Cię, że polecenie '%1%' zostało wykonane na stronie '%2%' przez użytkownika '%3%'.
 Możesz dalej edytować pod adresem:
 http://%4%/#/content/content/edit/%5%
 

@@ -259,7 +259,7 @@
     <key alias="tableRows">Aantal regels</key>
     <key alias="templateContentAreaHelp"><![CDATA[<strong>Plaats een placeholder id</strong> door een ID op uw placeholder te zetten kunt u inhoud plaatsen in deze template vanuit onderliggende templates,
       door te referreren naar deze ID door gebruik te maken van een <code>&lt;asp:content /&gt;</code> element.]]></key>
-    <key alias="templateContentPlaceHolderHelp"><![CDATA[<strong>Selecteer een placeholder id</strong> uit onderstaande lijst. U kunt alleen 
+    <key alias="templateContentPlaceHolderHelp"><![CDATA[<strong>Selecteer een placeholder id</strong> uit onderstaande lijst. U kunt alleen
       Id's kiezen van de master van de huidige template..]]></key>
     <key alias="thumbnailimageclickfororiginal">Klik op de afbeelding voor volledige grootte</key>
     <key alias="treepicker">Kies een item</key>
@@ -501,7 +501,7 @@
     <key alias="runwaySimpleSite">Ik wil met een eenvoudige website beginnen</key>
     <key alias="runwaySimpleSiteText"><![CDATA[<p> "Runway" is een eenvoudige website die je van enkele elementaire documenttypes en templates voorziet. De installer kan Runway automatisch voor je opzetten, maar je kunt het gemakkelijk aanpassen, uitbreiden of verwijderen. Het is niet vereist en je kunt Umbraco prima zonder Runway gebruiken.
 
-Echter, Runway biedt een gemakkelijke basis om je snel op weg te helpen. Als je er voor kiest om Runway te installeren, dan kun je optioneel de bouwstenen (genaamd Runway Modules) kiezen om je Runway pagina's te verbeteren.</p> <small> <em>Runway omvat:</em> Home pagina, Getting Started pagina, Module installatie pagina.<br /> <em>Optionele Modules:</em> Top Navigatie, Sitemap, Contact, Gallery. </small> 
+Echter, Runway biedt een gemakkelijke basis om je snel op weg te helpen. Als je er voor kiest om Runway te installeren, dan kun je optioneel de bouwstenen (genaamd Runway Modules) kiezen om je Runway pagina's te verbeteren.</p> <small> <em>Runway omvat:</em> Home pagina, Getting Started pagina, Module installatie pagina.<br /> <em>Optionele Modules:</em> Top Navigatie, Sitemap, Contact, Gallery. </small>
     ]]></key>
     <key alias="runwayWhatIsRunway">Wat is Runway</key>
     <key alias="step1">Stap 1/5: Licentie aanvaarden</key>
@@ -575,17 +575,17 @@ Echter, Runway biedt een gemakkelijke basis om je snel op weg te helpen. Als je 
       Een prettige dag!
 
       Dit is een bericht van uw Content Management Systeem.
-    
+
         ]]></key>
     <key alias="mailBodyHtml"><![CDATA[<p>Hi %0%</p>
 
-		  <p>Dit is een geautomatiseerde mail om u op de hoogte te brengen dat de taak <strong>'%1%'</strong> 
-		  is uitgevoerd op pagina <a href="http://%4%/actions/preview.aspx?id=%5%"><strong>'%2%'</strong></a> 
+		  <p>Dit is een geautomatiseerde mail om u op de hoogte te brengen dat de taak <strong>'%1%'</strong>
+		  is uitgevoerd op pagina <a href="http://%4%/actions/preview.aspx?id=%5%"><strong>'%2%'</strong></a>
 		  door gebruiker <strong>'%3%'</strong>
 	  </p>
 		  <div class="buttons">
 				<br />
-				<a class="buttonEdit" href="http://%4%/#/content/content/edit/%5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EDIT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> &nbsp; 
+				<a class="buttonEdit" href="http://%4%/#/content/content/edit/%5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EDIT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> &nbsp;
 				<br />
 		  </div>
 		  <p>
@@ -597,7 +597,7 @@ Echter, Runway biedt een gemakkelijke basis om je snel op weg te helpen. Als je 
 
 		  <div class="buttons">
 				<br />
-				<a class="buttonEdit" href="http://%4%/#/content/content/edit/%5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EDIT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> &nbsp; 
+				<a class="buttonEdit" href="http://%4%/#/content/content/edit/%5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EDIT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a> &nbsp;
 				<br />
 		  </div>
 
@@ -672,7 +672,7 @@ Echter, Runway biedt een gemakkelijke basis om je snel op weg te helpen. Als je 
     ]]></key>
     <key alias="contentPublishedFailedByEvent"><![CDATA[
       %0% kon niet worden gepubliceerd doordat een 3rd party extensie het heeft geannuleerd.
-    
+
         ]]></key>
     <key alias="includeUnpublished">Inclusief ongepubliceerde kinderen</key>
     <key alias="inProgress">Publicatie in uitvoering - even geduld...</key>
@@ -918,7 +918,7 @@ Om een vertalingstaak te sluiten, ga aub naar het detailoverzicht en klik op de 
       Een prettige dag!
 
       Dit is een bericht van uw Content Management Systeem.
-    
+
         ]]></key>
     <key alias="mailSubject">[%0%] Vertaalopdracht voor %1%</key>
     <key alias="noTranslators">Geen vertaal-gebruikers gevonden. Maak eerst een vertaal-gebruiker aan voordat je pagina's voor vertaling verstuurd</key>
