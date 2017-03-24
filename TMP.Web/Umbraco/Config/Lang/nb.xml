@@ -37,10 +37,6 @@
     <key alias="translate">Oversett</key>
     <key alias="update">Oppdater</key>
     <key alias="defaultValue">Standard verdi</key>
-    <key alias="SEOCheckerSchedule">Add scheduled validation</key>
-    <key alias="SEOCheckerEditRobots">Edit robots.txt file</key>
-    <key alias="SEOCheckerImportRedirects">Import redirects</key>
-    <key alias="SEOCheckerExportRedirects">Export redirects</key>
   </area>
   <area alias="assignDomain">
     <key alias="permissionDenied">Ingen tilgang.</key>
@@ -704,7 +700,6 @@ Vennlig hilsen Umbraco roboten
     <key alias="help" version="7.0">Hjelp</key>
     <key alias="forms">Skjemaer</key>
     <key alias="analytics">Analytics</key>
-    <key alias="seochecker">SEO Checker</key>
   </area>
   <area alias="help">
     <key alias="goTo">gå til</key>

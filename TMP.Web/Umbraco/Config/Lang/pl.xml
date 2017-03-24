@@ -35,10 +35,6 @@
     <key alias="toPublish">Zapisz do opublikowania</key>
     <key alias="translate">Przetłumacz</key>
     <key alias="update">Aktualizuj</key>
-    <key alias="SEOCheckerSchedule">Add scheduled validation</key>
-    <key alias="SEOCheckerEditRobots">Edit robots.txt file</key>
-    <key alias="SEOCheckerImportRedirects">Import redirects</key>
-    <key alias="SEOCheckerExportRedirects">Export redirects</key>
   </area>
   <area alias="assignDomain">
     <key alias="addNew">Dodaj nową domenę</key>
@@ -460,7 +456,7 @@ Możesz dodać dodatkowe języki w menu "Języki" po lewej stronie.]]></key>
   </area>
   <area alias="notifications">
     <key alias="editNotifications">Edytuj powiadomienie dla %0%</key>
-    <key alias="mailBody"><![CDATA[Witaj %0% To jest automatyczny e-mail, wysłany aby poinformować Cię, że polecenie '%1%' zostało wykonane na stronie '%2%' przez użytkownika '%3%'. 
+    <key alias="mailBody"><![CDATA[Witaj %0% To jest automatyczny e-mail, wysłany aby poinformować Cię, że polecenie '%1%' zostało wykonane na stronie '%2%' przez użytkownika '%3%'.
 Możesz dalej edytować pod adresem:
 http://%4%/#/content/content/edit/%5%
 
@@ -565,7 +561,6 @@ Miłego dnia!]]></key>
     <key alias="statistics">Statystyki</key>
     <key alias="translation">Tłumaczenie</key>
     <key alias="users">Użytkownicy</key>
-    <key alias="seochecker">SEO Checker</key>
   </area>
   <area alias="settings">
     <key alias="defaulttemplate">Domyślny szablon</key>

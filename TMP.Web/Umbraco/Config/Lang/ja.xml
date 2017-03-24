@@ -37,10 +37,6 @@
     <key alias="translate">翻訳</key>
     <key alias="update">更新</key>
     <key alias="defaultValue">初期値</key>
-    <key alias="SEOCheckerSchedule">Add scheduled validation</key>
-    <key alias="SEOCheckerEditRobots">Edit robots.txt file</key>
-    <key alias="SEOCheckerImportRedirects">Import redirects</key>
-    <key alias="SEOCheckerExportRedirects">Export redirects</key>
   </area>
   <area alias="assignDomain">
     <key alias="permissionDenied">アクセスが拒否されました</key>
@@ -854,7 +850,6 @@ Runwayをインストールして作られた新しいウェブサイトがど�
     <key alias="help" version="7.0">ヘルプ</key>
     <key alias="forms">フォーム</key>
     <key alias="analytics">アナリティクス</key>
-    <key alias="seochecker">SEO Checker</key>
   </area>
   <area alias="help">
     <key alias="goTo">該当のヘルプへ</key>
