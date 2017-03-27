@@ -1,29 +1,29 @@
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits UmbracoViewPage<IPublishedContent>
 @{
-	var ImageId = Model.Content.GetPropertyValue("bannerImage");
+	var ImageId = Model.GetPropertyValue("bannerImage");
 	var ImageMedia = Umbraco.Media(ImageId);
 	var ImageNullChecked = ImageMedia != null ? ImageMedia.Url : " ";
 
-	String Title = Model.Content.GetPropertyValue<string>("bannerTitle");
+	String Title = Model.GetPropertyValue<string>("bannerTitle");
 	var TitleNullChecked = !string.IsNullOrWhiteSpace(Title) ? Title : "Creative Solutions For Your Mailing ";
 
-	String SubTitle = Model.Content.GetPropertyValue<string>("bannerSubTitle");
+	String SubTitle = Model.GetPropertyValue<string>("bannerSubTitle");
 	var SubTitleNullChecked = !string.IsNullOrWhiteSpace(SubTitle) ? SubTitle : "";
 
 
-	String PageLink1 = Model.Content.GetPropertyValue<string>("bannerLink1");
+	String PageLink1 = Model.GetPropertyValue<string>("bannerLink1");
 	var decode1 = Json.Decode(PageLink1);
-	var PageLink1Image = Model.Content.GetPropertyValue("bannerLink1Image");
+	var PageLink1Image = Model.GetPropertyValue("bannerLink1Image");
 	var PageLink1ImageMedia = Umbraco.Media(PageLink1Image);
 
-	String PageLink2 = Model.Content.GetPropertyValue<string>("bannerLink2");
+	String PageLink2 = Model.GetPropertyValue<string>("bannerLink2");
 	var decode2 = Json.Decode(PageLink2);
-	var PageLink2Image = Model.Content.GetPropertyValue("bannerLink2Image");
+	var PageLink2Image = Model.GetPropertyValue("bannerLink2Image");
 	var PageLink2ImageMedia = Umbraco.Media(PageLink2Image);
 
-	String PageLink3 = Model.Content.GetPropertyValue<string>("bannerLink3");
+	String PageLink3 = Model.GetPropertyValue<string>("bannerLink3");
 	var decode3 = Json.Decode(PageLink3);
-	var PageLink3Image = Model.Content.GetPropertyValue("bannerLink3Image");
+	var PageLink3Image = Model.GetPropertyValue("bannerLink3Image");
 	var PageLink3ImageMedia = Umbraco.Media(PageLink3Image);
 
 }
