@@ -21,7 +21,9 @@
 }
 
 .c-block__right{
-	background-color: $pri;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 	width: 50%;
 	height: 100%;
 	display: block;
@@ -97,6 +99,7 @@
 @include respond-max($mq-large){
 
 	.c-block__last-week{
+		background-color: $white;
 		.c-block__left{
 			width: 100%;
 		}
@@ -105,6 +108,32 @@
 		}
 	}
 
+	.c-block__content-left, .c-block__content-right{
+		width: 100%;
+		padding: 0;
+	}
+
+	.c-block__padded{
+		padding: 4rem 0;
+	}
+
+	.c-section__total{
+		float: none;
+		text-align: center;
+		margin-top: 6rem;
+	}
+
+	.c-block__content-right .c-block__p{
+		text-align: center;
+	}
+
+	.c-block__read-more{
+		display: none;
+	}
+
+	.c-block__padded.has--link {
+		padding-bottom: 4rem;
+	}
 }
 
 .c-block__client-review{
@@ -189,11 +218,49 @@
 
 @include respond-max($mq-large){
 	.c-block__client-review{
+
 		.c-block__left{
 			width: 100%;
 		}
+
 		.c-client__p{
 			min-height: auto;
+		}
+
+		.c-block__headline{
+			padding: 4rem 0 3rem 0;
+		}
+
+		.c-client__item{
+			padding-right: 0;
+			padding-bottom: 14rem;
+		}
+
+		.c-client-review__image{
+			float: none;
+			display: block;
+			margin: 0 auto;
+		}
+
+		.c-client__p{
+			width: 100%;
+			text-align: center;
+			margin-top: 2rem;
+		}
+
+		.c-client__name{
+			width: 100%;
+			text-align: center;
+		}
+
+		.c-client__link{
+			bottom: 4rem;
+		}
+
+		.c-block__left{
+			.c-carousel__nav--prev, .c-carousel__nav--next{
+				visibility: hidden;
+			}
 		}
 	}
 }

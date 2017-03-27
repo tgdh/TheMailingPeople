@@ -20,7 +20,7 @@
 					String Quote = item.GetPropertyValue<string>("quote");
 					var Link = item.GetPropertyValue("link");
 					<div class="c-client__item">
-						<img src="@ImageMedia.Url" alt="@Client" class="c-client-review__image">
+						<img src="@ImageMedia.Url?width=80&height=80" alt="@Client" class="c-client-review__image">
 						<p class="c-client__p">" @Quote "</p>
 						<span class="c-client__name">@Client</span>
 						<a href="@Link" class="c-client__link">View Case Study</a>
