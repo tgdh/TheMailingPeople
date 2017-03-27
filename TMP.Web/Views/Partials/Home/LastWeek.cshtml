@@ -1,19 +1,39 @@
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits UmbracoViewPage<IPublishedContent>
 @{
-    <div class="c-block__last-week">
-		<div class="o-wrap o-wrap--large">
-			<div class="c-block__left c-block__padded has--link">
-				<div class="c-block__content-left">
-					<h2 class="o-heading c-block__headline u-mega u-uppercase c-section">Last Week We</h2>
-					<p class="c-block__p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
-				</div>
-				<div class="c-block__content-right">
-					<span class="c-section__total">5678k</span>
-					<p class="c-block__p">*Lorem ipsum dolor sit amet</p>
-				</div>
-				<a href="#" class="c-block__read-more">Possible read more link > </a>
-			</div>
-			<div class="c-block__right"></div>
-		</div>
-	</div>
+	String Text = Model.GetPropertyValue<string>("text");
+	String SmallText = Model.GetPropertyValue<string>("smallText");
+	String Number = Model.GetPropertyValue<string>("largeTextNumber");
+	var Link = Model.GetPropertyValue("link");
+	var Image = Model.GetPropertyValue("image");
+	var ImageUrl = Image != null ? Umbraco.Media(Image) : "";
+
 }
+
+<div class="c-block__last-week">
+	<div class="o-wrap o-wrap--large">
+		<div class="c-block__left c-block__padded has--link">
+			<div class="c-block__content-left">
+				<h2 class="o-heading c-block__headline u-mega u-uppercase c-section">Last Week We</h2>
+				@if(!string.IsNullOrWhiteSpace(Text))
+				{
+					<p class="c-block__p">@Text</p>
+				}
+			</div>
+			@if(!string.IsNullOrWhiteSpace(Number))
+			{
+				<div class="c-block__content-right">
+					<span class="c-section__total">@Number</span>
+					@if(!string.IsNullOrWhiteSpace(SmallText))
+					{
+						<p class="c-block__p">@SmallText</p>
+					}
+				</div>
+			}
+			@if(Link != null)
+			{
+				<a href="@Link" class="c-block__read-more">Read more > </a>
+			}
+		</div>
+		<div class="c-block__right" style="background-image: url(@ImageUrl.Url);"></div>
+	</div>
+</div>
