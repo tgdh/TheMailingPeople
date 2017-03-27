@@ -9,32 +9,43 @@
         return;
     }
 
-    var socialPlatforms = settings.GetPropertyValue<IEnumerable<IPublishedContent>>("socialPlatforms");
+    var facebook = settings.GetPropertyValue<string>("socialFacebookUrl");
+	var twitter = settings.GetPropertyValue<string>("socialTwitterUrl");
+	var linkedin = settings.GetPropertyValue<string>("socialLinkedinUrl");
+	var google = settings.GetPropertyValue<string>("socialGoogleUrl");
+	var instagram = settings.GetPropertyValue<string>("socialInstagramUrl");
     var extraClass = ViewData["extraClass"] ?? "";
 }
 
-@if (socialPlatforms != null)
-{
-    <div class="c-social @extraClass u-clearfix">
-
-        @foreach (var socialPlatform in socialPlatforms)
-        {
-            var platformName = socialPlatform.GetPropertyValue<string>("socialPlatformName");
-            var link = socialPlatform.GetPropertyValue<string>("socialPlatformLink");
-            var cssStyleClass = platformName.ToLower();
-
-            if (cssStyleClass == "google+")
-            {
-                cssStyleClass = "google";
-            }
-
-            if (!string.IsNullOrWhiteSpace(link))
-            {
-                <a href="@link" title="Go to our @platformName page (external link)" class="c-social__link c-social__link--@cssStyleClass" target="_blank">
-                    <i class="ico-@cssStyleClass"></i> <span class="u-hide-text">@platformName</span>
-                </a>
-            }
-        }
-    </div>
-}
-
+<div class="c-social @extraClass u-clearfix">
+	@if(!string.IsNullOrWhiteSpace(facebook))
+	{
+		<a href="@facebook" title="Go to our Facebook page (external link)" class="c-social__link c-social__link--facebook" target="_blank">
+	        <i class="ico-facebook"></i> <span class="u-hide-text">Facebook</span>
+	    </a>
+	}
+	@if(!string.IsNullOrWhiteSpace(twitter))
+	{
+		<a href="@twitter" title="Go to our Facebook page (external link)" class="c-social__link c-social__link--twitter" target="_blank">
+	        <i class="ico-twitter"></i> <span class="u-hide-text">Twitter</span>
+	    </a>
+	}
+	@if(!string.IsNullOrWhiteSpace(instagram))
+	{
+		<a href="@instagram" title="Go to our Facebook page (external link)" class="c-social__link c-social__link--instagram" target="_blank">
+	        <i class="ico-instagram"></i> <span class="u-hide-text">Instagram</span>
+	    </a>
+	}
+	@if(!string.IsNullOrWhiteSpace(linkedin))
+	{
+		<a href="@linkedin" title="Go to our Facebook page (external link)" class="c-social__link c-social__link--linkedin" target="_blank">
+	        <i class="ico-linkedin"></i> <span class="u-hide-text">LinkedIn</span>
+	    </a>
+	}
+	@if(!string.IsNullOrWhiteSpace(google))
+	{
+		<a href="@google" title="Go to our Facebook page (external link)" class="c-social__link c-social__link--google" target="_blank">
+	        <i class="ico-google"></i> <span class="u-hide-text">GooglePlus</span>
+	    </a>
+	}
+</div>
