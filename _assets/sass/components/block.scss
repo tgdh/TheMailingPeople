@@ -28,10 +28,11 @@
 	float: left;
 	position: absolute;
 	right: 0;
+	top: 0;
 }
 
 .c-block__padded{
-	padding: 5rem;
+	padding: 5rem 4em 5rem 0;
 	box-sizing: border-box;
 	position: relative;
 	&.has--link{
@@ -92,7 +93,9 @@
 		width: 35%;
 	}
 }
+
 @include respond-max($mq-large){
+
 	.c-block__last-week{
 		.c-block__left{
 			width: 100%;
@@ -101,33 +104,38 @@
 			display: none;
 		}
 	}
+
 }
 
 .c-block__client-review{
 	background-color: $dark-2;
 	float: left;
 	width: 100%;
+	position: relative;
 	*{
 		color: white;
+	}
+	.c-block__headline{
+		padding: 5rem 4em 5rem 0;
 	}
 }
 
 .c-client__p{
-	float: right;
+	float: left;
 	width: calc(100% - 14rem);
-	line-height: 2.5rem;
-	min-height: 8rem;
+	font-size: 1.55rem;
 }
 
 .c-client__name{
-	font-weight: bold;
-	margin-left: 14rem;
-	width: calc(100% - 14rem);
+	margin-top: 2rem;
+	float: left;
 	display: block;
+	font-weight: bold;
 }
 
 .c-client__item{
-	margin-top: 3rem;
+	padding-bottom: 14rem;
+	padding-right: 5rem;
 }
 
 .c-client-review__image{
@@ -136,6 +144,7 @@
 	overflow: hidden;
 	border-radius: 50%;
 	margin-right: 6rem;
+	float: left;
 }
 
 .c-client__link{
@@ -143,15 +152,114 @@
 	color: black;
 	display: inline-block;
 	padding: 1.25rem 4rem;
-	margin-left: 8.7em;
-	margin-top: 3rem;
 	border-radius: 5px;
 	border-bottom: 4px solid darken($light-2,20);
 	transition: $ease $speed border-color,
 				$ease $speed background-color;
-	&:hover{
+	position: absolute;
+	bottom: 5rem;
+	width: 200px;
+	left: calc(50% - 100px);
+	&:hover,&:focus{
 		color: black;
 		background-color: darken(white,10);
 		border-bottom-color: darken($light-2,30);
 	}
+}
+
+.c-block__left{
+	.c-carousel__nav--prev,.c-carousel__nav--next{
+		background-color: transparent;
+		font-size: 3rem;
+		position: absolute;
+		bottom: 0;
+		height: 5rem;
+		top: calc(100% - 7.5rem);
+		&:focus,&:hover{
+			background-color: transparent;
+		}
+	}
+	.c-carousel__nav--prev{
+		left: 8rem;
+	}
+	.c-carousel__nav--next{
+		right: 8rem;
+	}
+}
+
+@include respond-max($mq-large){
+	.c-block__client-review{
+		.c-block__left{
+			width: 100%;
+		}
+		.c-client__p{
+			min-height: auto;
+		}
+	}
+}
+
+.c-block__video{
+	height: 100%;
+    display: block;
+    float: left;
+    position: absolute;
+    right: 0;
+    top: 0;
+	width: 50%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+@include respond-max($mq-x-large){
+	.c-block__video{
+		width: 35%;
+	}
+}
+
+@include respond-max($mq-large){
+	.c-block__video{
+		width: 100%;
+		height: 40rem;
+		top: auto;
+		bottom: 0;
+	}
+
+	.c-block__client-review{
+		padding-bottom: 40rem;
+	}
+}
+
+.c-video__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+	box-sizing: border-box;
+	padding: 4rem;
+	position: relative;
+	&:hover,&:focus{
+		.c-video__play-btn{
+			transform: scale(1.05);
+		}
+	}
+}
+
+.c-heading__centered{
+	text-align: center;
+	&::after{
+		position: relative;
+		left: calc(50% - 3rem);
+	}
+}
+
+.c-video__play-btn{
+	width: 8rem;
+	height: 8rem;
+	background-image: url(../img/play.png);
+	display: block;
+	background-size: contain;
+	position: absolute;
+	top: calc(50% - 4rem);
+	left: calc(50% - 4rem);
+	transition: $ease $speed transform;
 }
