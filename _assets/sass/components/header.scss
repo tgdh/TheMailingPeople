@@ -50,7 +50,6 @@
 	.c-header__right{
 		float: right;
 		position: relative;
-		right: -4rem;
 	}
 
 	.c-header__toggle-menu-button{
@@ -89,7 +88,8 @@
 		border-right: 1px solid white;
 		display: block;
 		float: left;
-
+		position: relative;
+		z-index: -1;
 		.ico-finder{
 			color: white;
 			font-size: 2.5rem;
@@ -165,28 +165,16 @@
 
 	}
 
-	.c-header__main__right{
+	.c-header__toggle-menu-button{
 		transition: $ease $speed right;
 		&.js-active{
-			right: calc(100% - 2rem)
+			right: calc(100vw - 6rem);
 		}
 	}
 
 }
 
-@include respond-max ( $mq-medium ) {
 
-	.c-header__right{
-		right: -1.5rem;
-	}
-
-	.c-header__main__right{
-		transition: $ease $speed right;
-		&.js-active{
-			right: calc(100% - 4.5rem);
-		}
-	}
-}
 
 @include respond-min ( $mq-large ) {
 
@@ -211,6 +199,10 @@
 			.c-header__cta__item--phone{
 				display: block;
 			}
+
+			.c-nav__list--sub .c-nav__link{
+				padding: 1rem 2.25rem;
+			}
 		}
 	}
 
@@ -223,6 +215,7 @@
 	.c-header__right{
 		float: right;
 		width: 30%;
+		max-width: 500px;
 	}
 
 	.c-header__super__left{
