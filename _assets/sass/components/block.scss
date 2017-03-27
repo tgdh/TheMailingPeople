@@ -1,0 +1,157 @@
+.c-block{
+	float: left;
+	width: 100%;
+}
+
+.c-block__last-week{
+	width: 100%;
+	float: left;
+	background-color: $light-2;
+	position: relative;
+	.o-heading{
+		&::after{
+			background-color: $black;
+		}
+	}
+}
+
+.c-block__left{
+	float: left;
+	width: 50%;
+}
+
+.c-block__right{
+	background-color: $pri;
+	width: 50%;
+	height: 100%;
+	display: block;
+	float: left;
+	position: absolute;
+	right: 0;
+}
+
+.c-block__padded{
+	padding: 5rem;
+	box-sizing: border-box;
+	position: relative;
+	&.has--link{
+		padding-bottom: 13rem;
+	}
+}
+
+.c-block__content-left,.c-block__content-right{
+	float: left;
+	width: 50%;
+}
+
+.c-block__content-left{
+	padding-right: 1.5rem;
+}
+
+.c-block__content-right{
+	padding-left: 1.5rem;
+	.c-block__p{
+		display: block;
+		float: left;
+		width: 100%;
+		text-align: right;
+		font-size: 1.4rem;
+		margin-top: 2rem;
+	}
+}
+
+.c-block__p{
+	line-height: 2.5rem;
+}
+
+.c-block__read-more{
+	color: $pri;
+	position: absolute;
+	right: 5rem;
+	bottom: 5rem;
+	&:hover,&:focus{
+		color: $pri;
+		text-decoration: underline;
+	}
+}
+
+.c-section__total{
+	font-size: 9rem;
+	font-weight: normal;
+	float: right;
+    font-family: "bebas-neue", sans-serif;
+	display: block;
+	line-height: 7rem;
+}
+
+@include respond-max($mq-x-large){
+	.c-block__left{
+		width: 65%;
+	}
+	.c-block__right{
+		width: 35%;
+	}
+}
+@include respond-max($mq-large){
+	.c-block__last-week{
+		.c-block__left{
+			width: 100%;
+		}
+		.c-block__right{
+			display: none;
+		}
+	}
+}
+
+.c-block__client-review{
+	background-color: $dark-2;
+	float: left;
+	width: 100%;
+	*{
+		color: white;
+	}
+}
+
+.c-client__p{
+	float: right;
+	width: calc(100% - 14rem);
+	line-height: 2.5rem;
+	min-height: 8rem;
+}
+
+.c-client__name{
+	font-weight: bold;
+	margin-left: 14rem;
+	width: calc(100% - 14rem);
+	display: block;
+}
+
+.c-client__item{
+	margin-top: 3rem;
+}
+
+.c-client-review__image{
+	width: 8rem;
+	height: 8rem;
+	overflow: hidden;
+	border-radius: 50%;
+	margin-right: 6rem;
+}
+
+.c-client__link{
+	background-color: white;
+	color: black;
+	display: inline-block;
+	padding: 1.25rem 4rem;
+	margin-left: 8.7em;
+	margin-top: 3rem;
+	border-radius: 5px;
+	border-bottom: 4px solid darken($light-2,20);
+	transition: $ease $speed border-color,
+				$ease $speed background-color;
+	&:hover{
+		color: black;
+		background-color: darken(white,10);
+		border-bottom-color: darken($light-2,30);
+	}
+}
