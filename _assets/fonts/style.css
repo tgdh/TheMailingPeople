@@ -78,4 +78,9 @@
 .ico-pinterest:before {
   content: "\ead1";
 }
-
+.ico-home:before {
+  content: "\e900";
+}
+.ico-envelop:before {
+  content: "\e945";
+}
