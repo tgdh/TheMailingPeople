@@ -12,35 +12,31 @@
 
 <header id="header" class="c-header u-clearfix" role="banner">
     <div class="c-header__super">
-		<div class="o-wrap o-wrap--large">
-	        <div class="c-header__left c-header__super__left">
-	            @Html.Partial("~/Views/Partials/Page/HeaderCta.cshtml", Model, new ViewDataDictionary { { "extraClass", "c-header__cta--super" } })
-	        </div>
-	        <div class="c-header__right c-header__super__right">
-	            @Html.Partial("~/Views/Partials/Page/HeaderSearch.cshtml")
-	            @Html.Partial("~/Views/Partials/Page/SocialLinks.cshtml", Model, new ViewDataDictionary { { "extraClass", "c-social--header" } })
-	        </div>
-		</div>
+        <div class="c-header__left c-header__super__left">
+            @Html.Partial("~/Views/Partials/Page/HeaderCta.cshtml", Model, new ViewDataDictionary { { "extraClass", "c-header__cta--super" } })
+        </div>
+        <div class="c-header__right c-header__super__right">
+            @Html.Partial("~/Views/Partials/Page/HeaderSearch.cshtml")
+            @Html.Partial("~/Views/Partials/Page/SocialLinks.cshtml", Model, new ViewDataDictionary { { "extraClass", "c-social--header" } })
+        </div>
     </div>
     <div class="c-header__main u-clearfix">
-		<div class="o-wrap o-wrap--large">
-	        <div class="c-header__left c-header__main__left">
-	            <a href="/" class="c-header__logo-link">
-	                <img src="/assets/img/tmp-logo.svg" alt="@siteName" class="c-header__logo-image">
-	            </a>
-	            <div class="c-header__nav-wrap">
-	                @Html.Partial("~/Views/Partials/Page/MainNavigation.cshtml")
-	            </div>
-	        </div>
-	        <div class="c-header__right c-header__main__right">
-	            @Html.Partial("~/Views/Partials/Page/HeaderCta.cshtml", Model, new ViewDataDictionary { { "extraClass", "c-header__cta--main" } })
-	            <button class="c-header__toggle-menu-button js-toggle" id="toggle-menu" aria-haspopup="true">
-	                <i class="c-header__toggle__icon">
-	                    <span class="c-header__toggle__line"></span>
-	                </i>
-	                <span class="u-hide-text">Menu</span>
-	            </button>
-	        </div>
-		</div>
+        <div class="c-header__left c-header__main__left">
+            <a href="/" class="c-header__logo-link">
+                <img src="/assets/img/tmp-logo.svg" alt="@siteName" class="c-header__logo-image">
+            </a>
+            <div class="c-header__nav-wrap">
+                @Html.Partial("~/Views/Partials/Page/MainNavigation.cshtml")
+            </div>
+        </div>
+        <div class="c-header__right c-header__main__right">
+            @Html.Partial("~/Views/Partials/Page/HeaderCta.cshtml", Model, new ViewDataDictionary { { "extraClass", "c-header__cta--main" } })
+            <button class="c-header__toggle-menu-button js-toggle" id="toggle-menu" aria-haspopup="true">
+                <i class="c-header__toggle__icon">
+                    <span class="c-header__toggle__line"></span>
+                </i>
+                <span class="u-hide-text">Menu</span>
+            </button>
+        </div>
     </div>
 </header>
