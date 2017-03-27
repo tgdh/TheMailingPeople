@@ -1,0 +1,82 @@
+.c-contact{
+	display: inline-block;
+	width: 100%;
+	padding: 10rem 0;
+}
+
+.c-contact__item{
+	width: calc(50% - 3.5rem);
+	float: left;
+	background-color: $light-2;
+	margin-bottom: 7rem;
+	padding: 2.5rem;
+	border-radius: 7px;
+
+	&:nth-child(odd){
+		margin-right: 3.5rem;
+	}
+
+	&:nth-child(even){
+		margin-left: 3.5rem;
+	}
+
+}
+
+.c-contact__address{
+	font-size: 1.9rem;
+	line-height: 3rem;
+	float: left;
+}
+
+.c-contact__link{
+	color: black;
+	border-bottom: 1px solid darken($light-2, 10);
+	padding-bottom: .3rem;
+	font-size: 1.9rem;
+	transition: $ease $speed border-color;
+
+	&:hover,&:focus{
+		color: black;
+		border-bottom-color: darken($light-2, 35);
+	}
+
+}
+
+.c-contact__single-icon{
+	font-size: 3rem;
+	float: left;
+	margin-right: 1.9rem;
+	color: $pri;
+}
+
+.c-contact__social{
+	float: none;
+}
+
+.c-contact__social-wrapper{
+	margin-bottom: 3.5rem;
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+
+}
+
+.c-contact__icon{
+	background-color: $pri;
+	border-radius: 50%;
+	float: left;
+	margin-right: 2rem;
+	color: white;
+	font-size: 1.6rem;
+	padding: .75rem;
+}
+
+.c-contact__map{
+	width: 100%;
+	height: 500px;
+	#map{
+		width: 100%;
+		height: 100%;
+	}
+}

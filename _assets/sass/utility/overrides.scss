@@ -1,0 +1,20 @@
+/* ===========================================================
+
+  # Overrides
+
+=========================================================== */
+
+.u-clearfix {
+	@include clearfix;
+}
+
+.u-hide-text,
+.u-visually-hidden {
+	@include hide-text;
+}
+
+.u-center-content,
+.u-center-text {
+	text-align: center;
+}
+

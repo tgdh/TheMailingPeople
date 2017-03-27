@@ -1,0 +1,20 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    var VideoURL = Model.GetPropertyValue<string>("videoURL");
+	var Title = Model.GetPropertyValue<string>("title");
+	var Image = Model.GetPropertyValue("videoImage");
+	var ImageUrl = Umbraco.Media(Image);
+	var ImageUrlNull = ImageUrl != null ? ImageUrl.Url : "";
+	if(VideoURL == null){
+		return;
+	}
+}
+<div class="c-block__video" style="background-image: url(@ImageUrlNull);">
+	<a href="@VideoURL" class="c-video__link js-popup__video">
+		@if(!string.IsNullOrWhiteSpace(Title))
+		{
+			<h2 class="o-heading u-mega u-uppercase c-heading__centered">@Title</h2>
+		}
+		<span class="c-video__play-btn"></span>
+	</a>
+</div>

@@ -1,0 +1,63 @@
+/* ===========================================================
+
+	# Footer nav
+
+=========================================================== */
+
+.c-nav--footer {
+
+	.c-nav__list {
+		list-style: none;
+	}
+
+	.c-nav__item {
+		margin: 0;
+	}
+
+	.c-nav__link {
+		padding: 1rem 0;
+		padding-top: 0;
+		display: block;
+		transition: color $speed $ease,
+					background $speed $ease;
+		color: inherit;
+
+		&:hover,
+		&:focus {
+			color: $link-colour-hover;
+		}
+	}
+}
+
+@include respond-min( $mq-small ) {
+
+	.c-nav--footer {
+
+		.c-nav__item {
+			display: inline;
+
+			&:last-child {
+				.c-nav__link {
+					padding-right: 0;
+				}
+			}
+
+		}
+
+		.c-nav__link {
+			display: inline-block;
+			padding: 1rem;
+			padding-top: 0;
+			padding-left: 0;
+		}
+	}
+
+}
+
+@include respond-min( $mq-medium ) {
+
+	.c-nav--footer {
+		text-align: right;
+	}
+
+}

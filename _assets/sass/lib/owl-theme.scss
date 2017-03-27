@@ -1,0 +1,92 @@
+.owl-nav {
+
+}
+
+.owl-next,
+.owl-prev {
+	color: $dark-1;
+	position: absolute;
+	top: 50%;
+	padding: 1rem;
+
+	[class^='ico-'],
+	[class*=' ico-'] {
+		font-size: 3rem;
+		vertical-align: middle;
+	}
+}
+
+.owl-next {
+	right: 0;
+	padding-right: 0rem;
+}
+
+.owl-prev {
+	left: 0;
+	padding-left: 0rem;
+}
+
+.owl-dots {
+	margin-top: $line-height * 1.5;
+	text-align: center;
+}
+
+.owl-dot {
+	display: inline-block;
+	zoom: 1;
+	padding: 1.3rem;
+}
+
+.owl-dot span {
+	backface-visibility: visible;
+	background-color: darken($light-2, 5);
+	border-radius: 100%;
+	display: block;
+	height: 1.7rem;
+	transition: opacity 200ms ease;
+	width: 1.7rem;
+	transition: background-color .3s ease;
+}
+
+.owl-dot.active span,
+.owl-dot:hover span {
+	background-color: $red;
+}
+
+
+@include respond-min($mq-medium) {
+
+	.owl-dot {
+		padding: 1.5rem;
+	}
+
+	.owl-dot span {
+		backface-visibility: visible;
+		background-color: darken($light-2, 5);
+		border-radius: 100%;
+		display: block;
+		height: 2.2rem;
+		transition: opacity 200ms ease;
+		width: 2.2rem;
+		transition: background-color .3s ease;
+	}
+
+	.owl-next,
+	.owl-prev {
+		padding: 3rem;
+		padding-top: 0;
+
+		[class^='ico-'],
+		[class*=' ico-'] {
+			font-size: 4.5rem;
+		}
+	}
+
+	.owl-next {
+		padding-right: 0rem;
+	}
+
+	.owl-prev {
+		padding-left: 0rem;
+	}
+}

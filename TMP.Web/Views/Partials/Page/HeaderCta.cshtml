@@ -1,0 +1,26 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    var homePage = Model.Site();
+    var settings = homePage.Descendants("globalSettings").FirstOrDefault();
+
+    if (settings == null)
+    {
+        return;
+    }
+
+    var extraClass = ViewData["extraClass"] ?? "";
+}
+<span class="c-header__search__sticky">
+	<i class="ico-finder"></i>
+</span>
+<div class="c-header__cta @extraClass">
+    <span class="c-header__cta__item c-header__cta__item--phone">
+        <a href="tel:02392377900">
+            <i class="ico-phone"></i>
+            <strong>023 9237 7900</strong>
+        </a>
+    </span>
+    <span class="c-header__cta__item">
+        <a href="mailto:enquiries@themailingpeople.co.uk">enquiries@themailingpeople.co.uk</a>
+    </span>
+</div>

@@ -1,0 +1,8 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    var extraClass = ViewData["extraClass"] ?? "";
+}
+
+<div class="c-header__search @extraClass">
+    <i class="ico-finder"></i>
+</div>

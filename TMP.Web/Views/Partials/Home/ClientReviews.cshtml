@@ -1,0 +1,33 @@
+@using TMP.Core.Models.Components
+@using Umbraco.Web
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    var reviews = Model.GetPropertyValue<IEnumerable<IPublishedContent>>("reviews");
+
+    if (reviews == null)
+    {
+        return;
+    }
+	<div class="c-block__client-review">
+		<div class="o-wrap o-wrap--large">
+			<h2 class="o-heading c-block__headline u-mega u-uppercase">From Our Clients</h2>
+			<div class="c-block__left js-carousel" data-fade="true" data-loop="true" data-nav="true">
+				@foreach (var item in reviews.ToContentSet())
+			    {
+					var ImageId = item.GetPropertyValue("image");
+					var ImageMedia = Umbraco.Media(ImageId);
+					String Client = item.GetPropertyValue<string>("client");
+					String Quote = item.GetPropertyValue<string>("quote");
+					var Link = item.GetPropertyValue("link");
+					<div class="c-client__item">
+						<img src="@ImageMedia.Url" alt="@Client" class="c-client-review__image">
+						<p class="c-client__p">" @Quote "</p>
+						<span class="c-client__name">@Client</span>
+						<a href="@Link" class="c-client__link">View Case Study</a>
+					</div>
+			    }
+			</div>
+			@Html.Partial("~/Views/Partials/Home/Video.cshtml")
+		</div>
+	</div>
+}

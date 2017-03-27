@@ -1,0 +1,90 @@
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    String ContactNumber = Model.Content.GetPropertyValue<string>("contactNumber");
+	String Address = Model.Content.GetPropertyValue<string>("address");
+	String EmailAddress = Model.Content.GetPropertyValue<string>("emailAddress");
+
+	String SocialFacebook = Model.Content.GetPropertyValue<string>("facebookURL");
+	String SocialTwitter = Model.Content.GetPropertyValue<string>("twitterURL");
+	String SocialLinkedIn = Model.Content.GetPropertyValue<string>("linkedInUrl");
+	String GooglePlus = Model.Content.GetPropertyValue<string>("googlePlusUrl");
+	String Instagram = Model.Content.GetPropertyValue<string>("instagramURL");
+}
+
+<div class="c-contact">
+	<div class="o-wrap o-wrap--large u-clearfix">
+		@if(ContactNumber != null){
+			<div class="c-contact__item">
+				<i class="c-contact__single-icon ico-envelop"></i>
+				<a href="tel:@Html.Raw(Html.Encode(ContactNumber).Replace(" ", ""))" class="c-contact__link">@ContactNumber</a>
+			</div>
+		}
+		@if(!string.IsNullOrWhiteSpace(EmailAddress)){
+			<div class="c-contact__item">
+				<i class="c-contact__single-icon"></i>
+				<a href="mailto:@EmailAddress" class="c-contact__link">@EmailAddress</a>
+			</div>
+		}
+		@if(!string.IsNullOrWhiteSpace(Address))
+		{
+			<div class="c-contact__item u-clearfix">
+				<i class="c-contact__single-icon ico-envelop"></i>
+				<p class="c-contact__address">@Html.Raw(Html.Encode(Address).Replace("\n", "<br />"))</p>
+			</div>
+		}
+		<div class="c-contact__item">
+			@if(!string.IsNullOrWhiteSpace(SocialFacebook)){
+				<div class="c-contact__social-wrapper u-clearfix">
+					<i class="c-contact__icon ico-facebook"></i>
+					<a href="@SocialFacebook" class="c-contact__link c-contact__social" target="_blank">@SocialFacebook</a>
+				</div>
+			}
+			@if(!string.IsNullOrWhiteSpace(SocialTwitter)){
+				<div class="c-contact__social-wrapper u-clearfix">
+					<i class="c-contact__icon ico-twitter"></i>
+					<a href="@SocialFacebook" class="c-contact__link c-contact__social" target="_blank">@SocialTwitter</a>
+				</div>
+			}
+			@if(!string.IsNullOrWhiteSpace(SocialLinkedIn)){
+				<div class="c-contact__social-wrapper u-clearfix">
+					<i class="c-contact__icon ico-linkedin"></i>
+					<a href="@SocialFacebook" class="c-contact__link c-contact__social" target="_blank">@SocialLinkedIn</a>
+				</div>
+			}
+			@if(!string.IsNullOrWhiteSpace(GooglePlus)){
+				<div class="c-contact__social-wrapper u-clearfix">
+					<i class="c-contact__icon ico-google"></i>
+					<a href="@SocialFacebook" class="c-contact__link c-contact__social" target="_blank">@GooglePlus</a>
+				</div>
+			}
+			@if(!string.IsNullOrWhiteSpace(Instagram)){
+				<div class="c-contact__social-wrapper u-clearfix">
+					<i class="c-contact__icon ico-instagram"></i>
+					<a href="@SocialFacebook" class="c-contact__link c-contact__social" target="_blank">@Instagram</a>
+				</div>
+			}
+		</div>
+	</div>
+</div>
+<div class="c-contact__map">
+	<div id="map"></div>
+</div>
+
+<script type="text/javascript">
+function initMap() {
+	var uluru = {lat: 50.843588, lng: -1.033552};
+	var map = new google.maps.Map(document.getElementById('map'), {
+	  zoom: 15,
+	  center: uluru,
+	  scrollwheel: false,
+      disableDefaultUI: true,
+	  styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
+	});
+	var marker = new google.maps.Marker({
+	  position: uluru,
+	  map: map
+	});
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnLu6XZV6jhyH-TeLBWzDrlHIgHW7EvCE&callback=initMap"
+type="text/javascript"></script>

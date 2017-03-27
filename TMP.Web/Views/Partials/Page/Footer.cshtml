@@ -1,0 +1,46 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+    var homePage = Model.Site();
+    var settings = homePage.Descendants("globalSettings").FirstOrDefault();
+    var copyright = string.Empty;
+
+    if (settings != null)
+    {
+        copyright = settings.GetPropertyValue<string>("copyrightDisclaimer");
+    }
+}
+
+<footer id="footer" class="c-footer" role="contentinfo">
+    <div class="c-footer__top-wrap">
+        <div class="o-wrap o-wrap--large c-footer__top__inner o-section--small">
+            <div class="c-footer__top__col c-footer__top__col--first">
+                <h2 class="o-heading c-footer__headline u-mega u-uppercase">Contacts</h2>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                <h3>Locations: </h3>
+                <p>Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
+            </div>
+            <div class="c-footer__top__col c-footer__top__col--last">
+                <h2 class="o-heading c-footer__healine c-footer__headline u-mega u-uppercase">Connect with us</h2>
+                <div class="u-space-bottom">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                </div>
+                @Html.Partial("~/Views/Partials/Page/SocialLinks.cshtml", Model, new ViewDataDictionary { { "extraClass", "c-social--footer" } })
+            </div>
+        </div>
+    </div>
+    <div class="c-footer__bottom-wrap">
+        <div class="o-wrap o-wrap--large c-footer__bottom__inner">
+            <div class="c-footer__bottom_col">
+                @if (!string.IsNullOrWhiteSpace(copyright))
+                {
+                    <p class="c-footer__copyright">
+                        @Html.Raw(copyright.Replace("\n", "<br/>"))
+                    </p>
+                }
+            </div>
+            <div class="c-footer__bottom_col">
+                @Html.Partial("~/Views/Partials/Page/FooterNavigation.cshtml")
+            </div>
+        </div>
+    </div>
+</footer>

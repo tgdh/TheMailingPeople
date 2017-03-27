@@ -1,0 +1,75 @@
+/* ===========================================================
+
+	# Buttons
+
+=========================================================== */
+
+.c-button {
+	border-radius: $border-radius;
+	display: block;
+	line-height: 1;
+	font-size: 1.8rem;
+	text-align: center;
+	padding: 1.8rem 8rem;
+	transition: background $speed $ease,
+				border $speed $ease,
+				color $speed $ease;
+
+	&:hover,
+	&:focus {
+		color: $white;
+	}
+
+	&.is-disabled {
+		background: $border-colour;
+		color: $white;
+		cursor: not-allowed;
+
+		&:hover,
+		&:focus {
+			background: $border-colour;
+		}
+	}
+}
+
+.c-button--primary {
+	background-color: $pri;
+	color: $white;
+	border-bottom: .4rem solid darken($pri, 20);
+
+	&:focus,
+	&:hover {
+		background-color: darken($pri, 10);
+		border-bottom: .4rem solid darken($pri, 30);
+	}
+}
+
+.c-button--secondary {
+	background: $sec;
+	color: $white;
+
+	&:hover,
+	&:focus {
+		background: $black;
+	}
+}
+
+@include respond-max( $mq-small ) {
+
+	.c-button + .c-button {
+		margin-top: $line-height;
+	}
+
+}
+
+@include respond-min( $mq-small ) {
+
+	.c-button {
+		display: inline-block;
+	}
+
+	.c-button {
+		padding: 2.2rem 8rem;
+	}
+
+}

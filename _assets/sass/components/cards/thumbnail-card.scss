@@ -1,0 +1,62 @@
+.c-thumbnail__card {
+    position: relative;
+}
+
+.c-thumbnail__card__label {
+    background-color: $dark-1;
+    color: $white;
+    padding: 1.1rem 1.7rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    font-size: 1.5rem;
+}
+
+.c-thumbnail__card__image-wrap {
+    margin-bottom: $line-height;
+    display: block;
+}
+
+.c-thumbnail__card__image {
+}
+
+.c-thumbnail__title {
+    color: $dark-1;
+    padding-bottom: $line-height;
+
+    a {
+        color: inherit;
+    }
+}
+
+.no-enhance {
+
+}
+
+@include respond-max($mq-small) {
+
+    .c-thumbnail__card__image-wrap {
+        margin-bottom: $line-height / 2;
+    }
+
+    .c-thumbnail__card__label {
+        padding: .6rem 1.2rem;
+        position: absolute;
+    }
+
+    .c-thumbnail__title {
+        font-size: 1.6rem;
+        padding-bottom: $line-height / 2;
+    }
+
+}
+
+@include respond-min($mq-medium) {
+
+    .c-thumbnail__card__label {
+        padding: 1.5rem 2.1rem;
+        font-size: 1.7rem;
+    }
+
+}

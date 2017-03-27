@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FADBC756-32AA-4EDB-9416-F1A3590829E6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TMP.Core</RootNamespace>
+    <AssemblyName>TMP.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="businesslogic">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\businesslogic.dll</HintPath>
+    </Reference>
+    <Reference Include="cms">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\cms.dll</HintPath>
+    </Reference>
+    <Reference Include="controls">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\controls.dll</HintPath>
+    </Reference>
+    <Reference Include="interfaces">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLCE4Umbraco">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\SQLCE4Umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\System.Data.SqlServerCe.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TMP.Web\bin\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TidyNet">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\TidyNet.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\umbraco.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Core">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\Umbraco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.DataLayer">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\umbraco.DataLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.editorControls">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\umbraco.editorControls.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.MacroEngines">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\umbraco.MacroEngines.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.providers">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\umbraco.providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Umbraco.Web.UI">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\Umbraco.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UmbracoExamine">
+      <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\UmbracoExamine.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Controllers\ContactFormController.cs" />
+    <Compile Include="Controllers\TwitterFeedController.cs" />
+    <Compile Include="Data\BlogRepository.cs" />
+    <Compile Include="Data\DataHelpers.cs" />
+    <Compile Include="Data\NewsRepository.cs" />
+    <Compile Include="ExtensionMethods\IntExtentionsMethods.cs" />
+    <Compile Include="ExtensionMethods\StringExtensionMethods.cs" />
+    <Compile Include="Models\Components\ArticleViewModel.cs" />
+    <Compile Include="Models\ContactForm.cs" />
+    <Compile Include="Models\Components\FormViewModel.cs" />
+    <Compile Include="Models\Components\GalleryViewModel.cs" />
+    <Compile Include="Models\Components\EmbedViewModel.cs" />
+    <Compile Include="Models\Components\DownloadsViewModel.cs" />
+    <Compile Include="Models\Components\ImageViewModel.cs" />
+    <Compile Include="Models\Interfaces\ICard.cs" />
+    <Compile Include="Models\Components\QuoteViewModel.cs" />
+    <Compile Include="Models\Components\TabListViewModel.cs" />
+    <Compile Include="Models\Components\TabViewModel.cs" />
+    <Compile Include="Models\Components\TextareaViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\MailHelper.cs" />
+    <Compile Include="Utility\Paging.cs" />
+    <Compile Include="Utility\TextHelper.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetPath)" "$(SolutionDir)TMP.Web\bin\" /R /H /Y /D
+xcopy "$(TargetPath)" "$(SolutionDir)_assemblies\" /R /H /Y /D</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

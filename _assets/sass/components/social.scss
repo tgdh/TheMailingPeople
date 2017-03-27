@@ -1,0 +1,161 @@
+/* ===========================================================
+
+	# Social links
+
+=========================================================== */
+
+
+.c-social--header {
+	display: none;
+}
+
+@include respond-min($mq-large) {
+
+    .c-social--header {
+		display: inline-block;
+		text-align: center;
+		padding: .8rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		// float: right;
+
+		.c-social__link {
+			display: inline-block;
+			float: none;
+		}
+	}
+
+}
+
+
+@include respond-min($mq-x-large) {
+
+    .c-social--header {
+		float: none;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+}
+
+.c-social--footer {
+
+	.c-social__link {
+		width: 4.4rem;
+		height: 4.4rem;
+
+		i {
+			line-height: 4.4rem;
+			width: 4.4rem;
+			height: 4.4rem;
+			font-size: 2rem;
+		}
+
+	}
+
+}
+
+.c-social__link {
+	color: $dark-1;
+	font-size: 1.6rem;
+	display: inline-block;
+	background-color: $white;
+	border-radius: 100%;
+	text-align: center;
+	width: 2.4rem;
+	height: 2.4rem;
+	float: left;
+	transition: background $speed $ease,
+				color $speed $ease;
+
+	i {
+		vertical-align: middle;
+		color: inherit;
+		text-align: center;
+		width: 2.4rem;
+		height: 2.4rem;
+		font-size: 1.5rem;
+	}
+
+	&:hover,
+	&:focus {
+		color: $dark-1;
+		background-color: $light-1;
+	}
+
+	+ .c-social__link {
+		margin-left: 2rem;
+	}
+}
+
+.c-social__link--facebook {
+
+	&:hover,
+	&:focus {
+		background-color: $facebook;
+	}
+}
+
+.c-social__link--twitter {
+
+	&:hover,
+	&:focus {
+		background-color: $twitter;
+	}
+}
+
+.c-social__link--google {
+
+	&:hover,
+	&:focus {
+		background-color: $google;
+	}
+}
+
+.c-social__link--instagram {
+
+	&:hover,
+	&:focus {
+		background-color: $instagram;
+	}
+}
+
+.c-social__link--linkedin {
+
+	&:hover,
+	&:focus {
+		background-color: $linkedin;
+	}
+}
+
+.c-social__link--pinterest {
+
+	&:hover,
+	&:focus {
+		background-color: $pinterest;
+	}
+}
+
+.c-social__link--youtube {
+
+	&:hover,
+	&:focus {
+		background-color: $youtube;
+	}
+}
+
+.c-social__link--vimeo {
+
+	&:hover,
+	&:focus {
+		background-color: $vimeo;
+	}
+}
+
+.c-social__link--flcikr {
+
+	&:hover,
+	&:focus {
+		background-color: $flcikr;
+	}
+}

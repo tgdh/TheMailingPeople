@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'tmp';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/assets/fonts/fonts/tmp.eot?qey6ez');
+    src: url('/assets/fonts/fonts/tmp.eot?qey6ez#iefix') format('embedded-opentype'),
+    url('/assets/fonts/fonts/tmp.ttf?qey6ez') format('truetype'),
+    url('/assets/fonts/fonts/tmp.woff?qey6ez') format('woff'),
+    url('/assets/fonts/fonts/tmp.svg?qey6ez#tmp') format('svg');
+}
+
+[class^='ico-'],
+[class*=' ico-'] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'tmp' !important;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    -moz-osx-font-smoothing: grayscale;
+    speak: none;
+    text-transform: none;
+}
+
+.ico-arrow-down:before {
+  content: "\e905";
+}
+
+.ico-arrow-left:before {
+  content: "\e906";
+}
+
+.ico-arrow-right:before {
+  content: "\e907";
+}
+
+.ico-arrow-up:before {
+  content: "\e908";
+}
+
+.ico-finder:before {
+  content: "\e900";
+}
+
+.ico-phone:before {
+  content: "\e901";
+}
+
+.ico-postage:before {
+  content: "\e902";
+}
+
+.ico-postbox:before {
+  content: "\e903";
+}
+
+.ico-printing:before {
+  content: "\e904";
+}
+
+.ico-google:before {
+  content: "\ea8b";
+}
+
+.ico-facebook:before {
+  content: "\ea90";
+}
+
+.ico-instagram:before {
+  content: "\ea92";
+}
+
+.ico-twitter:before {
+  content: "\ea96";
+}
+
+.ico-youtube:before {
+  content: "\ea9d";
+}
+
+.ico-vimeo:before {
+  content: "\eaa0";
+}
+
+.ico-flickr:before {
+  content: "\eaa3";
+}
+
+.ico-linkedin:before {
+  content: "\eaca";
+}
+
+.ico-pinterest:before {
+  content: "\ead1";
+}
+

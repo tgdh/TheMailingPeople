@@ -1,0 +1,43 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+
+}
+
+<div class="o-section o-wrap o-wrap--large">
+    <h2 class="o-heading o-heading--inverted u-mega">Tips & Tricks</h2>
+    <div class="c-card-list js-carousel--featured">
+        @RenderCard("Blog article about Email Marketing and Direct Mail Services", "Tips & Advice", 1202, "c-card-list__item")
+        @RenderCard("Direct Mail partner – why every Marketing Agency should have one", "News", 1203, "c-card-list__item")
+        @RenderCard("Make sure the reader knows what to do next!", "Blog post", 1201, "c-card-list__item")
+        @RenderCard("Blog article about Email Marketing and Direct Mail Services", "Tips & Advice", 1202, "c-card-list__item")
+        @RenderCard("Direct Mail partner – why every Marketing Agency should have one", "News", 1203, "c-card-list__item")
+        @RenderCard("Make sure the reader knows what to do next!", "Blog post", 1201, "c-card-list__item")
+    </div>
+</div>
+
+@helper RenderCard(string title, string label, int imageId, string modifierClass)
+{
+    var image = Umbraco.TypedMedia(imageId);
+    var imageClass = image != null ? "has-image" : "no-image";
+    var link = "#";
+
+    <article class="c-thumbnail__card @imageClass @modifierClass">
+        @if (!string.IsNullOrWhiteSpace(label))
+        {
+            <span class="c-thumbnail__card__label">@label</span>
+        }
+        @if (image != null)
+        {
+            var imageUrl = Url.GetCropUrl(image, cropAlias: "4:3", width: 360, quality: 85, htmlEncode: false, furtherOptions: "&format=jpeg").ToString();
+
+            <a href="@link" class="c-thumbnail__card__image-wrap o-media o-aspect--4-3">
+                <img class="c-thumbnail__card__image" src="@imageUrl" alt="@title"/>
+            </a>
+        }
+        <h3 class="c-thumbnail__title u-delta">
+            <a href="#">@title</a>
+        </h3>
+        <p><a href="@link">Read more ></a></p>
+    </article>
+
+}
