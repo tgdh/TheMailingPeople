@@ -2,7 +2,12 @@
 @inherits UmbracoViewPage<IPublishedContent>
 @{
 	String List = Model.GetPropertyValue<string>("blogPicker");
-	var ListOfBlogs = !string.IsNullOrWhiteSpace(List) ? List.Split(',').Select(mediaId => Umbraco.TypedMedia(mediaId)).ToList() : null;
+	var ListOfBlogs = !string.IsNullOrWhiteSpace(List) ? List.Split(',').Select(mediaId => Umbraco.TypedContent(mediaId)).ToList() : null;
+
+	if(List == null)
+	{
+		return;
+	}
 }
 <div class="c-card-list">
 	<div class="o-section o-wrap o-wrap--large">
@@ -10,23 +15,26 @@
 	    <div class="c-card-list js-carousel--featured js-carousel_many" data-loop="true" data-auto-play="true" data-speed="10000">
 			@foreach (var item in ListOfBlogs)
 	        {
-				@item
+				var headline = item.GetPropertyValue<string>("headline");
+				var catId = item.GetPropertyValue<int>("category");
+				var ItemLink = item.Url;
+				int itemImage = item.GetPropertyValue<int>("featuredImage") != 0 ? item.GetPropertyValue<int>("featuredImage") : 1202;
+				@RenderCard(headline, catId, itemImage, "c-card-list__item", ItemLink)
 	        }
 	    </div>
 	</div>
 </div>
 
-@helper RenderCard(string title, string label, int imageId, string modifierClass)
+@helper RenderCard(string title, int labelId, int imageId, string modifierClass, string link)
 {
     var image = Umbraco.TypedMedia(imageId);
     var imageClass = image != null ? "has-image" : "no-image";
-    var link = "#";
-
+	var label = Umbraco.TypedContent(labelId);
     <article class="c-thumbnail__card @imageClass @modifierClass">
-        @if (!string.IsNullOrWhiteSpace(label))
-        {
-            <span class="c-thumbnail__card__label">@label</span>
-        }
+		@if(label != null)
+		{
+			<span class="c-thumbnail__card__label">@label.Name</span>
+		}
         @if (image != null)
         {
             var imageUrl = Url.GetCropUrl(image, cropAlias: "4:3", width: 360, quality: 85, htmlEncode: false, furtherOptions: "&format=jpeg").ToString();
@@ -36,7 +44,7 @@
             </a>
         }
         <h3 class="c-thumbnail__title u-delta">
-            <a href="#">@title</a>
+            <a href="@link">@title</a>
         </h3>
         <p><a href="@link">Read more ></a></p>
     </article>
