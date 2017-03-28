@@ -1,18 +1,19 @@
+@using TMP.Core.ExtensionMethods
 @inherits UmbracoViewPage<IPublishedContent>
 @{
-
+	String List = Model.GetPropertyValue<string>("blogPicker");
+	var ListOfBlogs = !string.IsNullOrWhiteSpace(List) ? List.Split(',').Select(mediaId => Umbraco.TypedMedia(mediaId)).ToList() : null;
 }
-
-<div class="o-section o-wrap o-wrap--large">
-    <h2 class="o-heading o-heading--inverted u-mega">Tips & Tricks</h2>
-    <div class="c-card-list js-carousel--featured js-carousel_many">
-        @RenderCard("Blog article about Email Marketing and Direct Mail Services", "Tips & Advice", 1202, "c-card-list__item")
-        @RenderCard("Direct Mail partner � why every Marketing Agency should have one", "News", 1203, "c-card-list__item")
-        @RenderCard("Make sure the reader knows what to do next!", "Blog post", 1201, "c-card-list__item")
-        @RenderCard("Blog article about Email Marketing and Direct Mail Services", "Tips & Advice", 1202, "c-card-list__item")
-        @RenderCard("Direct Mail partner � why every Marketing Agency should have one", "News", 1203, "c-card-list__item")
-        @RenderCard("Make sure the reader knows what to do next!", "Blog post", 1201, "c-card-list__item")
-    </div>
+<div class="c-card-list">
+	<div class="o-section o-wrap o-wrap--large">
+	    <h2 class="o-heading o-heading--inverted u-mega">Tips & Tricks</h2>
+	    <div class="c-card-list js-carousel--featured js-carousel_many" data-loop="true" data-auto-play="true" data-speed="10000">
+			@foreach (var item in ListOfBlogs)
+	        {
+				@item
+	        }
+	    </div>
+	</div>
 </div>
 
 @helper RenderCard(string title, string label, int imageId, string modifierClass)
