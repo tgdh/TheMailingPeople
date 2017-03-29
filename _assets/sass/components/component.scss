@@ -1,0 +1,26 @@
+.c-component{
+	padding-bottom: 5rem;
+	p{
+		line-height: 3rem;
+	}
+	.o-heading::after{
+		background-color: $black;
+	}
+	.c-small-heading{
+		font-weight: bold;
+		border-bottom: 1px solid black;
+		display: inline-block;
+		padding: 0;
+		margin-bottom: 1rem;
+		margin-top: 2rem;
+	}
+	img{
+		height: auto !important;
+	}
+	ul{
+		margin-top: 1.4rem;
+	}
+	a{
+		border-bottom: 1px solid $pri;
+	}
+}
