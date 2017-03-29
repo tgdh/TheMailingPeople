@@ -1,0 +1,50 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+	var PageTitle = !string.IsNullOrWhiteSpace(Model.GetPropertyValue<string>("pageTitle")) ? Model.GetPropertyValue<string>("pageTitle") : "Test";
+	var FirstPara = Model.GetPropertyValue<string>("paragraph");
+	var PageIcon = Model.GetPropertyValue("pageIcon");
+	var Image = Umbraco.Media(PageIcon).Url;
+}
+<div class="c-section_wrapper o-wrap o-wrap--large u-clearfix">
+	<div class="c-service__page-list">
+		<ul class="c-services__list">
+			<li class="c-services__li">
+				<a href="#" class="c-services__link u-delta">Bespoke envelopes</a>
+			</li>
+			<li class="c-services__li">
+				<a href="#" class="c-services__link u-delta">Bespoke envelopes</a>
+			</li>
+			<li class="c-services__li">
+				<a href="#" class="c-services__link u-delta is-active">Bespoke envelopes</a>
+			</li>
+			<li class="c-services__li">
+				<a href="#" class="c-services__link u-delta">Bespoke envelopes</a>
+			</li>
+			<li class="c-services__li">
+				<a href="#" class="c-services__link u-delta">Bespoke envelopes</a>
+			</li>
+			<li class="c-services__li">
+				<a href="#" class="c-services__link u-delta">Bespoke envelopes</a>
+			</li>
+			<li class="c-services__li">
+				<a href="#" class="c-services__link u-delta">Bespoke envelopes</a>
+			</li>
+			<li class="c-services__li">
+				<a href="#" class="c-services__link u-delta">Bespoke envelopes</a>
+			</li>
+		</ul>
+	</div>
+	<div class="c-service__content u-clearfix">
+		<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@PageTitle</h2>
+		@if(Image != null){
+			<img src="@Image?width=150" class="c-section__pageIcon">
+		}
+		@if(!string.IsNullOrWhiteSpace(FirstPara))
+		{
+			<p class="c-section__first-para"><strong>@FirstPara</strong></p>
+		}
+		<div class="c-section__page-components">
+			@Html.Partial("~/Views/Partials/Page/Components.cshtml")
+		</div>
+	</div>
+</div>

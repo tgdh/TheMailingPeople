@@ -1,0 +1,10 @@
+@using TMP.Core.Models.Components
+@inherits UmbracoViewPage<VideoViewModel>
+@{
+	var video = Model.VideoUrl;
+	var title = Model.Title;
+}
+<h1>
+@video<br
+@title
+</h1>
