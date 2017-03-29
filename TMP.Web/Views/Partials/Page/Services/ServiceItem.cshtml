@@ -38,7 +38,7 @@
 	</div>
 	<div class="c-service__content u-clearfix">
 		<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@PageTitle</h2>
-		@if(Image != null){
+		@if(Image != null && Image != ""){
 			<img src="@Image?width=150" class="c-section__pageIcon">
 		}
 		@if(!string.IsNullOrWhiteSpace(FirstPara))
