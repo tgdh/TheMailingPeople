@@ -325,3 +325,26 @@
 	left: calc(50% - 4rem);
 	transition: $ease $speed transform;
 }
+
+.c-video{
+	margin: 4rem 0;
+}
+
+.c-video__subpage{
+	height: 42.5rem;
+}
+
+.c-video__top-title{
+	padding: 0;
+	margin: 0;
+	border-bottom: 1px solid lighten($dark-1,50);
+	padding-bottom: .2rem;
+	display: inline-block;
+	margin-bottom: 2rem;
+	a{
+		color: $dark-1;
+		&:hover,&:focus{
+			color: $dark-1;
+		}
+	}
+}

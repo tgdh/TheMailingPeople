@@ -139,6 +139,7 @@
                 {
                     Title = item.GetPropertyValue<string>("videoTitle"),
                     VideoUrl = item.GetPropertyValue<string>("videoURL"),
+                    Image = item.GetPropertyValue<string>("videoImage")
                 };
 
                 @Html.Partial("~/Views/Partials/PageComponents/Video.cshtml", video)
