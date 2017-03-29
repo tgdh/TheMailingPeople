@@ -1,122 +1,75 @@
-/* ===========================================================
-
-	# Accordion
-=========================================================== */
-
-.enhance {
-
-	.c-accordion__panel {
-		transition: height $speed $ease,
-					visibility $speed $ease;
-
-		&[aria-hidden="true"] {
-			visibility: hidden;
-			height: 0;
+.c-accordion_item{
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 2rem;
+	.c-accordion__content{
+		max-height: 0;
+		overflow: hidden;
+		transition: $ease $speed max-height;
+	}
+	&.js-active{
+		.c-accordion__content{
+			max-height: 500px;
 		}
-
-		&[aria-hidden="false"] {
-			visibility: visible;
+		.c-accordion__button{
+			background-color: $pri;
+		}
+		.plus{
+			transform: scale(0);
+		}
+		.minus{
+			transform: scale(1);
+			&::before{
+				background-color: white;
+			}
 		}
 	}
-
-	.c-accordion--is-ready {
-
-		.c-accordion__panel {
-			overflow: hidden;
-
-		}
-
-		.c-accordion__header {
-			cursor: pointer;
-		}
-
+}
+.c-accordion__button{
+	border: 1px solid lighten($light-1,40);
+	width: 60px;
+	height: 60px;
+	border-radius: 5px;
+	display: block;
+	float: left;
+	cursor: pointer;
+	position: relative;
+	transition: $ease $speed background-color;
+	.plus,.minus{
+		transition: $ease $speed all;
+		float: left;
 	}
-
-
-	// style
-
-	.c-accordion__header {
-		font-size: 1.8rem;
-		border-top: 1px solid $border-colour;
-		border-bottom: 1px solid $border-colour;
-		margin-top: -1px;
-		padding: 2rem 0 2.1rem;
+	.plus{
+		transform: scale(1);
 		display: block;
 		position: relative;
-
-		&:first-of-type {
-			border-top: 0;
-		}
-
-		&:before,
-		&:after {
+		left: calc(50% - 9px);
+		top: calc(50% - 1px);
+		&::before,&::after{
 			content: "";
+			position: relative;
+			width: 18px;
+			height: 2px;
+			background-color: $light-1;
 			display: block;
-			background-color: $border-colour;
-			position: absolute;
-			top: 50%;
-			opacity: 0;
-			transition: opacity $speed $ease,
-						background $speed $ease;
 		}
-
-		&:before {
-			width: 1.8rem;
-			height: .4rem;
-			right: 0;
-			margin-top: -.2rem;
+		&::after{
+			transform: rotate(90deg);
+			margin-top: -2px;
 		}
-
-		&:after {
-			width: .4rem;
-			height: 1.8rem;
-			right: .7rem;
-			margin-top: -.9rem;
-
-		}
-
-		&:hover {
-
-			&:before,
-			&:after {
-				background-color: darken( $border-colour, 5 );
-			}
-
-		}
-
-
-		&:focus {
-
-			&:before,
-			&:after {
-				background-color: $pri
-			}
-
-		}
-
-		&[aria-selected="false"],
-		&[aria-selected="true"] {
-
-			&:before,
-			&:after {
-				opacity: 1;
-			}
-
-		}
-
-		&[aria-selected="true"] {
-
-			&:after {
-				opacity: 0;
-			}
-
-		}
-
 	}
-
-	.c-accordion__panel-inner {
-		padding: 2rem 0;
+	.minus{
+		display: block;
+		position: absolute;
+		left: calc(50% - 9px);
+		top: calc(50% - 1px);
+		&::before{
+			content: "";
+			position: relative;
+			width: 18px;
+			height: 2px;
+			background-color: $light-1;
+			display: block;
+		}
 	}
-
-
 }
