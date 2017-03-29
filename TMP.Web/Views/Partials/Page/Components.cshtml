@@ -134,6 +134,15 @@
 
                 @Html.Partial("~/Views/Partials/PageComponents/Form.cshtml", form)
                 break;
+            case "video":
+                var video = new VideoViewModel
+                {
+                    Title = item.GetPropertyValue<string>("videoTitle"),
+                    VideoUrl = item.GetPropertyValue<string>("videoURL"),
+                };
+
+                @Html.Partial("~/Views/Partials/PageComponents/Video.cshtml", video)
+                break;
             default:
                 @NoResult(item)
                 break;

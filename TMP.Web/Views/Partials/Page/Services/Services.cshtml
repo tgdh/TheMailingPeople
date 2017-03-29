@@ -1,3 +1,43 @@
-<div class="c-services">
-	<h1>Services</h1>
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+	String List = Model.GetPropertyValue<string>("featuredServices");
+	var ListOfItems = !string.IsNullOrWhiteSpace(List) ? List.Split(',').Select(mediaId => Umbraco.TypedContent(mediaId)).ToList() : null;
+	if(List == null)
+	{
+		return;
+	}
+}
+
+<div class="c-service">
+	<div class="o-wrap o-wrap--large c-service-flex-container">
+		@foreach(var item in ListOfItems)
+		{
+			if(item != null)
+			{
+				var image = item.GetPropertyValue("pageIcon");
+				var imageUrl = Umbraco.Media(image);
+				var pageTitle = item.GetPropertyValue<string>("pageTitle");
+				var pageText = item.GetPropertyValue<string>("paragraph");
+				var pageTitleNull = !string.IsNullOrWhiteSpace(pageTitle) ? pageTitle: item.Name;
+				var altText = !string.IsNullOrWhiteSpace(pageTitle) ? pageTitle : "Service Page Icon";
+				<a class="c-services__item" href="@item.Url">
+					@if(image != null)
+					{
+						<div class="c-services__image-wrapper">
+							<img src="@imageUrl.Url?width=100" alt="@altText" class="c-services__image">
+						</div>
+					}
+					@if(pageTitleNull != null)
+					{
+						<h2 class="c-services__title u-beta">@pageTitleNull</h2>
+					}
+					@if(pageText != null)
+					{
+						<p class="c-services__paragraph">@pageText</p>
+					}
+					<span class="c-services__read-more">Read More ></span>
+				</a>
+			}
+		}
+	</div>
 </div>
