@@ -1,37 +1,22 @@
 @inherits UmbracoViewPage<IPublishedContent>
 @{
-	var PageTitle = !string.IsNullOrWhiteSpace(Model.GetPropertyValue<string>("pageTitle")) ? Model.GetPropertyValue<string>("pageTitle") : "Test";
+	var PageTitle = !string.IsNullOrWhiteSpace(Model.GetPropertyValue<string>("pageTitle")) ? Model.GetPropertyValue<string>("pageTitle") : Model.Name;
 	var FirstPara = Model.GetPropertyValue<string>("paragraph");
 	var PageIcon = Model.GetPropertyValue("pageIcon");
 	var Image = Umbraco.Media(PageIcon).Url;
+	var CurrentPage = Model.Id;
+	var Parent = Model.Parent.Children.Where("Visible");
 }
+
 <div class="c-section_wrapper o-wrap o-wrap--large u-clearfix">
 	<div class="c-service__page-list">
 		<ul class="c-services__list">
-			<li class="c-services__li">
-				<a href="#" class="c-services__link u-delta">Bespoke envelopes</a>
-			</li>
-			<li class="c-services__li">
-				<a href="#" class="c-services__link u-delta">Bespoke envelopes</a>
-			</li>
-			<li class="c-services__li">
-				<a href="#" class="c-services__link u-delta is-active">Bespoke envelopes</a>
-			</li>
-			<li class="c-services__li">
-				<a href="#" class="c-services__link u-delta">Bespoke envelopes</a>
-			</li>
-			<li class="c-services__li">
-				<a href="#" class="c-services__link u-delta">Bespoke envelopes</a>
-			</li>
-			<li class="c-services__li">
-				<a href="#" class="c-services__link u-delta">Bespoke envelopes</a>
-			</li>
-			<li class="c-services__li">
-				<a href="#" class="c-services__link u-delta">Bespoke envelopes</a>
-			</li>
-			<li class="c-services__li">
-				<a href="#" class="c-services__link u-delta">Bespoke envelopes</a>
-			</li>
+			@foreach(var item in Parent){
+				var active = item.Id == CurrentPage ? "is-active" : "";
+				<li class="c-services__li">
+					<a href="@item.Url" class="c-services__link u-delta @active">@item.Name</a>
+				</li>
+			}
 		</ul>
 	</div>
 	<div class="c-service__content u-clearfix">
