@@ -6,6 +6,15 @@
 	var Image = Umbraco.Media(PageIcon).Url;
 	var CurrentPage = Model.Id;
 	var Parent = Model.Parent.Children.Where("Visible");
+
+	var homePage = Model.Site();
+    var settings = homePage.Descendants("globalSettings").FirstOrDefault();
+    var contactNumber = string.Empty;
+
+    if (settings != null)
+    {
+        contactNumber = settings.GetPropertyValue<string>("contactNumber");
+    }
 }
 
 <div class="c-section_wrapper o-wrap o-wrap--large u-clearfix">
@@ -18,6 +27,14 @@
 				</li>
 			}
 		</ul>
+		<div class="c-service__need-help">
+			<h2 class="u-gamma c-nee-help__title">Need help with Direct Mail?</h2>
+			<img src="/assets/img/steve/walking.png" alt="Steve Logo" class="c-need-help__logo">
+			@if(!string.IsNullOrWhiteSpace(contactNumber))
+			{
+				<a href="tel:@contactNumber.Replace(" ","")" class="c-need-help__link">Call us on <span>@contactNumber</span></a>
+			}
+		</div>
 	</div>
 	<div class="c-service__content u-clearfix">
 		<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@PageTitle</h2>

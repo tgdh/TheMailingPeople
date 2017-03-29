@@ -164,7 +164,38 @@
 	float: right;
 }
 
-
 .c-section__page-components{
 	display: inline-block;
+}
+
+.c-service__need-help{
+	background-color: $light-2;
+	border-radius: 6px;
+	margin-top: 6rem;
+	width: 100%;
+	padding: 5rem 4rem;
+	text-align: center;
+	*{
+		color: $dark-1;
+	}
+}
+
+.c-need-help__logo{
+	width: 75%;
+	margin-top: 2rem;
+}
+
+.c-need-help__link{
+	display: inline-block;
+	font-size: 2.25rem;
+	margin-top: 4rem;
+	span{
+		font-weight: bold;
+		display: block;
+		margin-top: 1rem;
+	}
+	&:focus,&:hover{
+		color: black;
+
+	}
 }
