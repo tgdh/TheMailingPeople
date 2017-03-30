@@ -1,6 +1,11 @@
 var Accordion = (function ($) {
 	var init = function() {
-        console.log('test');
+        $(document).ready(function(){
+			$('.c-accordion__button').click(function(){
+				$('.c-accordion_item').removeClass('js-active');
+				$(this).parent('.c-accordion_item').toggleClass('js-active');
+			});
+		});
 	};
 
 	return {
