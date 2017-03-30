@@ -64,6 +64,7 @@
 		$window.Carousel.init_many($('.js-carousel_many'));
 		$window.PopupMagic.init();
 		$window.Accordion.init();
+		$window.Tabs.init();
         //		MQ.init(breakpoints);
     }
 
