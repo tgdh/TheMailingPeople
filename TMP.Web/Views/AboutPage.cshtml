@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = "Master.cshtml";
+}
+
+<main class="o-page__inner" role="main">
+	<div class="c-page__wrapper">
+	    @Html.Partial("~/Views/Partials/Page/Headline.cshtml")
+	    <div class="o-section s-free-content">
+			@Html.Partial("~/Views/Partials/Page/Staff/Staff.cshtml")
+	    </div>
+		@Html.Partial("~/Views/Partials/Page/Newsletter.cshtml")
+		@Html.Partial("~/Views/Partials/Page/Accreditations.cshtml")
+	</div>
+</main>

@@ -1,0 +1,56 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+	var Homepage = Model.Site();
+	var Parent = Model.Children.Where("Visible");
+}
+
+<div class="c-staff-members">
+	<div class="o-section o-wrap o-wrap--large u-clearfix">
+		<h2 class="o-heading o-heading--inverted u-mega">Our Team</h2>
+		<div class="c-staff_wrapper">
+			@foreach(var StaffMember in Parent){
+				var StaffImageId = StaffMember.GetPropertyValue<int>("staffImage");
+				var StaffName = StaffMember.GetPropertyValue<string>("staffName");
+				var StaffJobTitle = StaffMember.GetPropertyValue<string>("staffJobTitle");
+				var StaffLinkedIn = StaffMember.GetPropertyValue<string>("staffLinkedInURL");
+				if(StaffImageId != null)
+				{
+					<div class="c-block__three-two-one">
+						@if(!string.IsNullOrWhiteSpace(StaffLinkedIn))
+						{
+							<a href="@StaffLinkedIn" target="_blank" class="c-staff__link">
+								@HasLink(StaffImageId, StaffJobTitle, StaffName, StaffLinkedIn)
+								<p class="c-staff__linkedin">View on LinkedIn</p>
+							</a>
+						}
+						else{
+							@HasLink(StaffImageId, StaffJobTitle, StaffName, null)
+						}
+					</div>
+				}
+			}
+		</div>
+	</div>
+</div>
+
+@helper HasLink(int StaffImageId, string StaffJobTitle, string StaffName, string StaffLinkedIn)
+{
+	var Image = Umbraco.Media(StaffImageId);
+	if(StaffLinkedIn != null){
+		<div class="c-staff__image-has-link">
+			<span class="c_staff__circle-overlay"></span>
+			<img src="@Image.Url" alt="Staff Image" class="c-staff__image">
+		</div>
+	}
+	else{
+		<img src="@Image.Url" alt="Staff Image" class="c-staff__image">
+	}
+	if(!string.IsNullOrWhiteSpace(StaffName))
+	{
+		<h2 class="u-delta c-staff__heading">@StaffName</h2>
+	}
+	if(!string.IsNullOrWhiteSpace(StaffJobTitle))
+	{
+		<p class="c-staff__jobtitle">@StaffJobTitle</p>
+	}
+}
