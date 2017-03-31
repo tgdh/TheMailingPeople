@@ -19,32 +19,36 @@
 
 <div class="c-section_wrapper o-wrap o-wrap--large u-clearfix">
 	<div class="c-service__page-list">
-		<ul class="c-services__list">
-			@foreach(var item in Parent){
-				var active = item.Id == CurrentPage ? "is-active" : "";
-				<li class="c-services__li">
-					<a href="@item.Url" class="c-services__link u-delta @active">@item.Name</a>
-				</li>
-			}
-		</ul>
-		<div class="c-service__need-help">
-			<h2 class="u-gamma c-nee-help__title">Need help with Direct Mail?</h2>
-			<img src="/assets/img/steve/walking.png" alt="Steve Logo" class="c-need-help__logo">
-			@if(!string.IsNullOrWhiteSpace(contactNumber))
-			{
-				<a href="tel:@contactNumber.Replace(" ","")" class="c-need-help__link">Call us on <span>@contactNumber</span></a>
-			}
+		<div class="o-wrap o-wrap--medium">
+			<ul class="c-services__list">
+				@foreach(var item in Parent){
+					var active = item.Id == CurrentPage ? "is-active" : "";
+					<li class="c-services__li">
+						<a href="@item.Url" class="c-services__link u-delta @active">@item.Name</a>
+					</li>
+				}
+			</ul>
+			<div class="c-service__need-help">
+				<h2 class="u-gamma c-nee-help__title">Need help with Direct Mail?</h2>
+				<img src="/assets/img/steve/walking.png" alt="Steve Logo" class="c-need-help__logo">
+				@if(!string.IsNullOrWhiteSpace(contactNumber))
+				{
+					<a href="tel:@contactNumber.Replace(" ","")" class="c-need-help__link">Call us on <span>@contactNumber</span></a>
+				}
+			</div>
 		</div>
 	</div>
 	<div class="c-service__content u-clearfix">
-		<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@PageTitle</h2>
-		@if(Image != null && Image != ""){
-			<img src="@Image?width=150" class="c-section__pageIcon">
-		}
-		@if(!string.IsNullOrWhiteSpace(FirstPara))
-		{
-			<p class="c-section__first-para"><strong>@FirstPara</strong></p>
-		}
+		<div class="o-wrap o-wrap--medium">
+			<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@PageTitle</h2>
+			@if(Image != null && Image != ""){
+				<img src="@Image?width=150" class="c-section__pageIcon">
+			}
+			@if(!string.IsNullOrWhiteSpace(FirstPara))
+			{
+				<p class="c-section__first-para"><strong>@FirstPara</strong></p>
+			}
+		</div>
 		<div class="c-section__page-components">
 			@Html.Partial("~/Views/Partials/Page/Components.cshtml")
 		</div>
