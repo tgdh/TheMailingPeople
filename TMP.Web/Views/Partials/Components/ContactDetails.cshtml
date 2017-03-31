@@ -15,20 +15,20 @@
 	<div class="o-wrap o-wrap--large u-clearfix">
 		@if(ContactNumber != null){
 			<div class="c-contact__item">
-				<i class="c-contact__single-icon ico-envelop"></i>
+				<i class="c-contact__single-icon ico-phone"></i>
 				<a href="tel:@Html.Raw(Html.Encode(ContactNumber).Replace(" ", ""))" class="c-contact__link">@ContactNumber</a>
 			</div>
 		}
 		@if(!string.IsNullOrWhiteSpace(EmailAddress)){
 			<div class="c-contact__item">
-				<i class="c-contact__single-icon"></i>
+				<i class="c-contact__single-icon ico-envelop"></i>
 				<a href="mailto:@EmailAddress" class="c-contact__link">@EmailAddress</a>
 			</div>
 		}
 		@if(!string.IsNullOrWhiteSpace(Address))
 		{
 			<div class="c-contact__item u-clearfix">
-				<i class="c-contact__single-icon ico-envelop"></i>
+				<i class="c-contact__single-icon ico-home"></i>
 				<p class="c-contact__address">@Html.Raw(Html.Encode(Address).Replace("\n", "<br />"))</p>
 			</div>
 		}
@@ -53,7 +53,7 @@
 			}
 			@if(!string.IsNullOrWhiteSpace(GooglePlus)){
 				<div class="c-contact__social-wrapper u-clearfix">
-					<i class="c-contact__icon ico-google"></i>
+					<i class="c-contact__icon ico-google-plus"></i>
 					<a href="@SocialFacebook" class="c-contact__link c-contact__social" target="_blank">@GooglePlus</a>
 				</div>
 			}
