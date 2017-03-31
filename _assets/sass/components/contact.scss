@@ -33,11 +33,27 @@
 	border-bottom: 1px solid darken($light-2, 10);
 	padding-bottom: .3rem;
 	font-size: 1.9rem;
-	transition: $ease $speed border-color;
+	transition: $ease 1s border-color;
+	position: relative;
 
 	&:hover,&:focus{
 		color: black;
 		border-bottom-color: darken($light-2, 35);
+		&::after{
+			width: 100%;
+		}
+	}
+
+	&::after{
+		transition: $ease $speed width;
+		content: "";
+		width: 0;
+		height: 1px;
+		background-color: darken($light-2, 25);
+		display: block;
+		position: absolute;
+		bottom: -1px;
+		right: 0;
 	}
 
 }
