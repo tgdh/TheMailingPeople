@@ -97,6 +97,9 @@
 
 .c-section_wrapper{
 	margin: 11rem auto 10rem auto;
+	.o-heading strong{
+		font-weight: normal;
+	}
 	.o-heading::after{
 		background-color: black;
 	}
