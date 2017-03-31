@@ -1,0 +1,126 @@
+.c-blogs__aside{
+	width: 350px;
+	float: left;
+}
+
+.c-blogs{
+	float: left;
+	width: calc(100% - 350px);
+	box-sizing: border-box;
+	padding-left: 100px;
+}
+
+.c-pod{
+	margin-bottom: 3rem;
+	background-color: $light-2;
+	padding: 3rem;
+	.js-select{
+		background-color: white;
+		cursor: pointer;
+		border-radius: 0;
+		padding: .5rem;
+		&:focus{
+			border-color: black;
+		}
+	}
+}
+
+.c-pod__title{
+	padding-bottom: 2rem;
+}
+
+.c-link-list__link{
+	color: black;
+	border-bottom: 1px solid darken($light-2,10);
+	margin-bottom: .5rem;
+	display: inline-block;
+	position: relative;
+	&::after{
+		position: absolute;
+		left: 0;
+		bottom: -1px;
+		background-color: darken($light-2, 25);
+		width: 0;
+		height: 1px;
+		content: "";
+		transition: $ease .5s width;
+	}
+	&:focus,&:hover{
+		color: black;
+		&::after{
+			width: 100%;
+		}
+	}
+}
+
+.c-listing--article{
+	padding: 3rem;
+	margin-bottom: 3rem;
+	background-color: $light-2;
+	display: inline-block;
+	width: 100%;
+}
+
+.c-blogs__pagination{
+	.c-pagination__link{
+		color: black;
+		border: 3px solid $light-2;
+		padding: 1rem;
+		min-width: 4.6rem;
+		display: inline-block;
+		text-align: center;
+		margin-right: 1rem;
+		font-size: 1.8rem;
+		font-weight: bold;
+		&.is-active{
+			background-color: $light-2;
+		}
+	}
+}
+
+.c-listing__content{
+	.c-meta-data__item{
+		.c-meta-data__item__item{
+			float: left;
+			margin: 0 2rem 0 0;
+			padding: 0 0 .2rem 0;
+			color: black;
+			border-bottom: 1px solid darken($light-2,10);
+			height: 27px;
+			position: relative;
+			&:hover,&:focus{
+				&::after{
+					width: 100%;
+				}
+			}
+			&::after{
+				position: absolute;
+				left: 0;
+				bottom: -1px;
+				background-color: darken($light-2, 25);
+				width: 0;
+				height: 1px;
+				content: "";
+				transition: $ease .5s width;
+			}
+		}
+	}
+}
+.flexbox{
+	.c-listing__content{
+		.c-meta-data__item__item{
+		    display: flex;
+		    align-items: flex-end;
+		}
+	}
+}
+.no-flexbox{
+	.c-listing__content{
+		.c-meta-data__item__item{
+			time{
+				position: relative;
+				top: -4px;
+			}
+		}
+	}
+}
