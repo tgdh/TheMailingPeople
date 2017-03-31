@@ -15,11 +15,14 @@
 	    <div class="c-card-list js-carousel--featured js-carousel_many" data-loop="true" data-auto-play="true" data-speed="10000">
 			@foreach (var item in ListOfBlogs)
 	        {
-				var headline = item.GetPropertyValue<string>("headline");
-				var catId = item.GetPropertyValue<int>("category");
-				var ItemLink = item.Url;
-				int itemImage = item.GetPropertyValue<int>("featuredImage") != 0 ? item.GetPropertyValue<int>("featuredImage") : 1202;
-				@RenderCard(headline, catId, itemImage, "c-card-list__item", ItemLink)
+				if(item != null)
+				{
+					var headline = item.GetPropertyValue<string>("headline");
+					var catId = item.GetPropertyValue<int>("category");
+					var ItemLink = item.Url;
+					int itemImage = item.GetPropertyValue<int>("featuredImage") != 0 ? item.GetPropertyValue<int>("featuredImage") : 1202;
+					@RenderCard(headline, catId, itemImage, "c-card-list__item", ItemLink)
+				}
 	        }
 	    </div>
 	</div>
@@ -43,10 +46,16 @@
                 <img class="c-thumbnail__card__image" src="@imageUrl" alt="@title"/>
             </a>
         }
-        <h3 class="c-thumbnail__title u-delta">
-            <a href="@link">@title</a>
-        </h3>
-        <p><a href="@link">Read more ></a></p>
+		@if(!string.IsNullOrWhiteSpace(title))
+		{
+	        <h3 class="c-thumbnail__title u-delta">
+	            <a href="@link">@title</a>
+	        </h3>
+		}
+		@if(link != null)
+		{
+			<p><a href="@link">Read more ></a></p>
+		}
     </article>
 
 }
