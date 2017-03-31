@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'tmp';
-  src:  url('fonts/tmp.eot?zb7ihs');
-  src:  url('fonts/tmp.eot?zb7ihs#iefix') format('embedded-opentype'),
-    url('fonts/tmp.ttf?zb7ihs') format('truetype'),
-    url('fonts/tmp.woff?zb7ihs') format('woff'),
-    url('fonts/tmp.svg?zb7ihs#tmp') format('svg');
+  src:  url('fonts/tmp.eot?j9wleh');
+  src:  url('fonts/tmp.eot?j9wleh#iefix') format('embedded-opentype'),
+    url('fonts/tmp.ttf?j9wleh') format('truetype'),
+    url('fonts/tmp.woff?j9wleh') format('woff'),
+    url('fonts/tmp.svg?j9wleh#tmp') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -35,6 +35,9 @@
 }
 .ico-printing:before {
   content: "\e954";
+}
+.ico-search:before {
+  content: "\e986";
 }
 .ico-postage:before {
   content: "\e9b0";
