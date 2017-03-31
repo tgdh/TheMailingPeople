@@ -520,3 +520,26 @@
 	}
 
 }
+
+.c-block__page-content{
+	.o-heading{
+		&::after{
+			background-color: black;
+		}
+	}
+}
+
+.c-block__page__content{
+	&.has--quote{
+		width: calc(100% - 400px);
+		float: left;
+	}
+}
+
+@include respond-max($mq-x-large){
+	.c-block__page__content{
+		&.has--quote{
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,22 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+	var PageContent = Model.GetPropertyValue<IHtmlString>("pageTextarea");
+	var PageQuote = Model.GetPropertyValue<string>("pageQuote");
+	var QuoteCheck = !string.IsNullOrWhiteSpace(PageQuote) ? "has--quote" : "";
+}
+
+<div class="c-block__page-content">
+	<div class="o-section o-wrap o-wrap--large u-clearfix">
+		<div class="c-block__page__content @QuoteCheck">
+			@if(PageContent != null){
+				@PageContent
+			}
+		</div>
+		@if(!string.IsNullOrWhiteSpace(PageQuote))
+		{
+			<div class="c-quote__page-quote">
+				@Html.Partial("~/Views/Partials/Page/Staff/Quote.cshtml")
+			</div>
+		}
+	</div>
+</div>

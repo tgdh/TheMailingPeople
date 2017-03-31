@@ -29,3 +29,22 @@
 		margin-top: 1rem;
 	}
 }
+
+.c-quote__page-quote{
+	float: right;
+	width: 350px;
+	background-color: $light-2;
+	padding: 3rem;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.c-quote__title{
+	text-transform: uppercase;
+}
+
+@include respond-max($mq-x-large){
+	.c-quote__page-quote{
+		display: none;
+	}
+}
