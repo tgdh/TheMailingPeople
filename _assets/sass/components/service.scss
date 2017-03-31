@@ -94,108 +94,129 @@
 	}
 }
 
+.c-section_wrapper{
+	margin: 11rem auto 10rem auto;
+	.o-heading::after{
+		background-color: black;
+	}
+}
 
-.c-service__page-list{
-	width: 35rem;
-	float: left;
+.c-section__first-para{
+	margin-bottom: 3rem;
 }
 
 .c-services__list{
 	border-radius: 6px;
 	overflow: hidden;
-	background-color: darken($pri,10);
+	margin-bottom: 6rem;
 }
 
 .c-services__li{
-	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	list-style-type: none;
+	&:last-child{
+		.c-services__link{
+			border-bottom: none;
+		}
+	}
 }
 
 .c-services__link{
-	background-color: $pri;
-	display: block;
-	padding: 3rem;
 	color: white;
-	font-weight: bold;
-	transition: $ease $speed color,
-				$ease $speed background-color;
-	margin-bottom: 1px;
-	&:hover,&:focus{
-		background-color: white;
-		color: $dark-2;
-	}
+	display: block;
+	padding: 2rem 3rem;
+	border-bottom: 1px solid darken($pri,10);
+	background-color: $pri;
+	transition: $ease $speed background-color,
+				$ease $speed color;
+
 	&.is-active{
-		background-color: white;
-		color: $dark-2;
+		background-color: $light-2;
+		color: $dark-1;
+		border-bottom: none;
 	}
-}
 
-.c-section_wrapper{
-	margin: 10rem auto;
-}
-
-.c-service__content{
-	float: left;
-	width: calc(100% - 35rem);
-	padding-left: 10rem;
-	box-sizing: border-box;
-}
-
-.c-service__title{
-	color: $dark-1;
-	margin-bottom: 2rem;
-	float: left;
-	width: calc(100% - 150px);
-	&::after{
-		background-color: $dark-1;
+	&:hover,&:focus{
+		background-color: $light-2;
+		color: $dark-1;
 	}
-}
 
-.c-section__first-para{
-	margin-bottom: 4rem;
-	width: calc(100% - 150px);
-	float: left;
-	padding-right: 50px;
-}
-
-.c-section__pageIcon{
-	max-width: 150px;
-	float: right;
-}
-
-.c-section__page-components{
-	display: inline-block;
 }
 
 .c-service__need-help{
 	background-color: $light-2;
-	border-radius: 6px;
-	margin-top: 6rem;
-	width: 100%;
-	padding: 5rem 4rem;
 	text-align: center;
-	*{
-		color: $dark-1;
-	}
+	padding: 4rem;
+	border-radius: 5px;
+}
+
+.c-nee-help__title{
+	line-height: 3.5rem;
 }
 
 .c-need-help__logo{
-	width: 75%;
-	margin-top: 2rem;
+	max-width: 200px;
+	display: block;
+	margin: 2rem auto 4rem auto;
 }
 
 .c-need-help__link{
-	display: inline-block;
-	font-size: 2.25rem;
-	margin-top: 4rem;
+	display: block;
+	color: black;
+	font-size: 2.5rem;
 	span{
 		font-weight: bold;
 		display: block;
 		margin-top: 1rem;
 	}
-	&:focus,&:hover{
-		color: black;
+}
 
+/* Mobile First Service Item Page */
+@include respond-max($mq-x-large){
+
+	.c-service__page-list{
+		display: inline-block;
+		width: 100%;
 	}
+
+	.c-service__content{
+		display: inline-block;
+		width: 100%;
+	}
+
+	.c-service__need-help{
+		display: none;
+	}
+
+	.flexbox{
+		.c-section_wrapper{
+			display: flex;
+			flex-direction: column;
+		}
+
+		.c-service__page-list{
+			order: 2;
+			margin-top: 8rem;
+		}
+
+		.c-service__content{
+			order: 1;
+		}
+	}
+
+}
+
+@include respond-min($mq-x-large){
+
+	.c-service__page-list{
+		width: 350px;
+		float: left;
+	}
+
+	.c-service__content{
+		float: right;
+		width: calc(100% - 450px);
+	}
+
 }
