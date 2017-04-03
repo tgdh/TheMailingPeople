@@ -41,8 +41,8 @@
 		height: $line-height;
 		position: absolute;
 		top: -$line-height / 2;
-		border-left: 1px solid darken($light-2, 5);
-		border-bottom: 1px solid darken($light-2, 5);
+		border-left: .1rem solid darken($light-2, 5);
+		border-bottom: .1rem solid darken($light-2, 5);
 	}
 }
 

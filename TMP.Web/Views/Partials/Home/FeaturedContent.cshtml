@@ -1,31 +1,43 @@
+@using TMP.Core.ExtensionMethods
 @inherits UmbracoViewPage<IPublishedContent>
 @{
+	String List = Model.GetPropertyValue<string>("blogPicker");
+	var ListOfBlogs = !string.IsNullOrWhiteSpace(List) ? List.Split(',').Select(mediaId => Umbraco.TypedContent(mediaId)).ToList() : null;
 
+	if(List == null)
+	{
+		return;
+	}
 }
-
-<div class="o-section o-wrap o-wrap--large">
-    <h2 class="o-heading o-heading--inverted u-mega">Tips & Tricks</h2>
-    <div class="c-card-list js-carousel--featured">
-        @RenderCard("Blog article about Email Marketing and Direct Mail Services", "Tips & Advice", 1202, "c-card-list__item")
-        @RenderCard("Direct Mail partner – why every Marketing Agency should have one", "News", 1203, "c-card-list__item")
-        @RenderCard("Make sure the reader knows what to do next!", "Blog post", 1201, "c-card-list__item")
-        @RenderCard("Blog article about Email Marketing and Direct Mail Services", "Tips & Advice", 1202, "c-card-list__item")
-        @RenderCard("Direct Mail partner – why every Marketing Agency should have one", "News", 1203, "c-card-list__item")
-        @RenderCard("Make sure the reader knows what to do next!", "Blog post", 1201, "c-card-list__item")
-    </div>
+<div class="c-card-list">
+	<div class="o-section o-wrap o-wrap--large">
+	    <h2 class="o-heading o-heading--inverted u-mega">Tips & Tricks</h2>
+	    <div class="c-card-list js-carousel--featured js-carousel_many" data-loop="true" data-auto-play="true" data-speed="10000">
+			@foreach (var item in ListOfBlogs)
+	        {
+				if(item != null)
+				{
+					var headline = item.GetPropertyValue<string>("headline");
+					var catId = item.GetPropertyValue<int>("category");
+					var ItemLink = item.Url;
+					int itemImage = item.GetPropertyValue<int>("featuredImage") != 0 ? item.GetPropertyValue<int>("featuredImage") : 1202;
+					@RenderCard(headline, catId, itemImage, "c-card-list__item", ItemLink)
+				}
+	        }
+	    </div>
+	</div>
 </div>
 
-@helper RenderCard(string title, string label, int imageId, string modifierClass)
+@helper RenderCard(string title, int labelId, int imageId, string modifierClass, string link)
 {
     var image = Umbraco.TypedMedia(imageId);
     var imageClass = image != null ? "has-image" : "no-image";
-    var link = "#";
-
+	var label = Umbraco.TypedContent(labelId);
     <article class="c-thumbnail__card @imageClass @modifierClass">
-        @if (!string.IsNullOrWhiteSpace(label))
-        {
-            <span class="c-thumbnail__card__label">@label</span>
-        }
+		@if(label != null)
+		{
+			<span class="c-thumbnail__card__label">@label.Name</span>
+		}
         @if (image != null)
         {
             var imageUrl = Url.GetCropUrl(image, cropAlias: "4:3", width: 360, quality: 85, htmlEncode: false, furtherOptions: "&format=jpeg").ToString();
@@ -34,10 +46,16 @@
                 <img class="c-thumbnail__card__image" src="@imageUrl" alt="@title"/>
             </a>
         }
-        <h3 class="c-thumbnail__title u-delta">
-            <a href="#">@title</a>
-        </h3>
-        <p><a href="@link">Read more ></a></p>
+		@if(!string.IsNullOrWhiteSpace(title))
+		{
+	        <h3 class="c-thumbnail__title u-delta">
+	            <a href="@link">@title</a>
+	        </h3>
+		}
+		@if(link != null)
+		{
+			<p><a href="@link">Read more ></a></p>
+		}
     </article>
 
 }

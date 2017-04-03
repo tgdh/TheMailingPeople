@@ -1,122 +1,105 @@
-/* ===========================================================
+.c-accordion_item{
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 2rem;
 
-	# Accordion
-=========================================================== */
-
-.enhance {
-
-	.c-accordion__panel {
-		transition: height $speed $ease,
-					visibility $speed $ease;
-
-		&[aria-hidden="true"] {
-			visibility: hidden;
-			height: 0;
-		}
-
-		&[aria-hidden="false"] {
-			visibility: visible;
-		}
+	.c-accordion__content{
+		max-height: 0;
+		overflow: hidden;
+		transition: $ease $speed max-height;
+		float: left;
+		width: calc(100% - 6rem);
+		box-sizing: border-box;
+		padding-left: 2.5rem;
 	}
 
-	.c-accordion--is-ready {
+	&.js-active{
 
-		.c-accordion__panel {
-			overflow: hidden;
-
+		.c-accordion__content{
+			max-height: 200rem;
 		}
 
-		.c-accordion__header {
-			cursor: pointer;
+		.c-accordion__button{
+			background-color: $pri;
+		}
+
+		.plus{
+			transform: scale(0);
+		}
+
+		.minus{
+			transform: scale(1);
+
+			&::before{
+				background-color: white;
+			}
+
 		}
 
 	}
 
+}
 
-	// style
+.c-accordion__button{
+	border: .1rem solid lighten($light-1,40);
+	width: 6rem;
+	height: 6rem;
+	border-radius: .5rem;
+	display: block;
+	float: left;
+	cursor: pointer;
+	position: relative;
+	transition: $ease $speed background-color;
 
-	.c-accordion__header {
-		font-size: 1.8rem;
-		border-top: 1px solid $border-colour;
-		border-bottom: 1px solid $border-colour;
-		margin-top: -1px;
-		padding: 2rem 0 2.1rem;
+	.plus,.minus{
+		transition: $ease $speed all;
+		float: left;
+	}
+
+	.plus{
+		transform: scale(1);
 		display: block;
 		position: relative;
+		left: calc(50% - .9rem);
+		top: calc(50% - .1rem);
 
-		&:first-of-type {
-			border-top: 0;
-		}
-
-		&:before,
-		&:after {
+		&::before,&::after{
 			content: "";
+			position: relative;
+			width: 1.8rem;
+			height: .2rem;
+			background-color: $light-1;
 			display: block;
-			background-color: $border-colour;
-			position: absolute;
-			top: 50%;
-			opacity: 0;
-			transition: opacity $speed $ease,
-						background $speed $ease;
 		}
 
-		&:before {
-			width: 1.8rem;
-			height: .4rem;
-			right: 0;
+		&::after{
+			transform: rotate(90deg);
 			margin-top: -.2rem;
 		}
 
-		&:after {
-			width: .4rem;
-			height: 1.8rem;
-			right: .7rem;
-			margin-top: -.9rem;
+	}
 
-		}
+	.minus{
+		display: block;
+		position: absolute;
+		left: calc(50% - .9rem);
+		top: calc(50% - .1rem);
 
-		&:hover {
-
-			&:before,
-			&:after {
-				background-color: darken( $border-colour, 5 );
-			}
-
-		}
-
-
-		&:focus {
-
-			&:before,
-			&:after {
-				background-color: $pri
-			}
-
-		}
-
-		&[aria-selected="false"],
-		&[aria-selected="true"] {
-
-			&:before,
-			&:after {
-				opacity: 1;
-			}
-
-		}
-
-		&[aria-selected="true"] {
-
-			&:after {
-				opacity: 0;
-			}
-
+		&::before{
+			content: "";
+			position: relative;
+			width: 1.8rem;
+			height: .2rem;
+			background-color: $light-1;
+			display: block;
 		}
 
 	}
 
-	.c-accordion__panel-inner {
-		padding: 2rem 0;
-	}
+}
 
-
+.c-accordion__header{
+	display: inline-block;
+	padding-left: 2.5rem;
+	padding-top: 1.5rem;
 }

@@ -17,6 +17,13 @@
         </div>
         <div class="c-header__right c-header__super__right">
             @Html.Partial("~/Views/Partials/Page/HeaderSearch.cshtml")
+			<div class="c-search__form-wrapper">
+				<div class="close-nav"><span></span></div>
+				<form action="/search" method="GET" class="c-search__form">
+					<input type="text" value="@Request["q"]" class="c-search__text" placeholder="Search here..." name="q" id="search">
+					<input type="submit" name="" value="Search" class="c-search__submit">
+				</form>
+			</div>
             @Html.Partial("~/Views/Partials/Page/SocialLinks.cshtml", Model, new ViewDataDictionary { { "extraClass", "c-social--header" } })
         </div>
     </div>

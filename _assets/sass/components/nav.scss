@@ -4,12 +4,16 @@
 
 .c-nav__link{
 	font-weight: bold;
-	&:hover,&:focus{
+
+	&:hover,
+	&:focus{
 		color: $white;
 	}
+
 }
 
 @include respond-max ( $mq-large ) {
+
 	.c-header__nav-wrap{
 		position: fixed;
 		top: 0;
@@ -18,10 +22,12 @@
 		background-color: $pri;
 		height: 100vh;
 		transition: $ease $speed right;
-		box-shadow: inset 5px 0 30px rgba($black,0.2);
+		box-shadow: inset .5rem 0 3rem rgba($black,0.2);
+
 		&.js-nav-active{
 			right: 0;
 		}
+
 	}
 
 	.c-nav--main{
@@ -37,10 +43,13 @@
 	.c-nav__link{
 		font-size: 2.1rem;
 		color: $white;
-		&:hover,&:focus{
+
+		&:hover,
+		&:focus{
 			text-decoration: underline;
 			color: white;
 		}
+
 	}
 
 	.c-nav__sub-chevron{
@@ -50,24 +59,28 @@
 		height: 2rem;
 		margin-left: 5rem;
 		position: relative;
-		top: 3px;
+		top: .3rem;
 		cursor: pointer;
+
 		&::before,&::after{
 			content: "";
 			display: block;
-			width: 10px;
-			height: 2px;
+			width: 1rem;
+			height: .2rem;
 			background-color: white;
 			position: relative;
 		}
+
 		&::before{
 			transform: rotate(55deg);
-			top: 6px;
+			top: .6rem;
 		}
+
 		&::after{
 			transform: rotate(-55deg);
-			top: 11px;
+			top: 1.1rem;
 		}
+
 	}
 
 	.c-nav__list--sub{
@@ -80,9 +93,11 @@
 		background-color: $pri;
 		z-index: 999;
 		transition: $ease $speed left;
+
 		&.js-active{
 			left: 2rem;
 		}
+
 	}
 
 	.c-nav__close{
@@ -93,34 +108,41 @@
 		opacity: .75;
 		position: absolute;
 		top: 0;
-		left: 40px;
+		left: 4rem;
 		cursor: pointer;
+
 		.c-nav__close-icon{
-			width: 20px;
-			height: 3px;
+			width: 2rem;
+			height: .3rem;
 			background-color: white;
 			display: block;
 			position: relative;
-			top: 12px;
-			left: -30px;
+			top: 1.2rem;
+			left: -3rem;
+
 			&::before,&::after{
 				content: "";
 				display: block;
-				width: 12px;
-				height: 3px;
+				width: 1.2rem;
+				height: .3rem;
 				position: relative;
 				background-color: white;
-				left: -2px;
+				left: -.2rem;
 			}
+
 			&::before{
 				transform: rotate(-45deg);
-				top: -4px;
+				top: -.4rem;
 			}
+
 			&::after{
 				transform: rotate(45deg);
 			}
+
 		}
-		&:hover,&:focus{
+
+		&:hover,
+		&:focus{
 			text-decoration: underline;
 		}
 	}
@@ -130,10 +152,13 @@
 		transition: $ease $speed right;
 		right: 0%;
 		position: relative;
+
 		&.js-nav-active{
 			right: 50%;
 		}
+
 	}
+
 }
 
 @include respond-min ( $mq-large ){
@@ -147,8 +172,10 @@
 		margin: 0;
 		position: relative;
 
-		&:hover, &:focus{
+		&:hover,
+		&:focus{
 			color: white;
+
 			.c-nav__link{
 				background-color: $pri;
 				color: white;
@@ -157,14 +184,19 @@
 			.c-nav__list--sub{
 				visibility: visible;
 				opacity: 1;
+
 				.c-nav__item:hover{
 					.c-nav__link{
 						background-color: white;
 						color: $pri;
 					}
+
 				}
+
 			}
+
 		}
+
 	}
 
 	.c-nav__link{
@@ -178,16 +210,18 @@
 			color: $pri;
 		}
 
-		&:hover, &:focus{
+		&:hover,
+		&:focus{
 			background-color: $pri;
 			color: white;
 		}
+
 	}
 
 	.c-nav__list--sub{
 		background-color: $pri;
 		display: block;
-		min-width: 200px;
+		min-width: 20rem;
 		position: absolute;
 		top: 8.2rem;
 		left: 0;
@@ -210,8 +244,11 @@
 	}
 
 	.c-header.js-smaller{
+
 		.c-nav__list--sub{
 			top: 6.6rem;
 		}
+
 	}
+
 }

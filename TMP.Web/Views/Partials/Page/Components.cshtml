@@ -65,17 +65,6 @@
 
                 @Html.Partial("~/Views/Partials/PageComponents/Downloads.cshtml", downloads)
                 break;
-            case "quote":
-                var quote = new QuoteViewModel
-                {
-                    Quote = item.GetPropertyValue<IHtmlString>("quoteMessage"),
-                    Source = item.GetPropertyValue<string>("source"),
-                    Alignment = alignment,
-                    AdditionalClass = pageComponentClass
-                };
-
-                @Html.Partial("~/Views/Partials/PageComponents/Quote.cshtml", quote)
-                break;
             case "embed":
                 var embed = new EmbedViewModel
                 {
@@ -134,7 +123,26 @@
 
                 @Html.Partial("~/Views/Partials/PageComponents/Form.cshtml", form)
                 break;
-            default:
+            case "video":
+                var video = new VideoViewModel
+                {
+                    Title = item.GetPropertyValue<string>("videoTitle"),
+                    VideoUrl = item.GetPropertyValue<string>("videoURL"),
+                    Image = item.GetPropertyValue<string>("videoImage")
+                };
+
+                @Html.Partial("~/Views/Partials/PageComponents/Video.cshtml", video)
+                break;
+			case "quote":
+                var quote = new QuoteViewModel
+                {
+                    Quote = item.GetPropertyValue<string>("quote"),
+                    Source = item.GetPropertyValue<string>("source")
+                };
+
+                @Html.Partial("~/Views/Partials/PageComponents/Quote.cshtml", quote)
+                break;
+			default:
                 @NoResult(item)
                 break;
         }

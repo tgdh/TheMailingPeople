@@ -14,19 +14,41 @@
     .c-social--header {
 		display: inline-block;
 		text-align: center;
-		padding: .8rem;
-		padding-left: 2rem;
-		padding-right: 2rem;
+		padding: .8rem .5rem 0 .5rem;
 		// float: right;
 
 		.c-social__link {
 			display: inline-block;
 			float: none;
+			position: relative;
+			opacity: 1;
+			visibility: visible;
+			top: 0;
+			transition: $ease $speed opacity,
+						$ease $speed visibility,
+						$ease $speed top;
+
+			&.js-search-active{
+				opacity: 0;
+				visibility: hidden;
+				top: 3rem;
+			}
 		}
 	}
 
 }
 
+@include respond-max($mq-x-large) {
+
+	.c-social--header{
+		display: none;
+	}
+
+	.c-header__search {
+		float: right;
+	}
+
+}
 
 @include respond-min($mq-x-large) {
 
@@ -67,6 +89,8 @@
 	float: left;
 	transition: background $speed $ease,
 				color $speed $ease;
+	margin-right: 2rem;
+	margin-bottom: 1rem;
 
 	i {
 		vertical-align: middle;
@@ -82,9 +106,11 @@
 		color: $dark-1;
 		background-color: $light-1;
 	}
+}
 
-	+ .c-social__link {
-		margin-left: 2rem;
+@include respond-max($mq-large){
+	.c-social__link{
+		margin-right: 1rem;
 	}
 }
 

@@ -11,13 +11,19 @@
 <div class="c-accordion js-accordion @Model.AdditionalClass @Model.WrapClasses">
     @foreach (var tab in Model.Tabs)
     {
-        var uniqueId = StringExtensionMethods.CreateGuid();
-
-        <h2 id="accordion-header-@uniqueId" class="c-accordion__header js-accordion__header">@tab.Title</h2>
-        <div id="accordion-panel-@uniqueId" class="c-accordion__panel js-accordion__panel">
-            <div class="c-accordion__panel-inner">
-                @tab.Content
-            </div>
-        </div>
+		<div class="c-accordion_item">
+			<span class="c-accordion__button">
+				<i class="plus"></i>
+				<i class="minus"></i>
+			</span>
+			<h2 class="c-accordion__header js-accordion__header u-gamma">@tab.Title</h2>
+			<div class="c-accordion__content">
+		        <div class="c-accordion__panel js-accordion__panel">
+		            <div class="c-accordion__panel-inner">
+		                @tab.Content
+		            </div>
+		        </div>
+			</div>
+		</div>
     }
 </div>

@@ -1,24 +1,57 @@
 .c-header{
+
 	&.js-sticky{
+
 		.c-header__main{
 			position: fixed;
 			top: 0;
 			left: 0;
 			width: 100%;
 		}
+
 		.c-header__super{
-			margin-bottom: 82px;
+			margin-bottom: 8.2rem;
 		}
+
+		.c-header__search__scroll{
+			opacity: 1;
+		}
+
+	}
+
+}
+
+.c-header__search__scroll {
+    position: absolute;
+    left: -67px;
+    color: lighten($light-1,10);
+    border-left: 1px solid lighten($light-1,25);
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 67px;
+    cursor: pointer;
+	opacity: 0;
+	transition: $ease $speed opacity;
+	.ico-finder{
+		font-size: 2rem;
 	}
 }
 
 .c-header__main{
 	background-color: white;
-	z-index: 999;
+	z-index: 997;
 	position: relative;
 }
 
 @include respond-max ( $mq-large ) {
+
+	/* Fixed the fixed position of c-header */
+	.c-page__wrapper{
+		margin-top: 6rem;
+	}
 
 	.c-header{
 		position: fixed;
@@ -30,11 +63,27 @@
 	}
 
 	.c-header__super{
-		display: none;
+
+		.c-header__left{
+			display: none;
+		}
+
+		.c-header__right{
+
+			.c-header__search {
+				display: none;
+			}
+
+			.c-social--header{
+				display: none;
+			}
+
+		}
+
 	}
 
 	.c-header__main{
-		box-shadow: 0 0 9px rgba($black,0.25);
+		box-shadow: 0 0 .9rem rgba($black,0.25);
 	}
 
 	.c-header__left{
@@ -69,12 +118,12 @@
 
 				&::before{
 					transform: rotate(45deg);
-					top: 1px;
+					top: .1rem;
 				}
 
 				&::after{
 					transform: rotate(-45deg);
-					top: -1px;
+					top: -.1rem;
 				}
 
 			}
@@ -85,11 +134,13 @@
 		width: 6rem;
 		height: 6rem;
 		background-color: $pri;
-		border-right: 1px solid white;
+		border-right: .1rem solid white;
 		display: block;
 		float: left;
 		position: relative;
-		z-index: -1;
+		z-index: 0;
+		cursor: pointer;
+
 		.ico-finder{
 			color: white;
 			font-size: 2.5rem;
@@ -160,26 +211,42 @@
 
 		.c-header__cta--main{
 			top: 1rem;
-			height: 82px;
+			height: 8.2rem;
 		}
 
 	}
 
 	.c-header__toggle-menu-button{
 		transition: $ease $speed right;
+
 		&.js-active{
 			right: calc(100vw - 6rem);
 		}
+
+	}
+
+	.c-header__main__right{
+		transition: $ease $speed left;
+		left: 0;
+
+		&.js-active{
+			left: calc(-100% + 6rem);
+		}
+
+		&.js-mobile-active{
+			left: 6.1rem;
+		}
+
 	}
 
 }
 
-
-
 @include respond-min ( $mq-large ) {
 
 	.c-header{
+
 		&.js-smaller{
+
 			.c-header__logo-link{
 				width: 18rem;
 			}
@@ -189,7 +256,7 @@
 			}
 
 			.c-header__cta--main, .c-header__main__right{
-				height: 67px;
+				height: 6.7rem;
 			}
 
 			.c-header__cta__item{
@@ -203,7 +270,9 @@
 			.c-nav__list--sub .c-nav__link{
 				padding: 1rem 2.25rem;
 			}
+
 		}
+
 	}
 
 	.c-header__super{
@@ -215,7 +284,7 @@
 	.c-header__right{
 		float: right;
 		width: 30%;
-		max-width: 500px;
+		max-width: 50rem;
 	}
 
 	.c-header__super__left{
@@ -230,7 +299,7 @@
 		float: left;
 		width: 100%;
 		background-color: white;
-		box-shadow: 0 0 9px rgba($black,0.25);
+		box-shadow: 0 0 .9rem rgba($black,0.25);
 	}
 
 	.c-header__main__left{
@@ -249,7 +318,7 @@
 	.c-header__main__right{
 		background-color: $pri;
 		display: none;
-		height: 82px;
+		height: 8.2rem;
 		transition: $ease $speed height;
 	}
 
@@ -272,6 +341,14 @@
 
 	.c-header__main__right{
 		display: block;
+	}
+
+}
+
+@include respond-min-max($mq-large, $mq-x-large){
+
+	.c-header__super{
+		display: none;
 	}
 
 }

@@ -15,20 +15,20 @@
 	<div class="o-wrap o-wrap--large u-clearfix">
 		@if(ContactNumber != null){
 			<div class="c-contact__item">
-				<i class="c-contact__single-icon ico-envelop"></i>
+				<i class="c-contact__single-icon ico-phone"></i>
 				<a href="tel:@Html.Raw(Html.Encode(ContactNumber).Replace(" ", ""))" class="c-contact__link">@ContactNumber</a>
 			</div>
 		}
 		@if(!string.IsNullOrWhiteSpace(EmailAddress)){
 			<div class="c-contact__item">
-				<i class="c-contact__single-icon"></i>
+				<i class="c-contact__single-icon ico-envelop"></i>
 				<a href="mailto:@EmailAddress" class="c-contact__link">@EmailAddress</a>
 			</div>
 		}
 		@if(!string.IsNullOrWhiteSpace(Address))
 		{
 			<div class="c-contact__item u-clearfix">
-				<i class="c-contact__single-icon ico-envelop"></i>
+				<i class="c-contact__single-icon ico-home"></i>
 				<p class="c-contact__address">@Html.Raw(Html.Encode(Address).Replace("\n", "<br />"))</p>
 			</div>
 		}
@@ -72,6 +72,7 @@
 
 <script type="text/javascript">
 function initMap() {
+    var markerIcon = "/assets/img/marker.png";
 	var uluru = {lat: 50.843588, lng: -1.033552};
 	var map = new google.maps.Map(document.getElementById('map'), {
 	  zoom: 15,
@@ -82,7 +83,8 @@ function initMap() {
 	});
 	var marker = new google.maps.Marker({
 	  position: uluru,
-	  map: map
+	  map: map,
+      icon: markerIcon
 	});
   }
 </script>

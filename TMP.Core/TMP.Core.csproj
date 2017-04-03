@@ -111,6 +111,7 @@
     <Compile Include="ExtensionMethods\IntExtentionsMethods.cs" />
     <Compile Include="ExtensionMethods\StringExtensionMethods.cs" />
     <Compile Include="Models\Components\ArticleViewModel.cs" />
+    <Compile Include="Models\Components\VideoViewModel.cs" />
     <Compile Include="Models\ContactForm.cs" />
     <Compile Include="Models\Components\FormViewModel.cs" />
     <Compile Include="Models\Components\GalleryViewModel.cs" />

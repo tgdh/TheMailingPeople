@@ -5,35 +5,51 @@
 =========================================================== */
 
 .c-quote {
-	position: relative;
-	line-height: 1.3;
-	padding-left: $padding-medium;
-	padding-right: $padding-medium;
-	quotes: "\201C""\201D""\2018""\2019";
+	background-color: $light-2;
+	padding: 5rem 8rem;
+	text-align: center;
 }
 
-.c-quote__copy {
-	display: block;
-	font-size: 2rem;
+.c-quote__heading{
+	&::after{
+		display: none;
+	}
 }
 
-.c-quote__src {
-	text-align: right;
-	font-weight: $bold;
-	margin-top: $line-height;
+.c-quote__source{
+	font-weight: bold;
+	margin-top: 3rem;
 }
 
-.c-quote:before{
-	color: $pri;
-	font-size: 6.4rem;
-	font-weight: 700;
-	font-family: serif;
-	line-height: 0.6em;
-	position: absolute;
-	top: .7rem;
+@include respond-max($mq-large){
+
+	.c-quote {
+		padding: 4rem 2rem;
+	}
+
+	.c-quote__source{
+		margin-top: 1rem;
+	}
+
 }
 
-.c-quote:before {
-	content: "\201C";
-	left: 0;
+.c-quote__page-quote{
+	float: right;
+	width: 35rem;
+	background-color: $light-2;
+	padding: 3rem;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.c-quote__title{
+	text-transform: uppercase;
+}
+
+@include respond-max($mq-x-large){
+
+	.c-quote__page-quote{
+		display: none;
+	}
+
 }

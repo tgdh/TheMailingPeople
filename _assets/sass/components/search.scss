@@ -1,0 +1,178 @@
+@include respond-min($mq-x-large) {
+
+	.c-search__form-wrapper{
+		position: absolute;
+		left: 0;
+		top: -4.2rem;
+		height: 4.2rem;
+		width: 100%;
+		background-color: white;
+		opacity: 0;
+		transition: $ease .5s top,
+					$ease $speed opacity;
+
+		&.js-search-active{
+			top: 0;
+			opacity: 1;
+		}
+
+		.c-search__form{
+			width: calc(100% - 4.6rem);
+			padding: 0.7rem 1rem;
+			float: right;
+		}
+
+		.close-nav{
+			width: 4.6rem;
+			height: 4.2rem;
+			background-color: white;
+			float: left;
+			position: relative;
+			cursor: pointer;
+
+			span{
+				width: 1.8rem;
+				height: .2rem;
+				background-color: black;
+				display: block;
+				position: relative;
+				transform: rotate(45deg);
+				position: relative;
+				top: 2.0rem;
+				left: 1.3rem;
+
+				&::before{
+					content: "";
+					display: block;
+					position: relative;
+					transform: rotate(90deg);
+					width: 1.8rem;
+					height: .2rem;
+					background-color: black;
+					top: 0;
+					left: 0;
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+@include respond-max($mq-x-large){
+
+	.c-search__form-wrapper{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: calc(100vh - 6rem);
+		background-color: white;
+		z-index: 999;
+		visibility: hidden;
+		opacity: 0;
+		transition: ease-in-out $speed opacity,
+					ease-in-out $speed visibility;
+
+		&.js-mobile-active{
+			opacity: 1;
+			visibility: visible;
+
+			.c-search__text{
+				font-size: 3rem;
+				text-align: center;
+			}
+
+			.c-search__submit{
+				display: block;
+			    width: 100%;
+			    height: 5.5rem;
+			    background-color: #e42622;
+			    position: absolute;
+			    bottom: 0;
+			    left: 0;
+			    color: white;
+			    font-size: 2.75rem;
+			    font-weight: bold;
+			}
+
+		}
+
+	}
+
+	.flexbox{
+
+		.c-search__form-wrapper{
+
+			&.js-mobile-active{
+
+				.c-search__form{
+					height: calc(100vh - 6rem);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+
+			}
+
+		}
+
+	}
+
+	.no-flexbox{
+
+		.c-search__form-wrapper{
+
+			&.js-mobile-active{
+
+				.c-search__form{
+					height: 4.4rem;
+					position: relative;
+					top: calc(50% - 2.2rem);
+					text-align: center;
+
+					.c-search__submit{
+						bottom: -10rem;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+.c-search__text, .c-search__submit{
+	padding: .2rem 0;
+	margin: 0;
+	border-radius: 0;
+}
+
+.c-search__text{
+	width: 20rem;
+	border: none;
+	background-color: transparent;
+	color: black;
+	display: inline-block;
+}
+
+.c-search__submit{
+	display: none;
+}
+
+.c-header__right{
+	position: relative;
+}
+
+.ezsearch-result-count{
+	margin-bottom: 2rem;
+}
+
+.c-listing__label{
+	display: none;
+}

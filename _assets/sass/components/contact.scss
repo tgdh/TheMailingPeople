@@ -10,7 +10,7 @@
 	background-color: $light-2;
 	margin-bottom: 7rem;
 	padding: 2.5rem;
-	border-radius: 7px;
+	border-radius: .7rem;
 
 	&:nth-child(odd){
 		margin-right: 3.5rem;
@@ -30,14 +30,33 @@
 
 .c-contact__link{
 	color: black;
-	border-bottom: 1px solid darken($light-2, 10);
+	border-bottom: .1rem solid darken($light-2, 10);
 	padding-bottom: .3rem;
 	font-size: 1.9rem;
-	transition: $ease $speed border-color;
+	transition: $ease 1s border-color;
+	position: relative;
 
-	&:hover,&:focus{
+	&:hover,
+	&:focus{
 		color: black;
 		border-bottom-color: darken($light-2, 35);
+
+		&::after{
+			width: 100%;
+		}
+
+	}
+
+	&::after{
+		transition: $ease $speed width;
+		content: "";
+		width: 0;
+		height: .1rem;
+		background-color: darken($light-2, 25);
+		display: block;
+		position: absolute;
+		bottom: -.1rem;
+		right: 0;
 	}
 
 }
@@ -74,9 +93,40 @@
 
 .c-contact__map{
 	width: 100%;
-	height: 500px;
+	height: 50rem;
+
 	#map{
 		width: 100%;
 		height: 100%;
 	}
+
+}
+
+@include respond-max($mq-large){
+
+	.c-contact{
+		padding: 5rem 0;
+	}
+
+	.c-contact__item{
+		width: 100%;
+		margin: 0 0 4rem 0 !important; /* To override nth-childs */
+
+		&:last-child{
+			margin-bottom: 0 !important; /* To override nth-childs */
+		}
+
+	}
+	.c-contact__link{
+		word-wrap: break-word;
+	}
+
+	.c-contact__single-icon{
+		display: none;
+	}
+
+	.c-contact__icon{
+		display: none;
+	}
+
 }

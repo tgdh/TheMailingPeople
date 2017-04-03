@@ -1,7 +1,5 @@
 .c-banner{
 	position: relative;
-	float: left;
-	width: 100%;
 	overflow: hidden;
 }
 
@@ -12,7 +10,7 @@
 
 .c-banner__link{
 	background-color: $pri;
-	border-radius: 5px;
+	border-radius: .5rem;
 	overflow: hidden;
 	color: white;
 	padding: 1.25rem 2rem;
@@ -20,9 +18,12 @@
 	font-weight: bold;
 	transition: $ease $speed background-color,
 				$ease $speed border-color;
-	&:hover,&:focus{
+
+	&:hover,
+	&:focus{
 		color: white;
 	}
+
 }
 
 .c-banner__icon{
@@ -37,8 +38,40 @@
 	line-height: 2.25rem;
 }
 
+@include respond-min(1200px) {
+
+	.c-banner__link{
+		float: left;
+	}
+
+	.c-banner__icon{
+		float: left;
+	}
+}
+
+@include respond-max(1200px) {
+
+	.c-banner__link{
+		float: left;
+		width: 100%;
+		max-width: 350px !important;
+		margin-bottom: 1.5rem;
+	}
+
+	.c-banner__icon{
+		float: left;
+	}
+
+	.c-banner__links{
+		margin-top: 5rem !important;
+	}
+
+}
+
 @include respond-min ( $mq-large ) {
+
 	.c-banner{
+
 		&::after{
 			content: "";
 			display: block;
@@ -49,6 +82,7 @@
 			background-color: white;
 			height: 100%;
 		}
+
 	}
 
 	.c-banner__content-wrapper{
@@ -58,30 +92,33 @@
 		background-color: white;
 		position: relative;
 		z-index: 2;
+
 		&::before{
 			content: "";
-			width: 500px;
-			height: calc(100% + 150px);
+			width: 50rem;
+			height: calc(100% + 15rem);
 			background-color: white;
 			display: block;
 			position: absolute;
-			bottom: -150px;
-			left: -250px;
+			bottom: -15rem;
+			left: -25rem;
 			transform: rotate(25deg);
 		}
+
 		&::after{
 			content: "";
 			display: block;
-			width: 520px;
-			height: 300px;
+			width: 52rem;
+			height: 30rem;
 			background-color: $pri;
 			opacity: .8;
 			position: absolute;
-			top: -175px;
-			left: -520px;
+			top: -17.5rem;
+			left: -52.0rem;
 			transform: rotate(25deg);
 			z-index: -1;
 		}
+
 	}
 
 	.c-banner__content{
@@ -108,76 +145,33 @@
 	}
 
 	.no-flexbox{
+
 		.c-banner__link{
 			float: left;
 		}
+
 		.c-banner__icon{
 			float: left;
 		}
+
 		.c-banner__link-text{
 			float: left;
 			width: calc(100% - 4rem);
 		}
-	}
-}
 
-@media(min-width: 1251px){
-	.flexbox{
-		.c-banner__links{
-			display: flex;
-		}
-		.c-banner__link{
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-	}
-}
-
-@media(max-width: 1250px) and (min-width: $mq-large){
-	.c-banner__link{
-		width: calc(50% - 2rem);
-		max-width: calc(50% - 2rem);
-		float: left;
-		display: block;
-		margin-bottom: 2rem;
-		min-height: 7.5rem;
-		&:nth-child(3){
-			left: 25%;
-			position: relative;
-		}
 	}
 
-	.c-banner__links{
-		display: block;
-	}
-	.c-banner__icon{
-		float: left;
-	}
-
-	.c-banner__link-text{
-		float: left;
-	}
-	.c-banner__link-text{
-		width: calc(100% - 4rem);
-	}
-
-	.flexbox{
-		.c-banner__link{
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-	}
 }
 
 @include respond-max ( $mq-large ) {
+
 	.c-banner{
-		padding: 12rem 0 3rem 0;
+		padding: 5rem 0 3rem 0;
 	}
 
 	.c-banner__background-image {
 		background-image: none !important;
+
 		&::before{
 			content: "";
 			display: block;
@@ -189,11 +183,13 @@
 			background: linear-gradient(transparent, rgba(0,0,0,0.075)); /* Standard syntax */
 			z-index: -1;
 		}
+
 	}
 
 	.c-banner__heading{
 		text-align: center;
 		position: relative;
+
 		&::before{
 			content: "";
 			display: block;
@@ -204,6 +200,11 @@
 			left: calc(50% - 2.5rem);
 			bottom: 1.5rem;
 		}
+
+		&::after{
+			display: none;
+		}
+
 	}
 
 	.c-banner__text{
@@ -219,8 +220,9 @@
 	.c-banner__link{
 		width: 100%;
 		display: block;
-		max-width: 290px;
+		max-width: 29rem;
 		margin: 0 auto 2rem auto;
+		float: none;
 	}
 
 	.c-banner__icon{
@@ -231,4 +233,5 @@
 		float: left;
 		width: calc(100% - 4rem);
 	}
+
 }

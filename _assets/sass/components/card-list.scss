@@ -1,44 +1,55 @@
-.c-card-list {
-
+.c-card-list{
+	padding: 0 3.25rem;
+	.c-carousel__nav{
+		background-color: transparent;
+		color: $black;
+		.ico-arrow-right,.ico-arrow-left{
+			font-size: 4rem;
+		}
+	}
+	.c-carousel__dots{
+		margin-top: 3rem;
+		li{
+			&.slick-active{
+				button{
+					border-color: black;
+					background-color: black;
+				}
+			}
+			button{
+				border-color: black;
+				&:hover,
+				&:focus{
+					background-color: black;
+					border-color: black;
+				}
+			}
+		}
+	}
+}
+.c-card-list__item{
+	margin: 0 2.5rem;
+}
+.c-thumbnail__title{
+	a{
+		border-bottom: 1px solid black;
+		line-height: 3.5rem;
+	}
 }
 
-.c-card-list__item {
-
-}
-
-
-.no-enhance {
-    .c-card-list__item {
-        @include column(1 / 2, $gutter: 4, $cycle: 2);
-    }
-
-
-    @include respond-max($mq-medium) {
-
-        .c-card-list__item:nth-child(1n + 3) {
-            margin-top: $line-height * 1.5;
-        }
-
-    }
-
-    @include respond-min($mq-medium) {
-
-        .c-card-list__item {
-            @include column(1 / 3, $gutter: 4, $uncycle: 2, $cycle: 3);
-        }
-
-        .c-card-list__item:nth-child(1n + 4) {
-            margin-top: $line-height * 2;
-        }
-    }
-
-}
-
-@include respond-min($mq-large) {
-
-    .c-card-list {
-        padding-left: 6.6rem;
-        padding-right: 6.6rem;
-    }
-
+@include respond-max($mq-large){
+	.c-card-list{
+		padding: 0;
+		.c-carousel__nav{
+			visibility: hidden;
+		}
+	}
+	.c-card-list__item{
+		margin: 0 1rem;
+	}
+	.c-thumbnail__title{
+		a{
+			line-height: 2.5rem;
+		}
+	}
 }

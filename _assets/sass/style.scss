@@ -60,7 +60,7 @@
 		'components/footer',
 		'components/accreditation',
 		'components/caption',
-//		'components/accordion',
+		'components/accordion',
 //		'components/carousel',
 //		'components/link-list',
 		'components/carousel',
@@ -77,7 +77,12 @@
 		'components/sitemap',
 		'components/banner',
 		'components/contact',
-		'components/block';
+		'components/block',
+		'components/service',
+		'components/component',
+		'components/gallery',
+		'components/search',
+		'components/blogs';
 
 @import 'utility/overrides',
 		'utility/hide',
