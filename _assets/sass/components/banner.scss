@@ -171,7 +171,7 @@
 
 @include respond-max ( $mq-large ) {
 	.c-banner{
-		padding: 12rem 0 3rem 0;
+		padding: 5rem 0 3rem 0;
 	}
 
 	.c-banner__background-image {
@@ -201,6 +201,9 @@
 			position: absolute;
 			left: calc(50% - 2.5rem);
 			bottom: 1.5rem;
+		}
+		&::after{
+			display: none;
 		}
 	}
 
