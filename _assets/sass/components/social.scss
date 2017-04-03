@@ -91,6 +91,8 @@
 	float: left;
 	transition: background $speed $ease,
 				color $speed $ease;
+	margin-right: 2rem;
+	margin-bottom: 1rem;
 
 	i {
 		vertical-align: middle;
@@ -106,9 +108,11 @@
 		color: $dark-1;
 		background-color: $light-1;
 	}
+}
 
-	+ .c-social__link {
-		margin-left: 2rem;
+@include respond-max($mq-large){
+	.c-social__link{
+		margin-right: 1rem;
 	}
 }
 
