@@ -20,6 +20,10 @@ var Search = (function ($) {
 				}, (1000 * (Math.exp(i * 0.1))) - 700);
 			    });
 			});
+			$('.c-header__search__sticky').click(function(){
+				$('.c-header__right.c-header__main__right').toggleClass('js-mobile-active');
+				$('.c-search__form-wrapper').toggleClass('js-mobile-active');
+			});
 		});
 	};
 

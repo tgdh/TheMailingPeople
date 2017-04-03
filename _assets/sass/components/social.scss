@@ -40,6 +40,17 @@
 
 }
 
+@include respond-max($mq-x-large) {
+
+	.c-social--header{
+		display: none;
+	}
+
+	.c-header__search {
+		float: right;
+	}
+
+}
 
 @include respond-min($mq-x-large) {
 

@@ -14,7 +14,7 @@
 
 .c-header__main{
 	background-color: white;
-	z-index: 999;
+	z-index: 997;
 	position: relative;
 }
 
@@ -30,7 +30,17 @@
 	}
 
 	.c-header__super{
-		display: none;
+		.c-header__left{
+			display: none;
+		}
+		.c-header__right{
+			.c-header__search {
+				display: none;
+			}
+			.c-social--header{
+				display: none;
+			}
+		}
 	}
 
 	.c-header__main{
@@ -89,7 +99,8 @@
 		display: block;
 		float: left;
 		position: relative;
-		z-index: -1;
+		z-index: 0;
+		cursor: pointer;
 		.ico-finder{
 			color: white;
 			font-size: 2.5rem;
@@ -169,6 +180,17 @@
 		transition: $ease $speed right;
 		&.js-active{
 			right: calc(100vw - 6rem);
+		}
+	}
+
+	.c-header__main__right{
+		transition: $ease $speed left;
+		left: 0;
+		&.js-active{
+			left: calc(-100% + 60px);
+		}
+		&.js-mobile-active{
+			left: 61px;
 		}
 	}
 
@@ -272,4 +294,10 @@
 		display: block;
 	}
 
+}
+
+@include respond-min-max($mq-large, $mq-x-large){
+	.c-header__super{
+		display: none;
+	}
 }
