@@ -218,11 +218,6 @@
 
 	.c-header__toggle-menu-button{
 		transition: $ease $speed right;
-
-		&.js-active{
-			right: calc(100vw - 6rem);
-		}
-
 	}
 
 	.c-header__main__right{

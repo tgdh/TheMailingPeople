@@ -3,6 +3,7 @@ var Nav = (function ($) {
 	var _nav = function() {
 		$(document).ready(function(){
 			$('.js-toggle').click(function(){
+				$('.c-header__toggle-menu-button').toggleClass('js-active');
 				$('.c-header__right.c-header__main__right').toggleClass('js-active');
 				$('.c-page__wrapper').toggleClass('js-nav-active');
 				$('header').toggleClass('js-nav-active');
