@@ -6,36 +6,47 @@
 
 
 .c-gallery{
+
 	.c-carousel__nav{
 		border-radius: 0;
 		width: 5rem;
 		height: 5rem;
 	}
+
 	.c-carousel__nav--prev{
 		left: 2.5rem;
 	}
+
 	.c-carousel__nav--next{
 		right: 2.5rem;
 	}
+
 	.ico-arrow-left, .ico-arrow-right{
 		font-size: 2.5rem;
 		font-weight: bold;
 	}
+
 }
 .flexbox{
+
 	.c-gallery{
+
 		.c-carousel__nav{
 			display: flex;
 			align-items: center;
 			justify-content: center;
 		}
+
 	}
+
 }
 
 .c-gallery__single-image{
 	display: inline-block;
 	width: 100%;
+
 	.o-media img{
 		border-radius: 0;
 	}
+
 }

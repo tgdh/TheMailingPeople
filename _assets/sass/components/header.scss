@@ -1,15 +1,20 @@
 .c-header{
+
 	&.js-sticky{
+
 		.c-header__main{
 			position: fixed;
 			top: 0;
 			left: 0;
 			width: 100%;
 		}
+
 		.c-header__super{
 			margin-bottom: 8.2rem;
 		}
+
 	}
+
 }
 
 .c-header__main{
@@ -35,17 +40,23 @@
 	}
 
 	.c-header__super{
+
 		.c-header__left{
 			display: none;
 		}
+
 		.c-header__right{
+
 			.c-header__search {
 				display: none;
 			}
+
 			.c-social--header{
 				display: none;
 			}
+
 		}
+
 	}
 
 	.c-header__main{
@@ -106,6 +117,7 @@
 		position: relative;
 		z-index: 0;
 		cursor: pointer;
+
 		.ico-finder{
 			color: white;
 			font-size: 2.5rem;
@@ -183,20 +195,25 @@
 
 	.c-header__toggle-menu-button{
 		transition: $ease $speed right;
+
 		&.js-active{
 			right: calc(100vw - 6rem);
 		}
+
 	}
 
 	.c-header__main__right{
 		transition: $ease $speed left;
 		left: 0;
+
 		&.js-active{
 			left: calc(-100% + 6rem);
 		}
+
 		&.js-mobile-active{
 			left: 6.1rem;
 		}
+
 	}
 
 }
@@ -204,7 +221,9 @@
 @include respond-min ( $mq-large ) {
 
 	.c-header{
+
 		&.js-smaller{
+
 			.c-header__logo-link{
 				width: 18rem;
 			}
@@ -228,7 +247,9 @@
 			.c-nav__list--sub .c-nav__link{
 				padding: 1rem 2.25rem;
 			}
+
 		}
+
 	}
 
 	.c-header__super{
@@ -302,7 +323,9 @@
 }
 
 @include respond-min-max($mq-large, $mq-x-large){
+
 	.c-header__super{
 		display: none;
 	}
+
 }

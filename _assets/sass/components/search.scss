@@ -1,4 +1,5 @@
 @include respond-min($mq-x-large) {
+
 	.c-search__form-wrapper{
 		position: absolute;
 		left: 0;
@@ -9,15 +10,18 @@
 		opacity: 0;
 		transition: $ease .5s top,
 					$ease $speed opacity;
+
 		&.js-search-active{
 			top: 0;
 			opacity: 1;
 		}
+
 		.c-search__form{
 			width: calc(100% - 4.6rem);
 			padding: 0.7rem 1rem;
 			float: right;
 		}
+
 		.close-nav{
 			width: 4.6rem;
 			height: 4.2rem;
@@ -25,6 +29,7 @@
 			float: left;
 			position: relative;
 			cursor: pointer;
+
 			span{
 				width: 1.8rem;
 				height: .2rem;
@@ -35,6 +40,7 @@
 				position: relative;
 				top: 2.0rem;
 				left: 1.3rem;
+
 				&::before{
 					content: "";
 					display: block;
@@ -46,12 +52,17 @@
 					top: 0;
 					left: 0;
 				}
+
 			}
+
 		}
+
 	}
+
 }
 
 @include respond-max($mq-x-large){
+
 	.c-search__form-wrapper{
 		position: fixed;
 		bottom: 0;
@@ -64,13 +75,16 @@
 		opacity: 0;
 		transition: ease-in-out $speed opacity,
 					ease-in-out $speed visibility;
+
 		&.js-mobile-active{
 			opacity: 1;
 			visibility: visible;
+
 			.c-search__text{
 				font-size: 3rem;
 				text-align: center;
 			}
+
 			.c-search__submit{
 				display: block;
 			    width: 100%;
@@ -83,37 +97,55 @@
 			    font-size: 2.75rem;
 			    font-weight: bold;
 			}
+
 		}
+
 	}
+
 	.flexbox{
+
 		.c-search__form-wrapper{
+
 			&.js-mobile-active{
+
 				.c-search__form{
 					height: calc(100vh - 6rem);
 					display: flex;
 					align-items: center;
 					justify-content: center;
 				}
+
 			}
+
 		}
+
 	}
+
 	.no-flexbox{
+
 		.c-search__form-wrapper{
+
 			&.js-mobile-active{
+
 				.c-search__form{
 					height: 4.4rem;
 					position: relative;
 					top: calc(50% - 2.2rem);
 					text-align: center;
+
 					.c-search__submit{
 						bottom: -10rem;
 					}
-				}
-			}
-		}
-	}
-}
 
+				}
+
+			}
+
+		}
+
+	}
+
+}
 
 .c-search__text, .c-search__submit{
 	padding: .2rem 0;
@@ -135,4 +167,12 @@
 
 .c-header__right{
 	position: relative;
+}
+
+.ezsearch-result-count{
+	margin-bottom: 2rem;
+}
+
+.c-listing__label{
+	display: none;
 }

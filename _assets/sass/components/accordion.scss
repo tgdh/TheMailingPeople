@@ -2,6 +2,7 @@
 	display: inline-block;
 	width: 100%;
 	margin-bottom: 2rem;
+
 	.c-accordion__content{
 		max-height: 0;
 		overflow: hidden;
@@ -11,24 +12,34 @@
 		box-sizing: border-box;
 		padding-left: 2.5rem;
 	}
+
 	&.js-active{
+
 		.c-accordion__content{
 			max-height: 200rem;
 		}
+
 		.c-accordion__button{
 			background-color: $pri;
 		}
+
 		.plus{
 			transform: scale(0);
 		}
+
 		.minus{
 			transform: scale(1);
+
 			&::before{
 				background-color: white;
 			}
+
 		}
+
 	}
+
 }
+
 .c-accordion__button{
 	border: .1rem solid lighten($light-1,40);
 	width: 6rem;
@@ -39,16 +50,19 @@
 	cursor: pointer;
 	position: relative;
 	transition: $ease $speed background-color;
+
 	.plus,.minus{
 		transition: $ease $speed all;
 		float: left;
 	}
+
 	.plus{
 		transform: scale(1);
 		display: block;
 		position: relative;
 		left: calc(50% - .9rem);
 		top: calc(50% - .1rem);
+
 		&::before,&::after{
 			content: "";
 			position: relative;
@@ -57,16 +71,20 @@
 			background-color: $light-1;
 			display: block;
 		}
+
 		&::after{
 			transform: rotate(90deg);
 			margin-top: -.2rem;
 		}
+
 	}
+
 	.minus{
 		display: block;
 		position: absolute;
 		left: calc(50% - .9rem);
 		top: calc(50% - .1rem);
+
 		&::before{
 			content: "";
 			position: relative;
@@ -75,8 +93,11 @@
 			background-color: $light-1;
 			display: block;
 		}
+
 	}
+
 }
+
 .c-accordion__header{
 	display: inline-block;
 	padding-left: 2.5rem;

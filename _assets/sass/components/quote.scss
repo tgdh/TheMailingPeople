@@ -22,12 +22,15 @@
 }
 
 @include respond-max($mq-large){
+
 	.c-quote {
 		padding: 4rem 2rem;
 	}
+
 	.c-quote__source{
 		margin-top: 1rem;
 	}
+
 }
 
 .c-quote__page-quote{
@@ -44,7 +47,9 @@
 }
 
 @include respond-max($mq-x-large){
+
 	.c-quote__page-quote{
 		display: none;
 	}
+
 }

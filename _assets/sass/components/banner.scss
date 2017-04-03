@@ -18,9 +18,11 @@
 	font-weight: bold;
 	transition: $ease $speed background-color,
 				$ease $speed border-color;
+
 	&:hover,&:focus{
 		color: white;
 	}
+
 }
 
 .c-banner__icon{
@@ -36,7 +38,9 @@
 }
 
 @include respond-min ( $mq-large ) {
+
 	.c-banner{
+
 		&::after{
 			content: "";
 			display: block;
@@ -47,6 +51,7 @@
 			background-color: white;
 			height: 100%;
 		}
+
 	}
 
 	.c-banner__content-wrapper{
@@ -56,6 +61,7 @@
 		background-color: white;
 		position: relative;
 		z-index: 2;
+
 		&::before{
 			content: "";
 			width: 50rem;
@@ -67,6 +73,7 @@
 			left: -25rem;
 			transform: rotate(25deg);
 		}
+
 		&::after{
 			content: "";
 			display: block;
@@ -80,6 +87,7 @@
 			transform: rotate(25deg);
 			z-index: -1;
 		}
+
 	}
 
 	.c-banner__content{
@@ -106,33 +114,43 @@
 	}
 
 	.no-flexbox{
+
 		.c-banner__link{
 			float: left;
 		}
+
 		.c-banner__icon{
 			float: left;
 		}
+
 		.c-banner__link-text{
 			float: left;
 			width: calc(100% - 4rem);
 		}
+
 	}
+
 }
 
 @media(min-width: 1251px){
 	.flexbox{
+
 		.c-banner__links{
 			display: flex;
 		}
+
 		.c-banner__link{
 			display: flex;
 			align-items: center;
 			justify-content: center;
 		}
+
 	}
+
 }
 
 @media(max-width: 1250px) and (min-width: $mq-large){
+
 	.c-banner__link{
 		width: calc(50% - 2rem);
 		max-width: calc(50% - 2rem);
@@ -140,15 +158,18 @@
 		display: block;
 		margin-bottom: 2rem;
 		min-height: 7.5rem;
+
 		&:nth-child(3){
 			left: 25%;
 			position: relative;
 		}
+
 	}
 
 	.c-banner__links{
 		display: block;
 	}
+
 	.c-banner__icon{
 		float: left;
 	}
@@ -156,26 +177,32 @@
 	.c-banner__link-text{
 		float: left;
 	}
+
 	.c-banner__link-text{
 		width: calc(100% - 4rem);
 	}
 
 	.flexbox{
+
 		.c-banner__link{
 			display: flex;
 			justify-content: center;
 			align-items: center;
 		}
+
 	}
+
 }
 
 @include respond-max ( $mq-large ) {
+
 	.c-banner{
 		padding: 5rem 0 3rem 0;
 	}
 
 	.c-banner__background-image {
 		background-image: none !important;
+
 		&::before{
 			content: "";
 			display: block;
@@ -187,11 +214,13 @@
 			background: linear-gradient(transparent, rgba(0,0,0,0.075)); /* Standard syntax */
 			z-index: -1;
 		}
+
 	}
 
 	.c-banner__heading{
 		text-align: center;
 		position: relative;
+
 		&::before{
 			content: "";
 			display: block;
@@ -202,9 +231,11 @@
 			left: calc(50% - 2.5rem);
 			bottom: 1.5rem;
 		}
+
 		&::after{
 			display: none;
 		}
+
 	}
 
 	.c-banner__text{
@@ -232,4 +263,5 @@
 		float: left;
 		width: calc(100% - 4rem);
 	}
+
 }

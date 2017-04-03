@@ -4,12 +4,15 @@
 
 .c-nav__link{
 	font-weight: bold;
+
 	&:hover,&:focus{
 		color: $white;
 	}
+
 }
 
 @include respond-max ( $mq-large ) {
+
 	.c-header__nav-wrap{
 		position: fixed;
 		top: 0;
@@ -19,9 +22,11 @@
 		height: 100vh;
 		transition: $ease $speed right;
 		box-shadow: inset .5rem 0 3rem rgba($black,0.2);
+
 		&.js-nav-active{
 			right: 0;
 		}
+
 	}
 
 	.c-nav--main{
@@ -37,10 +42,12 @@
 	.c-nav__link{
 		font-size: 2.1rem;
 		color: $white;
+
 		&:hover,&:focus{
 			text-decoration: underline;
 			color: white;
 		}
+
 	}
 
 	.c-nav__sub-chevron{
@@ -52,6 +59,7 @@
 		position: relative;
 		top: .3rem;
 		cursor: pointer;
+
 		&::before,&::after{
 			content: "";
 			display: block;
@@ -60,14 +68,17 @@
 			background-color: white;
 			position: relative;
 		}
+
 		&::before{
 			transform: rotate(55deg);
 			top: .6rem;
 		}
+
 		&::after{
 			transform: rotate(-55deg);
 			top: 1.1rem;
 		}
+
 	}
 
 	.c-nav__list--sub{
@@ -80,9 +91,11 @@
 		background-color: $pri;
 		z-index: 999;
 		transition: $ease $speed left;
+
 		&.js-active{
 			left: 2rem;
 		}
+
 	}
 
 	.c-nav__close{
@@ -95,6 +108,7 @@
 		top: 0;
 		left: 4rem;
 		cursor: pointer;
+
 		.c-nav__close-icon{
 			width: 2rem;
 			height: .3rem;
@@ -103,6 +117,7 @@
 			position: relative;
 			top: 1.2rem;
 			left: -3rem;
+
 			&::before,&::after{
 				content: "";
 				display: block;
@@ -112,14 +127,18 @@
 				background-color: white;
 				left: -.2rem;
 			}
+
 			&::before{
 				transform: rotate(-45deg);
 				top: -.4rem;
 			}
+
 			&::after{
 				transform: rotate(45deg);
 			}
+
 		}
+
 		&:hover,&:focus{
 			text-decoration: underline;
 		}
@@ -130,10 +149,13 @@
 		transition: $ease $speed right;
 		right: 0%;
 		position: relative;
+
 		&.js-nav-active{
 			right: 50%;
 		}
+
 	}
+
 }
 
 @include respond-min ( $mq-large ){
@@ -149,6 +171,7 @@
 
 		&:hover, &:focus{
 			color: white;
+
 			.c-nav__link{
 				background-color: $pri;
 				color: white;
@@ -157,14 +180,19 @@
 			.c-nav__list--sub{
 				visibility: visible;
 				opacity: 1;
+
 				.c-nav__item:hover{
 					.c-nav__link{
 						background-color: white;
 						color: $pri;
 					}
+
 				}
+
 			}
+
 		}
+
 	}
 
 	.c-nav__link{
@@ -182,6 +210,7 @@
 			background-color: $pri;
 			color: white;
 		}
+
 	}
 
 	.c-nav__list--sub{
@@ -210,8 +239,11 @@
 	}
 
 	.c-header.js-smaller{
+
 		.c-nav__list--sub{
 			top: 6.6rem;
 		}
+
 	}
+
 }

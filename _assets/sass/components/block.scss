@@ -3,11 +3,15 @@
 	float: left;
 	background-color: $light-2;
 	position: relative;
+
 	.o-heading{
+
 		&::after{
 			background-color: $black;
 		}
+
 	}
+
 }
 
 .c-block__left{
@@ -32,9 +36,11 @@
 	padding: 5rem 4em 5rem 0;
 	box-sizing: border-box;
 	position: relative;
+
 	&.has--link{
 		padding-bottom: 13rem;
 	}
+
 }
 
 .c-block__content-left,.c-block__content-right{
@@ -48,6 +54,7 @@
 
 .c-block__content-right{
 	padding-left: 1.5rem;
+
 	.c-block__p{
 		display: block;
 		float: left;
@@ -56,6 +63,7 @@
 		font-size: 1.4rem;
 		margin-top: 2rem;
 	}
+
 }
 
 .c-block__p{
@@ -67,10 +75,12 @@
 	position: absolute;
 	right: 5rem;
 	bottom: 5rem;
+
 	&:hover,&:focus{
 		color: $pri;
 		text-decoration: underline;
 	}
+
 }
 
 .c-section__total{
@@ -83,24 +93,30 @@
 }
 
 @include respond-max($mq-x-large){
+
 	.c-block__left{
 		width: 65%;
 	}
+
 	.c-block__right{
 		width: 35%;
 	}
+
 }
 
 @include respond-max($mq-large){
 
 	.c-block__last-week{
 		background-color: $white;
+
 		.c-block__left{
 			width: 100%;
 		}
+
 		.c-block__right{
 			display: none;
 		}
+
 	}
 
 	.c-block__content-left, .c-block__content-right{
@@ -129,6 +145,7 @@
 	.c-block__padded.has--link {
 		padding-bottom: 4rem;
 	}
+
 }
 
 .c-block__client-review{
@@ -136,12 +153,15 @@
 	float: left;
 	width: 100%;
 	position: relative;
+
 	*{
 		color: white;
 	}
+
 	.c-block__headline{
 		padding: 5rem 4em 5rem 0;
 	}
+
 }
 
 .c-client__p{
@@ -184,14 +204,17 @@
 	bottom: 5rem;
 	width: 20rem;
 	left: calc(50% - 10rem);
+
 	&:hover,&:focus{
 		color: black;
 		background-color: darken(white,10);
 		border-bottom-color: darken($light-2,30);
 	}
+
 }
 
 .c-block__left{
+
 	.c-carousel__nav--prev,.c-carousel__nav--next{
 		background-color: transparent;
 		font-size: 3rem;
@@ -199,19 +222,25 @@
 		bottom: 0;
 		height: 5rem;
 		top: calc(100% - 7.5rem);
+
 		&:focus,&:hover{
 			background-color: transparent;
 		}
+
 	}
+
 	.c-carousel__nav--prev{
 		left: 8rem;
 	}
+
 	.c-carousel__nav--next{
 		right: 8rem;
 	}
+
 }
 
 @include respond-max($mq-large){
+
 	.c-block__client-review{
 
 		.c-block__left{
@@ -253,11 +282,15 @@
 		}
 
 		.c-block__left{
+
 			.c-carousel__nav--prev, .c-carousel__nav--next{
 				visibility: hidden;
 			}
+
 		}
+
 	}
+
 }
 
 .c-block__video{
@@ -274,12 +307,15 @@
 }
 
 @include respond-max($mq-x-large){
+
 	.c-block__video{
 		width: 35%;
 	}
+
 }
 
 @include respond-max($mq-large){
+
 	.c-block__video{
 		width: 100%;
 		height: 40rem;
@@ -290,6 +326,7 @@
 	.c-block__client-review{
 		padding-bottom: 40rem;
 	}
+
 }
 
 .c-video__link {
@@ -299,19 +336,25 @@
 	box-sizing: border-box;
 	padding: 4rem;
 	position: relative;
+
 	&:hover,&:focus{
+
 		.c-video__play-btn{
 			transform: scale(1.05);
 		}
+
 	}
+
 }
 
 .c-heading__centered{
 	text-align: center;
+
 	&::after{
 		position: relative;
 		left: calc(50% - 3rem);
 	}
+
 }
 
 .c-video__play-btn{
@@ -343,12 +386,16 @@
 	padding-bottom: .2rem;
 	display: inline-block;
 	margin-bottom: 2rem;
+
 	a{
 		color: $dark-1;
+
 		&:hover,&:focus{
 			color: $dark-1;
 		}
+
 	}
+
 }
 
 .c-block__three-two-one{
@@ -356,16 +403,20 @@
 	width: calc(33.3333% - 6rem);
 	margin-bottom: 6rem;
 	position: relative;
+
 	&:nth-child(3n+1){
 		margin-right: 6rem;
 	}
+
 	&:nth-child(3n+2){
 		margin-right: 3rem;
 		margin-left: 3rem;
 	}
+
 	&:nth-child(3n+3){
 		margin-left: 6rem;
 	}
+
 }
 
 .c-staff__heading{
@@ -375,18 +426,22 @@
 
 .c-staff__link{
 	display: block;
+
 	*{
 		color: black;
 	}
+
 }
 
 .c-staff__linkedin{
 	margin-top: 1rem;
 	color: $pri;
 	display: inline-block;
+
 	&:hover{
 		text-decoration: underline;
 	}
+
 }
 
 .c-staff__jobtitle{
@@ -412,6 +467,7 @@
 				$ease $speed opacity,
 				$ease $speed transform;
 	z-index: 4;
+
 	&::before,&::after{
 		content: "";
 		display: block;
@@ -419,6 +475,7 @@
 		position: relative;
 		border-radius: .2rem;
 	}
+
 	&::before{
 		width: 3.5rem;
 		height: .4rem;
@@ -426,12 +483,14 @@
 		left: calc(50% - 1.75rem);
 		float: left;
 	}
+
 	&::after{
 		width: .4rem;
 		height: 3.5rem;
 		top: calc(50% - 1.75rem);
 		left: calc(50% - .2rem);
 	}
+
 }
 
 .c-staff__image-has-link{
@@ -484,8 +543,8 @@
 }
 
 @include respond-max($mq-small){
-	.c-block__three-two-one{
 
+	.c-block__three-two-one{
 		width: 100%;
 		margin-bottom: 6rem;
 
@@ -513,6 +572,7 @@
 	}
 
 }
+
 .no-flexbox{
 
 	.c-staff__linkedin{
@@ -522,24 +582,33 @@
 }
 
 .c-block__page-content{
+
 	.o-heading{
+
 		&::after{
 			background-color: black;
 		}
+
 	}
 }
 
 .c-block__page__content{
+
 	&.has--quote{
 		width: calc(100% - 40rem);
 		float: left;
 	}
+
 }
 
 @include respond-max($mq-x-large){
+
 	.c-block__page__content{
+
 		&.has--quote{
 			width: 100%;
 		}
+
 	}
+
 }

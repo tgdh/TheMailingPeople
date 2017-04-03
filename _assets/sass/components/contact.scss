@@ -39,9 +39,11 @@
 	&:hover,&:focus{
 		color: black;
 		border-bottom-color: darken($light-2, 35);
+
 		&::after{
 			width: 100%;
 		}
+
 	}
 
 	&::after{
@@ -91,14 +93,16 @@
 .c-contact__map{
 	width: 100%;
 	height: 50rem;
+
 	#map{
 		width: 100%;
 		height: 100%;
 	}
+
 }
 
-
 @include respond-max($mq-large){
+
 	.c-contact{
 		padding: 5rem 0;
 	}
@@ -106,17 +110,22 @@
 	.c-contact__item{
 		width: 100%;
 		margin: 0 0 4rem 0 !important; /* To override nth-childs */
+
 		&:last-child{
 			margin-bottom: 0 !important; /* To override nth-childs */
 		}
+
 	}
 	.c-contact__link{
 		word-wrap: break-word;
 	}
+
 	.c-contact__single-icon{
 		display: none;
 	}
+
 	.c-contact__icon{
 		display: none;
 	}
+
 }

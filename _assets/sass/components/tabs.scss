@@ -106,23 +106,29 @@ ul.scroll_tabs_container {
 	display: inline-block;
 	list-style-type: none;
 	font-size: 2rem;
+
 	&.tab_selected{
 		background-color: $pri;
 		color: white;
 	}
+
 	&:nth-child(1){
 		opacity: .1;
 	}
+
 }
 .c-tabs__content{
 	float: left;
 	width: 100%;
 }
+
 .c-tabs__content-tab{
 	display: none;
 	background-color: $light-2;
 	padding: 3rem;
+
 	&.is-active{
 		display: block;
 	}
+
 }
