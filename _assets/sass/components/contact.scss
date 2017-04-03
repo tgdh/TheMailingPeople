@@ -96,3 +96,23 @@
 		height: 100%;
 	}
 }
+
+
+@include respond-max($mq-large){
+	.c-contact__item{
+		width: 100%;
+		margin: 0 0 4rem 0 !important; /* To override nth-childs */
+		&:last-child{
+			margin-bottom: 0 !important; /* To override nth-childs */
+		}
+	}
+	.c-contact__link{
+		word-wrap: break-word;
+	}
+	.c-contact__single-icon{
+		display: none;
+	}
+	.c-contact__icon{
+		display: none;
+	}
+}
