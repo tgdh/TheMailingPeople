@@ -179,6 +179,14 @@
 /* Mobile First Service Item Page */
 @include respond-max($mq-x-large){
 
+	.c-section_wrapper{
+		margin: 5rem auto;
+	}
+
+	.c-service{
+		margin: 5rem 0;
+	}
+
 	.c-service__page-list{
 		display: inline-block;
 		width: 100%;

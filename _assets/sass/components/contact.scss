@@ -99,6 +99,10 @@
 
 
 @include respond-max($mq-large){
+	.c-contact{
+		padding: 5rem 0;
+	}
+
 	.c-contact__item{
 		width: 100%;
 		margin: 0 0 4rem 0 !important; /* To override nth-childs */

@@ -20,6 +20,11 @@
 
 @include respond-max ( $mq-large ) {
 
+	/* Fixed the fixed position of c-header */
+	.c-page__wrapper{
+		margin-top: 6rem;
+	}
+
 	.c-header{
 		position: fixed;
 		top: 0;

@@ -3,7 +3,6 @@
 	var PageTitle = !string.IsNullOrWhiteSpace(Model.GetPropertyValue<string>("pageTitle")) ? Model.GetPropertyValue<string>("pageTitle") : Model.Name;
 	var FirstPara = Model.GetPropertyValue<string>("paragraph");
 	var PageIcon = Model.GetPropertyValue("pageIcon");
-	var Image = Umbraco.Media(PageIcon).Url;
 	var CurrentPage = Model.Id;
 	var Parent = Model.Parent.Children.Where("Visible");
 
@@ -41,9 +40,6 @@
 	<div class="c-service__content u-clearfix">
 		<div class="o-wrap o-wrap--medium">
 			<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@PageTitle</h2>
-			@if(Image != null && Image != ""){
-				<img src="@Image?width=150" class="c-section__pageIcon">
-			}
 			@if(!string.IsNullOrWhiteSpace(FirstPara))
 			{
 				<p class="c-section__first-para"><strong>@FirstPara</strong></p>
