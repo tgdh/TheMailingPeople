@@ -38,6 +38,36 @@
 	line-height: 2.25rem;
 }
 
+@include respond-min(1200px) {
+
+	.c-banner__link{
+		float: left;
+	}
+
+	.c-banner__icon{
+		float: left;
+	}
+}
+
+@include respond-max(1200px) {
+
+	.c-banner__link{
+		float: left;
+		width: 100%;
+		max-width: 350px !important;
+		margin-bottom: 1.5rem;
+	}
+
+	.c-banner__icon{
+		float: left;
+	}
+
+	.c-banner__links{
+		margin-top: 5rem !important;
+	}
+
+}
+
 @include respond-min ( $mq-large ) {
 
 	.c-banner{
@@ -133,68 +163,6 @@
 
 }
 
-@media(min-width: 1251px){
-	.flexbox{
-
-		.c-banner__links{
-			display: flex;
-		}
-
-		.c-banner__link{
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-	}
-
-}
-
-@media(max-width: 1250px) and (min-width: $mq-large){
-
-	.c-banner__link{
-		width: calc(50% - 2rem);
-		max-width: calc(50% - 2rem);
-		float: left;
-		display: block;
-		margin-bottom: 2rem;
-		min-height: 7.5rem;
-
-		&:nth-child(3){
-			left: 25%;
-			position: relative;
-		}
-
-	}
-
-	.c-banner__links{
-		display: block;
-	}
-
-	.c-banner__icon{
-		float: left;
-	}
-
-	.c-banner__link-text{
-		float: left;
-	}
-
-	.c-banner__link-text{
-		width: calc(100% - 4rem);
-	}
-
-	.flexbox{
-
-		.c-banner__link{
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-
-	}
-
-}
-
 @include respond-max ( $mq-large ) {
 
 	.c-banner{
@@ -254,6 +222,7 @@
 		display: block;
 		max-width: 29rem;
 		margin: 0 auto 2rem auto;
+		float: none;
 	}
 
 	.c-banner__icon{
