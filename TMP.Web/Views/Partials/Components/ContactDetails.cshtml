@@ -1,25 +1,34 @@
-@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@inherits UmbracoViewPage<IPublishedContent>
 @{
-    String ContactNumber = Model.Content.GetPropertyValue<string>("contactNumber");
-	String Address = Model.Content.GetPropertyValue<string>("address");
-	String EmailAddress = Model.Content.GetPropertyValue<string>("emailAddress");
+	var homePage = Model.Site();
+	var Settings = homePage.Descendants("globalSettings").FirstOrDefault();
 
-	String SocialFacebook = Model.Content.GetPropertyValue<string>("facebookURL");
-	String SocialTwitter = Model.Content.GetPropertyValue<string>("twitterURL");
-	String SocialLinkedIn = Model.Content.GetPropertyValue<string>("linkedInUrl");
-	String GooglePlus = Model.Content.GetPropertyValue<string>("googlePlusUrl");
-	String Instagram = Model.Content.GetPropertyValue<string>("instagramURL");
+    String ContactNumber = Model.GetPropertyValue<string>("contactNumber");
+	String Address = Model.GetPropertyValue<string>("address");
+	String EmailAddress = Model.GetPropertyValue<string>("emailAddress");
+
+	String SocialFacebook = Settings.GetPropertyValue<string>("socialFacebookUrl");
+	String SocialTwitter = Settings.GetPropertyValue<string>("socialTwitterUrl");
+	String SocialLinkedIn = Settings.GetPropertyValue<string>("socialLinkedInUrl");
+	String GooglePlus = Settings.GetPropertyValue<string>("socialGoogleUrl");
+	String Instagram = Settings.GetPropertyValue<string>("socialInstagramUrl");
+
+	var TwitterVar = "@TMailingP";
+	var GoogleVar = "@TMailingP";
+	var InstagramVar = "@TMailingPeople";
 }
 
 <div class="c-contact">
 	<div class="o-wrap o-wrap--large u-clearfix">
-		@if(ContactNumber != null){
+		@if(ContactNumber != null)
+		{
 			<div class="c-contact__item">
 				<i class="c-contact__single-icon ico-phone"></i>
 				<a href="tel:@Html.Raw(Html.Encode(ContactNumber).Replace(" ", ""))" class="c-contact__link">@ContactNumber</a>
 			</div>
 		}
-		@if(!string.IsNullOrWhiteSpace(EmailAddress)){
+		@if(!string.IsNullOrWhiteSpace(EmailAddress))
+		{
 			<div class="c-contact__item">
 				<i class="c-contact__single-icon ico-envelop"></i>
 				<a href="mailto:@EmailAddress" class="c-contact__link">@EmailAddress</a>
@@ -33,34 +42,39 @@
 			</div>
 		}
 		<div class="c-contact__item">
-			@if(!string.IsNullOrWhiteSpace(SocialFacebook)){
+			@if(!string.IsNullOrWhiteSpace(SocialFacebook))
+			{
 				<div class="c-contact__social-wrapper u-clearfix">
 					<i class="c-contact__icon ico-facebook"></i>
-					<a href="@SocialFacebook" class="c-contact__link c-contact__social" target="_blank">@SocialFacebook</a>
+					<a href="@SocialFacebook" class="c-contact__link c-contact__social" target="_blank">TheMailingPeople</a>
 				</div>
 			}
-			@if(!string.IsNullOrWhiteSpace(SocialTwitter)){
+			@if(!string.IsNullOrWhiteSpace(SocialTwitter))
+			{
 				<div class="c-contact__social-wrapper u-clearfix">
 					<i class="c-contact__icon ico-twitter"></i>
-					<a href="@SocialFacebook" class="c-contact__link c-contact__social" target="_blank">@SocialTwitter</a>
+					<a href="@SocialTwitter" class="c-contact__link c-contact__social" target="_blank">@TwitterVar</a>
 				</div>
 			}
-			@if(!string.IsNullOrWhiteSpace(SocialLinkedIn)){
+			@if(!string.IsNullOrWhiteSpace(SocialLinkedIn))
+			{
 				<div class="c-contact__social-wrapper u-clearfix">
 					<i class="c-contact__icon ico-linkedin"></i>
-					<a href="@SocialFacebook" class="c-contact__link c-contact__social" target="_blank">@SocialLinkedIn</a>
+					<a href="@SocialLinkedIn" class="c-contact__link c-contact__social" target="_blank">The-Mailing-People</a>
 				</div>
 			}
-			@if(!string.IsNullOrWhiteSpace(GooglePlus)){
+			@if(!string.IsNullOrWhiteSpace(GooglePlus))
+			{
 				<div class="c-contact__social-wrapper u-clearfix">
 					<i class="c-contact__icon ico-google"></i>
-					<a href="@SocialFacebook" class="c-contact__link c-contact__social" target="_blank">@GooglePlus</a>
+					<a href="@GooglePlus" class="c-contact__link c-contact__social" target="_blank">@GoogleVar</a>
 				</div>
 			}
-			@if(!string.IsNullOrWhiteSpace(Instagram)){
+			@if(!string.IsNullOrWhiteSpace(Instagram))
+			{
 				<div class="c-contact__social-wrapper u-clearfix">
 					<i class="c-contact__icon ico-instagram"></i>
-					<a href="@SocialFacebook" class="c-contact__link c-contact__social" target="_blank">@Instagram</a>
+					<a href="@Instagram" class="c-contact__link c-contact__social" target="_blank">@InstagramVar</a>
 				</div>
 			}
 		</div>

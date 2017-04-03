@@ -60,6 +60,14 @@
 		width: 100%;
 		background-color: white;
 		z-index: 995;
+		&.js-sticky{
+
+			.c-header__super{
+				margin-bottom: 6rem;
+			}
+
+		}
+
 	}
 
 	.c-header__super{
