@@ -22,6 +22,19 @@
 		.c-social__link {
 			display: inline-block;
 			float: none;
+			position: relative;
+			opacity: 1;
+			visibility: visible;
+			top: 0;
+			transition: $ease $speed opacity,
+						$ease $speed visibility,
+						$ease $speed top;
+
+			&.js-search-active{
+				opacity: 0;
+				visibility: hidden;
+				top: 3rem;
+			}
 		}
 	}
 

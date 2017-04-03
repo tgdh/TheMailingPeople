@@ -65,6 +65,7 @@
 		$window.PopupMagic.init();
 		$window.Accordion.init();
 		$window.Tabs.init();
+        $window.Search.init();
         //		MQ.init(breakpoints);
     }
 
