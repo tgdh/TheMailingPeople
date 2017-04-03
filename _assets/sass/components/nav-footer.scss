@@ -61,3 +61,11 @@
 	}
 
 }
+
+@include respond-min($mq-large){
+
+	.c-nav--footer{
+		float: right;
+	}
+
+}
