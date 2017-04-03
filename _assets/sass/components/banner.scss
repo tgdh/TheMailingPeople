@@ -19,7 +19,8 @@
 	transition: $ease $speed background-color,
 				$ease $speed border-color;
 
-	&:hover,&:focus{
+	&:hover,
+	&:focus{
 		color: white;
 	}
 

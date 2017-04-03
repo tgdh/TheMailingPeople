@@ -26,7 +26,8 @@
     }
 
 	.c-nav__link{
-		&:hover{
+		&:hover,
+		&:focus{
 			background-color: transparent;
 		}
 	}

@@ -46,7 +46,8 @@
 	margin-top: 3rem;
 	display: block;
 
-	&:hover,&:focus{
+	&:hover,
+	&:focus{
 		text-decoration: underline;
 	}
 
@@ -165,7 +166,8 @@
 		border-bottom: none;
 	}
 
-	&:hover,&:focus{
+	&:hover,
+	&:focus{
 		background-color: $light-2;
 		color: $dark-1;
 	}

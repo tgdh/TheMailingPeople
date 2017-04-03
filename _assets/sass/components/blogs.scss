@@ -51,7 +51,8 @@
 		transition: $ease .5s width;
 	}
 
-	&:focus,&:hover{
+	&:focus,
+	&:hover{
 		color: black;
 
 		&::after{
@@ -105,7 +106,8 @@
 			height: 27px;
 			position: relative;
 
-			&:hover,&:focus{
+			&:hover,
+			&:focus{
 
 				&::after{
 					width: 100%;

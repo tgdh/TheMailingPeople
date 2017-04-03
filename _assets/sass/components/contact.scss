@@ -36,7 +36,8 @@
 	transition: $ease 1s border-color;
 	position: relative;
 
-	&:hover,&:focus{
+	&:hover,
+	&:focus{
 		color: black;
 		border-bottom-color: darken($light-2, 35);
 

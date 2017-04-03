@@ -76,7 +76,8 @@
 	right: 5rem;
 	bottom: 5rem;
 
-	&:hover,&:focus{
+	&:hover,
+	&:focus{
 		color: $pri;
 		text-decoration: underline;
 	}
@@ -205,7 +206,8 @@
 	width: 20rem;
 	left: calc(50% - 10rem);
 
-	&:hover,&:focus{
+	&:hover,
+	&:focus{
 		color: black;
 		background-color: darken(white,10);
 		border-bottom-color: darken($light-2,30);
@@ -223,7 +225,8 @@
 		height: 5rem;
 		top: calc(100% - 7.5rem);
 
-		&:focus,&:hover{
+		&:focus,
+		&:hover{
 			background-color: transparent;
 		}
 
@@ -337,7 +340,8 @@
 	padding: 4rem;
 	position: relative;
 
-	&:hover,&:focus{
+	&:hover,
+	&:focus{
 
 		.c-video__play-btn{
 			transform: scale(1.05);
@@ -390,7 +394,8 @@
 	a{
 		color: $dark-1;
 
-		&:hover,&:focus{
+		&:hover,
+		&:focus{
 			color: $dark-1;
 		}
 
@@ -438,7 +443,8 @@
 	color: $pri;
 	display: inline-block;
 
-	&:hover{
+	&:hover,
+	&:focus{
 		text-decoration: underline;
 	}
 
@@ -496,7 +502,8 @@
 .c-staff__image-has-link{
 	position: relative;
 
-	&:hover{
+	&:hover,
+	&:focus{
 
 		&::after{
 			opacity: 1;
