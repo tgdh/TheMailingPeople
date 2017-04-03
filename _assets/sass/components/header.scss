@@ -13,8 +13,31 @@
 			margin-bottom: 8.2rem;
 		}
 
+		.c-header__search__scroll{
+			opacity: 1;
+		}
+
 	}
 
+}
+
+.c-header__search__scroll {
+    position: absolute;
+    left: -67px;
+    color: lighten($light-1,10);
+    border-left: 1px solid lighten($light-1,25);
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 67px;
+    cursor: pointer;
+	opacity: 0;
+	transition: $ease $speed opacity;
+	.ico-finder{
+		font-size: 2rem;
+	}
 }
 
 .c-header__main{
