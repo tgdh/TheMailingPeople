@@ -10,7 +10,7 @@
 
 .c-banner__link{
 	background-color: $pri;
-	border-radius: 5px;
+	border-radius: .5rem;
 	overflow: hidden;
 	color: white;
 	padding: 1.25rem 2rem;
@@ -58,25 +58,25 @@
 		z-index: 2;
 		&::before{
 			content: "";
-			width: 500px;
-			height: calc(100% + 150px);
+			width: 50rem;
+			height: calc(100% + 15rem);
 			background-color: white;
 			display: block;
 			position: absolute;
-			bottom: -150px;
-			left: -250px;
+			bottom: -15rem;
+			left: -25rem;
 			transform: rotate(25deg);
 		}
 		&::after{
 			content: "";
 			display: block;
-			width: 520px;
-			height: 300px;
+			width: 52rem;
+			height: 30rem;
 			background-color: $pri;
 			opacity: .8;
 			position: absolute;
-			top: -175px;
-			left: -520px;
+			top: -17.5rem;
+			left: -52.0rem;
 			transform: rotate(25deg);
 			z-index: -1;
 		}
@@ -220,7 +220,7 @@
 	.c-banner__link{
 		width: 100%;
 		display: block;
-		max-width: 290px;
+		max-width: 29rem;
 		margin: 0 auto 2rem auto;
 	}
 

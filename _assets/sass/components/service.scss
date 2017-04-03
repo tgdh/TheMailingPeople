@@ -21,12 +21,12 @@
 .c-services__image-wrapper{
 	background-color: $light-2;
 	width: 100%;
-	height: 225px;
+	height: 22.5rem;
 }
 
 .c-services__title{
 	color: $dark-1;
-	border-bottom: 1px solid $dark-2;
+	border-bottom: .1rem solid $dark-2;
 	margin-top: 3rem;
 	margin-bottom: 2rem;
 	padding: 0 0 .2rem 0;
@@ -47,7 +47,7 @@
 }
 
 .c-services__item{
-	min-height: 550px;
+	min-height: 55rem;
 }
 
 .flexbox{
@@ -61,8 +61,8 @@
 .no-flexbox{
 	.c-services__image{
 		position: relative;
-		left: calc(50% - 50px);
-		top: calc(50% - 50px);
+		left: calc(50% - 5rem);
+		top: calc(50% - 5rem);
 	}
 }
 
@@ -110,7 +110,7 @@
 }
 
 .c-services__list{
-	border-radius: 6px;
+	border-radius: .6rem;
 	overflow: hidden;
 	margin-bottom: 6rem;
 }
@@ -130,7 +130,7 @@
 	color: white;
 	display: block;
 	padding: 2rem 3rem;
-	border-bottom: 1px solid darken($pri,10);
+	border-bottom: .1rem solid darken($pri,10);
 	background-color: $pri;
 	transition: $ease $speed background-color,
 				$ease $speed color;
@@ -152,7 +152,7 @@
 	background-color: $light-2;
 	text-align: center;
 	padding: 4rem;
-	border-radius: 5px;
+	border-radius: .5rem;
 }
 
 .c-nee-help__title{
@@ -160,7 +160,7 @@
 }
 
 .c-need-help__logo{
-	max-width: 200px;
+	max-width: 20rem;
 	display: block;
 	margin: 2rem auto 4rem auto;
 }
@@ -222,13 +222,13 @@
 @include respond-min($mq-x-large){
 
 	.c-service__page-list{
-		width: 350px;
+		width: 35rem;
 		float: left;
 	}
 
 	.c-service__content{
 		float: right;
-		width: calc(100% - 450px);
+		width: calc(100% - 45rem);
 	}
 
 }

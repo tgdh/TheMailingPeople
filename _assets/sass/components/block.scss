@@ -176,14 +176,14 @@
 	color: black;
 	display: inline-block;
 	padding: 1.25rem 4rem;
-	border-radius: 5px;
-	border-bottom: 4px solid darken($light-2,20);
+	border-radius: .5rem;
+	border-bottom: .4rem solid darken($light-2,20);
 	transition: $ease $speed border-color,
 				$ease $speed background-color;
 	position: absolute;
 	bottom: 5rem;
-	width: 200px;
-	left: calc(50% - 100px);
+	width: 20rem;
+	left: calc(50% - 10rem);
 	&:hover,&:focus{
 		color: black;
 		background-color: darken(white,10);
@@ -339,7 +339,7 @@
 .c-video__top-title{
 	padding: 0;
 	margin: 0;
-	border-bottom: 1px solid lighten($dark-1,50);
+	border-bottom: .1rem solid lighten($dark-1,50);
 	padding-bottom: .2rem;
 	display: inline-block;
 	margin-bottom: 2rem;
@@ -399,12 +399,12 @@
 }
 
 .c_staff__circle-overlay{
-	width: 75px;
-	height: 75px;
+	width: 7.5rem;
+	height: 7.5rem;
 	background-color: white;
 	position: absolute;
-	top: calc(50% - 27.5px);
-	left: calc(50% - 37.5px);
+	top: calc(50% - 2.75rem);
+	left: calc(50% - 3.75rem);
 	display: block;
 	border-radius: 50%;
 	opacity: 0;
@@ -417,20 +417,20 @@
 		display: block;
 		background-color: $pri;
 		position: relative;
-		border-radius: 2px;
+		border-radius: .2rem;
 	}
 	&::before{
-		width: 35px;
-		height: 4px;
-		top: calc(50% - 2px);
-		left: calc(50% - 17.5px);
+		width: 3.5rem;
+		height: .4rem;
+		top: calc(50% - .2rem);
+		left: calc(50% - 1.75rem);
 		float: left;
 	}
 	&::after{
-		width: 4px;
-		height: 35px;
-		top: calc(50% - 17.5px);
-		left: calc(50% - 2px);
+		width: .4rem;
+		height: 3.5rem;
+		top: calc(50% - 1.75rem);
+		left: calc(50% - .2rem);
 	}
 }
 
@@ -444,7 +444,7 @@
 		}
 
 		.c_staff__circle-overlay{
-			top: calc(50% - 37.5px);
+			top: calc(50% - 3.75rem);
 			opacity: 1;
 		}
 	}
@@ -516,7 +516,7 @@
 .no-flexbox{
 
 	.c-staff__linkedin{
-		height: 22px;
+		height: 2.2rem;
 	}
 
 }
@@ -531,7 +531,7 @@
 
 .c-block__page__content{
 	&.has--quote{
-		width: calc(100% - 400px);
+		width: calc(100% - 40rem);
 		float: left;
 	}
 }
