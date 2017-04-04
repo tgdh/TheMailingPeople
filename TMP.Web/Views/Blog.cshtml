@@ -13,53 +13,55 @@
 }
 
 <main class="o-page__inner" role="main">
-    @Html.Partial("~/Views/Partials/Page/Headline.cshtml")
-	<div class="c-section_wrapper o-wrap o-wrap--large u-clearfix">
-		<aside class="c-service__page-list">
-		    @Html.Partial("~/Views/Partials/Pods/TagPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Authors" }, { "docType", "author" }, { "baseUrl", Model.Url } })
-		    @Html.Partial("~/Views/Partials/Pods/TagPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Categories" }, { "docType", "category" }, { "baseUrl", Model.Url } })
-		    @Html.Partial("~/Views/Partials/Pods/DateArchive.cshtml", allBlogPosts)
-		</aside>
-		<section class="c-service__content u-clearfix">
-	        @if (selectedBlogPosts.Any())
-	        {
-	            foreach (var post in selectedBlogPosts)
-	            {
-	                var articleModel = new ArticleViewModel
-	                {
-	                    Id = post.Id,
-	                    Name = post.HasValue("headline") ? post.GetPropertyValue<string>("headline") : post.Name,
-	                    Thumbnail = Umbraco.TypedMedia(post.GetPropertyValue<int>("coverImage")),
-	                    Excerpt = post.GetPropertyValue<string>("excerpt"),
-	                    Url = post.Url,
-	                    Category = GetMetaById(post.GetPropertyValue<int>("category")),
-	                    Author = GetMetaById(post.GetPropertyValue<int>("author")),
-	                    CreateDate = post.GetPropertyValue<DateTime>("releaseDate")
-	                };
+	<div class="c-page__wrapper">
+	    @Html.Partial("~/Views/Partials/Page/Headline.cshtml")
+		<div class="c-section_wrapper o-wrap o-wrap--large u-clearfix">
+			<aside class="c-service__page-list">
+			    @Html.Partial("~/Views/Partials/Pods/TagPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Authors" }, { "docType", "author" }, { "baseUrl", Model.Url } })
+			    @Html.Partial("~/Views/Partials/Pods/TagPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Categories" }, { "docType", "category" }, { "baseUrl", Model.Url } })
+			    @Html.Partial("~/Views/Partials/Pods/DateArchive.cshtml", allBlogPosts)
+			</aside>
+			<section class="c-service__content u-clearfix">
+		        @if (selectedBlogPosts.Any())
+		        {
+		            foreach (var post in selectedBlogPosts)
+		            {
+		                var articleModel = new ArticleViewModel
+		                {
+		                    Id = post.Id,
+		                    Name = post.HasValue("headline") ? post.GetPropertyValue<string>("headline") : post.Name,
+		                    Thumbnail = Umbraco.TypedMedia(post.GetPropertyValue<int>("coverImage")),
+		                    Excerpt = post.GetPropertyValue<string>("excerpt"),
+		                    Url = post.Url,
+		                    Category = GetMetaById(post.GetPropertyValue<int>("category")),
+		                    Author = GetMetaById(post.GetPropertyValue<int>("author")),
+		                    CreateDate = post.GetPropertyValue<DateTime>("releaseDate")
+		                };
 
-	                if (post.DocumentTypeAlias == TMP.Core.Constants.InTheMedia)
-	                {
-	                    articleModel.Url = post.HasValue("source") ? post.GetPropertyValue<string>("source") : "#";
-	                    articleModel.LinkTarget = "_blank";
-	                    articleModel.ExtraClasses = "is-external";
-	                }
+		                if (post.DocumentTypeAlias == TMP.Core.Constants.InTheMedia)
+		                {
+		                    articleModel.Url = post.HasValue("source") ? post.GetPropertyValue<string>("source") : "#";
+		                    articleModel.LinkTarget = "_blank";
+		                    articleModel.ExtraClasses = "is-external";
+		                }
 
-	                @Html.Partial("~/Views/Partials/Cards/ArticleCard.cshtml", articleModel)
-	            }
+		                @Html.Partial("~/Views/Partials/Cards/ArticleCard.cshtml", articleModel)
+		            }
 
-	            <nav class="c-blogs__pagination">
-	                @PagingTemplate.RenderPaging(paging, Model.Id)
-	            </nav>
-	        }
-	        else
-	        {
-	            var homePage = Model.Site();
-	            var tagSettings = homePage.Descendant("tagSettings");
-	            var noResultsMessage = tagSettings.GetPropertyValue<IHtmlString>("noResultsMessage");
+		            <nav class="c-blogs__pagination">
+		                @PagingTemplate.RenderPaging(paging, Model.Id)
+		            </nav>
+		        }
+		        else
+		        {
+		            var homePage = Model.Site();
+		            var tagSettings = homePage.Descendant("tagSettings");
+		            var noResultsMessage = tagSettings.GetPropertyValue<IHtmlString>("noResultsMessage");
 
-	            @noResultsMessage
-	        }
-	    </section>
+		            @noResultsMessage
+		        }
+		    </section>
+		</div>
 	</div>
 </main>
 

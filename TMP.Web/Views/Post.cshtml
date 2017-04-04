@@ -7,15 +7,17 @@
 }
 
 <main class="o-page__inner" role="main">
-    @Html.Partial("~/Views/Partials/Page/Headline.cshtml")
-	<div class="c-section_wrapper o-wrap o-wrap--large u-clearfix">
-		<aside class="c-service__page-list">
-		    @Html.Partial("~/Views/Partials/Pods/TagPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Authors" }, { "docType", "author" }, { "baseUrl", Model.Url } })
-		    @Html.Partial("~/Views/Partials/Pods/TagPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Categories" }, { "docType", "category" }, { "baseUrl", Model.Url } })
-		    @Html.Partial("~/Views/Partials/Pods/DateArchive.cshtml", allBlogPosts)
-		</aside>
-		<div class="c-service__content u-clearfix c-blogs__blog-post">
-    		@Html.Partial("~/Views/Partials/Page/Components.cshtml")
+		<div class="c-page__wrapper">
+	    @Html.Partial("~/Views/Partials/Page/Headline.cshtml")
+		<div class="c-section_wrapper o-wrap o-wrap--large u-clearfix">
+			<aside class="c-service__page-list">
+			    @Html.Partial("~/Views/Partials/Pods/TagPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Authors" }, { "docType", "author" }, { "baseUrl", Model.Url } })
+			    @Html.Partial("~/Views/Partials/Pods/TagPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Categories" }, { "docType", "category" }, { "baseUrl", Model.Url } })
+			    @Html.Partial("~/Views/Partials/Pods/DateArchive.cshtml", allBlogPosts)
+			</aside>
+			<div class="c-service__content u-clearfix c-blogs__blog-post">
+	    		@Html.Partial("~/Views/Partials/Page/Components.cshtml")
+			</div>
 		</div>
 	</div>
 </main>

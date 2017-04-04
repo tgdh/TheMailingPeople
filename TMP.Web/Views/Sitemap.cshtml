@@ -4,13 +4,15 @@
 }
 
 <main class="o-page__inner" role="main">
-    @Html.Partial("~/Views/Partials/Page/Headline.cshtml")
+	<div class="c-page__wrapper">
+		@Html.Partial("~/Views/Partials/Page/Headline.cshtml")
 
-    <div class="o-section s-free-content">
-        @Html.Partial("~/Views/Partials/Page/Components.cshtml")
+		<div class="o-section s-free-content">
+		    @Html.Partial("~/Views/Partials/Page/Components.cshtml")
 
-        <div class=" o-wrap o-wrap--medium">
-            @Html.Partial("~/Views/Partials/Page/Sitemap.cshtml")
-        </div>
-    </div>
+		    <div class=" o-wrap o-wrap--medium">
+		        @Html.Partial("~/Views/Partials/Page/Sitemap.cshtml")
+		    </div>
+		</div>
+	</div>
 </main>
