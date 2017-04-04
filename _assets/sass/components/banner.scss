@@ -234,4 +234,9 @@
 		width: calc(100% - 4rem);
 	}
 
+	.no-enhance{
+		.c-banner{
+			padding: 0 0 5rem 0;
+		}
+	}
 }

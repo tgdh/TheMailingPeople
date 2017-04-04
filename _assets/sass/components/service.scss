@@ -77,6 +77,14 @@
 
 }
 
+.no-enhance{
+	.c-services__image{
+		position: relative;
+		left: calc(50% - 62.5px);
+		top: calc(50% - 62.5px);
+	}
+}
+
 @include respond-max($mq-x-large){
 
 	.c-services__item{
@@ -261,4 +269,12 @@
 		width: calc(100% - 45rem);
 	}
 
+}
+
+@include respond-max($mq-large){
+	.no-enhance{
+		.c-service__page-list{
+			display: none;
+		}
+	}
 }

@@ -27,6 +27,7 @@
 	}
 
 }
+
 .flexbox{
 
 	.c-gallery{
@@ -49,4 +50,10 @@
 		border-radius: 0;
 	}
 
+}
+
+.no-enhance{
+	.c-gallery{
+		display: none;
+	}
 }

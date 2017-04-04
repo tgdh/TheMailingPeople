@@ -10,7 +10,6 @@ ul.scroll_tabs_container {
   list-style: none;
 }
 
-
 .scroll_tabs_container div.scroll_tab_inner span, .scroll_tabs_container div.scroll_tab_inner li {
   cursor: pointer;
 }
@@ -93,11 +92,13 @@ ul.scroll_tabs_container {
 	float: left;
 	width: 100%;
 }
+
 .c-tabs__nav-list{
 	float: left;
 	width: 100%;
 	height: 62px;
 }
+
 .c-tabs__nav-item{
 	margin: 0;
 	padding: 0;
@@ -117,6 +118,7 @@ ul.scroll_tabs_container {
 	}
 
 }
+
 .c-tabs__content{
 	float: left;
 	width: 100%;
@@ -131,4 +133,14 @@ ul.scroll_tabs_container {
 		display: block;
 	}
 
+}
+
+.no-enhance{
+	.c-tabs__content-tab{
+		display: block;
+	}
+
+	.c-tabs__nav{
+		display: none;
+	}
 }

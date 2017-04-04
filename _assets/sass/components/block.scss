@@ -93,6 +93,20 @@
 	line-height: 7rem;
 }
 
+.no-enhance{
+	.c-client__item{
+		display: none;
+		&:first-child{
+			display: block;
+			height: 30rem;
+		}
+	}
+	.c-client__link{
+		left: 24.9rem;
+		font-size: 1.55rem;
+	}
+}
+
 @include respond-max($mq-x-large){
 
 	.c-block__left{

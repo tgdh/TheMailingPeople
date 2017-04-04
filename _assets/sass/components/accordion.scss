@@ -103,3 +103,9 @@
 	padding-left: 2.5rem;
 	padding-top: 1.5rem;
 }
+
+.no-enhance{
+	.c-accordion_item .c-accordion__content{
+		max-height: 100%;
+	}
+}

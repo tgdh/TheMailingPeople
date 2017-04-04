@@ -242,6 +242,47 @@
 
 	}
 
+	.no-enhance{
+
+		.c-header{
+			position: inherit;
+		}
+
+		.c-header__main__right{
+			display: none;
+		}
+
+		.c-header__nav-wrap{
+			position: inherit;
+			height: auto;
+			width: 100vw;
+		}
+
+		.c-nav--main{
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+		}
+
+		.c-nav__sub-chevron, .c-nav__close{
+			display: none;
+		}
+
+		.c-nav__list--sub{
+			width: auto;
+			height: auto;
+			padding: 0;
+			margin: 0;
+			position: inherit;
+			margin-left: 2rem;
+		}
+
+		.c-nav__item{
+			margin: 2rem;
+			padding: 0;
+		}
+
+	}
+
 }
 
 @include respond-min ( $mq-large ) {
@@ -364,4 +405,11 @@
 		margin-top: 6rem;
 	}
 
+}
+
+.no-enhance{
+	.c-header__cta{
+		position: relative;
+		top: 1.4rem;
+	}
 }
