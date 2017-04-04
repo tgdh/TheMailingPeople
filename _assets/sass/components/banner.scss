@@ -52,7 +52,7 @@
 @include respond-max(1200px) {
 
 	.c-banner__link{
-		float: left;
+		display: block;
 		width: 100%;
 		max-width: 350px !important;
 		margin-bottom: 1.5rem;

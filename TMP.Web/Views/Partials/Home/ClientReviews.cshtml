@@ -18,12 +18,14 @@
 					var ImageMedia = Umbraco.Media(ImageId);
 					String Client = item.GetPropertyValue<string>("client");
 					String Quote = item.GetPropertyValue<string>("quote");
-					var Link = item.GetPropertyValue("link");
+
+					String Link = item.GetPropertyValue<string>("link");
+					var decode = Json.Decode(Link);
 					<div class="c-client__item">
 						<img src="@ImageMedia.Url?width=80&height=80" alt="@Client" class="c-client-review__image">
 						<p class="c-client__p">" @Quote "</p>
 						<span class="c-client__name">@Client</span>
-						<a href="@Link" class="c-client__link">View Case Study</a>
+						<a href="@decode.url" class="c-client__link">View Case Study</a>
 					</div>
 			    }
 			</div>
