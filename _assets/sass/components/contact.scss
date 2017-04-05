@@ -5,19 +5,19 @@
 }
 
 .c-contact__item{
-	width: calc(50% - 3.5rem);
+	width: calc(50% - 2.5rem);
 	float: left;
 	background-color: $light-2;
-	margin-bottom: 7rem;
-	padding: 2.5rem;
+	margin-bottom: 5rem;
+	padding: 2rem;
 	border-radius: .7rem;
 
 	&:nth-child(odd){
-		margin-right: 3.5rem;
+		margin-right: 2.5rem;
 	}
 
 	&:nth-child(even){
-		margin-left: 3.5rem;
+		margin-left: 2.5rem;
 	}
 
 }
