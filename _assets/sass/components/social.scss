@@ -26,7 +26,8 @@
 			top: 0;
 			transition: $ease $speed opacity,
 						$ease $speed visibility,
-						$ease $speed top;
+						$ease $speed top,
+						$ease $speed background-color;
 
 			&.js-search-active{
 				opacity: 0;
