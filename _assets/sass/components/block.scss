@@ -164,96 +164,71 @@
 }
 
 .c-block__client-review{
-	background-color: $dark-2;
-	float: left;
+	display: inline-block;
 	width: 100%;
+	padding: 5rem 4rem 5rem 0;
 	position: relative;
-
+	background-color: $dark-2;
 	*{
 		color: white;
 	}
+	.c-carousel__nav {
+		position: absolute;
+		bottom: 0;
+		padding: 0;
+		margin: 8rem 0 0 0;
 
-	.c-block__headline{
-		padding: 5rem 4em 5rem 0;
+		&.c-carousel__nav--next{
+			right: 4rem;
+		}
+		&.c-carousel__nav--prev{
+			left: 0;
+		}
 	}
-
-}
-
-.c-client__p{
-	float: left;
-	width: calc(100% - 14rem);
-	font-size: 1.55rem;
-}
-
-.c-client__name{
-	margin-top: 2rem;
-	float: left;
-	display: block;
-	font-weight: bold;
 }
 
 .c-client__item{
-	padding-bottom: 14rem;
 	padding-right: 5rem;
+	margin-top: 4rem;
+	position: relative;
+	padding-bottom: 10rem;
 }
 
 .c-client-review__image{
-	width: 8rem;
-	height: 8rem;
-	overflow: hidden;
-	border-radius: 50%;
-	margin-right: 6rem;
+	width: 9rem;
+	height: 9rem;
+	display: block;
 	float: left;
+	border-radius: 50%;
+	margin-right: 5rem;
+}
+
+.c-client__name{
+	font-weight: bold;
+	margin-top: 2rem;
+	display: block;
 }
 
 .c-client__link{
-	background-color: white;
-	color: black;
+	background-color: $white;
+	border-bottom: 3px solid darken($white,20);
+	color: $black;
+	font-size: 1.7rem;
+	padding: 1rem 4rem;
 	display: inline-block;
-	padding: 1.25rem 4rem;
-	border-radius: .5rem;
-	border-bottom: .4rem solid darken($light-2,20);
-	transition: $ease $speed border-color,
-				$ease $speed background-color;
+	border-radius: 6px;
+	transition: $ease $speed color,
+				$ease $speed background-color,
+				$ease $speed border-color;
 	position: absolute;
-	bottom: 5rem;
-	width: 20rem;
-	left: calc(50% - 10rem);
-
+	bottom: 0;
+	left: 14rem;
 	&:hover,
 	&:focus{
+		background-color: darken($white,15);
+		border-bottom-color: darken($white,30);
 		color: black;
-		background-color: darken(white,10);
-		border-bottom-color: darken($light-2,30);
 	}
-
-}
-
-.c-block__left{
-
-	.c-carousel__nav--prev,.c-carousel__nav--next{
-		background-color: transparent;
-		font-size: 3rem;
-		position: absolute;
-		bottom: 0;
-		height: 5rem;
-		top: calc(100% - 7.5rem);
-
-		&:focus,
-		&:hover{
-			background-color: transparent;
-		}
-
-	}
-
-	.c-carousel__nav--prev{
-		left: 8rem;
-	}
-
-	.c-carousel__nav--next{
-		right: 8rem;
-	}
-
 }
 
 @include respond-max($mq-large){
@@ -351,7 +326,7 @@
     width: 100%;
     height: 100%;
 	box-sizing: border-box;
-	padding: 4rem;
+	padding: 5rem;
 	position: relative;
 
 	&:hover,
