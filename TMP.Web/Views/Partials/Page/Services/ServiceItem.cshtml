@@ -16,14 +16,20 @@
     }
 }
 
-<div class="c-section_wrapper o-wrap o-wrap--large u-clearfix">
+<div class="c-block__breadcrumb">
+	<div class="o-wrap o-wrap--x-large">
+		@Html.Partial("~/Views/Partials/Page/Breadcrumbs.cshtml")
+	</div>
+</div>
+
+<div class="c-section_wrapper o-section o-wrap o-wrap--x-large u-clearfix">
 	<div class="c-service__page-list">
-		<div class="o-wrap o-wrap--medium">
+		<div class="o-wrap o-wrap--large">
 			<ul class="c-services__list">
 				@foreach(var item in Parent){
 					var active = item.Id == CurrentPage ? "is-active" : "";
 					<li class="c-services__li">
-						<a href="@item.Url" class="c-services__link u-delta @active">@item.Name</a>
+						<a href="@item.Url" class="c-services__link u-epsilon @active">@item.Name</a>
 					</li>
 				}
 			</ul>
@@ -38,7 +44,7 @@
 		</div>
 	</div>
 	<div class="c-service__content u-clearfix">
-		<div class="o-wrap o-wrap--medium">
+		<div class="o-wrap o-wrap--large">
 			<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@PageTitle</h2>
 			@if(!string.IsNullOrWhiteSpace(FirstPara))
 			{
