@@ -1,6 +1,7 @@
 .c-service{
 	display: inline-block;
 	width: 100%;
+	display: flex;
 }
 
 .c-services__image{
@@ -70,10 +71,6 @@
 
 }
 
-.c-services__item{
-	min-height: 55rem;
-}
-
 .flexbox{
 
 	.c-services__image-wrapper{
@@ -82,14 +79,24 @@
 		justify-content: center;
 	}
 
+	.c-service-flex-container{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
+
 }
 
 .no-flexbox{
 
+	.c-services__item{
+		min-height: 600px;
+	}
+
 	.c-services__image{
 		position: relative;
-		left: calc(50% - 5rem);
-		top: calc(50% - 5rem);
+		left: calc(50% - 6.25rem);
+		top: calc(50% - 6.25rem);
 	}
 
 }
@@ -125,6 +132,12 @@
 }
 
 @include respond-max($mq-large){
+
+	.no-flexbox{
+		.c-services__item{
+			min-height: auto;
+		}
+	}
 
 	.flexbox .c-service-flex-container, .no-flexbox .c-service-flex-container{
 		display: block;

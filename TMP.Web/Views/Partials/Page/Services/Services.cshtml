@@ -11,12 +11,12 @@
 		{
 			if(item != null)
 			{
-				var image = item.GetPropertyValue("pageIcon");
+				var image = item.GetPropertyValue("featuredImage");
 				var LogoPath = "/assets/img/tmp-default-og.png";
 				var LogoWidth = Umbraco.Media(image).Url;
 				var imageUrl = image != null && image != "" ? LogoWidth : LogoPath;
 				var pageTitle = item.GetPropertyValue<string>("pageTitle");
-				var pageText = item.GetPropertyValue<string>("paragraph");
+				var pageText = item.GetPropertyValue<string>("pageDescription");
 				var pageTitleNull = !string.IsNullOrWhiteSpace(pageTitle) ? pageTitle: item.Name;
 				var altText = !string.IsNullOrWhiteSpace(pageTitle) ? pageTitle : "Service Page Icon";
 				<a class="c-services__item" href="@item.Url">
