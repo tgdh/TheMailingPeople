@@ -13,18 +13,21 @@
 
 	String PageLink1 = Model.GetPropertyValue<string>("bannerLink1");
 	var decode1 = Json.Decode(PageLink1);
-	var PageLink1Image = Model.GetPropertyValue("bannerLink1Image");
-	var PageLink1ImageMedia = Umbraco.Media(PageLink1Image);
+	var icon1 = Model.GetPropertyValue<int>("bannerLink1Image");
+	var iconNode1 = Umbraco.Content(icon1);
+
 
 	String PageLink2 = Model.GetPropertyValue<string>("bannerLink2");
 	var decode2 = Json.Decode(PageLink2);
-	var PageLink2Image = Model.GetPropertyValue("bannerLink2Image");
-	var PageLink2ImageMedia = Umbraco.Media(PageLink2Image);
+	var icon2 = Model.GetPropertyValue<int>("bannerLink2Image");
+	var iconNode2 = Umbraco.Content(icon2);
+
 
 	String PageLink3 = Model.GetPropertyValue<string>("bannerLink3");
 	var decode3 = Json.Decode(PageLink3);
-	var PageLink3Image = Model.GetPropertyValue("bannerLink3Image");
-	var PageLink3ImageMedia = Umbraco.Media(PageLink3Image);
+	var icon3 = Model.GetPropertyValue<int>("bannerLink3Image");
+	var iconNode3 = Umbraco.Content(icon3);
+
 
 }
 <div class="c-banner c-banner__background-image" style="background-image: url(@ImageNullChecked?width=1600);">
@@ -37,9 +40,9 @@
 						@if(decode1 != null)
 						{
 							<a href="@decode1.Url" class="c-banner__link c-button--primary">
-								@if(PageLink1ImageMedia.Url != "")
+								@if(icon1 != 0)
 								{
-									<i class="c-banner__icon"><img src="@PageLink1ImageMedia.Url?height=20" alt="@decode1.Name"></i>
+									<i class="--ico--white ico-@FormatIcon(iconNode1.GetPropertyValue("iconName"))"></i>
 								}
 								<span class="c-banner__link-text">@decode1.Name</span>
 							</a>
@@ -47,9 +50,9 @@
 						@if(decode2 != null)
 						{
 							<a href="@decode2.Url" class="c-banner__link c-button--primary">
-								@if(PageLink2ImageMedia.Url != "" )
+								@if(icon2 != 0)
 								{
-									<i class="c-banner__icon"><img src="@PageLink2ImageMedia.Url?height=20" alt="@decode2.Name"></i>
+									<i class="--ico--white ico-@FormatIcon(iconNode2.GetPropertyValue("iconName"))"></i>
 								}
 								<span class="c-banner__link-text">@decode2.Name</span>
 							</a>
@@ -57,9 +60,9 @@
 						@if(decode3 != null)
 						{
 							<a href="@decode3.Url" class="c-banner__link c-button--primary">
-								@if(PageLink3ImageMedia.Url != "")
+								@if(icon3 != 0)
 								{
-									<i class="c-banner__icon"><img src="@PageLink3ImageMedia.Url?height=20" alt="@decode3.Name"></i>
+									<i class="--ico--white ico-@FormatIcon(iconNode3.GetPropertyValue("iconName"))"></i>
 								}
 								<span class="c-banner__link-text">@decode3.Name</span>
 							</a>
@@ -69,3 +72,7 @@
 		</div>
 	</div>
 </div>
+
+@helper FormatIcon(string PreformattedIcon){
+	@PreformattedIcon.ToLower().Replace(" ", "-")
+}
