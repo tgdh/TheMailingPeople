@@ -207,6 +207,10 @@
 	font-weight: bold;
 	margin-top: 2rem;
 	display: block;
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 7rem;
+	left: 14rem;
 }
 
 .c-client__link{
@@ -234,6 +238,7 @@
 @include respond-max($mq-large){
 
 	.c-block__client-review{
+		padding: 0;
 
 		.c-block__left{
 			width: 100%;
@@ -249,7 +254,8 @@
 
 		.c-client__item{
 			padding-right: 0;
-			padding-bottom: 14rem;
+			padding-bottom: 3rem;
+			margin-top: 2rem;
 		}
 
 		.c-client-review__image{
@@ -267,10 +273,15 @@
 		.c-client__name{
 			width: 100%;
 			text-align: center;
+			margin-bottom: 4rem;
+			position: initial;
 		}
 
 		.c-client__link{
-			bottom: 4rem;
+			position: initial;
+			margin-top: 4rem;
+			display: table;
+			margin: 0 auto;
 		}
 
 		.c-block__left{
