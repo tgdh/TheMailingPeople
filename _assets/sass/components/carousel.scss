@@ -21,14 +21,20 @@
 		}
 
 	}
+}
+
+.js-carousel_many, .js-carousel{
 
 	&.slick-nav-black{
 		.c-carousel__right,.c-carousel__left{
 			&::before,&::after{
 				background-color: black;
 			}
+
 		}
+
 	}
+
 }
 
 .c-carousel {
@@ -60,12 +66,12 @@
 
 	&::before{
 		transform: rotate(-65deg);
-		top: -.5rem;
+		top: -.7rem;
 	}
 
 	&::after{
 		transform: rotate(65deg);
-		top: .5rem;
+		top: .6rem;
 	}
 
 }
@@ -74,12 +80,12 @@
 
 	&::before{
 		transform: rotate(65deg);
-		top: -.5rem;
+		top: -.7rem;
 	}
 
 	&::after{
 		transform: rotate(-65deg);
-		top: .5rem;
+		top: .6rem;
 	}
 
 }

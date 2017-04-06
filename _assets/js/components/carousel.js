@@ -79,12 +79,14 @@ var Carousel = (function ($) {
 				  slidesToScroll: 3,
 				  adaptiveHeight: settings.autoHeight,
 				  variableWidth: settings.autoWidth,
+				  arrows: settings.nav,
 				  responsive: [
 				    {
 				      breakpoint: 1350,
 				      settings: {
 				        slidesToShow: 2,
 				        slidesToScroll: 2,
+						arrows: settings.nav,
 				      }
 				    },
 				    {
@@ -93,7 +95,7 @@ var Carousel = (function ($) {
 				        slidesToShow: 1,
 				        slidesToScroll: 1,
 						dots: true,
-						arrows: false
+						arrows: false,
 				      }
 				    }
 				  ]

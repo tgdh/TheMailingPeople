@@ -2,28 +2,51 @@
 @inherits UmbracoViewPage<IPublishedContent>
 @{
 	String List = Model.GetPropertyValue<string>("blogPicker");
+
 	var ListOfBlogs = !string.IsNullOrWhiteSpace(List) ? List.Split(',').Select(mediaId => Umbraco.TypedContent(mediaId)).ToList() : null;
 
-	if(List == null)
-	{
-		return;
-	}
+	var Homepage = Model.Site();
+	var Blogpage = Homepage.Descendants("blog").FirstOrDefault();
+	var BlogsList = Blogpage.Children;
+	int count = 0;
 }
 <div class="c-card-list">
 	<div class="o-section o-wrap o-wrap--x-large">
 	    <h2 class="o-heading o-heading--inverted u-mega">Tips & Tricks</h2>
-	    <div class="c-card-list js-carousel--featured js-carousel_many" data-loop="true" data-auto-play="true" data-speed="10000">
-			@foreach (var item in ListOfBlogs)
-	        {
-				if(item != null)
-				{
-					var headline = item.GetPropertyValue<string>("headline");
-					var catId = item.GetPropertyValue<int>("category");
-					var ItemLink = item.Url;
-					int itemImage = item.GetPropertyValue<int>("featuredImage") != 0 ? item.GetPropertyValue<int>("featuredImage") : 1202;
-					@RenderCard(headline, catId, itemImage, "c-card-list__item", ItemLink)
-				}
-	        }
+	    <div class="c-card-list js-carousel--featured js-carousel_many slick-nav-black" data-loop="true" data-auto-play="true" data-speed="10000" data-nav="true">
+			@if(ListOfBlogs == null)
+			{
+				foreach (var blog in BlogsList)
+		        {
+					if(blog != null)
+					{
+						count ++;
+						var headline = blog.GetPropertyValue<string>("headline");
+						var catId = blog.GetPropertyValue<int>("category");
+						var ItemLink = blog.Url;
+						int itemImage = blog.GetPropertyValue<int>("featuredImage") != 0 ? blog.GetPropertyValue<int>("featuredImage") : 1202;
+						@RenderCard(headline, catId, itemImage, "c-card-list__item", ItemLink)
+
+						if(count >= 9)
+						{
+							break;
+						}
+					}
+		        }
+			}
+			else{
+				foreach (var item in ListOfBlogs)
+		        {
+					if(item != null)
+					{
+						var headline = item.GetPropertyValue<string>("headline");
+						var catId = item.GetPropertyValue<int>("category");
+						var ItemLink = item.Url;
+						int itemImage = item.GetPropertyValue<int>("featuredImage") != 0 ? item.GetPropertyValue<int>("featuredImage") : 1202;
+						@RenderCard(headline, catId, itemImage, "c-card-list__item", ItemLink)
+					}
+		        }
+			}
 	    </div>
 	</div>
 </div>
