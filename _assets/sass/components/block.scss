@@ -501,7 +501,8 @@
 
 .c-staff__image-has-link{
 	position: relative;
-
+	overflow: hidden;
+	border-radius: 10px;
 	&:hover,
 	&:focus{
 
@@ -526,6 +527,7 @@
 		background-color: rgba($black,0.5);
 		transition: $ease $speed opacity;
 		opacity: 0;
+		border-radius: 10px;
 	}
 }
 

@@ -1,5 +1,4 @@
 .c-service{
-	margin: 12.5rem 0;
 	display: inline-block;
 	width: 100%;
 }
@@ -20,6 +19,10 @@
 		margin-left: 8rem;
 	}
 
+}
+
+.c-services__page-link{
+	border-bottom: none !important;
 }
 
 .c-services__image-wrapper{
