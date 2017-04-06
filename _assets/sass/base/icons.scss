@@ -11,11 +11,11 @@ $fontPath:  "../fonts/IcoFont/fonts";
 /* Icons start below DO NOT DELETE THE ABOVE */
 @font-face {
   font-family: 'icomoon';
-  src:  url('#{$fontPath}/icomoon.eot?rg1ybn');
-  src:  url('#{$fontPath}/icomoon.eot?rg1ybn#iefix') format('embedded-opentype'),
-    url('#{$fontPath}/icomoon.ttf?rg1ybn') format('truetype'),
-    url('#{$fontPath}/icomoon.woff?rg1ybn') format('woff'),
-    url('#{$fontPath}/icomoon.svg?rg1ybn#icomoon') format('svg');
+  src:  url('#{$fontPath}/icomoon.eot?ndgoti');
+  src:  url('#{$fontPath}/icomoon.eot?ndgoti#iefix') format('embedded-opentype'),
+    url('#{$fontPath}/icomoon.ttf?ndgoti') format('truetype'),
+    url('#{$fontPath}/icomoon.woff?ndgoti') format('woff'),
+    url('#{$fontPath}/icomoon.svg?ndgoti#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -35,6 +35,34 @@ $fontPath:  "../fonts/IcoFont/fonts";
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.ico-phone:before {
+  content: "\e91c";
+}
+.ico-google:before {
+  content: "\e914";
+}
+.ico-linkedin:before {
+  content: "\e915";
+}
+.ico-instagram:before {
+  content: "\e916";
+}
+.ico-twitter:before {
+  content: "\e917";
+}
+.ico-facebook:before {
+  content: "\e918";
+}
+.ico-finder:before {
+  content: "\e919";
+}
+.ico-envelop:before {
+  content: "\e91b";
+}
+.ico-home:before {
+  content: "\e91a";
+}
 .ico-delivery-1:before {
   content: "\e900";
 }

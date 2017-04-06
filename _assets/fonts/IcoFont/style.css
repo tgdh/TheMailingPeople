@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?rg1ybn');
-  src:  url('fonts/icomoon.eot?rg1ybn#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?rg1ybn') format('truetype'),
-    url('fonts/icomoon.woff?rg1ybn') format('woff'),
-    url('fonts/icomoon.svg?rg1ybn#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?ndgoti');
+  src:  url('fonts/icomoon.eot?ndgoti#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ndgoti') format('truetype'),
+    url('fonts/icomoon.woff?ndgoti') format('woff'),
+    url('fonts/icomoon.svg?ndgoti#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,33 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ico-phone:before {
+  content: "\e91c";
+}
+.ico-google:before {
+  content: "\e914";
+}
+.ico-linkedin:before {
+  content: "\e915";
+}
+.ico-instagram:before {
+  content: "\e916";
+}
+.ico-twitter:before {
+  content: "\e917";
+}
+.ico-facebook:before {
+  content: "\e918";
+}
+.ico-finder:before {
+  content: "\e919";
+}
+.ico-envelop:before {
+  content: "\e91b";
+}
+.ico-home:before {
+  content: "\e91a";
+}
 .ico-delivery-1:before {
   content: "\e900";
 }
