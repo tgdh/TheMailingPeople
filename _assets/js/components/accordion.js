@@ -5,6 +5,10 @@ var Accordion = (function ($) {
 				$('.c-accordion_item').removeClass('js-active');
 				$(this).parent('.c-accordion_item').toggleClass('js-active');
 			});
+			$('.js-toggle-accordion').click(function(){
+				$('.c-accordion_item').removeClass('js-active');
+				$(this).parent('.c-accordion_item').toggleClass('js-active');
+			});
 		});
 	};
 
