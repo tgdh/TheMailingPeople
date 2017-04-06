@@ -1,7 +1,6 @@
 @inherits UmbracoViewPage<IPublishedContent>
 @{
-	var PageTitle = !string.IsNullOrWhiteSpace(Model.GetPropertyValue<string>("pageTitle")) ? Model.GetPropertyValue<string>("pageTitle") : Model.Name;
-	var FirstPara = Model.GetPropertyValue<string>("paragraph");
+	var FirstPara = Model.GetPropertyValue<string>("pageDescription");
 	var PageIcon = Model.GetPropertyValue("pageIcon");
 	var CurrentPage = Model.Id;
 	var Parent = Model.Parent.Children.Where("Visible");
@@ -45,7 +44,7 @@
 	</div>
 	<div class="c-service__content u-clearfix">
 		<div class="o-wrap o-wrap--large">
-			<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@PageTitle</h2>
+			<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@Model.Name</h2>
 			@if(!string.IsNullOrWhiteSpace(FirstPara))
 			{
 				<p class="c-section__first-para"><strong>@FirstPara</strong></p>
