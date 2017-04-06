@@ -1,16 +1,13 @@
 @inherits UmbracoViewPage<IPublishedContent>
 @{
-	String List = Model.GetPropertyValue<string>("featuredServices");
-	var ListOfItems = !string.IsNullOrWhiteSpace(List) ? List.Split(',').Select(mediaId => Umbraco.TypedContent(mediaId)).ToList() : null;
-	if(List == null)
-	{
-		return;
-	}
+	var Homepage = Model.Site();
+	var Services = Homepage.Descendants("services").FirstOrDefault();
+	var Children = Services.Children;
 }
 
 <div class="c-service o-section">
 	<div class="o-wrap o-wrap--large c-service-flex-container">
-		@foreach(var item in ListOfItems)
+		@foreach(var item in Children)
 		{
 			if(item != null)
 			{

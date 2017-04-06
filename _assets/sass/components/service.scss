@@ -10,13 +10,15 @@
 .c-services__item{
 	width: calc(33.3333% - 8rem);
 	float: left;
+	margin-bottom: 6rem;
 
 	&:nth-child(3n+1){
 		margin-right: 8rem;
 	}
 
 	&:nth-child(3n+2){
-		margin: 0 4rem;
+		margin-left: 4rem;
+		margin-right: 4rem;
 	}
 
 	&:nth-child(3n+3){
