@@ -1,17 +1,17 @@
 @font-face {
-  font-family: 'tmp';
-  src:  url('fonts/tmp.eot?j9wleh');
-  src:  url('fonts/tmp.eot?j9wleh#iefix') format('embedded-opentype'),
-    url('fonts/tmp.ttf?j9wleh') format('truetype'),
-    url('fonts/tmp.woff?j9wleh') format('woff'),
-    url('fonts/tmp.svg?j9wleh#tmp') format('svg');
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?rg1ybn');
+  src:  url('fonts/icomoon.eot?rg1ybn#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?rg1ybn') format('truetype'),
+    url('fonts/icomoon.woff?rg1ybn') format('woff'),
+    url('fonts/icomoon.svg?rg1ybn#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="ico-"], [class*=" ico-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'tmp' !important;
+  font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -24,61 +24,64 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ico-home:before {
+.ico-delivery-1:before {
   content: "\e900";
 }
-.ico-phone:before {
-  content: "\e942";
+.ico-delivery-2:before {
+  content: "\e901";
 }
-.ico-envelop:before {
-  content: "\e945";
+.ico-letter-box:before {
+  content: "\e902";
 }
-.ico-printing:before {
-  content: "\e954";
+.ico-mail-alert:before {
+  content: "\e903";
 }
-.ico-search:before {
-  content: "\e986";
+.ico-mail-and-post:before {
+  content: "\e904";
 }
-.ico-postage:before {
-  content: "\e9b0";
+.ico-mail-and-quote:before {
+  content: "\e905";
 }
-.ico-arrow-up:before {
-  content: "\ea3a";
+.ico-mail-browser:before {
+  content: "\e906";
 }
-.ico-arrow-right:before {
-  content: "\ea3c";
+.ico-mail-minus:before {
+  content: "\e907";
 }
-.ico-arrow-down:before {
-  content: "\ea3e";
+.ico-mail-newspaper:before {
+  content: "\e908";
 }
-.ico-arrow-left:before {
-  content: "\ea40";
+.ico-mail-open-1:before {
+  content: "\e909";
 }
-.ico-google-plus:before {
-  content: "\ea8b";
+.ico-mail-open-2:before {
+  content: "\e90a";
 }
-.ico-facebook:before {
-  content: "\ea90";
+.ico-mail-pc:before {
+  content: "\e90b";
 }
-.ico-instagram:before {
-  content: "\ea92";
+.ico-mail-plus:before {
+  content: "\e90c";
 }
-.ico-twitter:before {
-  content: "\ea96";
+.ico-mail-question:before {
+  content: "\e90d";
 }
-.ico-youtube:before {
-  content: "\ea9d";
+.ico-mail-recycle:before {
+  content: "\e90e";
 }
-.ico-vimeo:before {
-  content: "\eaa0";
+.ico-mail-shadow:before {
+  content: "\e90f";
 }
-.ico-flickr:before {
-  content: "\eaa3";
+.ico-mail-speed-1:before {
+  content: "\e910";
 }
-.ico-linkedin:before {
-  content: "\eaca";
+.ico-mail-speed-2:before {
+  content: "\e911";
 }
-.ico-pinterest:before {
-  content: "\ead1";
+.ico-post-1:before {
+  content: "\e912";
+}
+.ico-post-2:before {
+  content: "\e913";
 }
 
