@@ -3,6 +3,10 @@
 	width: 100%;
 }
 
+.c-services__image{
+	transition: $ease $speed transform;
+}
+
 .c-services__item{
 	width: calc(33.3333% - 8rem);
 	float: left;
@@ -19,6 +23,14 @@
 		margin-left: 8rem;
 	}
 
+	&:hover{
+		.c-services__read-more{
+			text-decoration: underline;
+		}
+		.c-services__image{
+			transform: scale(1.05);
+		}
+	}
 }
 
 .c-services__page-link{
@@ -126,7 +138,6 @@
 }
 
 .c-section_wrapper{
-	margin: 11rem auto 10rem auto;
 
 	.o-heading strong{
 		font-weight: normal;
@@ -219,7 +230,7 @@
 @include respond-max($mq-x-large){
 
 	.c-section_wrapper{
-		margin: 5rem auto;
+		padding-right: 4rem;
 	}
 
 	.c-service{
@@ -263,13 +274,13 @@
 @include respond-min($mq-x-large){
 
 	.c-service__page-list{
-		width: 35rem;
+		width: 28rem;
 		float: left;
 	}
 
 	.c-service__content{
 		float: right;
-		width: calc(100% - 45rem);
+		width: calc(100% - 38.5rem);
 	}
 
 }
