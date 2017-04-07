@@ -5,21 +5,14 @@
 }
 
 .c-contact__item{
-	width: calc(50% - 2.5rem);
-	float: left;
 	background-color: $light-2;
 	margin-bottom: 5rem;
 	padding: 2rem 3rem;
 	border-radius: .7rem;
-
-	&:nth-child(odd){
-		margin-right: 2.5rem;
-	}
-
+	@include column( 1/2, $gutter: 5);
 	&:nth-child(even){
-		margin-left: 2.5rem;
+		margin-right: 0;
 	}
-
 }
 
 .c-contact__address{
