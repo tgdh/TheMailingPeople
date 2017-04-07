@@ -4,14 +4,12 @@
 
 .c-grid__sidebar{
 	@include column(3.5 / 12, $gutter: 7);
-	height: 300px;
 
 	.o-heading{
 
 		&::after{
 			background-color: black;
 		}
-
 	}
 
 }

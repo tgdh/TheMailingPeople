@@ -4,7 +4,10 @@
 		opacity: 0;
 		top: -10px;
 		transition: $ease .5s top,
-					$ease .5s opacity;
+					$ease .5s opacity,
+					$ease $speed color,
+					$ease $speed background-color,
+					$ease $speed border-color;
 		&.is-showing{
 			top: 0;
 			opacity: 1;

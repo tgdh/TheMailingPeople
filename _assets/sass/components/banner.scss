@@ -31,6 +31,8 @@
 	&:hover,
 	&:focus{
 		color: white;
+		background-color: darken($pri,20);
+		border-color: darken($pri,30);
 	}
 
 }
