@@ -9,7 +9,7 @@
 }
 
 .c-services__item{
-	@include column(4 / 12, $gutter: 10);
+	@include column(1/3, $gutter: 10, $cycle: 3);
 	float: left;
 	margin-bottom: 6rem;
 
