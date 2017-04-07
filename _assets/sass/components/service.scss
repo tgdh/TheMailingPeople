@@ -9,22 +9,9 @@
 }
 
 .c-services__item{
-	width: calc(33.3333% - 8rem);
+	@include column(4 / 12, $gutter: 10);
 	float: left;
 	margin-bottom: 6rem;
-
-	&:nth-child(3n+1){
-		margin-right: 8rem;
-	}
-
-	&:nth-child(3n+2){
-		margin-left: 4rem;
-		margin-right: 4rem;
-	}
-
-	&:nth-child(3n+3){
-		margin-left: 8rem;
-	}
 
 	&:hover{
 		.c-services__read-more{
@@ -43,7 +30,7 @@
 .c-services__image-wrapper{
 	background-color: $light-2;
 	width: 100%;
-	height: 22.5rem;
+	height: 18rem;
 }
 
 .c-services__title{
@@ -90,7 +77,7 @@
 .no-flexbox{
 
 	.c-services__item{
-		min-height: 600px;
+		min-height: 550px;
 	}
 
 	.c-services__image{
@@ -112,21 +99,7 @@
 @include respond-max($mq-x-large){
 
 	.c-services__item{
-		width: calc(33.3333% - 3rem);
-		float: left;
-
-		&:nth-child(3n+1){
-			margin-right: 3rem;
-		}
-
-		&:nth-child(3n+2){
-			margin: 0 1.5rem;
-		}
-
-		&:nth-child(3n+3){
-			margin-left: 3rem;
-		}
-
+		@include column(12 / 12);
 	}
 
 }
