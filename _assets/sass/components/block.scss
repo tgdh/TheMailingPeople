@@ -404,8 +404,9 @@
 }
 
 .c-block__staff-member{
-	@include column(1/3, $gutter: 5, $cycle: 3);
-	margin-bottom: 6rem;
+	@include column(1/3, $gutter: 10, $cycle: 3);
+	margin-bottom: 4rem;
+	margin-top: 2rem;
 }
 
 .c-staff__heading{
@@ -441,6 +442,7 @@
 .c-staff__image{
 	width: 100%;
 	position: relative;
+	border-radius: 10px;
 }
 
 .c_staff__circle-overlay{
