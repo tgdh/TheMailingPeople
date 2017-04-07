@@ -1,0 +1,42 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+	var Homepage = Model.Site();
+	var Blogpage = Homepage.Descendants("blog").FirstOrDefault();
+	var BlogsList = Blogpage.Children;
+	int count = 0;
+
+    var settings = Homepage.Descendants("globalSettings").FirstOrDefault();
+    var contactNumber = string.Empty;
+
+    if (settings != null)
+    {
+        contactNumber = settings.GetPropertyValue<string>("contactNumber");
+    }
+}
+@foreach(var blog in BlogsList)
+{
+	count++;
+	var image = blog.GetPropertyValue<int>("featuredImage");
+	var titleNullChecked = !string.IsNullOrWhiteSpace(blog.GetPropertyValue<string>("headline")) ? blog.GetPropertyValue("headline") : blog.Name;
+	<div class="c-grid__sidebar-item">
+		<a href="@blog.Url" class="c-grid__sidebar-link">
+		<div class="c-grid__sidebar-image-wrapper">
+			<img src="@Umbraco.Media(image).Url" alt="@blog.Name" class="c-grid__sidebar-image">
+		</div>
+		<h2 class="c-grid__sidebar-title">@titleNullChecked</h2>
+		<span class="c-grid__sidebar-read-more">Read more > </span>
+		</a>
+	</div>
+	if(count >= 2){
+		break;
+	}
+}
+
+<div class="c-service__need-help">
+	<h2 class="u-gamma c-nee-help__title">Need help with Direct Mail?</h2>
+	<img src="/assets/img/steve.png" alt="Steve Logo" class="c-need-help__logo">
+	@if(!string.IsNullOrWhiteSpace(contactNumber))
+	{
+		<a href="tel:@contactNumber.Replace(" ","")" class="c-need-help__link">Call us on <span>@contactNumber</span></a>
+	}
+</div>
