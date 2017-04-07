@@ -5,17 +5,25 @@
 	var QuoteCheck = !string.IsNullOrWhiteSpace(PageQuote) ? "has--quote" : "";
 }
 
-<div class="c-block__page-content">
-	<div class="o-section o-wrap o-wrap--large u-clearfix">
-		<div class="c-block__page__content @QuoteCheck">
-			@if(PageContent != null){
-				@PageContent
-			}
-		</div>
+
+<div class="o-section">
+	<div class="c-grid o-wrap o-wrap--large">
 		@if(!string.IsNullOrWhiteSpace(PageQuote))
 		{
-			<div class="c-quote__page-quote">
+			<div class="c-grid__main-content @QuoteCheck">
+				@if(PageContent != null){
+					@PageContent
+				}
+			</div>
+			<div class="c-grid__sidebar c-quote__page-quote">
 				@Html.Partial("~/Views/Partials/Page/Staff/Quote.cshtml")
+			</div>
+		}
+		else{
+			<div class="c-block__page__content @QuoteCheck">
+				@if(PageContent != null){
+					@PageContent
+				}
 			</div>
 		}
 	</div>

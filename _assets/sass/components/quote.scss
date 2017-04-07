@@ -38,7 +38,7 @@
 	background-color: $light-2;
 	padding: 3rem;
 	box-sizing: border-box;
-	text-align: center;
+	text-align: center !important; /* Override the include column text-align */
 }
 
 .c-quote__title{
