@@ -49,45 +49,10 @@
 	display: block;
 }
 
-.c-carousel__right,.c-carousel__left{
-
-	&::before,&::after{
-		content: "";
-		display: block;
-		width: 1.75rem;
-		height: .3rem;
-		background-color: white;
-		position: relative;
+.ico-chevron{
+	&.left{
+		transform: rotate(180deg);
 	}
-
-}
-
-.c-carousel__left{
-
-	&::before{
-		transform: rotate(-65deg);
-		top: -.7rem;
-	}
-
-	&::after{
-		transform: rotate(65deg);
-		top: .6rem;
-	}
-
-}
-
-.c-carousel__right{
-
-	&::before{
-		transform: rotate(65deg);
-		top: -.7rem;
-	}
-
-	&::after{
-		transform: rotate(-65deg);
-		top: .6rem;
-	}
-
 }
 
 .c-carousel__nav--prev {

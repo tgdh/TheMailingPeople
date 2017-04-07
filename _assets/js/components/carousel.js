@@ -36,8 +36,8 @@ var Carousel = (function ($) {
 					centerPadding: settings.centerPadding,
 					dots: settings.dots,
 					dotsClass: 'c-carousel__dots',
-					prevArrow: "<button class='c-carousel__nav c-carousel__nav--prev'><i class='c-carousel__left'></i><span class='u-hide-text'>Prev</span></button>",
-                	nextArrow: "<button class='c-carousel__nav c-carousel__nav--next'><span class='u-hide-text'>Next</span><i class='c-carousel__right'></i></button>",
+					prevArrow: "<button class='c-carousel__nav c-carousel__nav--prev'><i class='ico-chevron-left'></i><span class='u-hide-text'>Prev</span></button>",
+                	nextArrow: "<button class='c-carousel__nav c-carousel__nav--next'><span class='u-hide-text'>Next</span><i class='ico-chevron-right'></i></button>",
 				    fade: settings.fade
 				});
 
@@ -73,8 +73,8 @@ var Carousel = (function ($) {
 				  autoplaySpeed: settings.speed,
 				  fade: settings.fade,
 				  dotsClass: 'c-carousel__dots',
-				  prevArrow: "<button class='c-carousel__nav c-carousel__nav--prev'><i class='c-carousel__left'></i><span class='u-hide-text'>Prev</span></button>",
-				  nextArrow: "<button class='c-carousel__nav c-carousel__nav--next'><span class='u-hide-text'>Next</span><i class='c-carousel__right'></i></button>",
+				  prevArrow: "<button class='c-carousel__nav c-carousel__nav--prev'><i class='ico-chevron-left'></i><span class='u-hide-text'>Prev</span></button>",
+				  nextArrow: "<button class='c-carousel__nav c-carousel__nav--next'><span class='u-hide-text'>Next</span><i class='ico-chevron-right'></i></button>",
 				  slidesToShow: 3,
 				  slidesToScroll: 3,
 				  adaptiveHeight: settings.autoHeight,
