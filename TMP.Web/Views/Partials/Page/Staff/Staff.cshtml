@@ -15,7 +15,7 @@
 				var StaffLinkedIn = StaffMember.GetPropertyValue<string>("staffLinkedInURL");
 				if(StaffImageId != null)
 				{
-					<div class="c-block__three-two-one">
+					<div class="c-block__staff-member">
 						@if(!string.IsNullOrWhiteSpace(StaffLinkedIn))
 						{
 							<a href="@StaffLinkedIn" target="_blank" class="c-staff__link">
