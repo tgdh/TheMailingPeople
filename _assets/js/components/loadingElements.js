@@ -38,6 +38,7 @@ var LoadingElements = (function ($) {
 			var wScroll = $(this).scrollTop();
 			animateIn( $('.c-staff_wrapper') , 1.2 , $('.c-block__staff-member') , wScroll );
 			animateIn( $('.c-page__wrapper') , 1.2 , $('.c-services__item') , wScroll );
+			animateIn( $('.c-page__wrapper') , 1.2 , $('.c-contact__item') , wScroll );
 		}
 		function animateIn(parentElement, windowAmount, itemElement, scroll){
 			if(parentElement.length > 0){
