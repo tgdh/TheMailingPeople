@@ -32,6 +32,7 @@ var mainScripts = [
     paths.assetsFolder + '/js/components/accordion.js',
     paths.assetsFolder + '/js/components/validateForms.js',
     paths.assetsFolder + '/js/components/*.js',
+    paths.assetsFolder + '/js/lib/throttle.js',
     paths.assetsFolder + '/js/main.js'
 ];
 

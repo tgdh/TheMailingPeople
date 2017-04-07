@@ -66,6 +66,7 @@
 		$window.Accordion.init();
 		$window.Tabs.init();
         $window.Search.init();
+		$window.LoadingElements.init();
         //		MQ.init(breakpoints);
     }
 
