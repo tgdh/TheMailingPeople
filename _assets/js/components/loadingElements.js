@@ -5,6 +5,7 @@ var LoadingElements = (function ($) {
 		$(document).ready(function(){
 			banner();
 			lastWeek();
+			googleMapsLoad();
 		});
 		var throttled = _.throttle(throttle, 250);
 		$(window).scroll(throttled);
@@ -26,6 +27,12 @@ var LoadingElements = (function ($) {
 				$('.c-block__last-week .c-block__content-right').addClass('is-showing');
 				$('.c-block__read-more').addClass('is-showing');
 			},600);
+		}
+		function googleMapsLoad() {
+			/* As the google maps API takes a second to kick in resulting in the page showing a grey box then the content just showing this makes that look nicer */
+			setTimeout(function(){
+				$('.c-contact__map').addClass('is-showing');
+			},500);
 		}
 		function throttle() {
 			var wScroll = $(this).scrollTop();
