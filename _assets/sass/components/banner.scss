@@ -67,6 +67,19 @@
 
 }
 
+.no-enhance{
+	.c-banner__link{
+		display: table;
+		margin-right: 0;
+		margin-bottom: 2rem;
+	}
+
+	.c-banner__link-text{
+		position: relative;
+		top: -6px;
+	}
+}
+
 @include respond-max ( $mq-x-large ) {
 
 	.flexbox{

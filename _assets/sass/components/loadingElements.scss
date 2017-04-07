@@ -36,3 +36,11 @@
 		}
 	}
 }
+
+
+.no-enhance{
+	.c-block__content-left,.c-block__content-right,.c-banner__heading, .c-banner__text,.c-banner__link,.c-block__staff-member, .c-services__item,.c-contact__item,.c-contact__map{
+		opacity: 1;
+		top: 0;
+	}
+}
