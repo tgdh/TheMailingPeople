@@ -22,9 +22,18 @@
 					String Link = item.GetPropertyValue<string>("link");
 					var decode = Json.Decode(Link);
 					<div class="c-client__item">
-						<img src="@ImageMedia.Url?width=80&height=80" alt="@Client" class="c-client-review__image">
-						<p class="c-client__p">" @Quote "</p>
-						<span class="c-client__name">@Client</span>
+						@if(ImageMedia != null)
+						{
+							<img src="@ImageMedia.Url?width=80&height=80" alt="@Client" class="c-client-review__image">
+						}
+						@if(!string.IsNullOrWhiteSpace(Quote))
+						{
+							<p class="c-client__p">" @Quote "</p>
+						}
+						@if(!string.IsNullOrWhiteSpace(Client))
+						{
+							<span class="c-client__name">@Client</span>
+						}
 						<a href="@decode.url" class="c-client__link">View Case Study</a>
 					</div>
 			    }
