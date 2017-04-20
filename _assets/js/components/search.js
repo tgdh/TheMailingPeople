@@ -30,6 +30,13 @@ var Search = (function ($) {
 					$('.c-search__text').focus();
 				},100);
 			});
+			$('.c-header__tablet-search').click(function(){
+				$('.c-header__right.c-header__main__right').toggleClass('js-mobile-active');
+				$('.c-search__form-wrapper').toggleClass('js-mobile-active');
+				setTimeout(function(){
+					$('.c-search__text').focus();
+				},100);
+			});
 		});
 	};
 

@@ -3,10 +3,11 @@
 	String Text = Model.GetPropertyValue<string>("text");
 	String SmallText = Model.GetPropertyValue<string>("smallText");
 	String Number = Model.GetPropertyValue<string>("largeTextNumber");
-	var Link = Model.GetPropertyValue("link");
 	var Image = Model.GetPropertyValue("image");
 	var ImageUrl = Image != null ? Umbraco.Media(Image) : "";
 
+	String Link = Model.GetPropertyValue<string>("link");
+	var decode = Json.Decode(Link);
 }
 
 <div class="c-block__last-week">
@@ -31,7 +32,7 @@
 			}
 			@if(Link != null)
 			{
-				<a href="@Link" class="c-block__read-more">Read more > </a>
+				<a href="@decode.url" class="c-block__read-more">Read more > </a>
 			}
 		</div>
 		<div class="c-block__right" style="background-image: url(@ImageUrl.Url?width=1200);"></div>
