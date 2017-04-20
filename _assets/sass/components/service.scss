@@ -9,8 +9,6 @@
 }
 
 .c-services__item{
-	@include column(1/3, $gutter: 10, $cycle: 3);
-	float: left;
 	margin-bottom: 6rem;
 
 	&:hover{
@@ -96,15 +94,21 @@
 	}
 }
 
+@include respond-min($mq-x-large){
+	.c-services__item{
+		@include column(1/3, $gutter: 10, $cycle: 3);
+	}
+}
+
 @include respond-max($mq-x-large){
 
 	.c-services__item{
-		@include column(12 / 12);
+		@include column(1 / 2, $gutter: 5, $cycle: 2);
 	}
 
 }
 
-@include respond-max($mq-large){
+@include respond-max($mq-medium){
 
 	.no-flexbox{
 		.c-services__item{
