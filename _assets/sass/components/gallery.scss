@@ -6,7 +6,9 @@
 
 
 .c-gallery{
-
+	.ico-chevron-right,.ico-chevron-left{
+		display: none;
+	}
 	.c-gallery__item{
 		img{
 			min-width: 100%;
