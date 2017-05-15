@@ -40,7 +40,6 @@
   display: none; }
 
 .mfp-content {
-  position: relative;
   display: inline-block;
   vertical-align: middle;
   margin: 0 auto;
@@ -110,7 +109,6 @@
 button.mfp-arrow {
   overflow: visible;
   cursor: pointer;
-  background: transparent;
   border: 0;
   -webkit-appearance: none;
   display: block;
@@ -124,8 +122,6 @@ button::-moz-focus-inner {
   padding: 0;
   border: 0; }
 
-
-
 .mfp-counter {
   position: absolute;
   top: 0;
@@ -137,19 +133,21 @@ button::-moz-focus-inner {
 
 .mfp-arrow {
   position: absolute;
-  opacity: 0.65;
   margin: 0;
   top: 50%;
-  margin-top: -55px;
+  margin-top: -40px;
   padding: 0;
-  width: 90px;
-  height: 110px;
-  -webkit-tap-highlight-color: transparent; }
-  .mfp-arrow:active {
-    margin-top: -54px; }
-  .mfp-arrow:hover,
-  .mfp-arrow:focus {
-    opacity: 1; }
+  width: 80px;
+  height: 80px;
+  background-color: $pri;
+  -webkit-tap-highlight-color: transparent;
+	transition: $ease $speed all;
+	&:hover,
+	&:focus{
+		background-color: $dark-1;
+	}
+}
+
   .mfp-arrow:before,
   .mfp-arrow:after {
     content: '';
@@ -165,7 +163,8 @@ button::-moz-focus-inner {
   .mfp-arrow:after {
     border-top-width: 13px;
     border-bottom-width: 13px;
-    top: 8px; }
+    top: -6px;
+left: -6px}
   .mfp-arrow:before {
     border-top-width: 21px;
     border-bottom-width: 21px;
@@ -176,17 +175,12 @@ button::-moz-focus-inner {
   .mfp-arrow-left:after {
     border-right: 17px solid #FFF;
     margin-left: 31px; }
-  .mfp-arrow-left:before {
-    margin-left: 25px;
-    border-right: 27px solid #3F3F3F; }
 
 .mfp-arrow-right {
   right: 0; }
   .mfp-arrow-right:after {
     border-left: 17px solid #FFF;
     margin-left: 39px; }
-  .mfp-arrow-right:before {
-    border-left: 27px solid #3F3F3F; }
 
 .mfp-iframe-holder {
   padding-top: 40px;
@@ -199,6 +193,7 @@ button::-moz-focus-inner {
   width: 100%;
   height: 0;
   overflow: hidden;
+  position: relative;
   padding-top: 56.25%; }
   .mfp-iframe-scaler iframe {
     position: absolute;
@@ -329,12 +324,42 @@ img.mfp-img {
 	position: absolute;
 	font-weight: $bold;
 	background-color: $pri;
-	top: 0;
-	right: 0;
-	padding: 0.5rem 3rem;
+	top: 2rem;
+	right: 2rem;
 	transition: color $speed $ease,
 				background $speed $ease;
-
+	font-size: 5rem;
+	border-radius: 50%;
+	cursor: pointer;
+	padding: 1px 23px;
+	&.close{
+		font-size: 0;
+		padding: 0;
+		width: 72px;
+		height: 72px;
+		&::before{
+			content: "";
+		    display: block;
+		    width: 25px;
+		    height: 3px;
+		    background: white;
+		    transform: rotate(45deg);
+		    position: relative;
+		    top: 33px;
+		    left: 23px;
+		}
+		&::after{
+			content: "";
+		    display: block;
+		    width: 25px;
+		    height: 3px;
+		    background: white;
+		    transform: rotate(-45deg);
+		    position: relative;
+		    top: 30px;
+		    left: 23px;
+		}
+	}
 	&:hover,
 	&:focus {
 		color: $white;
@@ -382,75 +407,3 @@ img.mfp-img {
 .mfp-zoom-in.mfp-removing.mfp-bg {
   opacity: 0;
 }
-
-/*
-====== Move-from-top effect ======
-
-
-.mfp-move-from-top {
-  // start state
-  // animate in
-  // animate out
-}
-.mfp-move-from-top .mfp-content {
-  vertical-align: top;
-}
-.mfp-move-from-top .mfp-with-anim {
-  opacity: 0;
-  transition: all 0.2s;
-  transform: translateY(-100px);
-}
-.mfp-move-from-top.mfp-bg {
-  opacity: 0;
-  transition: all 0.2s;
-}
-.mfp-move-from-top.mfp-ready .mfp-with-anim {
-  opacity: 1;
-  transform: translateY(0);
-}
-.mfp-move-from-top.mfp-ready.mfp-bg {
-  opacity: 0.8;
-}
-.mfp-move-from-top.mfp-removing .mfp-with-anim {
-  transform: translateY(-50px);
-  opacity: 0;
-}
-.mfp-move-from-top.mfp-removing.mfp-bg {
-  opacity: 0;
-}
-
-/*
-
-====== Zoom-out effect ======
-
-
-.mfp-zoom-out {
-  // start state
-  // animate in
-  // animate out
-}
-.mfp-zoom-out .mfp-with-anim {
-  opacity: 0;
-  transition: all 0.3s ease-in-out;
-  transform: scale(1.3);
-}
-.mfp-zoom-out.mfp-bg {
-  opacity: 0;
-  transition: all 0.3s ease-out;
-}
-.mfp-zoom-out.mfp-ready .mfp-with-anim {
-  opacity: 1;
-  transform: scale(1);
-}
-.mfp-zoom-out.mfp-ready.mfp-bg {
-  opacity: 0.8;
-}
-.mfp-zoom-out.mfp-removing .mfp-with-anim {
-  transform: scale(1.3);
-  opacity: 0;
-}
-.mfp-zoom-out.mfp-removing.mfp-bg {
-  opacity: 0;
-}
-
-*/

@@ -1,17 +1,28 @@
+$fontPath:  "../fonts/IcoFont/fonts";
+
+.--ico--red{
+	color: $pri !important;
+}
+
+.--ico--white{
+	color: $white !important;
+}
+
+/* Icons start below DO NOT DELETE THE ABOVE */
 @font-face {
-  font-family: 'tmp';
-  src:  url('../fonts/icofont/fonts/tmp.eot?zb7ihs');
-  src:  url('../fonts/icofont/fonts/tmp.eot?zb7ihs#iefix') format('embedded-opentype'),
-    url('../fonts/icofont/fonts/tmp.ttf?zb7ihs') format('truetype'),
-    url('../fonts/icofont/fonts/tmp.woff?zb7ihs') format('woff'),
-    url('../fonts/icofont/fonts/tmp.svg?zb7ihs#tmp') format('svg');
+  font-family: 'icomoon';
+  src:  url('#{$fontPath}/icomoon.eot?cxgaw0');
+  src:  url('#{$fontPath}/icomoon.eot?cxgaw0#iefix') format('embedded-opentype'),
+    url('#{$fontPath}/icomoon.ttf?cxgaw0') format('truetype'),
+    url('#{$fontPath}/icomoon.woff?cxgaw0') format('woff'),
+    url('#{$fontPath}/icomoon.svg?cxgaw0#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="ico-"], [class*=" ico-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'tmp' !important;
+  font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
@@ -24,60 +35,96 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.ico-home:before {
-  content: "\e900";
-}
 .ico-phone:before {
-  content: "\e942";
-}
-.ico-envelop:before {
-  content: "\e945";
-}
-.ico-printing:before {
-  content: "\e954";
-}
-.ico-finder:before {
-  content: "\e986";
-}
-.ico-postage:before {
-  content: "\e9b0";
-}
-.ico-arrow-up:before {
-  content: "\ea3a";
-}
-.ico-arrow-right:before {
-  content: "\ea3c";
-}
-.ico-arrow-down:before {
-  content: "\ea3e";
-}
-.ico-arrow-left:before {
-  content: "\ea40";
+  content: "\e91c";
 }
 .ico-google:before {
-  content: "\ea8b";
-}
-.ico-facebook:before {
-  content: "\ea90";
-}
-.ico-instagram:before {
-  content: "\ea92";
-}
-.ico-twitter:before {
-  content: "\ea96";
-}
-.ico-youtube:before {
-  content: "\ea9d";
-}
-.ico-vimeo:before {
-  content: "\eaa0";
-}
-.ico-flickr:before {
-  content: "\eaa3";
+  content: "\e914";
 }
 .ico-linkedin:before {
-  content: "\eaca";
+  content: "\e915";
 }
-.ico-pinterest:before {
-  content: "\ead1";
+.ico-instagram:before {
+  content: "\e916";
+}
+.ico-twitter:before {
+  content: "\e917";
+}
+.ico-facebook:before {
+  content: "\e918";
+}
+.ico-finder:before {
+  content: "\e919";
+}
+.ico-chevron-left:before {
+  content: "\e91e";
+}
+.ico-chevron-right:before {
+  content: "\e91d";
+}
+.ico-envelop:before {
+  content: "\e91b";
+}
+.ico-home:before {
+  content: "\e91a";
+}
+.ico-delivery-1:before {
+  content: "\e900";
+}
+.ico-delivery-2:before {
+  content: "\e901";
+}
+.ico-letter-box:before {
+  content: "\e902";
+}
+.ico-mail-alert:before {
+  content: "\e903";
+}
+.ico-mail-and-post:before {
+  content: "\e904";
+}
+.ico-mail-and-quote:before {
+  content: "\e905";
+}
+.ico-mail-browser:before {
+  content: "\e906";
+}
+.ico-mail-minus:before {
+  content: "\e907";
+}
+.ico-mail-newspaper:before {
+  content: "\e908";
+}
+.ico-mail-open-1:before {
+  content: "\e909";
+}
+.ico-mail-open-2:before {
+  content: "\e90a";
+}
+.ico-mail-pc:before {
+  content: "\e90b";
+}
+.ico-mail-plus:before {
+  content: "\e90c";
+}
+.ico-mail-question:before {
+  content: "\e90d";
+}
+.ico-mail-recycle:before {
+  content: "\e90e";
+}
+.ico-mail-shadow:before {
+  content: "\e90f";
+}
+.ico-mail-speed-1:before {
+  content: "\e910";
+}
+.ico-mail-speed-2:before {
+  content: "\e911";
+}
+.ico-post-1:before {
+  content: "\e912";
+}
+.ico-post-2:before {
+  content: "\e913";
 }

@@ -35,12 +35,12 @@
 .c-button--primary {
 	background-color: $pri;
 	color: $white;
-	border-bottom: .4rem solid darken($pri, 20);
+	border-bottom: .4rem solid darken($pri, 10);
 
 	&:focus,
 	&:hover {
 		background-color: darken($pri, 10);
-		border-bottom: .4rem solid darken($pri, 30);
+		border-bottom: .4rem solid darken($pri, 20);
 	}
 }
 

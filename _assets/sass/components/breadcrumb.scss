@@ -22,7 +22,7 @@
 	margin: 0;
 
 	&:before {
-		content: "/";
+		content: ">";
 	}
 
 	&:first-of-type {
@@ -37,10 +37,11 @@
 .c-breadcrumb__link {
 	padding: 1rem;
 	display: inline-block;
+	color: $text-colour;
 
 	&.is-active {
-		color: $text-colour;
+		color: $pri;
 		cursor: default;
+		font-weight: bold;
 	}
 }
-

@@ -1,31 +1,34 @@
 .c-service{
-	margin: 12.5rem 0;
 	display: inline-block;
 	width: 100%;
+	display: flex;
+}
+
+.c-services__image{
+	transition: $ease $speed transform;
 }
 
 .c-services__item{
-	width: calc(33.3333% - 8rem);
-	float: left;
+	margin-bottom: 6rem;
 
-	&:nth-child(3n+1){
-		margin-right: 8rem;
+	&:hover{
+		.c-services__read-more{
+			text-decoration: underline;
+		}
+		.c-services__image{
+			transform: scale(1.05);
+		}
 	}
+}
 
-	&:nth-child(3n+2){
-		margin: 0 4rem;
-	}
-
-	&:nth-child(3n+3){
-		margin-left: 8rem;
-	}
-
+.c-services__page-link{
+	border-bottom: none !important;
 }
 
 .c-services__image-wrapper{
 	background-color: $light-2;
 	width: 100%;
-	height: 22.5rem;
+	height: 18rem;
 }
 
 .c-services__title{
@@ -53,10 +56,6 @@
 
 }
 
-.c-services__item{
-	min-height: 55rem;
-}
-
 .flexbox{
 
 	.c-services__image-wrapper{
@@ -65,14 +64,24 @@
 		justify-content: center;
 	}
 
+	.c-service-flex-container{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
+
 }
 
 .no-flexbox{
 
+	.c-services__item{
+		min-height: 550px;
+	}
+
 	.c-services__image{
 		position: relative;
-		left: calc(50% - 5rem);
-		top: calc(50% - 5rem);
+		left: calc(50% - 6.25rem);
+		top: calc(50% - 6.25rem);
 	}
 
 }
@@ -85,29 +94,27 @@
 	}
 }
 
+@include respond-min($mq-x-large){
+	.c-services__item{
+		@include column(1/3, $gutter: 10, $cycle: 3);
+	}
+}
+
 @include respond-max($mq-x-large){
 
 	.c-services__item{
-		width: calc(33.3333% - 3rem);
-		float: left;
-
-		&:nth-child(3n+1){
-			margin-right: 3rem;
-		}
-
-		&:nth-child(3n+2){
-			margin: 0 1.5rem;
-		}
-
-		&:nth-child(3n+3){
-			margin-left: 3rem;
-		}
-
+		@include column(1 / 2, $gutter: 5, $cycle: 2);
 	}
 
 }
 
-@include respond-max($mq-large){
+@include respond-max($mq-medium){
+
+	.no-flexbox{
+		.c-services__item{
+			min-height: auto;
+		}
+	}
 
 	.flexbox .c-service-flex-container, .no-flexbox .c-service-flex-container{
 		display: block;
@@ -123,7 +130,6 @@
 }
 
 .c-section_wrapper{
-	margin: 11rem auto 10rem auto;
 
 	.o-heading strong{
 		font-weight: normal;
@@ -216,7 +222,7 @@
 @include respond-max($mq-x-large){
 
 	.c-section_wrapper{
-		margin: 5rem auto;
+		padding-right: 4rem;
 	}
 
 	.c-service{
@@ -260,13 +266,13 @@
 @include respond-min($mq-x-large){
 
 	.c-service__page-list{
-		width: 35rem;
+		width: 28rem;
 		float: left;
 	}
 
 	.c-service__content{
 		float: right;
-		width: calc(100% - 45rem);
+		width: calc(100% - 38.5rem);
 	}
 
 }

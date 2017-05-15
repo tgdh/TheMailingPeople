@@ -6,19 +6,56 @@
 
 
 .c-gallery{
-
+	.ico-chevron-right,.ico-chevron-left{
+		display: none;
+	}
+	.c-gallery__item{
+		img{
+			min-width: 100%;
+		}
+	}
 	.c-carousel__nav{
 		border-radius: 0;
-		width: 5rem;
-		height: 5rem;
+		width: 7rem;
+		height: 7rem;
+		z-index: 600;
+		background-color: $pri;
+		&::before,&::after{
+			content: '';
+		    display: block;
+		    width: 0;
+		    height: 0;
+		    position: absolute;
+		    left: 0;
+		    top: 0;
+		    margin-top: 35px;
+		    margin-left: 35px;
+		    border: medium inset transparent;
+		}
+		&::after{
+			border-top-width: 13px;
+		    border-bottom-width: 13px;
+		    top: -13px;
+		    left: -11px;
+			border-left: 17px solid #FFF;
+    		margin-left: 39px;
+		}
+		&:hover,&:focus{
+			background-color: $dark-1;
+		}
+	}
+
+	.c-carousel__right,.c-carousel__left{
+		display: none;
 	}
 
 	.c-carousel__nav--prev{
-		left: 2.5rem;
+		left: 0;
+		transform: rotate(180deg);
 	}
 
 	.c-carousel__nav--next{
-		right: 2.5rem;
+		right: 0;
 	}
 
 	.ico-arrow-left, .ico-arrow-right{

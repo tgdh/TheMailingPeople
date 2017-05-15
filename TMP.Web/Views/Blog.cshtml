@@ -15,13 +15,13 @@
 <main class="o-page__inner" role="main">
 	<div class="c-page__wrapper">
 	    @Html.Partial("~/Views/Partials/Page/Headline.cshtml")
-		<div class="c-section_wrapper o-wrap o-wrap--large u-clearfix">
-			<aside class="c-service__page-list">
+		<div class="c-grid o-wrap o-wrap--large u-clearfix o-section">
+			<aside class="c-grid__sidebar">
 			    @Html.Partial("~/Views/Partials/Pods/TagPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Authors" }, { "docType", "author" }, { "baseUrl", Model.Url } })
 			    @Html.Partial("~/Views/Partials/Pods/TagPrevalues.cshtml", Model, new ViewDataDictionary { { "title", "Categories" }, { "docType", "category" }, { "baseUrl", Model.Url } })
 			    @Html.Partial("~/Views/Partials/Pods/DateArchive.cshtml", allBlogPosts)
 			</aside>
-			<section class="c-service__content u-clearfix">
+			<section class="c-grid__main-content">
 		        @if (selectedBlogPosts.Any())
 		        {
 		            foreach (var post in selectedBlogPosts)

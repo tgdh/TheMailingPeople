@@ -36,8 +36,8 @@ var Carousel = (function ($) {
 					centerPadding: settings.centerPadding,
 					dots: settings.dots,
 					dotsClass: 'c-carousel__dots',
-					prevArrow: "<button class='c-carousel__nav c-carousel__nav--prev'><i class='ico-arrow-left'></i><span class='u-hide-text'>Prev</span></button>",
-                	nextArrow: "<button class='c-carousel__nav c-carousel__nav--next'><span class='u-hide-text'>Next</span><i class='ico-arrow-right'></i></button>",
+					prevArrow: "<button class='c-carousel__nav c-carousel__nav--prev'><i class='ico-chevron-left'></i><span class='u-hide-text'>Prev</span></button>",
+                	nextArrow: "<button class='c-carousel__nav c-carousel__nav--next'><span class='u-hide-text'>Next</span><i class='ico-chevron-right'></i></button>",
 				    fade: settings.fade
 				});
 
@@ -73,18 +73,20 @@ var Carousel = (function ($) {
 				  autoplaySpeed: settings.speed,
 				  fade: settings.fade,
 				  dotsClass: 'c-carousel__dots',
-				  prevArrow: "<button class='c-carousel__nav c-carousel__nav--prev'><i class='ico-arrow-left'></i><span class='u-hide-text'>Prev</span></button>",
-				  nextArrow: "<button class='c-carousel__nav c-carousel__nav--next'><span class='u-hide-text'>Next</span><i class='ico-arrow-right'></i></button>",
+				  prevArrow: "<button class='c-carousel__nav c-carousel__nav--prev'><i class='ico-chevron-left'></i><span class='u-hide-text'>Prev</span></button>",
+				  nextArrow: "<button class='c-carousel__nav c-carousel__nav--next'><span class='u-hide-text'>Next</span><i class='ico-chevron-right'></i></button>",
 				  slidesToShow: 3,
 				  slidesToScroll: 3,
 				  adaptiveHeight: settings.autoHeight,
 				  variableWidth: settings.autoWidth,
+				  arrows: settings.nav,
 				  responsive: [
 				    {
 				      breakpoint: 1350,
 				      settings: {
 				        slidesToShow: 2,
 				        slidesToScroll: 2,
+						arrows: settings.nav,
 				      }
 				    },
 				    {
@@ -93,7 +95,7 @@ var Carousel = (function ($) {
 				        slidesToShow: 1,
 				        slidesToScroll: 1,
 						dots: true,
-						arrows: false
+						arrows: false,
 				      }
 				    }
 				  ]

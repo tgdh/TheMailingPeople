@@ -8,7 +8,7 @@
 		width: 100%;
 		background-color: white;
 		opacity: 0;
-		transition: $ease .5s top,
+		transition: $ease $speed top,
 					$ease $speed opacity;
 
 		&.js-search-active{

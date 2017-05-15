@@ -1,0 +1,46 @@
+@include respond-min($mq-small){
+	.c-block__content-left,.c-block__content-right,.c-banner__heading, .c-banner__text,.c-banner__link{
+		position: relative;
+		opacity: 0;
+		top: -10px;
+		transition: $ease .5s top,
+					$ease .5s opacity,
+					$ease $speed color,
+					$ease $speed background-color,
+					$ease $speed border-color;
+		&.is-showing{
+			top: 0;
+			opacity: 1;
+		}
+	}
+
+	.c-block__read-more{
+		position: absolute;
+		bottom: 6rem;
+		opacity: 0;
+		transition: $ease .5s opacity,
+					$ease .5s bottom;
+		&.is-showing{
+			bottom: 5rem;
+			opacity: 1;
+		}
+	}
+}
+
+@include respond-min($mq-large){
+	.c-block__staff-member, .c-services__item{
+		opacity: 0;
+		transition: $ease $speed all;
+		&.is-showing{
+			opacity: 1;
+		}
+	}
+}
+
+
+.no-enhance{
+	.c-block__content-left,.c-block__content-right,.c-banner__heading, .c-banner__text,.c-banner__link,.c-block__staff-member, .c-services__item,.c-contact__item,.c-contact__map{
+		opacity: 1;
+		top: 0;
+	}
+}

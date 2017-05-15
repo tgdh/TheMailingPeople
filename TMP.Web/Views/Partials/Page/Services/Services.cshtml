@@ -1,37 +1,34 @@
 @inherits UmbracoViewPage<IPublishedContent>
 @{
-	String List = Model.GetPropertyValue<string>("featuredServices");
-	var ListOfItems = !string.IsNullOrWhiteSpace(List) ? List.Split(',').Select(mediaId => Umbraco.TypedContent(mediaId)).ToList() : null;
-	if(List == null)
-	{
-		return;
-	}
+	var Homepage = Model.Site();
+	var Services = Homepage.Descendants("services").FirstOrDefault();
+	var Children = Services.Children;
 }
 
-<div class="c-service">
+<div class="c-service o-section js-transition-in">
 	<div class="o-wrap o-wrap--large c-service-flex-container">
-		@foreach(var item in ListOfItems)
+		@foreach(var item in Children)
 		{
 			if(item != null)
 			{
-				var image = item.GetPropertyValue("pageIcon");
+				var image = item.GetPropertyValue("featuredImage");
 				var LogoPath = "/assets/img/tmp-default-og.png";
 				var LogoWidth = Umbraco.Media(image).Url;
 				var imageUrl = image != null && image != "" ? LogoWidth : LogoPath;
 				var pageTitle = item.GetPropertyValue<string>("pageTitle");
-				var pageText = item.GetPropertyValue<string>("paragraph");
+				var pageText = item.GetPropertyValue<string>("pageDescription");
 				var pageTitleNull = !string.IsNullOrWhiteSpace(pageTitle) ? pageTitle: item.Name;
 				var altText = !string.IsNullOrWhiteSpace(pageTitle) ? pageTitle : "Service Page Icon";
 				<a class="c-services__item" href="@item.Url">
 					@if(image != null)
 					{
 						<div class="c-services__image-wrapper">
-							<img src="@imageUrl?width=125" alt="@altText" class="c-services__image">
+							<img src="@imageUrl?width=110" alt="@altText" class="c-services__image">
 						</div>
 					}
 					@if(pageTitleNull != null)
 					{
-						<h2 class="c-services__title u-beta">@pageTitleNull</h2>
+						<h2 class="c-services__title u-gamma c-services__page-link">@pageTitleNull</h2>
 					}
 					@if(pageText != null)
 					{
