@@ -214,7 +214,7 @@ gulp.task('refAssets', ['css', 'js'], function() {
 // gulp dev
 gulp.task('dev', ['clean', 'modernizr'], function() {
     isProduction = false;
-    gulp.start('refAssets', 'watch', 'copyfonts');
+    gulp.start('refAssets', 'images', 'watch', 'copyfonts');
 });
 
 // gulp build
