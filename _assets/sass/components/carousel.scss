@@ -44,9 +44,14 @@
 .c-carousel__nav {
 	position: absolute;
 	top: calc(50% - 1.75rem);
-	width: 1.25rem;
-	height: 3.5rem;
 	display: block;
+}
+
+.slick-slide{
+	border-bottom: none !important;
+	img{
+		border-radius: 0;
+	}
 }
 
 .ico-chevron{
@@ -162,11 +167,8 @@
 	}
 }
 
-
-@include respond-min( $mq-large ) {
-
-	.c-carousel__nav {
-		font-size: 4.8rem;
+.no-flexbox{
+	.c-card-list .c-carousel__nav .ico-chevron-right, .c-card-list .c-carousel__nav .ico-chevron-left{
+		font-size: 3rem;
 	}
-
 }
