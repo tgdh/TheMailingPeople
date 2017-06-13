@@ -3,9 +3,9 @@
 	var homePage = Model.Site();
 	var Settings = homePage.Descendants("globalSettings").FirstOrDefault();
 
-    String ContactNumber = Model.GetPropertyValue<string>("contactNumber");
-	String Address = Model.GetPropertyValue<string>("address");
-	String EmailAddress = Model.GetPropertyValue<string>("emailAddress");
+    String ContactNumber = Settings.GetPropertyValue<string>("contactNumber");
+	String Address = Settings.GetPropertyValue<string>("address");
+	String EmailAddress = Settings.GetPropertyValue<string>("emailAddress");
 
     var list = Settings.GetPropertyValue<IEnumerable<IPublishedContent>>("socialIcons");
 }
