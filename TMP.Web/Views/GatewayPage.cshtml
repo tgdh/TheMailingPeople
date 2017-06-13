@@ -1,11 +1,52 @@
 ﻿@inherits UmbracoViewPage<IPublishedContent>
 @{
     Layout = "Layout.cshtml";
+	var Children = Model.Children;
 }
 <main class="o-page__inner" role="main">
 	<div class="c-page__wrapper">
 	    @Html.Partial("~/Views/Partials/Page/Headline.cshtml")
-
+		<div class="c-service o-section js-transition-in">
+			<div class="o-wrap o-wrap--large c-service-flex-container">
+				@foreach(var item in Children)
+				{
+					if(item != null)
+					{
+						var image = item.GetPropertyValue("featuredImage");
+						var LogoPath = "/assets/img/tmp-default-og.png";
+						var LogoWidth = Umbraco.Media(image).Url;
+						var imageUrl = image != null && image != "" ? LogoWidth : LogoPath;
+						var pageTitle = item.GetPropertyValue<string>("pageTitle");
+						var pageText = item.GetPropertyValue<string>("pageDescription");
+						var pageTitleNull = !string.IsNullOrWhiteSpace(pageTitle) ? pageTitle: item.Name;
+						var altText = !string.IsNullOrWhiteSpace(pageTitle) ? pageTitle : "Service Page Icon";
+						<a class="c-services__item" href="@item.Url">
+							@if(image != null)
+							{
+								<div class="c-services__image-wrapper">
+									<img src="@imageUrl?width=175" alt="@altText" class="c-services__image">
+								</div>
+							}
+							@if(pageTitleNull != null)
+							{
+								<h2 class="c-services__title u-gamma c-services__page-link">@pageTitleNull</h2>
+							}
+							@if(pageText != null)
+							{
+								<p class="c-services__paragraph">@pageText</p>
+							}
+							@if(pageTitleNull != null)
+							{
+								<span class="c-services__read-more">Read More @pageTitleNull></span>
+							}
+							else{
+								<span class="c-services__read-more">Read More></span>
+							}
+						</a>
+					}
+				}
+			</div>
+		</div>
 		@Html.Partial("~/Views/Partials/Page/Newsletter.cshtml")
 		@Html.Partial("~/Views/Partials/Page/Accreditations.cshtml")
 	</div>
