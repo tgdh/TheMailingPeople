@@ -25,6 +25,15 @@ var StaffPopup = (function ($) {
         });
 	};
 
+    $(document).mouseup(function(e){
+        var wrapper = $('.js-popup-staff');
+        if(!wrapper.is(e.target) && wrapper.has(e.target).length === 0)
+        {
+            wrapper.removeClass('is--showing');
+            $('.js-popup').removeClass('is--showing');
+        }
+    });
+
 	return {
 		init: _staffPopup
 	};

@@ -85,6 +85,10 @@
         margin-top: -250px;
         margin-left: -400px;
     }
+    .c-staff__text-wrapper{
+        max-height: 300px;
+        overflow: hidden;
+    }
 }
 @include respond-min-max($mq-small,$mq-large){
     .c-staff__popup-page__wrapper{
@@ -93,6 +97,10 @@
         top: 50%;
         left: 5%;
         margin-top: -300px;
+    }
+    .c-staff__text-wrapper{
+        max-height: 400px;
+        overflow: hidden;
     }
 }
 @include respond-max($mq-small){
