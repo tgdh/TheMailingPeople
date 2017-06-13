@@ -17,15 +17,15 @@
 	.c-header__nav-wrap{
 		position: fixed;
 		top: 0;
-		right: calc(-100% + 6rem);
+		transform: translate(calc(100% + 6rem),0);
 		width: calc(100% - 6rem);
 		background-color: $pri;
 		height: 100vh;
-		transition: $ease $speed right;
+		transition: $ease $speed transform;
 		box-shadow: inset .5rem 0 3rem rgba($black,0.2);
 
 		&.js-nav-active{
-			right: 0;
+			transform: translate(6rem,0);
 		}
 
 	}
@@ -84,18 +84,18 @@
 	}
 
 	.c-nav__list--sub{
-		left: 100%;
+		transform: translate(calc(100% + 2rem),0);
 		position: absolute;
 		top: 1.5rem;
 		padding-top: 4.5rem;
-		width: 100%;
+		width: calc(100% - 4rem);
 		height: calc(100vh - 1.5rem);
 		background-color: $pri;
 		z-index: 999;
-		transition: $ease $speed left;
+		transition: $ease $speed transform;
 
 		&.js-active{
-			left: 2rem;
+			transform: translate(0,0);
 		}
 
 	}
@@ -204,7 +204,8 @@
 		padding: 3rem 2rem;
 		display: block;
 		transition: $ease $speed background-color,
-					$ease $speed color;
+					$ease $speed color,
+					$ease $speed padding;
 
 		&.is-active{
 			color: $pri;
