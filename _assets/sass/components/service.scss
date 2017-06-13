@@ -15,15 +15,37 @@
 		.c-services__read-more{
 			text-decoration: underline;
 		}
-		.c-services__image{
-			transform: scale(1.05);
+		.c-services__title{
+			border-bottom-color: transparent;
 		}
 	}
 }
 
-.c-services__page-link{
-	border-bottom: none !important;
+.c-service__featured-image{
+	width: 125px;
+	margin-bottom: 2rem;
+	display: none;
+	margin-top: 2rem;
 }
+
+@include respond-min($mq-medium){
+	.c-section__first-para {
+		float: left;
+		clear: left;
+		width: calc(100% - 160px);
+	}
+	.c-section.c-service__title {
+		float: left;
+		width: calc(100% - 160px);
+	}
+	.c-service__featured-image{
+		display: block;
+	}
+}
+
+/*.c-services__page-link{
+	border-bottom: none !important;
+}*/
 
 .c-services__image-wrapper{
 	background-color: $light-2;
@@ -200,7 +222,7 @@
 }
 
 .c-need-help__logo{
-	max-width: 20rem;
+	max-width: 15rem;
 	display: block;
 	margin: 2rem auto 4rem auto;
 }
