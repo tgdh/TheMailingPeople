@@ -63,9 +63,9 @@
 		}
         @if (image != null)
         {
-            var imageUrl = Url.GetCropUrl(image, cropAlias: "4:3", width: 360, quality: 85, htmlEncode: false, furtherOptions: "&format=jpeg").ToString();
+            var imageUrl = Url.GetCropUrl(image, cropAlias: "3:2", width: 360, quality: 85, htmlEncode: false, furtherOptions: "&format=jpeg").ToString();
 
-            <a href="@link" class="c-thumbnail__card__image-wrap o-media o-aspect--4-3">
+            <a href="@link" class="c-thumbnail__card__image-wrap o-media o-aspect--3-2">
                 <img class="c-thumbnail__card__image" src="@imageUrl" alt="@title"/>
             </a>
         }
