@@ -253,16 +253,16 @@ var endRecord = Math.Min(model.TotalResults, (startRecord - 1) + model.PageSize)
     }
 
     var searchType = result.DocumentTypeAlias == "home" ? "ADC Theatre" : result.Ancestor().Name;
-    var hasImage = result.HasValue("coverImage") || result.HasValue("cardImage") || result.HasValue("socialMediaImage");
+    var hasImage = result.HasValue("featuredImage") || result.HasValue("cardImage") || result.HasValue("socialMediaImage");
     var summary = "";
 
     if (result.HasValue("excerpt"))
     {
         summary = result.GetPropertyValue<string>("excerpt");
     }
-    else if (result.HasValue("description"))
+    else if (result.HasValue("pageDescription"))
     {
-        summary = result.GetPropertyValue<string>("description");
+        summary = result.GetPropertyValue<string>("pageDescription");
     }
     else if (result.HasValue("summary"))
     {
@@ -281,25 +281,28 @@ var endRecord = Math.Min(model.TotalResults, (startRecord - 1) + model.PageSize)
                 @if (hasImage)
                 {
                     var imageId = result.HasValue("socialMediaImage") ? result.GetPropertyValue<string>("socialMediaImage") : "0";
-
-                    if (result.HasValue("coverImage"))
+                    var trueFalseImage = "false";
+                    if (result.HasValue("socialMediaImage") && trueFalseImage == "false")
                     {
-                        imageId = result.GetPropertyValue<string>("coverImage");
+                        imageId = result.GetPropertyValue<string>("socialMediaImage");
+                        trueFalseImage = "true";
                     }
-
-                    if (result.HasValue("cardImage"))
+                    if (result.HasValue("featuredImage") && trueFalseImage == "false")
+                    {
+                        imageId = result.GetPropertyValue<string>("featuredImage");
+                        trueFalseImage = "true";
+                    }
+                    if (result.HasValue("cardImage") && trueFalseImage == "false")
                     {
                         imageId = result.GetPropertyValue<string>("cardImage");
+                        trueFalseImage = "true";
                     }
-
                     var image = Umbraco.TypedMedia(imageId);
-
                     if (image != null)
                     {
                         string aspectRatio = "21:9";
                         int imageWidth = 800;
                         var imageUrl = Url.GetCropUrl(image, cropAlias: aspectRatio, width: imageWidth, htmlEncode: false);
-
                         <div class="c-listing__image-wrap o-aspect--21-9">
                             <img src="@imageUrl" alt="" class="c-listing__image" />
                         </div>
@@ -309,8 +312,10 @@ var endRecord = Math.Min(model.TotalResults, (startRecord - 1) + model.PageSize)
                 <div class="c-listing__content">
                     <h2 class="c-listing__heading u-delta" itemprop="name">@title</h2>
                     <div class="c-listing__description">
-                        @* <p>@Highlight(Truncate(Umbraco.StripHtml(summary), model.PreviewLength), model.SearchTerms)</p> *@
-                        <p>@TextHelper.TruncateAtWord(summary, 200).Replace("&amp;", "&")</p>
+                        @if(summary != "")
+                        {
+                            <p class="c-article__summary">@summary</p>
+                        }
                         <p class="c-listing__cta">More info <i class="ico-arrow-right"></i></p>
                     </div>
                 </div>
@@ -333,7 +338,7 @@ var endRecord = Math.Min(model.TotalResults, (startRecord - 1) + model.PageSize)
 
 @helper RenderPager(SearchViewModel model)
 {
-    <nav class="c-pagination">
+    <nav class="c-blogs__pagination">
         @if (model.CurrentPage > 1)
         {
             <a href="?q=@(model.SearchTerm)&p=@(model.CurrentPage-1)" class="c-pagination__link c-pagination__link--prev" rel="prev"><i role="presentation"></i> Previous</a>
