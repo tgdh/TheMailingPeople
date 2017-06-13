@@ -1,1 +1,3 @@
 _assets/_components/**
+_assets/js/lib/throttle.js
+_assets/js/components/loadingElements.js
