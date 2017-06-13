@@ -14,6 +14,11 @@ ul.scroll_tabs_container {
   cursor: pointer;
 }
 
+.c-tabs__nav-item{
+  transition: $ease $speed background-color,
+              $ease $speed color;
+}
+
 .scroll_tabs_container div.scroll_tab_inner li {
   display: -moz-inline-stack;
   display: inline-block;
