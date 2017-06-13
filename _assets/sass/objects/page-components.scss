@@ -7,3 +7,6 @@
 .o-page-component:not(.is-first) {
 	margin-top: $line-height * 2;
 }
+.o-page-component.is-first{
+	clear: left;
+}
