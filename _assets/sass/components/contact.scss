@@ -13,11 +13,52 @@
 	opacity: 0;
 	position: relative;
 	transition: $ease $speed opacity;
+	overflow: hidden;
 	&.is-showing{
 		opacity: 1;
 	}
 	&:nth-child(even){
 		margin-right: 0;
+	}
+	&.single--item{
+		.c-contact__link{
+			position: absolute;
+			top: 0;
+			left: 0;
+			box-sizing: border-box;
+			width: 100%;
+			height: 100%;
+			border-bottom-color: transparent;
+			padding-left: 8rem;
+			padding-top: 2rem;
+			&:hover,
+			&:focus{
+				&::after{
+					display: none;
+				}
+			}
+		}
+	}
+}
+@include respond-min-max($mq-small,$mq-large){
+	.c-contact__item{
+		&.single--item{
+			.c-contact__link{
+				padding-left: 3rem;
+				padding-top: 1rem;
+			}	
+		}
+	}
+}
+@include respond-max($mq-small){
+	.c-contact__item{
+		&.single--item{
+			.c-contact__link{
+				position: relative;
+				padding-left: 0;
+				padding-top: 0;
+			}	
+		}
 	}
 }
 
@@ -34,7 +75,6 @@
 	font-size: 1.8rem;
 	transition: $ease 1s border-color;
 	position: relative;
-
 	&:hover,
 	&:focus{
 		color: black;
