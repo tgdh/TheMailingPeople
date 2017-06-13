@@ -67,6 +67,7 @@
 		'components/breadcrumb',
 //		'components/map',
 		'components/social',
+		'components/download',
 //		'components/tile',
 //		'components/pagination',
 		'components/card-list.scss',
@@ -85,7 +86,8 @@
 		'components/blogs',
 		'components/icons',
 		'components/grid',
-		'components/loadingElements';
+		'components/loadingElements',
+		'components/popup';
 
 @import 'utility/overrides',
 		'utility/hide',
