@@ -11,11 +11,11 @@ $fontPath:  "../fonts/IcoFont/fonts";
 /* Icons start below DO NOT DELETE THE ABOVE */
 @font-face {
   font-family: 'icomoon';
-  src:  url('#{$fontPath}/icomoon.eot?cxgaw0');
-  src:  url('#{$fontPath}/icomoon.eot?cxgaw0#iefix') format('embedded-opentype'),
-    url('#{$fontPath}/icomoon.ttf?cxgaw0') format('truetype'),
-    url('#{$fontPath}/icomoon.woff?cxgaw0') format('woff'),
-    url('#{$fontPath}/icomoon.svg?cxgaw0#icomoon') format('svg');
+  src:  url('#{$fontPath}/icomoon.eot?40v4z2');
+  src:  url('#{$fontPath}/icomoon.eot?40v4z2#iefix') format('embedded-opentype'),
+    url('#{$fontPath}/icomoon.ttf?40v4z2') format('truetype'),
+    url('#{$fontPath}/icomoon.woff?40v4z2') format('woff'),
+    url('#{$fontPath}/icomoon.svg?40v4z2#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -35,6 +35,24 @@ $fontPath:  "../fonts/IcoFont/fonts";
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ico-flickr:before {
+  content: "\e922";
+}
+.ico-brand:before {
+  content: "\e922";
+}
+.ico-social:before {
+  content: "\e922";
+}
+.ico-pinterest:before {
+  content: "\e91f";
+}
+.ico-youtube:before {
+  content: "\e920";
+}
+.ico-vimeo:before {
+  content: "\e921";
+}
 .ico-phone:before {
   content: "\e91c";
 }
@@ -65,7 +83,7 @@ $fontPath:  "../fonts/IcoFont/fonts";
 .ico-envelop:before {
   content: "\e91b";
 }
-.ico-home:before {
+.ico-brand:before {
   content: "\e91a";
 }
 .ico-delivery-1:before {
