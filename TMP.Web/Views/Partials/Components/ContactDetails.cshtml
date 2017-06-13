@@ -7,15 +7,7 @@
 	String Address = Model.GetPropertyValue<string>("address");
 	String EmailAddress = Model.GetPropertyValue<string>("emailAddress");
 
-	String SocialFacebook = Settings.GetPropertyValue<string>("socialFacebookUrl");
-	String SocialTwitter = Settings.GetPropertyValue<string>("socialTwitterUrl");
-	String SocialLinkedIn = Settings.GetPropertyValue<string>("socialLinkedInUrl");
-	String GooglePlus = Settings.GetPropertyValue<string>("socialGoogleUrl");
-	String Instagram = Settings.GetPropertyValue<string>("socialInstagramUrl");
-
-	var TwitterVar = "@TMailingP";
-	var GoogleVar = "@TMailingP";
-	var InstagramVar = "@TMailingPeople";
+    var list = Settings.GetPropertyValue<IEnumerable<IPublishedContent>>("socialIcons");
 }
 
 <div class="c-contact">
@@ -37,47 +29,52 @@
 		@if(!string.IsNullOrWhiteSpace(Address))
 		{
 			<div class="c-contact__item u-clearfix">
-				<i class="c-contact__single-icon ico-home"></i>
+				<i class="c-contact__single-icon ico-brand"></i>
 				<p class="c-contact__address">@Html.Raw(Html.Encode(Address).Replace("\n", "<br />"))</p>
 			</div>
 		}
-		<div class="c-contact__item">
-			@if(!string.IsNullOrWhiteSpace(SocialFacebook))
-			{
-				<div class="c-contact__social-wrapper u-clearfix">
-					<i class="c-contact__icon ico-facebook"></i>
-					<a href="@SocialFacebook" class="c-contact__link c-contact__social" target="_blank">TheMailingPeople</a>
-				</div>
-			}
-			@if(!string.IsNullOrWhiteSpace(SocialTwitter))
-			{
-				<div class="c-contact__social-wrapper u-clearfix">
-					<i class="c-contact__icon ico-twitter"></i>
-					<a href="@SocialTwitter" class="c-contact__link c-contact__social" target="_blank">@TwitterVar</a>
-				</div>
-			}
-			@if(!string.IsNullOrWhiteSpace(SocialLinkedIn))
-			{
-				<div class="c-contact__social-wrapper u-clearfix">
-					<i class="c-contact__icon ico-linkedin"></i>
-					<a href="@SocialLinkedIn" class="c-contact__link c-contact__social" target="_blank">The-Mailing-People</a>
-				</div>
-			}
-			@if(!string.IsNullOrWhiteSpace(GooglePlus))
-			{
-				<div class="c-contact__social-wrapper u-clearfix">
-					<i class="c-contact__icon ico-google"></i>
-					<a href="@GooglePlus" class="c-contact__link c-contact__social" target="_blank">@GoogleVar</a>
-				</div>
-			}
-			@if(!string.IsNullOrWhiteSpace(Instagram))
-			{
-				<div class="c-contact__social-wrapper u-clearfix">
-					<i class="c-contact__icon ico-instagram"></i>
-					<a href="@Instagram" class="c-contact__link c-contact__social" target="_blank">@InstagramVar</a>
-				</div>
-			}
-		</div>
+		@if(list != null)
+		{
+			var facebookHandle = "TheMailingPeople";
+			var twitterHandle = "@TMailingP";
+			var instaHandle = "@TMailingPeople";
+			var googleHandle = "@TMailingP";
+			var linkedInHandle = "the-mailing-people";
+
+
+			<div class="c-contact__item">
+				@foreach(var item in list)
+				{
+					var itemUrl = item.GetPropertyValue("socialPlatformLink");
+					var type = item.GetPropertyValue<string>("socialPlatformName");
+					var typeLower = type.ToLower().Replace("+","");
+					<div class="c-contact__social-wrapper u-clearfix">
+						<i class="c-contact__icon ico-@typeLower"></i>
+						<a href="@itemUrl" class="c-contact__link c-contact__social" target="_blank">
+							@if(typeLower == "facebook")
+							{
+								<span>@facebookHandle</span>
+							}
+							else if(typeLower == "twitter"){
+								<span>@twitterHandle</span>
+							}
+							else if(typeLower == "instagram"){
+								<span>@instaHandle</span>
+							}
+							else if(typeLower == "google"){
+								<span>@googleHandle</span>
+							}
+							else if(typeLower == "linkedin"){
+								<span>@linkedInHandle</span>
+							}
+							else{
+								<span>@type</span>
+							}
+						</a>
+					</div>
+				}
+			</div>
+		}
 	</div>
 </div>
 <div class="c-contact__map">
