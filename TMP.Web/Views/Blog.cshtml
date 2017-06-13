@@ -30,7 +30,7 @@
 		                {
 		                    Id = post.Id,
 		                    Name = post.HasValue("headline") ? post.GetPropertyValue<string>("headline") : post.Name,
-		                    Thumbnail = Umbraco.TypedMedia(post.GetPropertyValue<int>("coverImage")),
+		                    Thumbnail = Umbraco.TypedMedia(post.GetPropertyValue<int>("featuredImage")),
 		                    Excerpt = post.GetPropertyValue<string>("excerpt"),
 		                    Url = post.Url,
 		                    Category = GetMetaById(post.GetPropertyValue<int>("category")),
