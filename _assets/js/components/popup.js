@@ -3,7 +3,13 @@ var PopupMagic = (function ($) {
 	var _popupMagic = function() {
 		$(document).ready(function(){
 			$('.js-popup__video').magnificPopup({
+				disableOn: 700,
 				type: 'iframe',
+				mainClass: 'mfp-fade',
+				removalDelay: 160,
+				preloader: false,
+
+				fixedContentPos: false,
 				iframe: {
 		            markup: '<div class="mfp-close close"></div>'+
 							'<div class="mfp-iframe-scaler">'+
@@ -13,6 +19,12 @@ var PopupMagic = (function ($) {
 			});
 			$('.js-popup__image').magnificPopup({
 				type: "image",
+				disableOn: 700,
+				mainClass: 'mfp-fade',
+				removalDelay: 160,
+				preloader: false,
+
+				fixedContentPos: false,
 		        image: {
 		            markup: '<div class="c-popup">' +
 		                        '<div class="mfp-toolbar"></div>' +
