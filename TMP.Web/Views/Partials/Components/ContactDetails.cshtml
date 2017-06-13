@@ -22,14 +22,14 @@
 	<div class="o-wrap o-wrap--large u-clearfix">
 		@if(ContactNumber != null)
 		{
-			<div class="c-contact__item">
+			<div class="c-contact__item single--item">
 				<i class="c-contact__single-icon ico-phone"></i>
 				<a href="tel:@Html.Raw(Html.Encode(ContactNumber).Replace(" ", ""))" class="c-contact__link">@ContactNumber</a>
 			</div>
 		}
 		@if(!string.IsNullOrWhiteSpace(EmailAddress))
 		{
-			<div class="c-contact__item">
+			<div class="c-contact__item single--item">
 				<i class="c-contact__single-icon ico-envelop"></i>
 				<a href="mailto:@EmailAddress" class="c-contact__link">@EmailAddress</a>
 			</div>
