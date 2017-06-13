@@ -40,18 +40,6 @@
 		padding: .8rem 0;
 	}
 
-	.c-nav__link{
-		font-size: 2.1rem;
-		color: $white;
-
-		&:hover,
-		&:focus{
-			text-decoration: underline;
-			color: white;
-		}
-
-	}
-
 	.c-nav__sub-chevron{
 		display: inline-block;
 		content: "";

@@ -52,16 +52,26 @@
 
 }
 
-@include respond-min( $mq-medium ) {
+@include respond-max( $mq-large ) {
 
 	.c-nav--footer {
-		text-align: right;
+		margin-top: 3rem;
+	}
+	.c-nav__list{
+		.c-nav__item:first-child{
+			a{
+				padding-left: 0;
+			}
+		}
 	}
 
 }
 
 @include respond-min($mq-large){
-
+	.c-footer__tgdh{
+		width: 100%;
+		text-align: right;
+	}
 	.c-nav--footer{
 		float: right;
 	}
