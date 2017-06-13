@@ -31,6 +31,7 @@ var Search = (function ($) {
 				},100);
 			});
 			$('.c-header__tablet-search').click(function(){
+				$(this).toggleClass('js-tablet--active');
 				$('.c-header__right.c-header__main__right').toggleClass('js-mobile-active');
 				$('.c-search__form-wrapper').toggleClass('js-mobile-active');
 				setTimeout(function(){
