@@ -1,0 +1,19 @@
+.c-downloads {
+    .c-link-list__item{
+        display: block;
+        margin-bottom: 1.5rem;
+        &::before{
+            content: "-";
+            display: block;
+            float: left;
+            margin-right: 1rem;
+            margin-left: 1rem;
+        }
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    .c-link-list{
+        padding: 2rem 0;
+    }
+}
