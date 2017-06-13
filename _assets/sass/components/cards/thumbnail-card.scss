@@ -1,5 +1,18 @@
 .c-thumbnail__card {
     position: relative;
+    &:hover,
+    &:focus{
+        .c-thumbnail__title{
+            a{
+                border-bottom-color: transparent;
+            }
+        }
+        p{
+            a{
+                border-bottom: 1px solid $red;
+            }
+        }
+    }
 }
 
 .c-thumbnail__card__label {
@@ -19,6 +32,10 @@
 }
 
 .c-thumbnail__card__image {
+}
+
+.c-article__summary{
+    color: black;
 }
 
 .c-thumbnail__title {
