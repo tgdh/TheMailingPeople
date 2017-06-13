@@ -3,49 +3,22 @@
 @{
     var homePage = Model.Site();
     var settings = homePage.Descendants("globalSettings").FirstOrDefault();
-
-    if (settings == null)
+    var list = settings.GetPropertyValue<IEnumerable<IPublishedContent>>("socialIcons");
+    if(list == null)
     {
-        return;
+      return;
     }
-
-    var facebook = settings.GetPropertyValue<string>("socialFacebookUrl");
-	var twitter = settings.GetPropertyValue<string>("socialTwitterUrl");
-	var linkedin = settings.GetPropertyValue<string>("socialLinkedinUrl");
-	var google = settings.GetPropertyValue<string>("socialGoogleUrl");
-	var instagram = settings.GetPropertyValue<string>("socialInstagramUrl");
-    var extraClass = ViewData["extraClass"] ?? "";
+	var extraClass = ViewData["extraClass"] ?? "";
 }
 
 <div class="c-social @extraClass u-clearfix">
-	@if(!string.IsNullOrWhiteSpace(facebook))
+	@foreach(var item in list)
 	{
-		<a href="@facebook" title="Go to our Facebook page (external link)" class="c-social__link c-social__link--facebook" target="_blank">
-	        <i class="ico-facebook"></i> <span class="u-hide-text">Facebook</span>
-	    </a>
-	}
-	@if(!string.IsNullOrWhiteSpace(twitter))
-	{
-		<a href="@twitter" title="Go to our Facebook page (external link)" class="c-social__link c-social__link--twitter" target="_blank">
-	        <i class="ico-twitter"></i> <span class="u-hide-text">Twitter</span>
-	    </a>
-	}
-	@if(!string.IsNullOrWhiteSpace(instagram))
-	{
-		<a href="@instagram" title="Go to our Facebook page (external link)" class="c-social__link c-social__link--instagram" target="_blank">
-	        <i class="ico-instagram"></i> <span class="u-hide-text">Instagram</span>
-	    </a>
-	}
-	@if(!string.IsNullOrWhiteSpace(linkedin))
-	{
-		<a href="@linkedin" title="Go to our Facebook page (external link)" class="c-social__link c-social__link--linkedin" target="_blank">
-	        <i class="ico-linkedin"></i> <span class="u-hide-text">LinkedIn</span>
-	    </a>
-	}
-	@if(!string.IsNullOrWhiteSpace(google))
-	{
-		<a href="@google" title="Go to our Facebook page (external link)" class="c-social__link c-social__link--google" target="_blank">
-	        <i class="ico-google"></i> <span class="u-hide-text">GooglePlus</span>
+		var itemUrl = item.GetPropertyValue("socialPlatformLink");
+		var type = item.GetPropertyValue<string>("socialPlatformName");
+		var typeLower = type.ToLower().Replace("+","");
+		<a href="@itemUrl" title="Go to our @type page (external link)" class="c-social__link c-social__link--@type" target="_blank">
+	        <i class="ico-@typeLower"></i> <span class="u-hide-text">@type</span>
 	    </a>
 	}
 </div>
