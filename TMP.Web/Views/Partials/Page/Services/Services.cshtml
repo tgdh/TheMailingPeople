@@ -23,7 +23,7 @@
 					@if(image != null)
 					{
 						<div class="c-services__image-wrapper">
-							<img src="@imageUrl?width=110" alt="@altText" class="c-services__image">
+							<img src="@imageUrl?width=175" alt="@altText" class="c-services__image">
 						</div>
 					}
 					@if(pageTitleNull != null)
@@ -34,7 +34,13 @@
 					{
 						<p class="c-services__paragraph">@pageText</p>
 					}
-					<span class="c-services__read-more">Read More ></span>
+					@if(pageTitleNull != null)
+					{
+						<span class="c-services__read-more">Read More @pageTitleNull></span>
+					}
+					else{
+						<span class="c-services__read-more">Read More></span>
+					}
 				</a>
 			}
 		}
