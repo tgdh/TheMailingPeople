@@ -137,7 +137,9 @@
                 var quote = new QuoteViewModel
                 {
                     Quote = item.GetPropertyValue<string>("quote"),
-                    Source = item.GetPropertyValue<string>("source")
+                    Source = item.GetPropertyValue<string>("source"),
+                    Highlight = item.GetPropertyValue<bool>("highlight"),
+                    Alignment = item.GetPropertyValue<string>("alignment")
                 };
 
                 @Html.Partial("~/Views/Partials/PageComponents/Quote.cshtml", quote)
