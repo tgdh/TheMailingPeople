@@ -10,7 +10,7 @@
 		float: left;
 		width: calc(100% - 6rem);
 		box-sizing: border-box;
-		padding-left: 2.5rem;
+		padding-left: 8.5rem;
 	}
 
 	&.js-active{
@@ -103,6 +103,8 @@
 	padding-left: 2.5rem;
 	padding-top: 1.5rem;
 	cursor: pointer;
+	width: calc(100% - 6rem);
+	min-height: 6rem;
 }
 
 .no-enhance{
