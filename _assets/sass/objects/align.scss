@@ -14,7 +14,7 @@
 
 	.o-align--left,
 	.o-align--right {
-		width: 40%;
+		width: calc(46% - 2rem);
 		margin-bottom: $line-height;
 	}
 
