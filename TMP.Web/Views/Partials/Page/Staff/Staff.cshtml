@@ -12,21 +12,12 @@
 				var StaffImageId = StaffMember.GetPropertyValue<int>("staffImage");
 				var StaffName = StaffMember.GetPropertyValue<string>("staffName");
 				var StaffJobTitle = StaffMember.GetPropertyValue<string>("staffJobTitle");
-				var StaffLinkedIn = StaffMember.GetPropertyValue<string>("staffLinkedInURL");
 				if(StaffImageId != null)
 				{
-					<div class="c-block__staff-member">
-						@if(!string.IsNullOrWhiteSpace(StaffLinkedIn))
-						{
-							<a href="@StaffLinkedIn" target="_blank" class="c-staff__link">
-								@HasLink(StaffImageId, StaffJobTitle, StaffName, StaffLinkedIn)
-								<p class="c-staff__linkedin">View on LinkedIn</p>
-							</a>
-						}
-						else{
-							@HasLink(StaffImageId, StaffJobTitle, StaffName, null)
-							<p class="c-staff__linkedin"></p>
-						}
+					<div class="c-block__staff-member js-staff-popup" data-name="@StaffName.ToLower().Replace(' ','-')">
+						<div target="_blank" class="c-staff__link">
+								@HasLink(StaffImageId, StaffJobTitle, StaffName)
+							</div>
 					</div>
 				}
 			}
@@ -34,19 +25,14 @@
 	</div>
 </div>
 
-@helper HasLink(int StaffImageId, string StaffJobTitle, string StaffName, string StaffLinkedIn)
+@helper HasLink(int StaffImageId, string StaffJobTitle, string StaffName)
 {
 	var Image = StaffImageId;
 
-	if(StaffLinkedIn != null){
-		<div class="c-staff__image-has-link">
-			<span class="c_staff__circle-overlay"></span>
-			<img src="@Umbraco.TypedMedia(Image).GetCropUrl("3:4")" alt="Staff Image" class="c-staff__image">
-		</div>
-	}
-	else{
+	<div class="c-staff__image-has-link">
+		<span class="c_staff__circle-overlay"></span>
 		<img src="@Umbraco.TypedMedia(Image).GetCropUrl("3:4")" alt="Staff Image" class="c-staff__image">
-	}
+	</div>
 	if(!string.IsNullOrWhiteSpace(StaffName))
 	{
 		<h2 class="u-delta c-staff__heading">@StaffName</h2>
