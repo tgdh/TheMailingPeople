@@ -8,6 +8,15 @@
 	background-color: $light-2;
 	padding: 5rem 8rem;
 	text-align: center;
+	&.is--highlighted{
+		background-color: $red;
+		*{
+			color: white;
+		}
+	}
+	&.o-align--left,&.o-align--right{
+		padding: 5rem 3rem;
+	}
 }
 
 .c-quote__heading{
