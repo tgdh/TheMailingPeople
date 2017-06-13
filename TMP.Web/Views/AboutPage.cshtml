@@ -1,6 +1,7 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+﻿@inherits UmbracoViewPage<IPublishedContent>
 @{
 	Layout = "Master.cshtml";
+	var Parent = Model.Children.Where("Visible");
 }
 
 <main class="o-page__inner" role="main">
@@ -12,3 +13,19 @@
 		@Html.Partial("~/Views/Partials/Page/Accreditations.cshtml")
 	</div>
 </main>
+<div class="c-staff__popup js-popup">
+@foreach(var StaffMember in Parent){
+	var StaffName = StaffMember.GetPropertyValue<string>("staffName");
+	var StaffJobTitle = StaffMember.GetPropertyValue<string>("staffJobTitle");
+	<div class="c-staff__popup-page__wrapper js-popup-staff" id="@StaffName.ToLower().Replace(' ','-')">
+		<div class="c-staff__padding">
+			<span class="c-staff__close js-close-popup"></span>
+			<h2 class="c-staff__heading">@StaffName</h2>
+			<h4 class="c-staff__sub-heading">@StaffJobTitle</h4>
+			<div class="c-staff__text-wrapper">
+				<p>Bethan has been going the extra mile for clients for over 4 years now. An experienced Account Manager and Estimator, she is used to the fast pace of work here at The Mailing People, and the demanding turnarounds, having previously worked in event management. Having said that, Bethan claims nothing is as hectic as keeping 26 children under control in her voluntary role as a local Brownie leader!</p>
+			</div>
+		</div>
+	</div>
+}
+</div>
