@@ -23,7 +23,6 @@ else
     {
         @Html.ValidationSummary()
     }
-
     using (Html.BeginUmbracoForm("ProcessFormSubmission", "ContactForm", FormMethod.Post, new { id = "contact-form", @class = "c-form js-form" }))
     {
         @Html.AntiForgeryToken()
@@ -46,8 +45,29 @@ else
                 @Html.ValidationMessageFor(x => x.Message)
             </div>
             <div class="o-form__field o-form__field--submit">
-                <button type="submit" class="c-button c-button--primary">Send form</button>
+                <button
+                    type="submit"
+                    class="g-recaptcha c-button c-button--primary"
+                    data-sitekey="6LcjMyYUAAAAAImqCVdeyrUXJN_nHoE-pRlRcDva"
+                    data-callback="YourOnSubmitFn"
+                    onclick="SubmitForm()">
+                    Send form
+                </button>
             </div>
         </fieldset>
     }
 }
+<script>
+    function SubmitForm(e)
+    {
+         var response = grecaptcha.getResponse();
+         alert('response length' + response.length);
+         if(response.length == 0)
+         {
+              e.preventDefault();
+              alert('low');
+         }else{
+              alert('high');
+         }
+    }
+</script>
