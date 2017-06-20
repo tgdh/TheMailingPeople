@@ -67,7 +67,6 @@
 		$window.Tabs.init();
         $window.Search.init();
 		$window.LoadingElements.init();
-        $window.StaffPopup.init();
         //		MQ.init(breakpoints);
     }
 

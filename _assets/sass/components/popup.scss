@@ -1,159 +1,55 @@
-.c-staff__popup{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    z-index: 999;
-    visibility: hidden;
-    opacity: 0;
-    transition: $ease $speed opacity,
-                $ease $speed visibility;
-    &.is--showing{
-        visibility: visible;
-        opacity: 1;
-    }
-}
 .c-staff__popup-page__wrapper{
     background-color: white;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
     box-shadow: 0 0 5px 2px rgba(0,0,0,0.1);
-    transform: scale(0.9);
-    opacity: 0;
-    transition: $ease $speed opacity,
-                $ease $speed visibility,
-                $ease $speed transform;
-    &.is--showing{
-        visibility: visible;
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-.c-staff__padding{
-    padding: 5rem;
-}
-
-.c-staff__text-wrapper{
-    margin-top: 3rem;
-    line-height: 2.75rem;
+    max-width: 800px;
+    display: block;
+    margin: 2rem auto;
+    padding: 4rem;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .c-staff__close{
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    height: 100px;
+    right: 2rem;
+    top: 2.5rem;
     display: block;
     cursor: pointer;
-    transition: $ease $speed transform;
     &::before{
         content: "";
-        position: relative;
-        transform: rotate(-45deg);
-        background-color: black;
-        width: 30px;
-        height: 3px;
         display: block;
-        left: 14px;
+        position: relative;
+        transform: rotate(45deg);
+        width: 20px;
+        height: 2px;
+        background-color: black;
+        top: 2px;
     }
     &::after{
         content: "";
-        position: relative;
-        transform: rotate(45deg);
-        background-color: black;
-        width: 30px;
-        height: 3px;
         display: block;
-        left: -17px;
-    }
-    &:hover,
-    &:focus{
-        transform: scale(1.05);
-    }
-}
-@include respond-min($mq-large){
-    .c-staff__popup-page__wrapper{
-        max-width: 800px;
-        max-height: 500px;
-        top: 50%;
-        left: 50%;
-        margin-top: -250px;
-        margin-left: -400px;
-    }
-    .c-staff__text-wrapper{
-        max-height: 300px;
-        overflow: hidden;
-    }
-}
-@include respond-min-max($mq-small,$mq-large){
-    .c-staff__popup-page__wrapper{
-        max-width: 90%;
-        max-height: 600px;
-        top: 50%;
-        left: 5%;
-        margin-top: -300px;
-    }
-    .c-staff__text-wrapper{
-        max-height: 400px;
-        overflow: hidden;
-    }
-}
-@include respond-max($mq-small){
-    .c-staff__popup-page__wrapper{
-        width: calc(100% - 5rem);
-        max-height: calc(100% - 5rem);
-        height: auto;
-    }
-    .c-staff__popup{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .c-staff__padding{
-        padding: 3rem;
-    }
-    .c-staff__text-wrapper{
-        overflow-x: auto;
-        max-height: calc(100vw - 50px);
-    }
-    .c-staff__close{
-        width: 50px;
-        height: 50px;
-        &::before{
-            width: 20px;
-            left: 10px;
-        }
-        &::after{
-            width: 20px;
-            left: -10px;
-        }
-    }
-}
-.flexbox{
-    .c-staff__close{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-.no-flexbox{
-    .c-staff__close{
-        &::after{
-            left: 35px;
-            top: 42px;
-        }
-        &::before{
-            left: 35px;
-            top: 45px;
-        }   
+        position: relative;
+        transform: rotate(-45deg);
+        width: 20px;
+        height: 2px;
+        background-color: black;
     }
 }
 
+.c-staff__text-wrapper{
+    margin-top: 2rem;
+    p{
+        line-height: 2.5rem;
+    }
+}
+
+@include respond-max($mq-medium){
+    .c-staff__popup-page__wrapper{
+        margin-left: 2rem;
+        margin-right: 2rem;
+        padding: 2rem;
+    }
+}
 /**
  * Simple fade transition,
  */

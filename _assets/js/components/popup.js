@@ -38,6 +38,16 @@ var PopupMagic = (function ($) {
 		            enabled: true
 		        },
 			});
+			$('.js-staff-popup').magnificPopup({
+				type: 'inline',
+				preloader: false,
+				modal: true,
+				mainClass: 'mfp-fade',
+			});
+			$(document).on('click', '.popup-modal-dismiss', function (e) {
+				e.preventDefault();
+				$.magnificPopup.close();
+			});
 		});
 	};
 

@@ -14,11 +14,11 @@
 				var StaffJobTitle = StaffMember.GetPropertyValue<string>("staffJobTitle");
 				if(StaffImageId != null)
 				{
-					<div class="c-block__staff-member js-staff-popup" data-name="@StaffName.ToLower().Replace(' ','-')">
+					<a class="c-block__staff-member js-staff-popup" href="#@StaffName.ToLower().Replace(" ","-").Replace("'","-")">
 						<div target="_blank" class="c-staff__link">
-								@HasLink(StaffImageId, StaffJobTitle, StaffName)
-							</div>
-					</div>
+							@HasLink(StaffImageId, StaffJobTitle, StaffName)
+						</div>
+					</a>
 				}
 			}
 		</div>

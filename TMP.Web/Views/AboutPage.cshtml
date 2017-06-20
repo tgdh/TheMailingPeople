@@ -18,9 +18,9 @@
 	var StaffName = StaffMember.GetPropertyValue<string>("staffName");
 	var StaffJobTitle = StaffMember.GetPropertyValue<string>("staffJobTitle");
 	var popupText = StaffMember.GetPropertyValue<string>("popupContentText");
-	<div class="c-staff__popup-page__wrapper js-popup-staff" id="@StaffName.ToLower().Replace(' ','-')">
+	<div class='c-staff__popup-page__wrapper mfp-hide' id='@StaffName.ToLower().Replace(" ","-").Replace("'","-")'>
 		<div class="c-staff__padding">
-			<span class="c-staff__close js-close-popup"></span>
+			<span class="c-staff__close popup-modal-dismiss"></span>
 			<h2 class="c-staff__heading">@StaffName</h2>
 			<h4 class="c-staff__sub-heading">@StaffJobTitle</h4>
 			<div class="c-staff__text-wrapper">
