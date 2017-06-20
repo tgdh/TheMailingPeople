@@ -49,6 +49,7 @@
 
 .c-grid__main-content{
 	@include column(8.5 / 12, $gutter: 7);
+	min-height: 1px;
 }
 
 @include respond-max($mq-x-large){
