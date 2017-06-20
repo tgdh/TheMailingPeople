@@ -305,3 +305,4 @@ TMP.Web/Config/connectionStrings.config
 /TMP.Web/Voyager/*.xml
 **/TMP.Web/bin/
 **_assemblies/
+*.zip
