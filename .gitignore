@@ -306,3 +306,4 @@ TMP.Web/Config/connectionStrings.config
 **/TMP.Web/bin/
 **_assemblies/
 *.zip
+.DS_Store
