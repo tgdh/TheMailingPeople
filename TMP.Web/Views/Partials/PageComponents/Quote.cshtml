@@ -17,11 +17,11 @@
 }
 
 <blockquote class="c-quote @highlightClass @alignmentClass">
-	<h2 class="c-quote__heading u-uppercase u-beta c-block__heading c-section o-heading">@Model.Quote</h2>
+	<p class="c-quote__heading u-uppercase u-gamma c-block__heading c-section o-heading">@Model.Quote</p>
 	@if(!string.IsNullOrWhiteSpace(Model.Source))
 	{
-		<footer>
-			<p class="c-quote__source">@Model.Source</p>
+		<footer class="c-quote__source">
+			@Model.Source
 		</footer>
 	}
 </blockquote>

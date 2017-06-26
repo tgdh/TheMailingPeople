@@ -46,12 +46,12 @@
 			</div>
 			<div class="c-grid__main-content u-relative">
 				<div class="o-wrap o-wrap--large">
-					<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@Model.Name</h2>
+					@*<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@Model.Name</h2>
 					@if(!string.IsNullOrWhiteSpace(FirstPara))
 					{
 						<p class="c-section__first-para"><strong>@Html.Raw(FirstPara.Replace("\n","<br>"))</strong></p>
 					}
-					<img src="@PageImageUrl" alt="@Model.Name" class="c-service__featured-image">
+					<img src="@PageImageUrl" alt="@Model.Name" class="c-service__featured-image">*@
 				</div>
 				<div class="c-section__page-components">
 					@Html.Partial("~/Views/Partials/Page/Components.cshtml")
