@@ -1,0 +1,86 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+	var ImageId = Model.GetPropertyValue("bannerImage");
+	var ImageMedia = Umbraco.Media(ImageId);
+	var ImageNullChecked = ImageMedia != null ? ImageMedia.Url : " ";
+
+	String Title = Model.GetPropertyValue<string>("bannerTitle");
+	var TitleNullChecked = !string.IsNullOrWhiteSpace(Title) ? Title : "Creative Solutions For Your Mailing ";
+
+	String SubTitle = Model.GetPropertyValue<string>("bannerSubTitle");
+	var SubTitleNullChecked = !string.IsNullOrWhiteSpace(SubTitle) ? SubTitle : "";
+
+
+	String PageLink1 = Model.GetPropertyValue<string>("bannerLink1");
+	var decode1 = Json.Decode(PageLink1);
+	var icon1 = Model.GetPropertyValue<int>("bannerLink1Image");
+	var iconNode1 = Umbraco.Content(icon1);
+
+
+	String PageLink2 = Model.GetPropertyValue<string>("bannerLink2");
+	var decode2 = Json.Decode(PageLink2);
+	var icon2 = Model.GetPropertyValue<int>("bannerLink2Image");
+	var iconNode2 = Umbraco.Content(icon2);
+
+
+	String PageLink3 = Model.GetPropertyValue<string>("bannerLink3");
+	var decode3 = Json.Decode(PageLink3);
+	var icon3 = Model.GetPropertyValue<int>("bannerLink3Image");
+	var iconNode3 = Umbraco.Content(icon3);
+
+
+}
+
+<section class="c-banner u-clearfix">
+    <div class="o-wrap o-wrap--x-large">
+        <div class="c-banner__background-image-wrap">
+            <div class="c-banner__background-image js-parallax-image"  style="background-image: url(@ImageNullChecked?width=1600);"></div>
+        </div>
+
+        <div class="c-banner__col">
+            <div class="c-banner__col--content">
+                <h2 class="c-banner__heading o-heading u-tera">@TitleNullChecked</h2>
+                <p class="c-banner__text">@SubTitleNullChecked</p>
+
+                <div class="c-banner__links">
+                    @if(decode1 != null)
+                    {
+                        <a href="@decode1.Url" class="c-banner__link c-button--primary">
+                            @if(icon1 != 0)
+                            {
+                                <i class="--ico--white ico-@FormatIcon(iconNode1.GetPropertyValue("iconName"))"></i>
+                            }
+                            <span class="c-banner__link-text">@decode1.Name</span>
+                        </a>
+                    }
+                    @if(decode2 != null)
+                    {
+                        <a href="@decode2.Url" class="c-banner__link c-button--primary">
+                            @if(icon2 != 0)
+                            {
+                                <i class="--ico--white ico-@FormatIcon(iconNode2.GetPropertyValue("iconName"))"></i>
+                            }
+                            <span class="c-banner__link-text">@decode2.Name</span>
+                        </a>
+                    }
+                    @if(decode3 != null)
+                    {
+                        <a href="@decode3.Url" class="c-banner__link c-button--primary">
+                            @if(icon3 != 0)
+                            {
+                                <i class="--ico--white ico-@FormatIcon(iconNode3.GetPropertyValue("iconName"))"></i>
+                            }
+                            <span class="c-banner__link-text">@decode3.Name</span>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@helper FormatIcon(string PreformattedIcon){
+	@PreformattedIcon.ToLower().Replace(" ", "-")
+}

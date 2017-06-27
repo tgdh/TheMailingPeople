@@ -64,6 +64,16 @@
 	}
 }
 
+.c-header__cta {
+	.c-header__cta__item{
+		color: $pri;
+	}
+
+	.c-header__cta__item--phone {
+		color: $sec;
+	}
+}
+
 .c-header__main{
 	background-color: white;
 	z-index: 997;
@@ -454,7 +464,7 @@
 	}
 
 	.c-header__main__right{
-		background-color: $pri;
+		background-color: $light-2;
 		display: none;
 		height: 8.2rem;
 		transition: $ease $speed height;
