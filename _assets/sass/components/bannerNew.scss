@@ -13,16 +13,11 @@
     z-index: -2;
 }
 
-.js-banner-parallax {
-    padding-top: 4.2rem;
-}
-
 .c-banner__background-image {
     background-size: cover;
     height: 100%;
+    transition: margin-top $ease $speed;
 }
-
-
 
 .c-banner__col {
     .c-banner__col--content {
