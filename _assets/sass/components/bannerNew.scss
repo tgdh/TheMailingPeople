@@ -124,6 +124,11 @@
         }
 
     }
+
+    .c-banner__text{
+		font-size: 2rem;
+		line-height: 3rem;
+	}
 }
 
 @include respond-max ( $mq-x-large ){
