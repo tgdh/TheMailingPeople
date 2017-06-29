@@ -9,6 +9,10 @@
     }
 
     var extraClass = ViewData["extraClass"] ?? "";
+
+
+    var tel = settings.GetPropertyValue<string>("contactNumber");
+    var email = settings.GetPropertyValue<string>("emailAddress");
 }
 <span class="c-header__search__sticky">
 	<i class="ico-finder"></i>
@@ -19,12 +23,12 @@
 		<i class="ico-finder"></i>
 	</span> -->
     <span class="c-header__cta__item c-header__cta__item--phone">
-        <a href="tel:02392377900">
+        <a href="tel:@tel">
             <i class="ico-phone"></i>
-            <strong>023 9237 7900</strong>
+            <strong>@tel</strong>
         </a>
     </span>
-    <span class="c-header__cta__item">
-        <a href="mailto:enquiries@themailingpeople.co.uk">enquiries@themailingpeople.co.uk</a>
+    <span class="c-header__cta__item c-header__cta__item--email">
+        <a href="mailto:enquiries@themailingpeople.co.uk">@email</a>
     </span>
 </div>

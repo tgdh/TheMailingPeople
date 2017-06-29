@@ -17,13 +17,27 @@ var PopupMagic = (function ($) {
 					        '</div>',
 		        },
 			});
+
+			var contentModal = function() {
+				$('.js-info-modal').magnificPopup({
+					removalDelay: 500, //delay removal by X to allow out-animation
+					callbacks: {
+						beforeOpen: function() {
+							this.st.mainClass = "mfp-zoom-in";
+						},
+
+					},
+					midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+				});
+			};
+
+
 			$('.js-popup__image').magnificPopup({
 				type: "image",
 				disableOn: 700,
 				mainClass: 'mfp-fade',
 				removalDelay: 160,
 				preloader: false,
-
 				fixedContentPos: false,
 		        image: {
 		            markup: '<div class="c-popup">' +
@@ -38,17 +52,22 @@ var PopupMagic = (function ($) {
 		            enabled: true
 		        },
 			});
+
 			$('.js-staff-popup').magnificPopup({
-				type: 'inline',
-				preloader: false,
-				modal: true,
-				mainClass: 'mfp-fade',
+				removalDelay: 500, //delay removal by X to allow out-animation
+				callbacks: {
+					beforeOpen: function() {
+						this.st.mainClass = 'mfp-zoom-in';
+					},
+				},
+				overflowY: 'scroll',
+				midClick: true
 			});
-			$(document).on('click', '.popup-modal-dismiss', function (e) {
-				e.preventDefault();
-				$.magnificPopup.close();
-			});
+
+			
 		});
+
+		
 	};
 
 	return {

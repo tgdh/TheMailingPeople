@@ -320,25 +320,25 @@ img.mfp-img {
 
 .mfp-close {
 	font-size: 2rem;
-	color: $white;
+	color: $black;
 	position: absolute;
 	font-weight: $bold;
-	background-color: $pri;
-	top: 2rem;
+	top: 0;
 	right: 2rem;
-	transition: color $speed $ease,
-				background $speed $ease;
 	font-size: 5rem;
 	border-radius: 50%;
 	cursor: pointer;
-	padding: 1px 23px;
-	&.close{
+	transition: color $speed $ease,
+				background $speed $ease;
+
+	&.close {
 		font-size: 0;
 		padding: 0;
 		width: 72px;
 		height: 72px;
-		&::before{
-			content: "";
+    
+		&::before {
+			  content: "";
 		    display: block;
 		    width: 25px;
 		    height: 3px;
@@ -348,8 +348,9 @@ img.mfp-img {
 		    top: 33px;
 		    left: 23px;
 		}
-		&::after{
-			content: "";
+
+		&::after {
+			  content: "";
 		    display: block;
 		    width: 25px;
 		    height: 3px;
@@ -360,10 +361,10 @@ img.mfp-img {
 		    left: 23px;
 		}
 	}
+
 	&:hover,
 	&:focus {
-		color: $white;
-		background-color: $sec;
+		color: $pri;
 	}
 }
 

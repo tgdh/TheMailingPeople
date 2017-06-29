@@ -93,6 +93,7 @@
             flex-direction: column;
             justify-content: center;
             height: 8.2rem;
+            transition: height $ease $speed;
         }
     }
 

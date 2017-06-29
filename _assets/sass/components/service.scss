@@ -6,6 +6,10 @@
 
 .c-services__image{
 	transition: $ease $speed transform;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 
 .c-services__item{
@@ -43,14 +47,16 @@
 	}
 }
 
-/*.c-services__page-link{
-	border-bottom: none !important;
-}*/
-
 .c-services__image-wrapper{
 	background-color: $light-2;
-	width: 100%;
-	height: 18rem;
+	position: relative;
+
+	&::after {
+		content: "";
+		display: block;
+		width: 100%;
+		@include pad-top(400, 300);
+	}
 }
 
 .c-services__title{
@@ -76,44 +82,6 @@
 		text-decoration: underline;
 	}
 
-}
-
-.flexbox{
-
-	.c-services__image-wrapper{
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.c-service-flex-container{
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: row;
-	}
-
-}
-
-.no-flexbox{
-
-	.c-services__item{
-		min-height: 550px;
-	}
-
-	.c-services__image{
-		position: relative;
-		left: calc(50% - 6.25rem);
-		top: calc(50% - 6.25rem);
-	}
-
-}
-
-.no-enhance{
-	.c-services__image{
-		position: relative;
-		left: calc(50% - 62.5px);
-		top: calc(50% - 62.5px);
-	}
 }
 
 @include respond-min($mq-x-large){

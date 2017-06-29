@@ -15,6 +15,7 @@
     top: 2.5rem;
     display: block;
     cursor: pointer;
+
     &::before{
         content: "";
         display: block;
@@ -25,6 +26,7 @@
         background-color: black;
         top: 2px;
     }
+
     &::after{
         content: "";
         display: block;
@@ -36,15 +38,16 @@
     }
 }
 
-.c-staff__text-wrapper{
+.c-staff__text-wrapper {
     margin-top: 2rem;
-    p{
+
+    p {
         line-height: 2.5rem;
     }
 }
 
 @include respond-max($mq-medium){
-    .c-staff__popup-page__wrapper{
+    .c-staff__popup-page__wrapper {
         margin-left: 2rem;
         margin-right: 2rem;
         padding: 2rem;
@@ -77,4 +80,37 @@
 }
 .mfp-fade.mfp-wrap.mfp-removing .mfp-content {
 	opacity: 0;
+}
+
+/*
+====== Zoom effect ======
+*/
+
+.mfp-zoom-in {
+  /* start state */
+  /* animate in */
+  /* animate out */
+}
+.mfp-zoom-in .mfp-with-anim {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.8);
+}
+.mfp-zoom-in.mfp-bg {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.mfp-zoom-in.mfp-ready .mfp-with-anim {
+  opacity: 1;
+  transform: scale(1);
+}
+.mfp-zoom-in.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+.mfp-zoom-in.mfp-removing .mfp-with-anim {
+  transform: scale(0.8);
+  opacity: 0;
+}
+.mfp-zoom-in.mfp-removing.mfp-bg {
+  opacity: 0;
 }

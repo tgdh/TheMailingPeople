@@ -9,7 +9,7 @@ var BannerPara = (function ($) {
 
     var throttle = function(){
         var scrollTimeout;
-        var throttle = 100;
+        var throttle = 50;
         var parallaxImageScroll = function(){
             var lastScrollTop = 0;
             $(window).on('scroll', function(e){
@@ -45,7 +45,6 @@ var BannerPara = (function ($) {
                     scrollTimeout = null;
                 }, throttle);
             }
-            console.log('native scroll');
         });
     };
 
