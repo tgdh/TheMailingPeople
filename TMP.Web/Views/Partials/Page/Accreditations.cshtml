@@ -11,22 +11,23 @@
     var introText = settings.GetPropertyValue<IHtmlString>("introductionText");
     var accreditations = settings.GetPropertyValue<IEnumerable<IPublishedContent>>("accreditations");
 }
-
-<div class="o-section--small o-wrap o-wrap--x-large">
-    <div class="c-accreditation">
-        <div class="c-accreditation__col c-accreditation__col--first">
-            @introText
-        </div>
-        <div class="c-accreditation__col c-accreditation__col--last">
-            @if (accreditations != null)
-            {
-                <div class="c-accreditation__logos">
-                    @foreach (var accreditation in accreditations)
-                    {
-                        @RenderLogo(accreditation, "c-accreditation__logo")
-                    }
-                </div>
-            }
+<div class="u-background-white">
+    <div class="o-section--small o-wrap o-wrap--x-large">
+        <div class="c-accreditation">
+            <div class="c-accreditation__col c-accreditation__col--first">
+                @introText
+            </div>
+            <div class="c-accreditation__col c-accreditation__col--last">
+                @if (accreditations != null)
+                {
+                    <div class="c-accreditation__logos">
+                        @foreach (var accreditation in accreditations)
+                        {
+                            @RenderLogo(accreditation, "c-accreditation__logo")
+                        }
+                    </div>
+                }
+            </div>
         </div>
     </div>
 </div>

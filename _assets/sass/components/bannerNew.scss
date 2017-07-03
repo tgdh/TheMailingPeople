@@ -6,17 +6,24 @@
 .c-banner__background-image-wrap {
     height: 100%;
     width: 50%;
-    position: absolute;
     background-color: #f2f2f2;
-    top: 0;
+    position: absolute;
     left:0;
     z-index: -2;
+    max-height: 76rem;
 }
 
 .c-banner__background-image {
     background-size: cover;
+    background-position: center;
     height: 100%;
     transition: margin-top $ease $speed;
+}
+
+.js-parallax-image-wrap--fix {
+    position: fixed;
+    transition: transform $ease $speed;
+    top: 5.5rem;
 }
 
 .c-banner__col {
@@ -158,7 +165,7 @@
 
             .c-banner__heading{
 
-                &::after{
+                &::after {
                     background-color: black;
                     margin-left: auto;
                     margin-right: auto;
@@ -171,29 +178,29 @@
         }
     }
 
-    .c-banner__text{
+    .c-banner__text {
 		text-align: center;
 		line-height: 3rem;
 		font-size: 1.6rem;
 	}
 
-	.c-banner__links{
+	.c-banner__links {
 		margin-top: 4rem;
 	}
 
 	.flexbox{
-		.c-banner__links{
+		.c-banner__links {
 			display: flex;
 			justify-content: center;
 		}
-		.c-banner__link{
+		.c-banner__link {
 			max-width: 100%;
 			margin-bottom: 2rem;
 			display: flex;
 		}
 	}
 
-    .c-banner__link-text{
+    .c-banner__link-text {
 		float: left;
 		width: calc(100% - 4rem);
 	}
@@ -202,10 +209,10 @@
 @include respond-max ( $mq-small ) {
 
 	.flexbox{
-		.c-banner__links{
+		.c-banner__links {
 			display: block;
 		}
-		.c-banner__link{
+		.c-banner__link {
 			width: 100%;
 			margin-bottom: 2rem;
 			float: left;

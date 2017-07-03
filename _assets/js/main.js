@@ -65,7 +65,8 @@
 		$window.PopupMagic.init();
 		$window.Accordion.init();
 		$window.Tabs.init();
-		$window.BannerPara.init();
+		//$window.BannerPara.init();
+		$window.FixImage.init();
         $window.Search.init();
 		$window.LoadingElements.init();
         //		MQ.init(breakpoints);
