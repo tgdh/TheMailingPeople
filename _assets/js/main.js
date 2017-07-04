@@ -39,13 +39,15 @@
         }
     }];
 
+    
+
     /* ===========================================================
 
 	# Init
 
 =========================================================== */
 
-    if ($window.IsModern) {
+    if ($window.IsModern) {        
 
         enhanceEdgeCaseBrowsers();
         //		$window.ToggleClass.init();
@@ -59,16 +61,18 @@
         //		$window.GMaps.init();
         $window.ValidateForms.init($('.js-form'));
         $window.Header.init();
+		$window.FixImage.init();
         $window.Nav.init();
         $window.Carousel.init($('.js-carousel'));
 		$window.Carousel.init_many($('.js-carousel_many'));
 		$window.PopupMagic.init();
 		$window.Accordion.init();
 		$window.Tabs.init();
-		$window.FixImage.init();
         $window.Search.init();
 		$window.LoadingElements.init();
         //		MQ.init(breakpoints);
+
+        $('select').selectric();
     }
 
     if (!Modernizr.svg) {

@@ -28,6 +28,7 @@ var mainScripts = [
     paths.assetsFolder + '/_components/slick-carousel/slick/slick.min.js',
     paths.assetsFolder + '/_components/jquery-scrolltabs/js/jquery.scrolltabs.js',
 	paths.assetsFolder + '/_components/jquery-scrolltabs/js/jquery.mousewheel.js',
+	paths.assetsFolder + '/_components/jquery-selectric/public/jquery.selectric.js',
     paths.assetsFolder + '/js/components/jquery.tabs.js',
     paths.assetsFolder + '/js/components/accordion.js',
     paths.assetsFolder + '/js/components/validateForms.js',

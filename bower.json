@@ -12,6 +12,7 @@
     "owl.carousel": "https://github.com/OwlCarousel2/OwlCarousel2.git",
     "magnific-popup": "^1.1.0",
     "slick-carousel": "^1.6.0",
-    "jquery-scrolltabs": "^2.0.0"
+    "jquery-scrolltabs": "^2.0.0",
+    "jquery-selectric": "^1.11.1"
   }
 }
