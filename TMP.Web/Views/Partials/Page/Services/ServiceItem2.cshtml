@@ -1,0 +1,61 @@
+@inherits UmbracoViewPage<IPublishedContent>
+@{
+	var FirstPara = Model.GetPropertyValue<string>("pageDescription");
+	var PageIcon = Model.GetPropertyValue("featuredImage");
+	var PageImageUrl = Umbraco.Media(PageIcon).Url;
+	var CurrentPage = Model.Id;
+	var Parent = Model.Parent.Children.Where("Visible");
+
+	var homePage = Model.Site();
+    var settings = homePage.Descendants("globalSettings").FirstOrDefault();
+    var contactNumber = string.Empty;
+
+    if (settings != null)
+    {
+        contactNumber = settings.GetPropertyValue<string>("contactNumber");
+    }
+}
+
+<div class="c-block__breadcrumb">
+	<div class="o-wrap o-wrap--x-large">
+		@Html.Partial("~/Views/Partials/Page/Breadcrumbs.cshtml")
+	</div>
+</div>
+
+<div class="o-section">
+		<div class="c-grid o-wrap o-wrap--x-large">
+			<div class="c-grid__sidebar">
+				<div class="o-page-component o-wrap o-wrap--large is-first">
+					<ul class="c-services__list">
+						@foreach(var item in Parent){
+							var active = item.Id == CurrentPage ? "is-active" : "";
+							<li class="c-services__li">
+								<a href="@item.Url" class="c-services__link u-epsilon @active">@item.Name</a> 
+							</li>
+						}
+					</ul>
+					<div class="c-service__need-help">
+						<h2 class="u-gamma c-nee-help__title">Need help with Direct Mail?</h2>
+						<img src="/assets/img/steve.png" alt="Steve Logo" class="c-need-help__logo">
+						@if(!string.IsNullOrWhiteSpace(contactNumber))
+						{
+							<a href="tel:@contactNumber.Replace(" ","")" class="c-need-help__link">Call us on <span>@contactNumber</span></a>
+						}
+					</div>
+				</div>
+			</div>
+			<div class="c-grid__main-content u-relative">
+				<div class="o-wrap o-wrap--large">
+					@*<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@Model.Name</h2>
+					@if(!string.IsNullOrWhiteSpace(FirstPara))
+					{
+						<p class="c-section__first-para"><strong>@Html.Raw(FirstPara.Replace("\n","<br>"))</strong></p>
+					}
+					<img src="@PageImageUrl" alt="@Model.Name" class="c-service__featured-image">*@
+				</div>
+				<div class="c-section__page-components">
+					@Html.Partial("~/Views/Partials/Page/Components.cshtml")
+				</div>
+			</div>
+		</div>
+</div>

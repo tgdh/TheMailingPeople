@@ -4,6 +4,21 @@
 	display: flex;
 }
 
+.c-services__list-sub {
+	margin-top: 0;
+
+	.c-services__link {
+		background-color: darken($pri, 5%);
+		padding-left: 5rem;
+	}
+
+	.c-services__li {
+		&:last-child {
+			border-bottom: .1rem solid darken($pri,10);
+		}
+	}
+}
+
 .c-services__image{
 	transition: $ease $speed transform;
 	position: absolute;

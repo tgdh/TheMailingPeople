@@ -7,6 +7,7 @@
 	var Parent = Model.Parent.Children.Where("Visible");
 
 	var homePage = Model.Site();
+    var menuItems = Model.AncestorOrSelf(2).Children().Where( x => x.IsVisible() && x.TemplateId > 0 );
     var settings = homePage.Descendants("globalSettings").FirstOrDefault();
     var contactNumber = string.Empty;
 
@@ -23,39 +24,82 @@
 </div>
 
 <div class="o-section">
-		<div class="c-grid o-wrap o-wrap--x-large">
-			<div class="c-grid__sidebar">
-				<div class="o-page-component o-wrap o-wrap--large is-first">
-					<ul class="c-services__list">
-						@foreach(var item in Parent){
-							var active = item.Id == CurrentPage ? "is-active" : "";
-							<li class="c-services__li">
-								<a href="@item.Url" class="c-services__link u-epsilon @active">@item.Name</a>
-							</li>
-						}
-					</ul>
-					<div class="c-service__need-help">
-						<h2 class="u-gamma c-nee-help__title">Need help with Direct Mail?</h2>
-						<img src="/assets/img/steve.png" alt="Steve Logo" class="c-need-help__logo">
-						@if(!string.IsNullOrWhiteSpace(contactNumber))
-						{
-							<a href="tel:@contactNumber.Replace(" ","")" class="c-need-help__link">Call us on <span>@contactNumber</span></a>
-						}
-					</div>
-				</div>
-			</div>
-			<div class="c-grid__main-content u-relative">
-				<div class="o-wrap o-wrap--large">
-					@*<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@Model.Name</h2>
-					@if(!string.IsNullOrWhiteSpace(FirstPara))
-					{
-						<p class="c-section__first-para"><strong>@Html.Raw(FirstPara.Replace("\n","<br>"))</strong></p>
+	<div class="c-grid o-wrap o-wrap--x-large">
+		<div class="c-grid__sidebar">
+			<div class="o-page-component o-wrap o-wrap--large is-first">
+				<ul class="c-services__list">
+
+					@foreach(var item in menuItems){
+						var active = item.Id == CurrentPage ? "is-active" : "";
+
+						<li class="c-services__li">
+							<a href="@item.Url" class="c-services__link u-epsilon @active">
+								@item.Name
+							</a>
+							@if( item.IsAncestorOrSelf(Model) && item.DocumentTypeAlias != "profilesPage") {
+								@Traverse(item)
+							}
+						</li>
 					}
-					<img src="@PageImageUrl" alt="@Model.Name" class="c-service__featured-image">*@
-				</div>
-				<div class="c-section__page-components">
-					@Html.Partial("~/Views/Partials/Page/Components.cshtml")
+
+				</ul>
+				
+				<div class="c-service__need-help">
+					<h2 class="u-gamma c-nee-help__title">Need help with Direct Mail?</h2>
+					<img src="/assets/img/steve.png" alt="Steve Logo" class="c-need-help__logo">
+					@if(!string.IsNullOrWhiteSpace(contactNumber))
+					{
+						<a href="tel:@contactNumber.Replace(" ","")" class="c-need-help__link">Call us on <span>@contactNumber</span></a>
+					}
 				</div>
 			</div>
 		</div>
+		<div class="c-grid__main-content u-relative">
+			<div class="o-wrap o-wrap--large">
+				@*<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@Model.Name</h2>
+				@if(!string.IsNullOrWhiteSpace(FirstPara))
+				{
+					<p class="c-section__first-para"><strong>@Html.Raw(FirstPara.Replace("\n","<br>"))</strong></p>
+				}
+				<img src="@PageImageUrl" alt="@Model.Name" class="c-service__featured-image">*@
+			</div>
+			<div class="c-section__page-components">
+				@Html.Partial("~/Views/Partials/Page/Components.cshtml")
+			</div>
+		</div>
+	</div>
 </div>
+
+
+@helper Traverse(IPublishedContent node) {
+	var CurrentPage = Model.Id;
+    var maxLevelForNav = 6;
+    var items = node.Children.Where(
+                    x => x.IsVisible() &&
+                    x.Level <= maxLevelForNav &&
+                    x.TemplateId > 0
+                ).ToList();
+
+	@*.Where("Visible").Where(
+
+	"Level <= " + maxLevelForNav +
+	" && TemplateId > 0 " +
+	" && DocumentTypeAlias != \"Article\" " +
+	" && DocumentTypeAlias != \"Event\" "
+	);*@
+
+    if ( items.Any() )
+    {
+        <ul class="c-services__list-sub">
+           @foreach (var item in items) {
+				var active = item.Id == CurrentPage ? "is-active" : "";
+                <li class="c-services__li">
+						<a href="@item.Url" class="c-services__link u-epsilon @active">
+						@item.Name
+					</a>
+                    @Traverse(item)
+                </li>
+           }
+        </ul>
+    }
+}
