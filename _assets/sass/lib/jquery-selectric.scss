@@ -11,10 +11,13 @@
 }
 
 .selectric {
-  border: 2px solid $light-2;
-  background: $white;
+  border: 2px solid $light-1;
+  color: $white;
+  background-color: $light-1;
   position: relative;
   border-radius: 0;
+  transition: background-color $ease $speed,
+              border $ease $speed;
 }
 
 .selectric .label {
@@ -27,7 +30,7 @@
   font-size: 15px;
   font-weight: 700;
   line-height: 18px;
-  color: #888;
+  color: $white;
   min-height: 18px;
 }
 
@@ -38,7 +41,7 @@
   top: 0;
   width: 42px;
   height: 42px;
-  color: #BBB;
+  color: $white;
   text-align: center;
   font: 0/0 a;
   /* IE Fix */
@@ -56,7 +59,7 @@
   width: 0;
   height: 0;
   border: 4px solid transparent;
-  border-top-color: #BBB;
+  border-top-color: $white;
   border-bottom: none;
 }
 
@@ -65,15 +68,16 @@
 }
 
 .selectric-hover .selectric {
-  border-color: #CCC;
+  border-color: darken($light-1, 5%);
+  background-color: darken($light-1, 5%);
 }
 
 .selectric-hover .selectric .button {
-  color: #888;
+  color: $white;
 }
 
 .selectric-hover .selectric .button:after {
-  border-top-color: #888;
+  border-top-color: $white;
 }
 
 .selectric-open {
@@ -81,8 +85,8 @@
 }
 
 .selectric-open .selectric {
-  border-color: #CCC;
-  background: #F0F0F0;
+  border-color: $light-1;
+  background: $light-1;
   border-bottom-width: 0;
   padding-bottom: 2px;
 }
@@ -172,7 +176,7 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background: #F0F0F0;
+  background: $light-2;
   border: 2px solid #CCC;
   border-top-width: 0;
   z-index: -1;
@@ -193,14 +197,14 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 12px;
-  line-height: 20px;
-  min-height: 20px;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  min-height: 2.2rem;
 }
 
 .selectric-items li {
   display: block;
-  padding: 10px 20px;
+  padding: 1.5rem 2rem;
   color: #666;
   cursor: pointer;
 }

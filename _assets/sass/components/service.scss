@@ -19,6 +19,10 @@
 	}
 }
 
+.c-services__link  {
+	font-size: 1.9rem;
+}
+
 .c-services__image{
 	transition: $ease $speed transform;
 	position: absolute;
@@ -271,7 +275,7 @@
 @include respond-min($mq-x-large){
 
 	.c-service__page-list{
-		width: 28rem;
+		//width: 28rem;
 		float: left;
 	}
 

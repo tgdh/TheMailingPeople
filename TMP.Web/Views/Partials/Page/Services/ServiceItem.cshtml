@@ -33,7 +33,7 @@
 						var active = item.Id == CurrentPage ? "is-active" : "";
 
 						<li class="c-services__li">
-							<a href="@item.Url" class="c-services__link u-epsilon @active">
+							<a href="@item.Url" class="c-services__link @active">
 								@item.Name
 							</a>
 							@if( item.IsAncestorOrSelf(Model) && item.DocumentTypeAlias != "profilesPage") {
@@ -94,7 +94,7 @@
            @foreach (var item in items) {
 				var active = item.Id == CurrentPage ? "is-active" : "";
                 <li class="c-services__li">
-						<a href="@item.Url" class="c-services__link u-epsilon @active">
+						<a href="@item.Url" class="c-services__link @active">
 						@item.Name
 					</a>
                     @Traverse(item)
