@@ -55,6 +55,7 @@
     margin-bottom: 1rem;
     border-bottom: 2px solid transparent;
     transition: $ease $speed border-color;
+
     &.margin-bottom{
         margin-bottom: 4rem;
     }
@@ -62,6 +63,10 @@
     &:focus{
         color: white;
         border-bottom-color: white;
+    }
+
+    a {
+        color: $white;
     }
 }
 

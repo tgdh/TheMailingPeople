@@ -23,7 +23,7 @@
                 @if(!string.IsNullOrWhiteSpace(number))
                 {
                     <h2 class="o-heading c-footer__headline u-mega u-uppercase">Contacts</h2>
-                    <a href='tel:@number.Replace(" ","")' class="c-footer__link">@number</a>
+                    <a href='tel:@number.Replace(" ","")' class="c-footer__link"><span class="mediahawkNumber1849 mhMobile">@number</span></a>
                     <a href='mailto:@email' class="c-footer__link margin-bottom">@email</a>
                 }
                 @if(!string.IsNullOrWhiteSpace(address))

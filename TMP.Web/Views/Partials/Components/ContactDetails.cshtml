@@ -16,7 +16,7 @@
 		{
 			<div class="c-contact__item single--item">
 				<i class="c-contact__single-icon ico-phone"></i>
-				<a href="tel:@Html.Raw(Html.Encode(ContactNumber).Replace(" ", ""))" class="c-contact__link">@ContactNumber</a>
+				<a href="tel:@Html.Raw(Html.Encode(ContactNumber).Replace(" ", ""))" class="c-contact__link"><span class="mediahawkNumber1849 mhMobile">@ContactNumber</span></a>
 			</div>
 		}
 		@if(!string.IsNullOrWhiteSpace(EmailAddress))
