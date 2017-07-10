@@ -81,7 +81,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="DTG.Spreadsheet, Version=2.7.0.0, Culture=neutral, PublicKeyToken=7b835b529fb706c3, processorArchitecture=MSIL">
-      <HintPath>..\packages\SEOChecker.1.9.4.1\lib\DTG.Spreadsheet.dll</HintPath>
+      <HintPath>..\packages\SEOChecker.1.10.1\lib\DTG.Spreadsheet.dll</HintPath>
     </Reference>
     <Reference Include="Examine, Version=0.1.80.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Examine.0.1.80\lib\net45\Examine.dll</HintPath>
@@ -120,7 +120,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="LumenWorks.Framework.IO, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SEOChecker.1.9.4.1\lib\LumenWorks.Framework.IO.dll</HintPath>
+      <HintPath>..\packages\SEOChecker.1.10.1\lib\LumenWorks.Framework.IO.dll</HintPath>
     </Reference>
     <Reference Include="MarkdownSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Markdown.1.14.4\lib\net45\MarkdownSharp.dll</HintPath>
@@ -200,26 +200,41 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="PackageGarden.Licensing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SEOChecker.1.9.4.1\lib\PackageGarden.Licensing.dll</HintPath>
+      <HintPath>..\packages\SEOChecker.1.10.1\lib\PackageGarden.Licensing.dll</HintPath>
     </Reference>
     <Reference Include="Semver, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\semver.1.1.2\lib\net451\Semver.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SEOChecker, Version=1.9.4.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SEOChecker.1.9.4.1\lib\SEOChecker.dll</HintPath>
+    <Reference Include="SEOChecker, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SEOChecker.1.10.1\lib\SEOChecker.dll</HintPath>
     </Reference>
-    <Reference Include="SEOChecker.Core, Version=1.9.4.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SEOChecker.1.9.4.1\lib\SEOChecker.Core.dll</HintPath>
+    <Reference Include="SEOChecker.Core, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SEOChecker.1.10.1\lib\SEOChecker.Core.dll</HintPath>
     </Reference>
-    <Reference Include="SEOChecker.Extensions, Version=1.9.4.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SEOChecker.1.9.4.1\lib\SEOChecker.Extensions.dll</HintPath>
+    <Reference Include="SEOChecker.DataTypes, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SEOChecker.1.10.1\lib\SEOChecker.DataTypes.dll</HintPath>
     </Reference>
-    <Reference Include="SEOChecker.Library, Version=1.9.4.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SEOChecker.1.9.4.1\lib\SEOChecker.Library.dll</HintPath>
+    <Reference Include="SEOChecker.Events, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SEOChecker.1.10.1\lib\SEOChecker.Events.dll</HintPath>
     </Reference>
-    <Reference Include="SEOChecker.Validators, Version=1.9.4.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SEOChecker.1.9.4.1\lib\SEOChecker.Validators.dll</HintPath>
+    <Reference Include="SEOChecker.Extensions, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SEOChecker.1.10.1\lib\SEOChecker.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SEOChecker.Library, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SEOChecker.1.10.1\lib\SEOChecker.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="SEOChecker.Logging, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SEOChecker.1.10.1\lib\SEOChecker.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="SEOChecker.MVC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SEOChecker.1.10.1\lib\SEOChecker.MVC.dll</HintPath>
+    </Reference>
+    <Reference Include="SEOChecker.PropertyEditorConverters, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SEOChecker.1.10.1\lib\SEOChecker.PropertyEditorConverters.dll</HintPath>
+    </Reference>
+    <Reference Include="SEOChecker.Validators, Version=1.10.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SEOChecker.1.10.1\lib\SEOChecker.Validators.dll</HintPath>
     </Reference>
     <Reference Include="Skybrud.Social, Version=0.9.4.8, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Skybrud.Social.0.9.4.8\lib\net40\Skybrud.Social.dll</HintPath>
@@ -321,9 +336,6 @@
     <Reference Include="umbraco.editorControls, Version=1.0.6247.17504, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\umbraco.editorControls.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="Umbraco.Licensing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SEOChecker.1.9.4.1\lib\Umbraco.Licensing.dll</HintPath>
     </Reference>
     <Reference Include="umbraco.MacroEngines, Version=1.0.6247.17504, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Core.7.5.9\lib\umbraco.MacroEngines.dll</HintPath>
@@ -659,7 +671,6 @@
     <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.DESKTOP-5BHHJ25.hash" />
     <Content Include="App_Data\TEMP\PluginCache\umbraco-plugins.DESKTOP-5BHHJ25.list" />
     <Content Include="App_Data\umbraco.config" />
-    <Content Include="App_Data\TEMP\SEOChecker\SEOChecker.config" />
     <Content Include="App_Plugins\NestedContent\package.manifest" />
     <Content Include="App_Plugins\Analytics\settings.config" />
     <Content Include="App_Plugins\Analytics\profile.config" />
@@ -724,6 +735,7 @@
     <Content Include="Views\Partials\Page\HeaderSearch.cshtml" />
     <Content Include="Views\Partials\Components\SearchForm.cshtml" />
     <Content Include="Views\MacroPartials\ezSearch.cshtml" />
+    <Content Include="App_Data\TEMP\SEOChecker\SEOChecker.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
