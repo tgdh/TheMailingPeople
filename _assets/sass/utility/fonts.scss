@@ -1,0 +1,15 @@
+/* ===========================================================
+
+  # Fonts
+
+=========================================================== */
+
+h1, h2, h3, h4, h5, h6, p, li, a {
+    opacity: 0!important;
+}
+
+.wf-proximanova-n7-active, .wf-proximanova-n4-active, .wf-bebasneue-n4-active, .wf-active {
+    h1, h2, h3, h4, h5, h6, p, li, a {
+        opacity: 1!important;
+    }
+}
