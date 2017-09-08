@@ -15,7 +15,14 @@
     {
         contactNumber = settings.GetPropertyValue<string>("contactNumber");
     }
+
+	var hideSideNav = Model.GetPropertyValue<bool>("hideSideNavigation");
 }
+
+@*
+Hide side navigation
+Checking this will hide the sidebar with the navigation
+*@
 
 <div class="c-block__breadcrumb">
 	<div class="o-wrap o-wrap--x-large">
@@ -24,50 +31,57 @@
 </div>
 
 <div class="o-section">
-	<div class="c-grid o-wrap o-wrap--x-large">
-		<div class="c-grid__sidebar">
-			<div class="o-page-component o-wrap o-wrap--large is-first">
-				<ul class="c-services__list">
+	@if (hideSideNav) {
+		<div class="c-section__page-components o-wrap o-wrap--medium">
+			@Html.Partial("~/Views/Partials/Page/Components.cshtml")
+		</div>
 
-					@foreach(var item in menuItems){
-						var active = item.Id == CurrentPage ? "is-active" : "";
+	} else {
+		<div class="c-grid o-wrap o-wrap--x-large">
+			<div class="c-grid__sidebar">
+				<div class="o-page-component o-wrap o-wrap--large is-first">
+					<ul class="c-services__list">
 
-						<li class="c-services__li">
-							<a href="@item.Url" class="c-services__link @active">
-								@item.Name
-							</a>
-							@if( item.IsAncestorOrSelf(Model) && item.DocumentTypeAlias != "profilesPage") {
-								@Traverse(item)
-							}
-						</li>
-					}
+						@foreach(var item in menuItems){
+							var active = item.Id == CurrentPage ? "is-active" : "";
 
-				</ul>
-				
-				<div class="c-service__need-help">
-					<h2 class="u-gamma c-nee-help__title">Need help with Direct Mail?</h2>
-					<img src="/assets/img/steve.png" alt="Steve Logo" class="c-need-help__logo">
-					@if(!string.IsNullOrWhiteSpace(contactNumber))
+							<li class="c-services__li">
+								<a href="@item.Url" class="c-services__link @active">
+									@item.Name
+								</a>
+								@if( item.IsAncestorOrSelf(Model) && item.DocumentTypeAlias != "profilesPage") {
+									@Traverse(item)
+								}
+							</li>
+						}
+
+					</ul>
+
+					<div class="c-service__need-help">
+						<h2 class="u-gamma c-nee-help__title">Need help with Direct Mail?</h2>
+						<img src="/assets/img/steve.png" alt="Steve Logo" class="c-need-help__logo">
+						@if(!string.IsNullOrWhiteSpace(contactNumber))
+						{
+							<a href="tel:@contactNumber.Replace(" ","")" class="c-need-help__link">Call us on <span>@contactNumber</span></a>
+						}
+					</div>
+				</div>
+			</div>
+			<div class="c-grid__main-content u-relative">
+				<div class="o-wrap o-wrap--large">
+					@*<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@Model.Name</h2>
+					@if(!string.IsNullOrWhiteSpace(FirstPara))
 					{
-						<a href="tel:@contactNumber.Replace(" ","")" class="c-need-help__link">Call us on <span>@contactNumber</span></a>
+						<p class="c-section__first-para"><strong>@Html.Raw(FirstPara.Replace("\n","<br>"))</strong></p>
 					}
+					<img src="@PageImageUrl" alt="@Model.Name" class="c-service__featured-image">*@
+				</div>
+				<div class="c-section__page-components">
+					@Html.Partial("~/Views/Partials/Page/Components.cshtml")
 				</div>
 			</div>
 		</div>
-		<div class="c-grid__main-content u-relative">
-			<div class="o-wrap o-wrap--large">
-				@*<h2 class="o-heading u-mega u-uppercase c-section c-service__title o-heading">@Model.Name</h2>
-				@if(!string.IsNullOrWhiteSpace(FirstPara))
-				{
-					<p class="c-section__first-para"><strong>@Html.Raw(FirstPara.Replace("\n","<br>"))</strong></p>
-				}
-				<img src="@PageImageUrl" alt="@Model.Name" class="c-service__featured-image">*@
-			</div>
-			<div class="c-section__page-components">
-				@Html.Partial("~/Views/Partials/Page/Components.cshtml")
-			</div>
-		</div>
-	</div>
+	}
 </div>
 
 
