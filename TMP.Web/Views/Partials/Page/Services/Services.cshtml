@@ -1,8 +1,10 @@
 @inherits UmbracoViewPage<IPublishedContent>
 @{
+@*
 	var Homepage = Model.Site();
 	var Services = Homepage.Descendants("services").FirstOrDefault();
-	var Children = Services.Children;
+*@
+	var Children = Model.Children().Where(x => x.IsVisible() && x.TemplateId > 0);
 
 	var settings = Umbraco.TypedContent(1151);
 }

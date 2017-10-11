@@ -1,7 +1,7 @@
 ﻿@inherits UmbracoViewPage<IPublishedContent>
 @{
     Layout = "Layout.cshtml";
-	var Children = Model.Children;
+	var Children = Model.Children().Where(x => x.IsVisible() && x.TemplateId > 0);
 
 	var settings = Umbraco.TypedContent(1151);
 }
@@ -30,7 +30,7 @@
 						var pageText = item.GetPropertyValue<string>("pageDescription");
 						var pageTitleNull = !string.IsNullOrWhiteSpace(pageTitle) ? pageTitle: item.Name;
 						var altText = !string.IsNullOrWhiteSpace(pageTitle) ? pageTitle : "Service Page Icon";
-						
+
 						<a class="c-services__item" href="@item.Url">
 							@if(hasImage)
 							{
