@@ -1,4 +1,4 @@
-@using TMP.Core.ExtensionMethods
+﻿@using TMP.Core.ExtensionMethods
 @inherits UmbracoViewPage<IPublishedContent>
 @{
 	String List = Model.GetPropertyValue<string>("blogPicker");
@@ -8,7 +8,6 @@
 	var Homepage = Model.Site();
 	var Blogpage = Homepage.Descendants("blog").FirstOrDefault();
 	var BlogsList = Blogpage.Children;
-	int count = 0;
 }
 <div class="c-card-list">
 	<div class="o-section o-wrap o-wrap--x-large">
@@ -16,21 +15,16 @@
 	    <div class="c-card-list js-carousel--featured js-carousel_many slick-nav-black" data-loop="true" data-auto-play="true" data-speed="10000" data-nav="true">
 			@if(ListOfBlogs == null)
 			{
-				foreach (var blog in BlogsList)
+				foreach (var blog in BlogsList.OrderByDescending(b => b.GetPropertyValue<DateTime>("releaseDate")).Take(9))
 		        {
 					if(blog != null)
 					{
-						count ++;
-						var headline = blog.GetPropertyValue<string>("headline");
+						var headline = !string.IsNullOrEmpty(blog.GetPropertyValue<string>("headline")) ? blog.GetPropertyValue<string>("headline") : blog.Name;
 						var catId = blog.GetPropertyValue<int>("category");
 						var ItemLink = blog.Url;
-						int itemImage = blog.GetPropertyValue<int>("featuredImage") != 0 ? blog.GetPropertyValue<int>("featuredImage") : 1202;
-						@RenderCard(headline, catId, itemImage, "c-card-list__item", ItemLink)
+						var itemImage = blog.GetPropertyValue<int>("featuredImage") != 0 ? blog.GetPropertyValue<int>("featuredImage") : 1202;
 
-						if(count >= 9)
-						{
-							break;
-						}
+						@RenderCard(headline, catId, itemImage, "c-card-list__item", ItemLink)
 					}
 		        }
 			}
@@ -39,7 +33,7 @@
 		        {
 					if(item != null)
 					{
-						var headline = item.GetPropertyValue<string>("headline");
+						var headline = !string.IsNullOrEmpty(item.GetPropertyValue<string>("headline")) ? item.GetPropertyValue<string>("headline") : item.Name;
 						var catId = item.GetPropertyValue<int>("category");
 						var ItemLink = item.Url;
 						int itemImage = item.GetPropertyValue<int>("featuredImage") != 0 ? item.GetPropertyValue<int>("featuredImage") : 1202;
