@@ -1,4 +1,4 @@
-@inherits UmbracoViewPage<IPublishedContent>
+﻿@inherits UmbracoViewPage<IPublishedContent>
 @{
 	var homePage = Model.Site();
 	var Settings = homePage.Descendants("globalSettings").FirstOrDefault();
@@ -83,7 +83,7 @@
 
 <script type="text/javascript">
 function initMap() {
-    var markerIcon = "/assets/img/marker.png";
+    var markerIcon = "/assets/img/marker.png"
 	var location = {lat:50.843409, lng:-1.033011};
 	var map = new google.maps.Map(document.getElementById('map'), {
 	  zoom: 9,

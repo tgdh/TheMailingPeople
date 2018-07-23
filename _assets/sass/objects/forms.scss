@@ -309,6 +309,16 @@ $line-height-half: $line-height / 4;
 
 			&:checked {
 
+				+ .o-checkbox__label:before,
+				+ .o-radio__label:before {
+					background-color: $pri;
+					border-color: $pri;
+				}
+
+				+ .o-checkbox__label:after {
+					opacity: 1;
+				}
+
 				+ input[type="hidden"] {
 
 					+ .o-checkbox__label:before,

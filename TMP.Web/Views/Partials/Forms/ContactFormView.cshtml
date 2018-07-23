@@ -23,6 +23,7 @@ else
     {
         @Html.ValidationSummary()
     }
+
     using (Html.BeginUmbracoForm("ProcessFormSubmission", "ContactForm", FormMethod.Post, new { id = "contact-form", @class = "c-form js-form" }))
     {
         @Html.AntiForgeryToken()
@@ -61,13 +62,11 @@ else
     function SubmitForm(e)
     {
          var response = grecaptcha.getResponse();
-         alert('response length' + response.length);
          if(response.length == 0)
          {
-              e.preventDefault();
-              alert('low');
-         }else{
-              alert('high');
+            // if response length is set to 0 the user is not valid preventing the form from submitting
+            e.preventDefault();
          }
+         // recaptcha success
     }
 </script>

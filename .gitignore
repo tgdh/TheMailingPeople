@@ -307,3 +307,4 @@ TMP.Web/Config/connectionStrings.config
 **_assemblies/
 *.zip
 .DS_Store
+TMP.Web/Media/

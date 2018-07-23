@@ -30,7 +30,7 @@
 						var pageText = item.GetPropertyValue<string>("pageDescription");
 						var pageTitleNull = !string.IsNullOrWhiteSpace(pageTitle) ? pageTitle: item.Name;
 						var altText = !string.IsNullOrWhiteSpace(pageTitle) ? pageTitle : "Service Page Icon";
-
+						
 						<a class="c-services__item" href="@item.Url">
 							@if(hasImage)
 							{

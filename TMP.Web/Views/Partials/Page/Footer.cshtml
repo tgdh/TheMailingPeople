@@ -1,4 +1,4 @@
-@inherits UmbracoViewPage<IPublishedContent>
+﻿@inherits UmbracoViewPage<IPublishedContent>
 @{
     var homePage = Model.Site();
     var settings = homePage.Descendants("globalSettings").FirstOrDefault();
@@ -35,7 +35,7 @@
             <div class="c-footer__top__col c-footer__top__col--last">
                 <h2 class="o-heading c-footer__healine c-footer__headline u-mega u-uppercase">Connect with us</h2>
                 <div class="u-space-bottom">
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
+                    <p>Keep up to date with the latest happenings at The Mailing People.</p>
                 </div>
                 @Html.Partial("~/Views/Partials/Page/SocialLinks.cshtml", Model, new ViewDataDictionary { { "extraClass", "c-social--footer" } })
             </div>

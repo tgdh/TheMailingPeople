@@ -1,4 +1,4 @@
-@inherits UmbracoViewPage<IPublishedContent>
+﻿@inherits UmbracoViewPage<IPublishedContent>
 @{
     var homePage = Model.Site();
     var settings = homePage.Descendants("globalSettings").FirstOrDefault();
@@ -43,7 +43,7 @@
     {
         var linkName = footerLogo.GetPropertyValue<string>("linkName");
         var linkUrl = footerLogo.GetPropertyValue<string>("linkUrl");
-        var imageUrlLow = image.Url + "?width=250&height=128&bgcolor=ffffff";
+        var imageUrlLow = image.Url + "?width=111&height=114&bgcolor=ffffff";
 
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="o-logo @extraClass">
             <a href="@linkUrl" itemprop="" title="Link to @linkName" class="o-logo__link" target="_blank">

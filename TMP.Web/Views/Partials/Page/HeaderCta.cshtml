@@ -1,4 +1,4 @@
-@inherits UmbracoViewPage<IPublishedContent>
+﻿@inherits UmbracoViewPage<IPublishedContent>
 @{
     var homePage = Model.Site();
     var settings = homePage.Descendants("globalSettings").FirstOrDefault();
@@ -29,6 +29,6 @@
         </a>
     </span>
     <span class="c-header__cta__item c-header__cta__item--email">
-        <a href="mailto:enquiries@themailingpeople.co.uk">@email</a>
+        <a href="mailto:enquiries@themailingpeople.co.uk" onclick="ga('send', 'event', 'emailclick', 'enquiries@themailingpeople.co.uk');">@email</a>
     </span>
 </div>
